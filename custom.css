@@ -1,0 +1,23 @@
+.post_content h2::before 
+{
+    content: '★'
+}
+.post_content h3::before 
+{
+    content: '✧'
+}
+.post_content h4::before 
+{
+    content: '✮'
+}
+
+b, strong, em {
+
+    font-weight: 600 !important;
+
+}
+#TableOfContents {
+    font-size: 90%;
+    line-height: normal;
+    border-bottom: 1px dashed;
+}

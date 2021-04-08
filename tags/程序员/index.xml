@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>程序员 on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/</link>
+    <description>Recent content in 程序员 on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Sun, 08 Dec 2019 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>适合程序员风格的许多日常软件列表分享（开源为主）</title>
+      <link>/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Sun, 08 Dec 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/</guid>
+      <description>
+        
+          
+            前言 本篇既是自己的记录，也是向各位介绍许多程序员会喜欢的风格的日常软件。都尽可能选同类软件中最干净的好用的。来自多年开源社区打滚经验。
+所介绍大多为开源软件，也含名声不错的闭源软件。
+ 姊妹篇：适合百姓日用且干净如玉的软件分享（有重叠内容）
+  虽然所介绍的大部分用过，本人免任何责，只做介绍。
+ 正文  对于跨平台的软件，只会提及Windows、Linux、Android、iOS、Mac OS
+   VirtuaWin(Windows)（开源）
+在Windows上使用虚拟桌面（工作区）。Windows 10已经原带这个功能了。
+建议也在它的模块页面下载KvasdoPager（开源）安装，它提供任务栏中快速切换工作区功能。
+  AltDrag(Windows)（开源）
+在Windows上用Alt+左键移动窗口，Alt+右键缩放容器。像Linux桌面用户熟悉的那样
+ 一个继续的fork：RamonUnch/AltSnap
+   OAndBackupX (Android)（开源）
+批量备份App和数据。常刷机有用
+  Delta Chat（Windows、Linux、Mac OS、Android、iOS）（开源）
+像使用聊天工具一样地使用Email通信。是个提供类似聊天工具的界面体验的Email客户端。
+ 使用前请先查它这个表，看哪一家Email兼容。表中所列好像还没有测试多少国内Email提供商
+这个软件正在积极开发中，用户目前也还是洋人多
+   TrafficMonitor 或 Perfmonbar (Windows)（开源）
+显示当前网速、CPU及内存利用率。TrafficMonitor可悬浮窗，或任务栏显示
+  linux-router（Linux）（开源）
+用于一个命令创建Wifi热点，按ctrl+c直接复原。
+有线、或虚拟interface的网络共享也可以。主要是为Linux桌面用户考虑的，而各种Pi也适用。 支持透明代理、IPv6。
+  WAFall+（Android）（开源）
+可控制哪些App可以或不可以联网。需要root。
+  NetGuard（Android）（开源）
+可控制哪些App可以或不可以联网。不需要root。
+  App Manager（Android）（开源）
+对已安装的Android App和未安装的apk，能够提供非常齐全的信息显示和操作。能想到的和未想到的都有（显示各类信息、打开各个相关路径、权限管理、tracker检查、活动、服务、备份数据等等）
+  guiscrcpy（Windows、Linux、Mac OS）（开源）
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

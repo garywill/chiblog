@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/post/</link>
+    <description>Recent content in Posts on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Thu, 01 Sep 2022 08:00:00 +0800</lastBuildDate><atom:link href="/chiblog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>非常干净的日用软件列表分享（许多开源App）</title>
+      <link>/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Sun, 18 Oct 2020 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+      <description>
+        
+          
+            前言 既是自己的记录，也是向各位介绍，面向各行各业大众，介绍许多适合日用、洁净单纯的软件（不包含专业领域）。所介绍的软件都尽可能选同类软件中最干净的好用的。
+网上推荐软件的文章很多，这里与其他不同，大多为开源（开放源代码）软件，也含名声不错的闭源软件。
+像电脑手机这类电子机器的这滩浑水我曾经趟过，读者可以少趟。
+ 虽然所介绍的大部分用过，本人免任何责，只做介绍。
+ 正文  对于跨平台的软件，只会提及Windows、Android、iOS、Mac OS、Linux
+ 解决Android卡顿 是否有因装多App变卡，而正在用的所谓“加速软件”自身就是占用大量资源的恶龙？
+ 这类最好有root权限以发挥最好功效
+ Android自启动管理   Autostarts（开源）
+ 用它禁止一App自启动时，也有可能牵连该App的某些触发性功能被破坏。在Autostarts的界面上能看到
+   Android应用冻结 冻结，也就是杀后台
+  SuperFreezZ（开源）
+这个比其他类似的有一点好，就是能设置默认策略为冻结（即，自动把新安装的app添加进冻结列表中）
+  绿色守护 作者是国人Oasis Feng，近年似乎名声不错。
+  冰箱（IceBox） 不但冻结，还放入冰箱中就好像被删掉了一样，还可以阻止同伙App将它唤醒，比杀后台更厉害。又可以随时取出来用。免费版的有冻结10个App的限制
+  自冻（开源） 有任务计划功能的冻结应用。也可以让被冻结的App暂时消失。作者是国人Playhi
+  Android应用隔离 这些可以说是帮你开启Android本身的一个隐藏功能，把应用装到一个隔离的环境中，整个隔离环境可以随时开启或关闭，关闭了里面的App就好像不存在了一样，自然不占用后台。
+从隔离环境内是无法访问外部文件的，还可以保护一些隐私。
+ 没有root也可以用，不过更麻烦些
+有些机型ROM或旧的Android可能不兼容
+   炼妖壶（Island）（开源） 与绿色守护是同一个作者
+  Shelter（开源） 作者是国人Peter Cai
+   如果用这类软件搞分身、双账号多开之类的，仍是有被检测到并封号的可能，风险要自己评估
+ 搜索引擎和上网入口   大术专搜（Big Search） （开源） 以 灵活又顺手 的方式 在(切换) 任意一个 或 (连续)多个 搜索引擎（或任意网站）进行搜索。这个工具的作者就是我。
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>适合程序员风格的许多日常软件列表分享（开源为主）</title>
+      <link>/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Sun, 08 Dec 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/</guid>
+      <description>
+        
+          
+            前言 本篇既是自己的记录，也是向各位介绍许多程序员会喜欢的风格的日常软件。都尽可能选同类软件中最干净的好用的。来自多年开源社区打滚经验。
+所介绍大多为开源软件，也含名声不错的闭源软件。
+ 姊妹篇：适合百姓日用且干净如玉的软件分享（有重叠内容）
+  虽然所介绍的大部分用过，本人免任何责，只做介绍。
+ 正文  对于跨平台的软件，只会提及Windows、Linux、Android、iOS、Mac OS
+   VirtuaWin(Windows)（开源）
+在Windows上使用虚拟桌面（工作区）。Windows 10已经原带这个功能了。
+建议也在它的模块页面下载KvasdoPager（开源）安装，它提供任务栏中快速切换工作区功能。
+  AltDrag(Windows)（开源）
+在Windows上用Alt+左键移动窗口，Alt+右键缩放容器。像Linux桌面用户熟悉的那样
+ 一个继续的fork：RamonUnch/AltSnap
+   OAndBackupX (Android)（开源）
+批量备份App和数据。常刷机有用
+  Delta Chat（Windows、Linux、Mac OS、Android、iOS）（开源）
+像使用聊天工具一样地使用Email通信。是个提供类似聊天工具的界面体验的Email客户端。
+ 使用前请先查它这个表，看哪一家Email兼容。表中所列好像还没有测试多少国内Email提供商
+这个软件正在积极开发中，用户目前也还是洋人多
+   TrafficMonitor 或 Perfmonbar (Windows)（开源）
+显示当前网速、CPU及内存利用率。TrafficMonitor可悬浮窗，或任务栏显示
+  linux-router（Linux）（开源）
+用于一个命令创建Wifi热点，按ctrl+c直接复原。
+有线、或虚拟interface的网络共享也可以。主要是为Linux桌面用户考虑的，而各种Pi也适用。 支持透明代理、IPv6。
+  WAFall+（Android）（开源）
+可控制哪些App可以或不可以联网。需要root。
+  NetGuard（Android）（开源）
+可控制哪些App可以或不可以联网。不需要root。
+  App Manager（Android）（开源）
+对已安装的Android App和未安装的apk，能够提供非常齐全的信息显示和操作。能想到的和未想到的都有（显示各类信息、打开各个相关路径、权限管理、tracker检查、活动、服务、备份数据等等）
+  guiscrcpy（Windows、Linux、Mac OS）（开源）
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>初探AppImage打包（Qt程序为例）</title>
+      <link>/chiblog/post/appimage%E6%89%93%E5%8C%85/</link>
+      <pubDate>Thu, 01 Sep 2022 08:00:00 +0800</pubDate>
+      
+      <guid>/chiblog/post/appimage%E6%89%93%E5%8C%85/</guid>
+      <description>
+        
+          
+            这是稿件，有待完善
+ .AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制+动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用了squashfs+FUSE）。软件退出后，/tmp/.mount_xxxxxxxx会消失。
+一般来说（如果正确打包了），运行时传递了参数给.AppImage文件，这些参数会传递到其内部的usr/bin/真正的可执行文件上（但也有特例，如解包参数--appimage-extract）
+查看或解包一.AppImage文件 学习打包前，先了解查看和解包的方法
+要解包一.AppImage文件，运行：
+1xxxxx.AppImage --appimage-extract 则只会将其内部的文件解包在./squashfs-root/下，不会运行软件
+若想只查看.AppImage文件内部的文件列表，可以使用下面说到的appimagetool，它的-l参数是做这个的
+初探AppImage打包基本要求和操作 准备一个AppDir目录，里面需要放：
+1├── AppRun # 从AppImage官方下载，此文件官方随同appimagetool一起发布（如果没有好像也可以，例如linuxdeploy的qt插件会生成一个shell脚本来充当它） 2├── appentry.desktop # 文件名随便，后缀要.desktop。这里不能有第二个.desktop文件 3├── logo.png # 文件名（去除后缀部分）与appentry.desktop中的icon=一致 4└── usr 5 ├── bin # appentry.desktop中的&amp;#34;exec=&amp;#34;使用的相对路径是相对于这里 6 │ ├── 可执行二进制文件 # 文件名与appentry.desktop中的exec=一致 7 ├── lib # 即使是64位，也不需要命名为lib64 8 │ └── 自己的软件编译出来的库（若有）.so # 如果有，需要在运行linuxdeploy时要设置LD_BRARY_PATH为这里（打包机器上的绝对路径） 9 └── share 10 ├── applications 11 │ └── 软件名.desktop -&amp;gt; ../../../appentry.desktop 12 └── icons 13 └── hicolor 14 └── 512x512 15 ├── 软件名.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/appimage%E6%89%93%E5%8C%85/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Linux给特定进程单独指定DNS</title>
+      <link>/chiblog/post/linux-process-dns/</link>
+      <pubDate>Sat, 17 Oct 2020 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/linux-process-dns/</guid>
+      <description>
+        
+          
+            Linux本身只能通过/etc/resolv.conf设置全系统的DNS。这里有一种给特定进程单独设置DNS的方法，通过免root的mount namespace达成。使用脚本只需要一条简洁的命令就可以。
+背景 例如，在各省各地布置了CDN，本地Linux系统用的DNS为114.114.114.114，这里想要使用某地某ISP的DNS5.5.5.5来测试CDN设置状况，却不想更改全系统设置。虽然dig和nslookup可指定DNS，但大部分程序没有这个功能。
+方法   Bubblewrap是一个非特权（免root）容器工具，使用bwrap命令以用它来创建一个mount namespace，使得在此namespace下的进程所看见的/etc/resolv.conf被覆盖为自己指定的内容。
+  有些程序会使用系统统一提供的DNS缓存（一般由nscd提供），因此mount namespace需要阻止DNS缓存被访问。阻止/var/run/nscd/被访问即可。
+  使用 移步Github仓库，有我整理好的脚本
+1proxc -d 5.5.5.5 -c nslookup my-website-with-cdn.com 2proxc -d 5.5.5.5 -c firefox http://my-website-with-cdn.com 3proxc -d 5.5.5.5 -c curl -v http://my-website-with-cdn.com 使用此脚本只需要一条简洁的命令就可以达到。将5.5.5.5分别替换成要测试的各省各ISP的DNS即可。
+限制   由于Bubblewrap的限制，若在使用过程中，mount namespace之外的进程删除、重建或更改了/etc/resolv.conf，也会使namespace内所看见的/etc/resolv.conf被修改。
+因此，NetworkManager切换网络后，可能会使此方法设置的DNS失效。可以通过禁止NetworkManager更改/etc/resolv.conf来避免。
+  在bubblewrap这类容器之中，有些程序本身需要用到mount、namespace等功能的无法使用，如AppImage
+  本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/linux-process-dns/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>wine实用经验教程</title>
+      <link>/chiblog/post/wine/</link>
+      <pubDate>Mon, 10 Aug 2020 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/wine/</guid>
+      <description>
+        
+          
+            本篇讲类unix系统下的用以模拟运行Windows程序的wine。会从普通使用者的比较实用的角度去讲。有专为国内用户准备的内容。
+本篇面向有Linux经验但对wine不熟悉的人。
+wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环境和严格环境中千万别用。
+一般越旧的Windows程序wine越容易模拟运行成功（或部分功能成功）。请先在官方wine Application Database上查你想运行的程序的别人的模拟结果（官方搜索不好用，可以用Google加 site:appdb.winehq.org），看Test Results：
+  Rating一列由运行结果好到坏为Platinum、Gold、Silver、Bronze、Garbage
+  看他们当时所用的wine版本和程序版本。有些是用很旧的wine测试的结果不好，新版本wine或许已不一样
+  结果好的，你打算做，那么点击此条结果，看提交者所描述的正常功能、不可用功能、未测试功能，及他所留的建立过程和操作方法
+  无近期结果或近期仍然Silver以下的就放弃吧。也可以自己尝试，但这对普通人来说，顺利则已，不顺利则是一大大大坑
+   基础知识和操作 WINEARCH环境变量 这个WINEARCH 决定了你模拟的Windows是32位或是64位的x86。对应的值为win32及win64，如果你的Unix系统是64位的它就默认是win64。
+发行版所提供的wine一般都有32位及64位两个包，直接对应所模拟的Windows位数，包里面的Unix二进制及运行库也都是对应位数。
+以我的经验来看，使用32位更容易成功。
+WINEPREFIX环境变量 WINEPREFIX是很重要的，默认值为~/.wine。
+wine会在它所指定的路径下创建drive_c/等几个文件（夹），其中包含了Windows环境配置、它的C盘文件等等。
+建议把你安装的不同的Windows程序分给不同的WINEPREFIX，便于打包和隔离。当你要启动这个Windows程序前也记得要设置WINEPREFIX。
+ 在你用一个空WINEPREFIX目录第一次启动wine时，它会问你是否下载mono和gecko。一般情况选否即可。
+ 启动Windows程序及路径处理 命令wine 路径/xxx.exe 参数（可以是文件路径）就可以通过wine运行exe。路径可以是Unix路径，也可以是（在有WINEPREFIX情况下的）Windows路径，wine会自动判断。
+以WINEPREFIX是默认值情况下为例：
+1wine notepad.exe c:/abc.txt 2wine notepad.exe ~/.wine/drive_c/abc.txt 上面两条命令效果一样。
+对wine来说，你Unix系统里的其他文件（即模拟的C盘之外的文件）的Windows路径都以Z盘开头：
+1wine notepad.exe z:/home/username/.wine/drive_c/abc.txt  wine也提供了winepath这个命令来转换Unix和Windows之前的路径，但一般用不上。
+ 安装Windows程序及之后 要安装一个Windows程序，一般就是在设置好WINEPREFIX和WINEARCH后，运行安装包
+1wine 安装包.exe 2wine msiexec /i 安装包.msi 安装好后，安装程序所生成的Windows开始菜单项会被自动加入你的Linux系统的启动器中。.desktop文件里已经有了WINEPREFIX和WINEARCH。安装程序所产生的文件扩展名关联、图标等等“垃圾”也会进入Linux中。
+ 如果你不喜欢垃圾，可以清理，参考官方FAQ 甚至你可以在安装前就禁止它在Unix中产生任何菜单、文件关联等物件（参考这里）： export WINEDLLOVERRIDES=winemenubuilder.exe=d wine setup.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/wine/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>2020年代仍有Firefox userChrome JS脚本（介绍、简略教程、资源）</title>
+      <link>/chiblog/post/firefox_uc%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sun, 19 Jan 2020 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/firefox_uc%E8%84%9A%E6%9C%AC/</guid>
+      <description>
+        
+          
+            直到现在（2022年中更新时）Firefox的 userChrome script（简称uc脚本） 仍然可以使用。我们无法知道在遥远的或不久的将来Mozilla会不会让uc脚本完全失效，这两年已有人在说，但自57以后，是uc脚本让一些人（例如我）不需要（或暂时不需要）放弃Firefox转用其他浏览器。目前看来，uc脚本仍然可以让我们这些普通用户安心使用下去。
+ 本人的技术重点不在于浏览器，只是个浏览器用户。本文非专业性很强的文章
+ 背景 2017年Firefox的“量子”版本（57）发布，中止了所有旧扩展（Addon/Extension，又称附加组件，与“插件 Plugins 不同）的支持。XUL、XPCOM、XBL等旧的被称为Legacy的技术被宣称要废弃。57开始只支持webExtension的扩展。
+这一改变我相信使得很多人离开Firefox，因为可自订性、可玩性降低很多（例如主界面不能再随意更改、扩展不能再任意操作浏览器about:config内的项目），一大堆的旧扩展作废。
+但旧技术也没有完全被剥离，仍然有人通过 userChrome script（简称uc脚本） 的方式实现一些webExtension无法实现（或暂时无法实现）的功能。甚至有人通过uc脚本复活了好多个Legacy扩展的100%功能。可以说只要uc脚本仍可用，以前的Firefox玩法都可以继续。
+在本来就小众的Firefox用户群中，uc脚本更加小众，本篇将介绍一些资源和笔者自己写的uc脚本，还有简略的脚本编写教程（默认你会js）（我这个教程写得不算好，但目前没发现有大神在写）。
+ userChrome JS脚本与userChrome.css有关但不同，脚本是JavaScript的，不是CSS
+ 如何启用uc脚本 Firefox每更新一个版本，启用uc脚本的方法就很可能会变化。以下这些常跟进Firefox的变化提供启用方法的：
+  xiaoxiaoflood/firefox-scripts:
+  Aris-t2/CustomJSforFx
+  方法一般就是将一些用于启用的js、xml、css文件放入Firefox程序目录及profile中，然后就可以把你的具体.uc.js文件放入对应位置使用。
+以上所列这些启用方式，每一套也称为一种uc脚本管理器。
+ 除了启用uc脚本的方法会变化，uc脚本代码也需要根据Firefox版本的更新而修改。如果常更新是较麻烦的，因此我自己使用半年更新一次的Firefox ESR。
+ 编写uc脚本的简略教程 启用浏览器工具箱 编写uc脚本需要使用浏览器工具箱（Browser Tools）来调试。可以让你用鼠标选择和可查看浏览器主界面上的任意一部位的部件（导航栏、地址栏、标签栏等），也可以让你输入执行整个浏览器级别的js代码。
+浏览器工具箱（Browser Tools）开启的快捷键是Ctrl+Shift+Alt+I。
+ 注意与网页开发所用的工具箱Ctrl+Shift+I不同，我们需要的这个是可以调试整个浏览器的，而那个只调试一个tab内的网页
+ 而Firefox默认是禁用了Browser Tools的。启用的方法为：
+  先打开一个tab页面的开发者工具（Ctrl+Shift+I）
+  右上角三个点-&amp;gt;设置
+  勾选高级设置下面的以下两个
+  Enable browser chrome and add-on debugging toolboxes
+  Enable remote debugging
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/firefox_uc%E8%84%9A%E6%9C%AC/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>容易上手的LXD容器和虚拟X server</title>
+      <link>/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/</link>
+      <pubDate>Sat, 18 Jan 2020 08:00:00 +0800</pubDate>
+      
+      <guid>/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/</guid>
+      <description>
+        
+          
+            Linux有容器技术LXC，LXD对LXC进行了封装。与Docker类似，但LXC容器比Docker容器完整，且不像Docker是一次性容器设计运行结束后即销毁实例。使用LXD操作容器，体验介于Docker与虚拟机之间。（其实LXD不只提供封装LXC容器的功能，还提供封装虚拟机）
+开始使用LXD——初始设置   从自己的发行版仓库安装LXD。LXD与Docker一样有一个守护进程lxd，因此有
+1sudo systemctl enable/disable/start/stop lxd  如果用systemctl停止lxd时，仍有正在运行的容器，那些容器不会被停止。所以应该先停止所有容器，再systemctl stop
+ lxd是守护进程，而平时操作LXD则是用lxc命令（此lxc非属于LXC容器，是LXD的客户端的意思）
+  安装LXD后自动创建lxd用户组，我们手动把自己的日常用户添加进这个组里：
+1usermod -aG lxd &amp;lt;username&amp;gt;   添加清华LXC镜像（下文都用这个tuna-images源）：
+1lxc remote add tuna-images https://mirrors.tuna.tsinghua.edu.cn/lxc-images/ --protocol=simplestreams --public  若想在连接镜像时使用代理：
+1lxc config set core.proxy_http http://ip:port 2lxc config set core.proxy_https http://ip:port 3lxc config set core.proxy_ignore_hosts image-server.local    /etc/subuid和/etc/subgid都写
+1root:1000000:65536 21000:1000000:65536 3lxd:1000000:65536 让容器进程运行时，宿主看到的容器进程所属UID以一百万算起 （外一百万=内0）。且容器的rootfs/下的文件在宿主机看来UID、GID也都是一样map过的。这种叫非特权容器，比特权容器安全。
+  初始化LXD。运行
+1sudo lxd init 交互问答式的。
+ 其中有一个项让我们选择储存方式，我们自用选最简单的dir方式就可以，简单实用（这样容器内文件可以直接访问/var/lib/lxd/storage-pools/default/containers/容器名/rootfs/查看修改）。    （可选）缓存与自动刷新相关设置
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>修复一些不能直接使用或不好用的ttf字体文件</title>
+      <link>/chiblog/post/ttffont/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/chiblog/post/ttffont/</guid>
+      <description>
+        
+          
+            有些TrueType字体文件（.ttf）下载回来后，虽然能在专用的字体编辑/查看软件中正常打开，并能看到字体形状，但却不能在无论Word、LibreOffice、Windows、Linux、Android中当一个正常字体用。
+胡搞一通后（本人不懂字体），摸索出了一些解决以下问题的方法：
+  .ttf文件无法当普通字体用
+  该.ttf文件中没有图形的字符，使到时显示空白，并不像正常情况那样fallback到系统默认字体
+  能用但太小，一个字图形边缘空白太大
+  解决步骤 用的软件是FontForge。
+  把以下脚本保存为.pe后缀，通过cli调用
+1#!/usr/bin/env fontforge 2 3Open($1) 4 5RemoveAllKerns() 6DetachAndRemoveGlyphs() 7SelectAll() 8UnlinkReference() 9Reencode(&amp;#34;unicode&amp;#34;) 10 11Generate($1:r + &amp;#34;_patch.ttf&amp;#34;) 如果不懂通过cli调用，也可以在FontForge在界面中打开字体文件后，点击菜单“文件-&amp;gt;执行脚本-&amp;gt;选择FF”，然后把
+1RemoveAllKerns() 2DetachAndRemoveGlyphs() 3SelectAll() 4UnlinkReference() 5Reencode(&amp;#34;unicode&amp;#34;) 这几行粘贴进去，点击确定。
+  在FontForge界面中打开上一步处理过后生成的新字体文件，菜单“文件-&amp;gt;生成字体”保存成一个新.ttf文件。这一步要点时间（1分钟）。忽略所有警告和错误。
+  菜单“编辑-&amp;gt;选择-&amp;gt;空格字形”，然后点“Clear”删掉它们。
+你会看见原本空白的格子变成了一个带浅灰色叉的格子。这样这个字体文件中没有图形的字符就可以被fallback用默认字体显示出来了。   针对某一类字符调整图形 菜单“基础-&amp;gt;字体信息-&amp;gt;统一码范围”，这里可以按类型批量选择字符，例如：
+  基本大小写英文字母+数字+基本符号：基本拉丁文
+  我们平时所用汉字（包括简和繁）：中日韩统一表意字符
+  改变字符图形大小 图形太小是常见的情况。如果用起来字符间总有消除不掉的间距，有可能是这个原因。
+批量选择要放大的字符后，菜单“基础-&amp;gt;变换-&amp;gt;变换”，其中有等比缩放功能。
+完全处理完成后，使用菜单“文件-&amp;gt;生成字体”保存成一个新.ttf文件。
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/ttffont/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>展示Github repo的橱窗页面，超越只允许6个仓库的限制</title>
+      <link>/chiblog/post/github6/</link>
+      <pubDate>Thu, 19 Dec 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/github6/</guid>
+      <description>
+        
+          
+            Github是许多人展示自己的作品的平台，而profile页面只允许pin 6个repo。
+如果你有超过6个作品想要展示： 只选6个最想要展示的，忍痛舍弃其他的？ 另外做一个网站来一个个介绍你的repo？
+不如自己弄一个Github风格的橱窗展示页面，直接调用Github API去fetch并展示各个repo的信息，这样想展示多少个都可以，而且也免去了为每个作品额外写介绍的麻烦。
+演示 先看看我自己的： https://garywill.github.io
+页面模板 非常符合Github风格的网页模板有一个Cayman theme，朴实简洁实用。就以它为基础修改。
+使用 经过js的Github API的调用、css编辑等工作，将展示一个repo封装成了这样一行简单的html：
+1&amp;lt;div class=&amp;#34;repo-box&amp;#34; owner=&amp;#34;garywill&amp;#34; reponame=&amp;#34;bigSearch&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; owner是Github用户名，reponame是repo名称。
+完整代码 完整的代码在这个仓库中： GitHub - garywill/garywill.github.io: Github page showing Github repos using API
+感谢Cayman theme模板
+ Update：
+现在Github的profile已经支持直接展示一个静态页面在6个pinned repos之上，支持文字、链接、图片，创建一个与自己Github用户名相同名称的repo，在其README.me中写内容即可。
+因为它是全静态，不支持js的，因此，放个链接引导向xxx.github.io就好了：）
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+  
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/github6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Android与电视盒，电脑投屏、技术工具、遥控器之外的操作方式等</title>
+      <link>/chiblog/post/androidtv/</link>
+      <pubDate>Mon, 09 Dec 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/androidtv/</guid>
+      <description>
+        
+          
+            本文又臭又长，内容较杂，请善用目录链接
+ 这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
+这篇文章不针对盒子型号，我手上目前有的设备有两个：
+  一个Android 8的，官方固件带root的盒子。ARM64v8。两个USB口，一个是USB 3.0。网线口。16G。
+  买某服务配送的电视盒子，设计给仅观看它们的某些节目用的，Android 4.4，32位ARM7，性能就那样1G运存，ROM空间倒是可以在root后装点东西进去。带有网线口和Wifi（有些盒子对热点参数很挑剔，否则Wifi很慢）、两个USB口。
+  电视盒子如果装Android手机的App，都可以装也95%可以运行，但实际发现可能是因为没有针对电视硬件优化过的原因，会比手机上使用卡，而且许多App放视频的时候无法硬解占CPU 99%，而且因屏幕方向不同，显示尺寸策略不同，有些用起来有点怪。
+因此有人说，目前买智能电视盒子不太值，不如买个手机USB转HDMI。
+或者使用手机与智能电视局域网投屏也不错，这个目前也有许多App实现了。
+实际测试一些大站的TV App比手机App能看的视频少（发现一些普通人上传的视频不让电视看），买剧更贵。
+本篇默认读者有一定的技术，写得较简略，且有点乱，因此不适合完全不懂的人阅读。如果你只是个用户消费者，这篇大部分内容不适合你看。我自己是常在Linux上以adb shell操作Android设备的，因此本篇会带有许多命令操作内容
+这里记录下（有root后）安装一些技术人喜欢用的工具类App，开源方案为主，及Android电视与电脑（Linux为主）配合的一些方法，包括有电脑控制电视、电脑向电视投屏、手机控制电视等奇技淫巧。也有少量提及家庭媒体相关的App。
+弄的过程中鼠标键盘还是需要准备的，无线的最好，毕竟在客厅电视前。USB插口设计给插U盘放电影，但也可以插鼠标键盘。
+ exFat及NTFS注意：买回来发现这个Android 8 盒子是不支持读取exFat的U盘的。而附赠的旧盒子竟然支持～。经查那些制造商没有给ms钱，也（暂时）没有采用其他第三方技术，就很可能不会支持这两个文件系统。于是把exFat的U盘格成了Fat32。
+Fat32只是在Windows下格式化时被限制在&amp;lt;32G，所以找个Linux格式化一下就可以最多支持8T。单个文件最大4G无法突破。
+ 解决时间无法自动同步问题 较新版本Android默认估计采用了遥远处我们正常无法连接的NTP服务器来同步时间。而如果手动设置时间，关掉自动同步，有些盒子断电后时间复原。
+ 用下面命令设置让它用国内的NTP服务器
+1settings put global ntp_server ntp1.aliyun.com  使用App来开关网络adb 如果进系统设置里开关adb麻烦，可以用一些App
+ com.matoski.adbm（或com.github.sryze.wirebug，或siir.es.adbWireless）
+ 终端模拟器与开机脚本 已有远程adb，但再装个终端App也无妨
+  com.termoneplus或jackpal.androidterm （Android &amp;lt;= 4）
+  Termux（推荐）
+可以用Termux + Termux:Boot来实现开机自定义脚本
+  安装SSH server，以及在SSH中开关adb （除以下笨方案外，Termux及其包中也提供有sshd）
+ adb没有密码，一直开着不够安全。
+装一个可以设置密码的SSH server(这里用了net.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/androidtv/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>如何配电脑？如何配一台对Linux兼容比较好的电脑？</title>
+      <link>/chiblog/post/choose-linux-pc/</link>
+      <pubDate>Tue, 26 Feb 2019 09:36:13 +0000</pubDate>
+      
+      <guid>/chiblog/post/choose-linux-pc/</guid>
+      <description>
+        
+          
+            这里收集了一些配电脑及了解某硬件与Linux兼容程度的一些方法。
+ 我收集了这些，但没用上，放弃了。最后配了一台标准的，没去考虑Linux。烧脑啊！
+ 普通的选电脑配件工具   https://hk.pcpartpicker.com/list/
+  中关村比较配硬件 http://zj.zol.com.cn/
+  PConline配硬件 https://mydiy.pconline.com.cn/
+  计算硬件功率 https://www.coolermaster.com/power-supply-calculator/
+  AMD Ryzen列表 https://www.wikiwand.com/zh-hans/AMD_Ryzen （这两年大家不是在都说AMD比Intel好，Intel爆出好多问题，还有AMD比Nvidia对Linux友好吗？）
+不负责任据说，三大主板商中，微星对Linux最友好。其次技嘉，华硕最不好。
+硬件的VID、DID、PID查询 Vendor ID、Product ID、Device ID。解释略。USB设备和PCI设备的ID分配是不同的。
+  PCI和USB的Vendor ID 、Product ID （无名称搜索） https://devicehunt.com/
+  PCI 的Vendor ID 、Product ID ，或名称搜索 https://www.pcilookup.com/
+  https://pci-ids.ucw.cz/read/PC/
+  Realtek 硬件的VID、DID查询（非官方） https://www.realtek.cz/realtek-audio-devices.html https://www.realtek.cz/realtek-network-devices.html https://www.realtek.cz/realtek-wireless-devices.html
+  Linux中用命令查看VID、DID   看当前硬件的内核模块和VID DID
+1$ lspci -knn   看当前linux中支持的VID、DID
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/choose-linux-pc/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>BASH让标准输出和错误输出颜色不同</title>
+      <link>/chiblog/post/bash%E8%AE%A9%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E4%B8%8D%E5%90%8C/</link>
+      <pubDate>Mon, 25 Feb 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/bash%E8%AE%A9%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E4%B8%8D%E5%90%8C/</guid>
+      <description>
+        
+          
+            shell中运行的程序输出有标准输出（stdout）和错误输出（stderr）两种。当在终端中运行一个进程时，默认是stdout和stderr混在一起的，需要区分只能去读内容，人眼不容易快速区分。
+如何让stdout和stderr一眼能够被区分开来？
+让进程产生的标准输出（stdout）是绿色，错误输出（stderr）是红色。这样有没有错误或警告一目明了！
+方法 颜色控制的话，使用\e[92m是绿色，\e[93m是红色，\e[0m是默认颜色。具体可以去自行查一查表。
+ 首先，&amp;gt; &amp;gt;( ..... )将stdout传给一个负责绿色命令，2&amp;gt; &amp;gt;( .... )又将stderr传给一个负责红色的命令。我们都知道stdout的fd号为1，在重定向时可以不写。stderr的fd为2。 用sed命令负责给文本加上颜色再输出。 别忘记对stderr加上红色后，还要用&amp;gt;&amp;amp;2输出至stderr，否则直接输出就变成stdout了。  好了，说了方法之后，完整的命令在这里
+1要运行的命令 &amp;gt; &amp;gt;(sed $&amp;#39;s,.*,\e[92m&amp;amp;\e[m,&amp;#39;) 2&amp;gt; &amp;gt;(sed $&amp;#39;s,.*,\e[93m&amp;amp;\e[m,&amp;#39;&amp;gt;&amp;amp;2) 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+  
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/bash%E8%AE%A9%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E4%B8%8D%E5%90%8C/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>在Linux终端中快速生成、解码二维码</title>
+      <link>/chiblog/post/qr/</link>
+      <pubDate>Mon, 25 Feb 2019 08:00:00 +0100</pubDate>
+      
+      <guid>/chiblog/post/qr/</guid>
+      <description>
+        
+          
+            我们需要的两个功能：
+ 解码Linux屏幕上的二维码，将结果输出在终端 在终端中将字符串转为二维码，直接显示二维码在终端中以供扫描  实现方法   生成二维码 qrencode是一个常见的生成二维码的CLI程序，许多发行版仓库中有。它支持直接输出二维码在终端中。（它也支持输出二维码到图片文件）
+  解码二维码
+ 此方法在 X11 上测试过
+  在终端中运行截屏程序，以截得二维码图形
+scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给解析二维码的CLI程序。
+我们用zbar来解析二维码，显示结果在终端。    我已将以上所述整理成一个shell脚本：
+ 终端中运行这个脚本，然后鼠标框选屏幕上的二维码，即可解析出结果。 将任意字符串当作参数传给这个脚本，即可在屏幕上显示出二维码。  完整脚本 代码请移步我的Github仓库 https://github.com/garywill/qrshot 查看
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+  
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/qr/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>用cgroup限制内存以防止Linux因内存用尽卡死</title>
+      <link>/chiblog/post/cgroup/</link>
+      <pubDate>Fri, 22 Feb 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/cgroup/</guid>
+      <description>
+        
+          
+            Linux在内存用尽的情况下，整个界面，包括tty和ctrl-alt-F1都会卡住难以响应。虽然Linux内核有OOM Killer机制杀掉吃内存的进程，但经常内存用尽时连OOM Killer都无法动作。
+本篇讲述如何用cgroup限制内存防止整个Linux因内存用尽卡死。
+因内存用尽卡住时怎么办  如果鼠标还能动一点，可以尝试在top中杀掉吃内存的进程。但这时想进入top并kill -9都很难。ctrl-alt-F1都会卡。 如果鼠标完全不能动，可以等待15分钟左右，OOM Killer可能会动作杀掉吃内存的进程，然后就可以恢复。如果15分钟还无反应，那是真卡死了。 魔法键强制安全重启。  用cgroup限制用户内存留空间给内核动作 cgroup是内核的一个资源限制功能。这里限制日常用户的内存，留500MB左右给root和内核。
+我的Linux是否支持cgroup 1cat /proc/self/cgroup 这里可以列出某进程所处的资源限制组。有则表示内核支持cgroup
+安装cgroup相关工具 我们要用到cgconfigparser和cgrulesengd这两个工具。安装libcgroup-tools（可能因发行版而异）这个包。
+配置cgroup规则 /etc/cgconfig.conf中写
+1group users_mem_limit { 2 memory { 3 memory.limit_in_bytes = 3500000000; 4 } 5} 这里限制共使用3.5G内存（假设共有4G内存）。用cat /proc/meminfo查看准确的总内存大小以决定数值。
+/etc/cgrules.conf中写
+1@users	memory	users_mem_limit/ 2日常用户名	memory	users_mem_limit/ 这是将规则应用给users组和日常用户。
+接下来运行
+1# cgconfigparser -l /etc/cgconfig.conf 2# cgrulesengd 等待两分钟，日常用户的所有进程就会被放入资源限制规则组中，新打开的进程也会自动加入。cat /proc/&amp;lt;PID&amp;gt;/cgroup可以看某进程是否已加入组。
+如果成功，将上面两条命令设置成为开机自动以root运行就行。具体步骤略。
+吃内存测试 如果想要测试这个方法的效果，可以用这个工具来吃内存（自己make一下）。
+1$ ./memhog 100 9999999 它会一次吃掉100MB内存，逐渐把内存用尽（这并不能完全模拟所有程序运行时的内存使用方式，这只是个简单的测试）
+其他方法 Linux有内存用尽卡死的问题，是Linux内核的OOM机制不够好。这或许是它不如Windows的一个地方。
+另外许多人推荐一个叫Early OOM的程序，用它来替代Linux自身的OOM。
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/cgroup/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>为Linux的文件管理器创建“在此打开终端”菜单</title>
+      <link>/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/</link>
+      <pubDate>Tue, 12 Jun 2018 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/</guid>
+      <description>
+        
+          
+            有些Linux的GUI文件管理器没有右键菜单“在此打开终端”，或者有却不能自行指定某种终端。
+因为文件夹也有其MIME类型（inode/directory），通过文件关联的方式，把文件夹关联给某个终端，就可以在文件管理器中用右键菜单的“打开方式 ”中选择你想要的终端。（前提是你的文件管理器右键菜单中有”打开方式“）
+在我之前一篇《 Linux关联文件扩展名和打开程序 》有写关联方法。在那篇文章的第2步写 你的终端-in-this-path.desktop文件
+1[Desktop Entry] 2Encoding=UTF-8 3Name=rxvt-unicode in this path 4GenericName=rxvt-unicode in this path 5Exec=urxvt -cd %f 6Icon=utilities-terminal 7Terminal=false 8NoDisplay=true 其中的Exec=终端命令 需要的参数 %f因不同终端而异，本例是urxvt-unicode终端的。 xfce4-terminal终端为Exec=xfce4-terminal --working-directory=%f
+终端安装好后是肯定自带了.dekstop文件的，但一般它的Exec=中都没有传递路径的部分，所以这里要自己写一个。
+然后，在那篇文章的第3步写
+1[Added Associations] 2inode/directory=你的终端-in-this-path.desktop; 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+  
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Linux关联文件扩展名和打开程序</title>
+      <link>/chiblog/post/linux%E5%85%B3%E8%81%94%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E5%92%8C%E6%89%93%E5%BC%80%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 06 Dec 2017 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/linux%E5%85%B3%E8%81%94%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E5%92%8C%E6%89%93%E5%BC%80%E7%A8%8B%E5%BA%8F/</guid>
+      <description>
+        
+          
+            手动为Linux关联文件扩展名与打开程序。
+当Linux不认识某种扩展名的时候，需要为此扩展名创建一个MIME类型。Linux是依据MIME类型而不是扩展名来决定打开程序的。
+再将此种MIME类型与某程序菜单项关联。
+手动关联步骤   为扩展名建造一个MIME类型
+ 如果你的Linux已经认得这种扩展名，不需要做这一步。在你的文件管理器中，看看这种扩展名的文件有没有被正确识别。或使用file命令查看。
+ 创建 application-x-扩展名.xml 内容：
+1&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; 2&amp;lt;mime-info xmlns=&amp;#34;http://www.freedesktop.org/standards/shared-mime-info&amp;#34;&amp;gt; 3 &amp;lt;mime-type type=&amp;#34;application/x-扩展名&amp;#34;&amp;gt; 4 &amp;lt;comment&amp;gt;此种文件类型的描述&amp;lt;/comment&amp;gt; 5 &amp;lt;icon name=&amp;#34;application-x-扩展名&amp;#34;/&amp;gt; 6 &amp;lt;glob-deleteall/&amp;gt; 7 &amp;lt;glob pattern=&amp;#34;*.扩展名&amp;#34;/&amp;gt; 8 &amp;lt;/mime-type&amp;gt; 9&amp;lt;/mime-info&amp;gt; 放 application-x-扩展名.xml 到 ~/.local/share/mime/packages/。
+刷新系统MIME数据库
+1$ update-mime-database ~/.local/share/mime   为程序建造一个菜单项
+ 如果此程序已经有菜单项，略过这一步。
+ 创建程序.desktop ， 内容：
+1[Desktop Entry] 2Version=1.0 3Type=Application 4Name=显示的程序名 5Icon=&amp;#34;/path-to/图标文件&amp;#34; 6Exec=&amp;#34;/path-to/执行程序&amp;#34; %f 7Path=&amp;#34;/path-to/&amp;#34; （可选） 8NoDisplay=false （true则不会在系统菜单中出现） 9Categories=Utility; 10StartupNotify=false 11Terminal=false 其关键在于Exec=行中的%f将文件路径传递给执行程序。
+Exec=也可以没有绝对路径直接使用命令，Icon=也可以不用路径而直接写系统认可的图标名称。
+放 程序.desktop 文件到 ~/.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/linux%E5%85%B3%E8%81%94%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E5%92%8C%E6%89%93%E5%BC%80%E7%A8%8B%E5%BA%8F/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Linux发行版教你如何选 给入门者的选择通法</title>
+      <link>/chiblog/post/distro/</link>
+      <pubDate>Mon, 16 Jan 2017 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/distro/</guid>
+      <description>
+        
+          
+            Linux的发行版何止琳琅满目，简直是乱入你眼。
+本篇将介绍选择发行版的经验和通用法则，主要会从PC角度去谈。
+更新于2020年，初次发布于2017年
+选择发行版需考虑哪些因素 选择发行版时需要考虑的因素不少。选择常常没有完美，只有较适合。
+背景、面向用途、用户群、软件源、支持周期、更新激进度、质量、易用程度都是选择时要考虑的因素。
+ 不必完全以界面好看作为选择依据，理论上，发行版都可以选择使用的桌面环境，套用外观主题
+   因素之背景
+背景包括衍生关系与出身。一个Linux发行版出自某商业公司，或非商业社区。有些发行版衍生自另一个发行版，子发行版必然继承了许多上游的特性。
+  因素之面向用途
+一个发行版被设计时，可能面向通用、娱乐、商业、教育、工作、服务器等几种用途之一，或某特殊用途。
+  因素之用户群
+用户群的大小影响接地气的程度。Linux虽是自由软件，但离不开用户群的力量。大用户群会让你更容易搜索到某问题的答案，或找到社区用户所打包的软件。一些软件发布者也可能会优先发布适用于流行发行版的安装包。
+考虑用户群时，既要考虑世界范围内的用户群大小，也要考虑国内范围的。
+  因素之软件源
+要考虑软件仓库收录软件的数量。如果仓库收录软件少，安装软件时就免不了上网搜索下载、编译、编译出错、解决依赖关系的麻烦。
+一个发行版的仓库中，软件多少既取决于官方，也受用户群影响，因为用户们也会贡献力量去为此发行版充实仓库。
+ 进阶知识：有静态编译、容器、AppImage、Flatpak、snap等技术让软件可跨发行版运行，部分填补Linux发行版间的鸿沟。
+ 还要注意该发行版的仓库在国内有没有镜像，若一直使用国外镜像很影响速度。
+ 可以到清华大学、中国科学技术大学、大连东软信息学院（上面有更多的教育网镜像列表）、华中科技大学、阿里巴巴等国内镜像站先看看。
+   因素之支持周期
+支持周期短会让你不得不频繁更新。支持周期太长代表软件仓库中的软件版本可能会过时。需要了解发行版的Major Release周期、Minor Release周期、延长支持周期。
+ 以Ubuntu为例，它半年发布一个新的系统版本，如18.04、18.10、19.04、19.10、20.04，每两年发布一个LTS（延长支持）版本，其中的18.04和20.04是LTS。非LTS的支持周期是9个月，LTS支持周期是5年。延长支持存在目的主要是为了一些重要服务器等不允许频繁更新的环境。
+ 升级系统的版本理论上只要一条命令，但实际上，升级也是一项小工程。
+  因素之更新激进度
+激进度是指仓库会收录位于测试、不稳定、稳定、非常稳定之中的哪个阶段的软件。前沿则不稳定、中庸两者兼顾、稳重则版本旧。用户需选择。
+  因素之质量
+质量可以指运行出错概率、硬件兼容率、软件源维护质量等。质量也是上面各因素的综合。
+  因素之易用程度
+“易用”在这里主要指开箱即用，省去新手自行调整的麻烦，也意味着默认安全水平较低。专业的用户可能不喜欢这点。不易用的可能连安装过程都是纯控制台形式。
+  几个主流发行版的描述 Ubuntu 近年来很流行的Ubuntu出自英国一商业公司“大教堂”，“大教堂”面向的是普罗大众用户，被一些电脑厂商所预装，也是目前装机量最大的Linux发行版。
+ Ubuntu在开箱即用方面做得不错。 面向用途尽管是通用，但有人认为偏娱乐，得到一些游戏、图形技术等开发者优先支持。但也不完全是，也有不少云服务在用它。 曾经国内的一些软件公司简单粗暴地只在Ubuntu上进行测试，只发布适合Ubuntu的deb安装包。但自西方与我们的封锁战开始后，这些公司转向了Deepin或UOS Ubuntu的支持周期见上文。 有少数人遭遇每天多次程序崩溃（最多人用的发行版并不一定是最好的）。  实际上Ubuntu是衍生自Debian的unstable版本。
+Debian   Debian是第二流行的发行版。
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/distro/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

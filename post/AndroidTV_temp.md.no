@@ -1,0 +1,617 @@
+---
+title: "tttttttt"
+date: 2019-12-09T08:47:11+01:00
+draft: false
+tags: ["Android", "Android 4.4", "Android 8", "Android Oreo", "Android Kitkat","RTSP", "RTMP", "投屏", "OBS Studio","Android电视盒子","adb","Android TV","远程音响","VNC"]
+toc: true
+#featured: true
+---
+
+这篇文章不针对盒子型号，所讲内容大部分已测试适用于Android 4.4或以上盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（不清楚当前有没有），不用像本文这样浪费时间弄那么多麻烦玩意。）
+
+> 电视盒子如果装Android手机的App，都可以装也95%可以运行，但实际发现可能是因为没有针对电视硬件优化过的原因，会比手机上使用卡，而且许多App放视频的时候无法硬解占CPU 99%，而且因屏幕方向不同，显示尺寸策略不同，有些用起来有点怪。
+> 
+> 因此有人说，目前买智能电视盒子不太值，不如买个手机USB转HDMI。
+> 
+> 或者使用手机与智能电视局域网投屏也不错，这个目前也有许多App实现了。
+> 
+> 实际测试一些大站的TV App比手机App能看的视频少（发现一些普通人上传的视频不让电视看），买剧更贵。
+
+> 本篇默认读者有一定的技术，写得较简略，且有点乱，因此不适合完全不懂的人阅读。如果你只是个用户消费者，这篇大部分内容不适合你看。我自己是常在Linux上以adb shell操作Android设备的，因此本篇会带有许多命令操作内容
+
+这篇文章不针对盒子型号，我手上目前有的设备有两个：
+
+1. 买某服务配送的电视盒子，设计给仅观看它们的某些节目用的，**Android 4.4**，32位ARM7，性能就那样1G运存，ROM空间倒是可以在root后装点东西进去。带有网线口和Wifi（有些盒子对热点参数很挑剔，否则Wifi很慢）、两个
+
+2. 另外手上还有一个**Android 8**的，官方固件带root的盒子。ARM64v8
+
+这里记录下（有root后）安装一些技术人喜欢用的工具类App，开源方案为主，及Android电视与电脑（Linux为主）配合的一些方法，包括有电脑控制电视、电脑向电视投屏、手机控制电视等奇技淫巧。也有少量提及家庭媒体相关的App。
+
+**弄的过程中鼠标键盘还是需要准备的**，无线的最好，毕竟在客厅电视前。USB插口设计给插U盘放电影，但也可以插鼠标键盘。
+
+> exFat及NTFS注意：买回来发现这个Android 8 盒子是不支持读取exFat的U盘的。而附赠的旧盒子竟然支持～。经查那些制造商没有给ms钱，也（暂时）没有采用其他第三方技术，就很可能不会支持这两个文件系统。于是exFat换Fat32。
+> 
+> Fat32只是在Windows下格式化时被限制在<32G，所以找个Linux格式化一下就可以最多支持8T。单个文件最大4G无法突破。
+
+## 盒子基本技术型设置和安装TV上的工具App
+
+### 安装SSH server，以及在SSH中开关adb
+
+adb没有密码，一直开着不够安全。装一个可以设置密码的SSH server(这里用了`net.xnano.android.sshserver`)。在SSH登录上去后可以再用命令去开关adb
+
+```
+# 关闭adbd
+setprop service.adb.tcp.port -1
+killall  adbd
+
+# 打开adbd
+setprop service.adb.tcp.port 5555 （也可以换个非标准端口，防恶意扫描）
+killall  adbd
+adbd & 
+```
+
+可与此SSH服务器配合的bash脚本：
+
+```
+TV_IP=
+TV_SSH_USER=
+TV_SSH_PASSWORD=
+
+function ssh_cmd() {
+    local PID
+
+    local AS
+    local USER PASS IP PORT
+    AS=$1
+    IP=$2;  PORT=$3;  USER=$4;  PASS=$5;  shift;shift;shift;shift;shift
+
+    sshpass -p "$PASS"  ssh   ${USER}@${IP} -p $PORT -tt  << EOF &
+su  -c "$@" $AS
+EOF
+
+PID=$!
+sleep 5
+kill $PID
+}
+function tv_cmd() {
+    local AS=$1
+    shift
+    ssh_cmd $AS $TV_IP 2222 $TV_SSH_USER $TV_SSH_PASSWORD "$@"
+}
+
+# 例：
+
+# 要打开某url
+tv_cmd "shell" am start -a android.intent.action.VIEW -d <URL>
+
+# 允许adb
+tv_cmd "root" "setprop service.adb.tcp.port 5555; killall  adbd; nohup adbd >/dev/null 2>&1  ; sleep 1"
+
+# 关闭adb
+tv_cmd "root" "setprop service.adb.tcp.port -1; killall  adbd"
+```
+
+除以上方案外，Termux及其包中也提供有sshd
+
+### 使用App来开关网络adb
+
+如果进系统设置里开关adb麻烦，可以用一些App
+
+[com.matoski.adbm](https://f-droid.org/packages/com.matoski.adbm/)（或[com.github.sryze.wirebug](https://f-droid.org/packages/com.github.sryze.wirebug/)，或[siir.es.adbWireless](https://f-droid.org/packages/siir.es.adbWireless/)）
+
+### 终端模拟器与开机脚本
+
+已有远程adb，但装个终端在电视也无妨
+
+[com.termoneplus](https://f-droid.org/packages/com.termoneplus/)或[jackpal.androidterm](https://f-droid.org/packages/jackpal.androidterm/)
+
+或termux（Android >= 5）
+
+可以用Termux + Termux:Boot来实现开机自定义脚本
+
+### F-Droid客户端（旧界面版）
+
+装个第三方的老界面版本的[eu.bubu1.fdroidclassic](https://f-droid.org/packages/eu.bubu1.fdroidclassic/)。官方的App对一些旧盒子来说吃不消。
+
+禁用原来的源后添加清华源（目前测试不能用https）
+
+```
+http://mirrors.tuna.tsinghua.edu.cn/fdroid/repo/  
+http://mirrors.tuna.tsinghua.edu.cn/fdroid/archive
+```
+
+指纹填 
+
+```
+43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB
+```
+
+
+
+### 控制哪个app禁止或可以上网
+
+AFWall+（dev.ukanth.ufirewall）不错
+
+> Android 4 的得找旧版本[2.9.9](https://github.com/ukanth/afwall/releases/tag/v2.9.9)
+
+### 适当压低CPU/GPU频率改善发热
+
+有些盒子的散热真的做的不好，如果你还没有买风扇，可以暂时适当降频
+
+```
+#!/data/data/com.termux/files/usr/bin/bash
+
+BASEPATH="/sys/devices/system/cpu"                                                                      
+
+for ((i=0; i<=3; i++))
+do                                                                  
+
+        su -c "echo conservative > $BASEPATH/cpu${i}/cpufreq/scaling_governor"
+        su -c "echo 50 > $BASEPATH/cpu${i}/cpufreq/conservative/down_threshold"
+        su -c "echo 99 > $BASEPATH/cpu${i}/cpufreq/conservative/up_threshold"
+done      
+```
+
+### 限制后台以解决卡顿（和发热）
+
+还是iOS好。Android要做几样不同的步骤来限制那些App。
+
+既然是TV Box，肯定要安装些视频网站的App，那些难免会不守道德偷偷占你后台。
+
+#### 关闭通知权限
+
+系统设置->应用->通知。把那些大站的App的通知权限都关掉。
+
+#### 取消APP后台运行权限
+
+管理权限（包括隐藏权限）的工具有：
+
+- AppOpsX
+- Permission Manager X
+- BackgroundRestrictor （这个只管理`RUN_IN_BACKGROUND`一个权限）
+- App Manager
+- ADBungFu
+
+ADBungFu是个名字个界面都有点奇怪但功能似乎很强大的东西，它与其他不同，可以按照权限来列出App，让你针对性的关。关了大站App的相关后台权限
+
+如果是用命令：
+
+```
+cmd appops set <package_name> RUN_IN_BACKGROUND ignore
+cmd appops set <package_name> RUN_ANY_IN_BACKGROUND ignore
+cmd appops set <package_name> START_FOREGROUND ignore
+cmd appops set <package_name> INSTANT_APP_START_FOREGROUND ignore
+```
+
+#### 在系统开发者选项中限制后台
+
+你会发现以上都不够。所以Android在这方面确实还有欠缺。
+
+进去开发者模式菜单->后台进程限制，设置允许后台数量2个左右好了。
+
+> 这一项最好你都做完了盒子该做的配置再搞
+
+#### 杀后台和冻结
+
+用SuperFreezZ杀后台，可以结合KeyMapper添加一个遥控器快捷键。
+
+杀后台的App不止这一个，而其他的必须都手动加入杀的列表，SuperFreezZ可以设置成用户新安装的App自动加入到杀的列表中（这样我们要手动把一些信得过的App加入到白名单）。
+
+装了又好大半年用不上的App可以用App Manager完全禁用掉。
+
+## 家庭媒体
+
+### 播放器
+
+- Kodi这个播放器具足了服务端和客户端的功能，nfs、smb、ftp、http这些局域网媒体协议都支持。
+
+> 最后支持Android 4 的是16版本
+
+- VLC。大家都知道。
+
+- DLNA（upnp）播放端（接收端）。F-Droid上就有几个支持这个功能的小App
+
+
+
+
+## 投屏及投声音（Linux为主，部分适用Windows）
+
+这里讲的是电脑向电视投屏，如果是手机（不管是iOS还是Android）向电视，外面已经有很多方案了
+
+### 将Linux所放音频投放到Android
+
+不是投放音频文件，而是实时投放Linux正在播放的音频
+
+#### TCP传输原始音频流播放
+
+使用Pulseaudio的模块将Linux作为简单原始音频的tcp服务器。这个方案音频延迟很小基本没有
+
+```
+pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=1 source=0 record=true 
+```
+
+默认端口为4711，`channel=1`为单声道，`rate=48000`占网速约100KB/s。
+
+如果要停止，则
+
+```
+pactl unload-module module-simple-protocol-tcp
+```
+
+> 此命令的技术文档位于[freedesktop页面](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/)
+
+Android端使用Simple Protocol Player NG（[fr.jakse.raphael.simpleprotocolplayer](https://f-droid.org/packages/fr.jakse.raphael.simpleprotocolplayer/)），输入Linux的IP和其他少量参数后接收播放
+
+> 这个方法还可以把Android手机当电脑的无线耳机使用。前提是手机支持锁屏幕后Wifi不休眠
+
+#### 利用Apple AirPlay协议
+
+苹果的AirPlay协议可投屏幕也可投音频，苹果用户很熟悉。其之中单独播放音频的AirTunes协议使用UDP。
+
+Android有一些App支持接收AirPlay的投放，如“乐播投屏”（版本8.x）。
+
+> 用Avahi Disvovery（`avahi-discover`命令，位于包`python3-avahi-gtk`中）可以看到局域网内的“乐播投屏”在广播`_airplay._tcp`及`AirTunes Remote Audio`
+
+PulseAudio的名为RAOP（Remote Audio Output Protocol）的模块实现了音频AirTunes投放，其对应模块有`module-raop-sink`、`module-raop-discover`。
+
+PulseAudio所实现的RAOP需要在“PulseAudio属性"(`paprefs`命令）中的"Network Access"中勾选"Make discoverable Apple AirTunes sound devices available locally”启用。
+
+另外Linux上需要有Avahi，用systemd先启动它
+
+```
+sudo systemctl start avahi-daemon.service
+```
+
+可能还要重启一下PulseAudio
+
+```
+pulseaudio -k
+```
+
+若要将单独一个Linux程序的音频投出去，在PulseAudio的“音量控制”（`pavucontrol`命令）中“回放”中将此程序的音频输出设置为找到的AirTunes。
+
+> 待续
+
+### 将Windows所放音频投放到Android
+
+- 上面那个Linux+PulseAudio方案，因Windows没有PulseAudio，但有人写了个实现上面功能的Windows程序： https://github.com/kaytat/SimpleProtocolServer
+
+- 一个[GeorgieLabs](http://georgielabs.net/)出的专用于网络传输音频的软件，Android上装他的App [SoundWire](https://play.google.com/store/apps/details?id=com.georgie.SoundWireFree)，电脑上也要运行他的软件（Windows、Linux）
+
+## Linux投屏到Android
+
+现有的各种现成投屏方案对Linux支持不够好，自己弄的方法有：
+
+- （推荐）流媒体方案（以下会有几种方案，其中推荐的是OBS Studio + RTSP + VLC，此方案也适用于Windows）
+
+- VNC方案可以用（VNC本身**无声音**），如果调低分辨率，放普通视频勉强可以（还要配合上面那个投放音频的方法一起用），画面变化大时占约1400KB/s网速
+
+- 通过Airplay投单张图片可以看看 https://github.com/openairplay/open-airplay
+
+### 流媒体投频方案
+
+流媒体直播屏幕的方案优点不用说，缺点有：
+
+- 占用电脑CPU稍高
+
+- 有明显的直播延迟，至少3秒
+
+#### 流媒体实时录屏方案一：OBS Studio （及推流）
+
+OBS Studio的界面操作是比较明了易懂的。多显示器的可以选择仅录一个屏幕。
+
+- 添加“屏幕采集”作为视频源
+
+- 在“设置”的“音频”中选中一个电脑输出音频
+
+- OBS Studio中设置视频录制参数：
+  
+  OBS Studio中“设置”的”输出“中，若调整”输出模式“为”高级“，可以选择的编码器（在我的Linux笔记本上）有：
+  
+  - x264
+    
+    能够使用电脑的多核CPU，但总体占用CPU量大，因此发热不小（这里为4核）
+    
+    CBR 200Kbps足够
+  
+  - FFMPEG VAAPI （使用了我的Intel集显，Codec为H.264）
+    
+    总体CPU占用不算很大，但需要的码率比x264高
+    
+    CBR 3000Kbps够
+
+- 流视频服务器（或推流到服务器）：
+  
+  - 方案一：推流到Nginx RTMP服务器（服务器搭建见另节）：
+    
+    - “设置”的”推流“的”服务“选”自定义“，服务器填`rtmp://127.0.0.1/stream`（此处的这个`stream`是串流名称，若要改，需要在nginx那边做对应设置才允许推流），串流密钥可留空
+    
+    - 点击”开始推流“
+    
+    - 播放那端的设备上打开URL `rtmp://电脑IP/stream（这是串流名称）/串流密钥`（密钥空则可省）
+  
+  - 方案二：使用RTSP服务器插件（插件安装见另节）：
+    
+    - “工具”->“RTSP服务器"->”启动“
+    
+    - 播放那端的设备上打开URL `rtsp://电脑IP:端口/live（这是串流名称）`
+  
+  以上视频服务器**选一种**方案使用即可。建议RTSP。
+
+#### 流媒体实时录屏方案二：[Gnome Network Display](https://gitlab.gnome.org/GNOME/gnome-network-displays)
+
+这是一种Miracast协议（又叫Wi-Fi Display）的实现，软件正在实验阶段的，项目目前属于Gnome。
+
+按照说明中的testing purposes的方法，可以录屏的同时作为RTSP流服务器，声音可以通过pulseaudio的一些操作开启。不过试验结果是较卡。
+
+#### 流服务器方案一：OBS Studio的RTSP流服务器插件安装
+
+RTSP（实时串流协议，Real Time Streaming Protocol）默认使用端口554。这是个Netscape交由IETF标准化的协议。
+
+一位国人做的 [GitHub - iamscottxu/obs-rtspserver: RTSP server plugin for obs-studio](https://github.com/iamscottxu/obs-rtspserver) 十分实用，安装只要下载文件放入OBS插件对应位置（测试环境Linux 64位，obs-rtspserver 1.3.0）。
+
+安装好OBS插件后，“工具”->“RTSP服务器"打开其操作界面，应当改一下使用的端口。
+
+#### 流服务器方案二：搭建Nginx RTMP module
+
+[RTMP（实时消息协议，Real-Time Messaging Protocol）](https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%97%B6%E6%B6%88%E6%81%AF%E5%8D%8F%E8%AE%AE)这个协议默认使用端口1935，最初本是Macromedia Flash所用（Macromedia Flash Communications Server MX）。
+
+OBS推流及播放器的访问都是在RTMP服务器的1935端口。Linux上的RTMP服务器一般是使用Nginx服务器配合模块[nginx-rtmp-module](https://github.com/arut/nginx-rtmp-module)。
+
+> 如果发行版中没有`nginx-rtmp-module`的包，可以使用Docker Hub上的镜像，如
+> 
+> ```
+> docker pull alfg/nginx-rtmp
+> docker run -it -p 1935:1935 -p 8080:80 --rm alfg/nginx-rtmp
+> ```
+> 
+> （实际测试中80端口未用上，不映射它也可以）
+
+#### 播放端软件
+
+可使用VLC，这里用了[VLC-Android-1.5.2](https://get.videolan.org/vlc-android/1.5.2/)播放RTSP流（如果使用RTMP协议则要更高的版本的VLC）。
+
+> VLC在界面中输入rtsp地址有可能会播放失败，然而使用adb直接打开rtsp地址则能播放：
+> 
+> ```
+> am start -a android.intent.action.VIEW -d rtsp://xxxxx
+> ```
+
+经试验RTMP有时会有音视频不同步的问题，RTSP则没有。
+
+### VNC投画面
+
+这部分**只有画面不含声音**，可以配合另节的是个仅投音频的方法。
+
+电脑端的以**当前屏幕内容**作为源的VNC服务器可以用：
+
+- vino (Gnome)（经试验，密码验证及加密传输无法使用，只能无密）
+
+- krfb (KDE)（如果是多显示器，只能显示主屏幕）
+
+- rfb
+
+下面只讲一讲vino在非Gnome桌面的操作，因为非Gnome无GUI。另外两个有GUI
+
+#### vino在非Gnome桌面的操作
+
+安装vino后，如果用的不是Gnome桌面，则要通过命令启用（并且它的`vino`二进制程序未必在`$PATH`的路径里）和操作。
+
+- 查看vino的设置
+  
+  ```
+   gsettings list-recursively org.gnome.Vino
+  ```
+
+- 修改设置
+  
+   修改为仅观看模式，不允许电视操作电脑
+  
+  ```
+   gsettings set org.gnome.Vino view-only true
+  ```
+  
+  （可选） 改为不需要弹出确认就可以观看
+  
+  ```
+   gsettings set org.gnome.Vino prompt-enabled false
+  ```
+  
+   还可以把密码去掉，加密也免掉，以提高流畅度
+  
+  ```
+   org.gnome.Vino prompt-enabled false
+   org.gnome.Vino require-encryption false
+   org.gnome.Vino use-alternative-port false
+   org.gnome.Vino disable-background false
+   org.gnome.Vino disable-xdamage false
+   org.gnome.Vino alternative-port uint16 5900
+   org.gnome.Vino icon-visibility 'client'
+   org.gnome.Vino authentication-methods ['none']
+   org.gnome.Vino network-interface ''
+   org.gnome.Vino notify-on-connect true
+   org.gnome.Vino mailto ''
+   org.gnome.Vino lock-screen-on-disconnect false
+   org.gnome.Vino use-upnp false
+   org.gnome.Vino vnc-password 'keyring'
+   org.gnome.Vino view-only true
+  ```
+  
+  > 对应的设置文档可查阅[这个页面](https://getadmx.com/?Category=CentrifyDC_GP_Extension&Policy=Centrify.Policies.CentrifyGnome3Settings::policy_1573)
+
+启动vino: `/usr/lib/vino/vino-server`。即可以用Android上的VNC客户端来连接。
+
+#### Android端的VNC客户端
+
+可以用
+
+- [com.iiordanov.freebVNC](https://apt.izzysoft.de/fdroid/index/apk/com.iiordanov.freebVNC)
+
+- [com.coboltforge.dontmind.multivnc](https://apt.izzysoft.de/fdroid/index/apk/com.coboltforge.dontmind.multivnc?repo=archive) (1.8.10 支持Android 4)
+
+## 操作电视的旁门左道
+
+毕竟是TV盒子，不可能一直接着键盘鼠标，遥控器也很费力。并且有些盒子直接砍掉了一些Android设置界面。
+
+### 在电脑上查看和操作Android屏幕
+
+#### Android 4
+
+- [Vysor](https://github.com/koush/vysor.io)
+  
+  通过adb。Android端安装App，使用PC端的客户端就可以用局域网adb。
+
+- 电脑端的AndroidScreencast（开源， java）
+  
+  通过USB调试接口（也就是adb）通信，不过这个很卡
+
+#### Android >= 5
+
+有一个著名的由Genymotion开源的scrcpy，是通过adb传画面和远控的。有人做了个加强版guiscrcpy。
+
+这个时候，你可能还需要一个 Keyboard Switcher [com.kunzisoft.keyboard.switcher](https://f-droid.org/en/packages/com.kunzisoft.keyboard.switcher)，它可以显示一个浮动小图标，可以用鼠标来点击切换Android输入法
+
+### 找一些盒子固件隐藏的App入口
+
+用[de.szalkowski.activitylauncher](https://f-droid.org/packages/de.szalkowski.activitylauncher/)查看和调用所有App之下的活动（其实这没太多必要）
+
+### 远程键盘输入法
+
+1. WiFi键盘 [com.volosyukivan](https://f-droid.org/packages/com.volosyukivan/)
+
+2. ADB键盘 [com.android.adbkeyboard](https://f-droid.org/en/packages/com.android.adbkeyboard/)
+
+3. Telnet键盘 [de.onyxbits.remotekeyboard](https://f-droid.org/en/packages/de.onyxbits.remotekeyboard/).
+
+
+或者用Keyboard Switcher  [com.kunzisoft.keyboard.switcher](https://f-droid.org/en/packages/com.kunzisoft.keyboard.switcher)
+
+
+
+### 用[KDE Connect](https://f-droid.org/packages/org.kde.kdeconnect_tp)在另一个Android手机（或电脑）上用键盘控制电视
+
+手机（也有电脑版的）和电视上装上同一个App，配对。
+
+1. 在电视盒上选择KDE Connect输入法
+   
+   并在它的键盘弹出时，点下面的设置，去掉“只有在输入时接收远程按键”
+
+2. 手机设置为控制端，不当受控端
+   
+   在手机配对后，插件页面，去掉所有，只留下“电视遥控”和“远程输入”两个
+   
+   > 手机上可以安装[Hacker's Keyboard](https://f-droid.org/packages/org.pocketworkstation.pckeyboard/)或[BeHe Keyboard](https://f-droid.org/packages/com.vlath.keyboard/)，这两个键盘能提供比一般手机输入法更多的按键，如ctrl、tab、alt、方向键、更方便的常用符号等等。
+
+### 局域网传文本的App
+
+Kouchat是可以在局域网内传文字信息，不需要服务器，自动发现。所以，用来从手机或电脑传一个URL到电视点开是可以。Kouchat有Android版和PC java版。
+
+只不过，许多家大的视频网站的Android TV版的App竟然没有注册自己成为URL scheme的打开方式。
+
+### 自定义遥控器动作或快捷键
+
+[Keyboard/Button Mapper](https://f-droid.org/packages/io.github.sds100.keymapper)可以用来启动App或其他动作，毕竟遥控器有些按钮没有。
+
+
+### 浮动工具
+
+许多电视盒子ROM**状态栏**、**通知面板**和**桌面小部件**的功能都**没有**，所以找一些浮动在屏幕上的小工具
+
+- [Resource Monitor Mini](https://apkpure.com/cn/resource-monitor-mini/info.kfsoft.android.MemoryIndicator) CPU、内存（文本）。CPU可以在屏幕边缘以细线条显示，占地方少又清晰。
+
+- [com.pies3nscy.cpuindicator](https://apkpure.com/cn/cpu-indicator/com.pies3nscy.cpuindicator) 浮动CPU、内存百分数圈
+
+- [com.toolbox.shortcuts](https://apkpure.com/cn/floating-toolbox/com.toolbox.shortcuts) 可以选择几个App的浮动的应用启动器，可伸缩，挺适合用鼠标
+
+- [jc.floating.monitor](https://apkpure.com/cn/floating-network-monitor/jc.floating.monitor) 浮动网速显示（文字）
+  
+  这个要从命令直接开启浮动显示的话使用（root）：
+  
+  ```
+  am startservice jc.floating.monitor/.NetworkMonitor
+  ```
+
+- [Tinycore](https://apkpure.com/cn/tinycore-cpu-ram-monitor/org.neotech.app.tinycore) 在以屏幕边缘以条状显示一项（可以是CPU、内存、温度)，无文字
+
+- [Cpu Temperature](https://apkdl.net/en/com.kami.cputemp) 仅以文字简单地浮动显示一个温度
+
+- [com.ccs.floating_info](https://apkpure.com/cn/c-floating/com.ccs.floating_info) 浮动的可伸缩的最近几个App、内存监视、网络监视。纯文字，且占面积有点大
+
+- Transparent CPU Monitor(skynet.transparentcpumonitor) CPU、GPU、内存
+  
+  这个显示的图表有点巨大。它本身就占了一定CPU。它可以自定义各个参数的读取路径，这在其他App读不出时有点用
+
+### 一点常用的adb命令
+
+- adb启动App
+  
+  ```
+  am start -n 包名/活动
+  ```
+  
+  你需要知道App的包名和主活动的名称
+
+- adb打开网址
+  
+  ```
+  am start -a android.intent.action.VIEW -d http://xxxxxxx
+  ```
+
+- adb输入文本
+  
+  ```
+  input text hello
+  ```
+
+- adb模拟按键/输入
+  
+  ```
+  input keyevent <keycode>
+  ```
+  
+   参考https://developer.android.com/reference/android/view/KeyEvent
+  
+  ```
+  input keyevent <keycode>
+  3    HOME 键 （一些遥控器的”本地“）
+  4    返回键
+  19  KEYCODE_DPAD_UP 導航鍵 向上 19 （遥控器方向键）
+  20  KEYCODE_DPAD_DOWN 導航鍵 向下 20
+  21  KEYCODE_DPAD_LEFT 導航鍵 向左 21
+  22  KEYCODE_DPAD_RIGHT 導航鍵 向右 22 
+  23  遥控器“OK”.  Directional Pad Center key. 
+  24    增加音量
+  25    降低音量
+  26    电源键
+  64    打开浏览器
+  66  ENTER
+  67  Backspace key.KEYCODE_DEL  遥控器”交换“
+  82    菜单键
+  83  KEYCODE_NOTIFICATION
+  85    播放/暂停
+  86    停止播放
+  87    播放下一首
+  88    播放上一首
+  92  PAGE UP
+  93  PAGE DOWN
+  111  ESCAPE
+  126    恢复播放
+  127    暂停播放
+  166  频道+（换台）
+  167  频道-
+  168  ZOOM_IN
+  169  ZOOM_OUT
+  176    打开系统设置
+  183  遥控器红键（直播）
+  184  遥控器绿键（回看）
+  185  遥控器黄键（点播）
+  186  遥控器蓝键（信息）
+  187    切换应用
+  223    系统休眠
+  224    点亮屏幕
+  226 KEYCODE_MEDIA_TOP_MENU 226
+  229  KEYCODE_LAST_CHANNEL  Last Channel key. Goes to the last viewed channel.
+  284  KEYCODE_ALL_APPS  284
+  ```
+
+{{< after_article >}}

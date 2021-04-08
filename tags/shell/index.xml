@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/shell/</link>
+    <description>Recent content in shell on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Mon, 25 Feb 2019 08:00:00 +0100</lastBuildDate><atom:link href="/chiblog/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Linux终端中快速生成、解码二维码</title>
+      <link>/chiblog/post/qr/</link>
+      <pubDate>Mon, 25 Feb 2019 08:00:00 +0100</pubDate>
+      
+      <guid>/chiblog/post/qr/</guid>
+      <description>
+        
+          
+            我们需要的两个功能：
+ 解码Linux屏幕上的二维码，将结果输出在终端 在终端中将字符串转为二维码，直接显示二维码在终端中以供扫描  实现方法   生成二维码 qrencode是一个常见的生成二维码的CLI程序，许多发行版仓库中有。它支持直接输出二维码在终端中。（它也支持输出二维码到图片文件）
+  解码二维码
+ 此方法在 X11 上测试过
+  在终端中运行截屏程序，以截得二维码图形
+scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给解析二维码的CLI程序。
+我们用zbar来解析二维码，显示结果在终端。    我已将以上所述整理成一个shell脚本：
+ 终端中运行这个脚本，然后鼠标框选屏幕上的二维码，即可解析出结果。 将任意字符串当作参数传给这个脚本，即可在屏幕上显示出二维码。  完整脚本 代码请移步我的Github仓库 https://github.com/garywill/qrshot 查看
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+  
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/qr/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>为Linux的文件管理器创建“在此打开终端”菜单</title>
+      <link>/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/</link>
+      <pubDate>Tue, 12 Jun 2018 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/</guid>
+      <description>
+        
+          
+            有些Linux的GUI文件管理器没有右键菜单“在此打开终端”，或者有却不能自行指定某种终端。
+因为文件夹也有其MIME类型（inode/directory），通过文件关联的方式，把文件夹关联给某个终端，就可以在文件管理器中用右键菜单的“打开方式 ”中选择你想要的终端。（前提是你的文件管理器右键菜单中有”打开方式“）
+在我之前一篇《 Linux关联文件扩展名和打开程序 》有写关联方法。在那篇文章的第2步写 你的终端-in-this-path.desktop文件
+1[Desktop Entry] 2Encoding=UTF-8 3Name=rxvt-unicode in this path 4GenericName=rxvt-unicode in this path 5Exec=urxvt -cd %f 6Icon=utilities-terminal 7Terminal=false 8NoDisplay=true 其中的Exec=终端命令 需要的参数 %f因不同终端而异，本例是urxvt-unicode终端的。 xfce4-terminal终端为Exec=xfce4-terminal --working-directory=%f
+终端安装好后是肯定自带了.dekstop文件的，但一般它的Exec=中都没有传递路径的部分，所以这里要自己写一个。
+然后，在那篇文章的第3步写
+1[Added Associations] 2inode/directory=你的终端-in-this-path.desktop; 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+  
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

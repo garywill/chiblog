@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BASH on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/bash/</link>
+    <description>Recent content in BASH on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Mon, 25 Feb 2019 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BASH让标准输出和错误输出颜色不同</title>
+      <link>/chiblog/post/bash%E8%AE%A9%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E4%B8%8D%E5%90%8C/</link>
+      <pubDate>Mon, 25 Feb 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/bash%E8%AE%A9%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E4%B8%8D%E5%90%8C/</guid>
+      <description>
+        
+          
+            shell中运行的程序输出有标准输出（stdout）和错误输出（stderr）两种。当在终端中运行一个进程时，默认是stdout和stderr混在一起的，需要区分只能去读内容，人眼不容易快速区分。
+如何让stdout和stderr一眼能够被区分开来？
+让进程产生的标准输出（stdout）是绿色，错误输出（stderr）是红色。这样有没有错误或警告一目明了！
+方法 颜色控制的话，使用\e[92m是绿色，\e[93m是红色，\e[0m是默认颜色。具体可以去自行查一查表。
+ 首先，&amp;gt; &amp;gt;( ..... )将stdout传给一个负责绿色命令，2&amp;gt; &amp;gt;( .... )又将stderr传给一个负责红色的命令。我们都知道stdout的fd号为1，在重定向时可以不写。stderr的fd为2。 用sed命令负责给文本加上颜色再输出。 别忘记对stderr加上红色后，还要用&amp;gt;&amp;amp;2输出至stderr，否则直接输出就变成stdout了。  好了，说了方法之后，完整的命令在这里
+1要运行的命令 &amp;gt; &amp;gt;(sed $&amp;#39;s,.*,\e[92m&amp;amp;\e[m,&amp;#39;) 2&amp;gt; &amp;gt;(sed $&amp;#39;s,.*,\e[93m&amp;amp;\e[m,&amp;#39;&amp;gt;&amp;amp;2) 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+  
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/bash%E8%AE%A9%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E4%B8%8D%E5%90%8C/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

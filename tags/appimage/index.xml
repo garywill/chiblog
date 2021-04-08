@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AppImage on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/appimage/</link>
+    <description>Recent content in AppImage on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Thu, 01 Sep 2022 08:00:00 +0800</lastBuildDate><atom:link href="/chiblog/tags/appimage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初探AppImage打包（Qt程序为例）</title>
+      <link>/chiblog/post/appimage%E6%89%93%E5%8C%85/</link>
+      <pubDate>Thu, 01 Sep 2022 08:00:00 +0800</pubDate>
+      
+      <guid>/chiblog/post/appimage%E6%89%93%E5%8C%85/</guid>
+      <description>
+        
+          
+            这是稿件，有待完善
+ .AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制+动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用了squashfs+FUSE）。软件退出后，/tmp/.mount_xxxxxxxx会消失。
+一般来说（如果正确打包了），运行时传递了参数给.AppImage文件，这些参数会传递到其内部的usr/bin/真正的可执行文件上（但也有特例，如解包参数--appimage-extract）
+查看或解包一.AppImage文件 学习打包前，先了解查看和解包的方法
+要解包一.AppImage文件，运行：
+1xxxxx.AppImage --appimage-extract 则只会将其内部的文件解包在./squashfs-root/下，不会运行软件
+若想只查看.AppImage文件内部的文件列表，可以使用下面说到的appimagetool，它的-l参数是做这个的
+初探AppImage打包基本要求和操作 准备一个AppDir目录，里面需要放：
+1├── AppRun # 从AppImage官方下载，此文件官方随同appimagetool一起发布（如果没有好像也可以，例如linuxdeploy的qt插件会生成一个shell脚本来充当它） 2├── appentry.desktop # 文件名随便，后缀要.desktop。这里不能有第二个.desktop文件 3├── logo.png # 文件名（去除后缀部分）与appentry.desktop中的icon=一致 4└── usr 5 ├── bin # appentry.desktop中的&amp;#34;exec=&amp;#34;使用的相对路径是相对于这里 6 │ ├── 可执行二进制文件 # 文件名与appentry.desktop中的exec=一致 7 ├── lib # 即使是64位，也不需要命名为lib64 8 │ └── 自己的软件编译出来的库（若有）.so # 如果有，需要在运行linuxdeploy时要设置LD_BRARY_PATH为这里（打包机器上的绝对路径） 9 └── share 10 ├── applications 11 │ └── 软件名.desktop -&amp;gt; ../../../appentry.desktop 12 └── icons 13 └── hicolor 14 └── 512x512 15 ├── 软件名.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/appimage%E6%89%93%E5%8C%85/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

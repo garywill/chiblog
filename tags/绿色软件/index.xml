@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>绿色软件 on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/</link>
+    <description>Recent content in 绿色软件 on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Sun, 18 Oct 2020 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>非常干净的日用软件列表分享（许多开源App）</title>
+      <link>/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Sun, 18 Oct 2020 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+      <description>
+        
+          
+            前言 既是自己的记录，也是向各位介绍，面向各行各业大众，介绍许多适合日用、洁净单纯的软件（不包含专业领域）。所介绍的软件都尽可能选同类软件中最干净的好用的。
+网上推荐软件的文章很多，这里与其他不同，大多为开源（开放源代码）软件，也含名声不错的闭源软件。
+像电脑手机这类电子机器的这滩浑水我曾经趟过，读者可以少趟。
+ 虽然所介绍的大部分用过，本人免任何责，只做介绍。
+ 正文  对于跨平台的软件，只会提及Windows、Android、iOS、Mac OS、Linux
+ 解决Android卡顿 是否有因装多App变卡，而正在用的所谓“加速软件”自身就是占用大量资源的恶龙？
+ 这类最好有root权限以发挥最好功效
+ Android自启动管理   Autostarts（开源）
+ 用它禁止一App自启动时，也有可能牵连该App的某些触发性功能被破坏。在Autostarts的界面上能看到
+   Android应用冻结 冻结，也就是杀后台
+  SuperFreezZ（开源）
+这个比其他类似的有一点好，就是能设置默认策略为冻结（即，自动把新安装的app添加进冻结列表中）
+  绿色守护 作者是国人Oasis Feng，近年似乎名声不错。
+  冰箱（IceBox） 不但冻结，还放入冰箱中就好像被删掉了一样，还可以阻止同伙App将它唤醒，比杀后台更厉害。又可以随时取出来用。免费版的有冻结10个App的限制
+  自冻（开源） 有任务计划功能的冻结应用。也可以让被冻结的App暂时消失。作者是国人Playhi
+  Android应用隔离 这些可以说是帮你开启Android本身的一个隐藏功能，把应用装到一个隔离的环境中，整个隔离环境可以随时开启或关闭，关闭了里面的App就好像不存在了一样，自然不占用后台。
+从隔离环境内是无法访问外部文件的，还可以保护一些隐私。
+ 没有root也可以用，不过更麻烦些
+有些机型ROM或旧的Android可能不兼容
+   炼妖壶（Island）（开源） 与绿色守护是同一个作者
+  Shelter（开源） 作者是国人Peter Cai
+   如果用这类软件搞分身、双账号多开之类的，仍是有被检测到并封号的可能，风险要自己评估
+ 搜索引擎和上网入口   大术专搜（Big Search） （开源） 以 灵活又顺手 的方式 在(切换) 任意一个 或 (连续)多个 搜索引擎（或任意网站）进行搜索。这个工具的作者就是我。
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>适合程序员风格的许多日常软件列表分享（开源为主）</title>
+      <link>/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Sun, 08 Dec 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/</guid>
+      <description>
+        
+          
+            前言 本篇既是自己的记录，也是向各位介绍许多程序员会喜欢的风格的日常软件。都尽可能选同类软件中最干净的好用的。来自多年开源社区打滚经验。
+所介绍大多为开源软件，也含名声不错的闭源软件。
+ 姊妹篇：适合百姓日用且干净如玉的软件分享（有重叠内容）
+  虽然所介绍的大部分用过，本人免任何责，只做介绍。
+ 正文  对于跨平台的软件，只会提及Windows、Linux、Android、iOS、Mac OS
+   VirtuaWin(Windows)（开源）
+在Windows上使用虚拟桌面（工作区）。Windows 10已经原带这个功能了。
+建议也在它的模块页面下载KvasdoPager（开源）安装，它提供任务栏中快速切换工作区功能。
+  AltDrag(Windows)（开源）
+在Windows上用Alt+左键移动窗口，Alt+右键缩放容器。像Linux桌面用户熟悉的那样
+ 一个继续的fork：RamonUnch/AltSnap
+   OAndBackupX (Android)（开源）
+批量备份App和数据。常刷机有用
+  Delta Chat（Windows、Linux、Mac OS、Android、iOS）（开源）
+像使用聊天工具一样地使用Email通信。是个提供类似聊天工具的界面体验的Email客户端。
+ 使用前请先查它这个表，看哪一家Email兼容。表中所列好像还没有测试多少国内Email提供商
+这个软件正在积极开发中，用户目前也还是洋人多
+   TrafficMonitor 或 Perfmonbar (Windows)（开源）
+显示当前网速、CPU及内存利用率。TrafficMonitor可悬浮窗，或任务栏显示
+  linux-router（Linux）（开源）
+用于一个命令创建Wifi热点，按ctrl+c直接复原。
+有线、或虚拟interface的网络共享也可以。主要是为Linux桌面用户考虑的，而各种Pi也适用。 支持透明代理、IPv6。
+  WAFall+（Android）（开源）
+可控制哪些App可以或不可以联网。需要root。
+  NetGuard（Android）（开源）
+可控制哪些App可以或不可以联网。不需要root。
+  App Manager（Android）（开源）
+对已安装的Android App和未安装的apk，能够提供非常齐全的信息显示和操作。能想到的和未想到的都有（显示各类信息、打开各个相关路径、权限管理、tracker检查、活动、服务、备份数据等等）
+  guiscrcpy（Windows、Linux、Mac OS）（开源）
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

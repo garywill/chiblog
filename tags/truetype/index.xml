@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>truetype on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/truetype/</link>
+    <description>Recent content in truetype on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Fri, 17 Jan 2020 00:00:00 +0100</lastBuildDate><atom:link href="/chiblog/tags/truetype/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>修复一些不能直接使用或不好用的ttf字体文件</title>
+      <link>/chiblog/post/ttffont/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/chiblog/post/ttffont/</guid>
+      <description>
+        
+          
+            有些TrueType字体文件（.ttf）下载回来后，虽然能在专用的字体编辑/查看软件中正常打开，并能看到字体形状，但却不能在无论Word、LibreOffice、Windows、Linux、Android中当一个正常字体用。
+胡搞一通后（本人不懂字体），摸索出了一些解决以下问题的方法：
+  .ttf文件无法当普通字体用
+  该.ttf文件中没有图形的字符，使到时显示空白，并不像正常情况那样fallback到系统默认字体
+  能用但太小，一个字图形边缘空白太大
+  解决步骤 用的软件是FontForge。
+  把以下脚本保存为.pe后缀，通过cli调用
+1#!/usr/bin/env fontforge 2 3Open($1) 4 5RemoveAllKerns() 6DetachAndRemoveGlyphs() 7SelectAll() 8UnlinkReference() 9Reencode(&amp;#34;unicode&amp;#34;) 10 11Generate($1:r + &amp;#34;_patch.ttf&amp;#34;) 如果不懂通过cli调用，也可以在FontForge在界面中打开字体文件后，点击菜单“文件-&amp;gt;执行脚本-&amp;gt;选择FF”，然后把
+1RemoveAllKerns() 2DetachAndRemoveGlyphs() 3SelectAll() 4UnlinkReference() 5Reencode(&amp;#34;unicode&amp;#34;) 这几行粘贴进去，点击确定。
+  在FontForge界面中打开上一步处理过后生成的新字体文件，菜单“文件-&amp;gt;生成字体”保存成一个新.ttf文件。这一步要点时间（1分钟）。忽略所有警告和错误。
+  菜单“编辑-&amp;gt;选择-&amp;gt;空格字形”，然后点“Clear”删掉它们。
+你会看见原本空白的格子变成了一个带浅灰色叉的格子。这样这个字体文件中没有图形的字符就可以被fallback用默认字体显示出来了。   针对某一类字符调整图形 菜单“基础-&amp;gt;字体信息-&amp;gt;统一码范围”，这里可以按类型批量选择字符，例如：
+  基本大小写英文字母+数字+基本符号：基本拉丁文
+  我们平时所用汉字（包括简和繁）：中日韩统一表意字符
+  改变字符图形大小 图形太小是常见的情况。如果用起来字符间总有消除不掉的间距，有可能是这个原因。
+批量选择要放大的字符后，菜单“基础-&amp;gt;变换-&amp;gt;变换”，其中有等比缩放功能。
+完全处理完成后，使用菜单“文件-&amp;gt;生成字体”保存成一个新.ttf文件。
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/ttffont/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

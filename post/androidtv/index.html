@@ -1,0 +1,1573 @@
+
+<!DOCTYPE html>
+<html lang="en" data-figures="" class="page">
+  <head>
+<title>Android与电视盒，电脑投屏、技术工具、遥控器之外的操作方式等 | Gary W 的中文博客(站2)</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta property="og:locale" content="en" />
+
+<meta property="og:type" content="article">
+<meta name="description" content="本文又臭又长，内容较杂，请善用目录链接
+ 这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
+这篇 …">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="">
+<meta name="twitter:title" content="Android与电视盒，电脑投屏、技术工具、遥控器之外的操作方式等" />
+<meta property="og:url" content="/chiblog/post/androidtv/" />
+<meta property="og:title" content="Android与电视盒，电脑投屏、技术工具、遥控器之外的操作方式等" />
+<meta property="og:description" content="本文又臭又长，内容较杂，请善用目录链接
+ 这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
+这篇 …" />
+<meta property="og:image" content="/chiblog/images/thumbnail.png" />
+<link rel="apple-touch-icon" sizes="180x180" href='/chiblog/icons/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/chiblog/icons/favicon-32x32.png'>
+<link rel="manifest" href='/chiblog/icons/site.webmanifest'>
+<link rel="mask-icon" href='/chiblog/safari-pinned-tab.svg' color="#002538">
+<meta name="msapplication-TileColor" content="#002538">
+<meta name="theme-color" content="#002538">
+
+<link rel="canonical" href="/chiblog/post/androidtv/">
+
+    
+
+    
+    
+    <link rel="preload" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity = "sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" as="style" crossorigin="anonymous">
+    <link rel="preload" href="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" as="script" integrity=
+    "sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" type="text/css" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity="sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" crossorigin="anonymous"><link rel="stylesheet" href="/chiblog/custom.css">
+    
+  </head>
+  
+  
+  
+    
+  
+  <body data-code="10" data-lines="true" id="documentTop">
+
+<header class="nav_header" >
+  <nav class="nav"><a href='/chiblog/' class="nav_brand nav_item" title="Gary W 的中文博客(站2)">Gary W 的中文博客(站2)
+  <div class="nav_close">
+    <div><svg class="icon">
+  <use xlink:href="#open-menu"></use>
+</svg><svg class="icon">
+  <use xlink:href="#closeme"></use>
+</svg></div>
+  </div>
+</a>
+
+    <div class='nav_body nav_body_left'>
+      
+      
+      
+        
+
+  <div class="nav_parent">
+    <a href="/chiblog/" class="nav_item" title="Home">Home </a>
+  </div>
+  <div class="nav_parent">
+    <a href="/chiblog/" class="nav_item" title="Links">Links <img src='/chiblog/icons/caret-icon.svg' alt="icon" class="nav_icon"></a>
+    <div class="nav_sub">
+      <span class="nav_child"></span>
+        <a href="https://garywill.github.io" class="nav_child nav_item" title="我的开源代码">我的开源代码</a>
+        <a href="https://github.com/garywill" class="nav_child nav_item" title="Github profile">Github profile</a>
+        <a href="https://www.cnblogs.com/garyw" class="nav_child nav_item" title="中文博客国内站">中文博客国内站</a>
+    </div>
+  </div>
+  <div class="nav_parent">
+    <a href="https://github.com/garywill/receiving/blob/master/receiving_methods.md" class="nav_item" title="扫个码打赏我一下">扫个码打赏我一下 </a>
+  </div>
+      
+<div class='follow'>
+  <a href="https://github.com/garywill">
+    <svg class="icon">
+  <use xlink:href="#github"></use>
+</svg>
+  </a>
+    
+  <a href="/chiblog/index.xml">
+    <svg class="icon">
+  <use xlink:href="#rss"></use>
+</svg>
+  </a>
+<div class="color_mode">
+  <input type="checkbox" class="color_choice" id="mode">
+</div>
+
+</div>
+
+    </div>
+  </nav>
+</header>
+
+    <main>
+  
+<div class="grid-inverse wrap content">
+  <article class="post_content">
+    <h1 class="post_title">Android与电视盒，电脑投屏、技术工具、遥控器之外的操作方式等</h1><div class="post_meta">
+  
+    <svg class="icon">
+  <use xlink:href="#calendar"></use>
+</svg>
+    <span class="post_date">
+      2019-12-09</span>
+      <a href='/chiblog/tags/android' title="Android" class="post_tag button button_translucent">Android
+      </a>
+      <a href='/chiblog/tags/android-4.4' title="Android 4.4" class="post_tag button button_translucent">Android 4.4
+      </a>
+      <a href='/chiblog/tags/android-8' title="Android 8" class="post_tag button button_translucent">Android 8
+      </a>
+      <a href='/chiblog/tags/android-oreo' title="Android Oreo" class="post_tag button button_translucent">Android Oreo
+      </a>
+      <a href='/chiblog/tags/android-kitkat' title="Android Kitkat" class="post_tag button button_translucent">Android Kitkat
+      </a>
+      <a href='/chiblog/tags/rtsp' title="RTSP" class="post_tag button button_translucent">RTSP
+      </a>
+      <a href='/chiblog/tags/rtmp' title="RTMP" class="post_tag button button_translucent">RTMP
+      </a>
+      <a href='/chiblog/tags/%E6%8A%95%E5%B1%8F' title="投屏" class="post_tag button button_translucent">投屏
+      </a>
+      <a href='/chiblog/tags/obs-studio' title="OBS Studio" class="post_tag button button_translucent">OBS Studio
+      </a>
+      <a href='/chiblog/tags/android%E7%94%B5%E8%A7%86%E7%9B%92%E5%AD%90' title="Android电视盒子" class="post_tag button button_translucent">Android电视盒子
+      </a>
+      <a href='/chiblog/tags/adb' title="adb" class="post_tag button button_translucent">adb
+      </a>
+      <a href='/chiblog/tags/android-tv' title="Android TV" class="post_tag button button_translucent">Android TV
+      </a>
+      <a href='/chiblog/tags/%E8%BF%9C%E7%A8%8B%E9%9F%B3%E5%93%8D' title="远程音响" class="post_tag button button_translucent">远程音响
+      </a>
+      <a href='/chiblog/tags/vnc' title="VNC" class="post_tag button button_translucent">VNC
+      </a>
+</div>
+
+    
+  <div class="post_share">
+    Share on:
+    <a href="https://twitter.com/intent/tweet?text=Android%e4%b8%8e%e7%94%b5%e8%a7%86%e7%9b%92%ef%bc%8c%e7%94%b5%e8%84%91%e6%8a%95%e5%b1%8f%e3%80%81%e6%8a%80%e6%9c%af%e5%b7%a5%e5%85%b7%e3%80%81%e9%81%a5%e6%8e%a7%e5%99%a8%e4%b9%8b%e5%a4%96%e7%9a%84%e6%93%8d%e4%bd%9c%e6%96%b9%e5%bc%8f%e7%ad%89&url=%2fchiblog%2fpost%2fandroidtv%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+      <svg class="icon">
+  <use xlink:href="#twitter"></use>
+</svg>
+    </a>
+    <a href="https://www.facebook.com/sharer.php?u=%2fchiblog%2fpost%2fandroidtv%2f&t=Android%e4%b8%8e%e7%94%b5%e8%a7%86%e7%9b%92%ef%bc%8c%e7%94%b5%e8%84%91%e6%8a%95%e5%b1%8f%e3%80%81%e6%8a%80%e6%9c%af%e5%b7%a5%e5%85%b7%e3%80%81%e9%81%a5%e6%8e%a7%e5%99%a8%e4%b9%8b%e5%a4%96%e7%9a%84%e6%93%8d%e4%bd%9c%e6%96%b9%e5%bc%8f%e7%ad%89" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+      <svg class="icon">
+  <use xlink:href="#facebook"></use>
+</svg>
+    </a>
+    <a href="#linkedinshare" id = "linkedinshare" class="linkedin" title="Share on LinkedIn" rel="nofollow">
+      <svg class="icon">
+  <use xlink:href="#linkedin"></use>
+</svg>
+    </a>
+    <a href="/chiblog/post/androidtv/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <use xlink:href="#copy"></use>
+</svg>
+    </a>
+  </div>
+
+    
+    
+    <h2>Overview</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#解决时间无法自动同步问题">解决时间无法自动同步问题</a></li>
+    <li><a href="#使用app来开关网络adb">使用App来开关网络adb</a></li>
+    <li><a href="#终端模拟器与开机脚本">终端模拟器与开机脚本</a></li>
+    <li><a href="#安装ssh-server以及在ssh中开关adb">安装SSH server，以及在SSH中开关adb</a></li>
+    <li><a href="#f-droid客户端旧界面版">F-Droid客户端（旧界面版）</a></li>
+    <li><a href="#控制哪个app禁止或可以上网">控制哪个app禁止或可以上网</a></li>
+    <li><a href="#盒子基本技术型设置和安装tv上的工具app">盒子基本技术型设置和安装TV上的工具App</a>
+      <ul>
+        <li><a href="#安装一个适合android-tv的桌面launcher">安装一个适合Android TV的桌面Launcher</a></li>
+        <li><a href="#使菜单键可用">使菜单键可用</a></li>
+        <li><a href="#尝试清除附赠盒子的一些厂家的预装app失败">尝试清除附赠盒子的一些厂家的预装App（失败～）</a></li>
+        <li><a href="#适当压低cpugpu频率改善发热">适当压低CPU/GPU频率改善发热</a></li>
+        <li><a href="#限制后台以解决卡顿和发热">限制后台以解决卡顿（和发热）</a></li>
+      </ul>
+    </li>
+    <li><a href="#家庭媒体略写">家庭媒体（略写）</a>
+      <ul>
+        <li><a href="#播放器">播放器</a></li>
+        <li><a href="#接收投屏的app">接收投屏的App</a></li>
+      </ul>
+    </li>
+    <li><a href="#用电视看小说">用电视看小说</a></li>
+    <li><a href="#投屏及投声音linux为主部分适用windows">投屏及投声音（Linux为主，部分适用Windows）</a>
+      <ul>
+        <li><a href="#将linux所放音频投放到android">将Linux所放音频投放到Android</a></li>
+        <li><a href="#将windows所放音频投放到android">将Windows所放音频投放到Android</a></li>
+        <li><a href="#linux整个屏幕音视投屏到android">Linux整个屏幕音视投屏到Android</a></li>
+        <li><a href="#linux-vnc投画面">Linux VNC投画面</a></li>
+      </ul>
+    </li>
+    <li><a href="#操作android设备电视的奇怪技巧">操作Android设备（电视）的奇怪技巧</a>
+      <ul>
+        <li><a href="#自定义遥控器动作或快捷键">自定义遥控器动作或快捷键</a></li>
+        <li><a href="#在电脑上查看和操作android屏幕">在电脑上查看和操作Android屏幕</a></li>
+        <li><a href="#浮动工具">浮动工具</a></li>
+        <li><a href="#用kde-connecthttpsf-droidorgpackagesorgkdekdeconnect_tp在另一个android手机或电脑上用键盘控制电视">用<a href="https://f-droid.org/packages/org.kde.kdeconnect_tp">KDE Connect</a>在另一个Android手机（或电脑）上用键盘控制电视</a></li>
+        <li><a href="#远程键盘输入法">远程键盘输入法</a></li>
+        <li><a href="#局域网传文本的app">局域网传文本的App</a></li>
+        <li><a href="#找一些盒子固件隐藏的app入口">找一些盒子固件隐藏的App入口</a></li>
+        <li><a href="#一点常用的adb命令">一点常用的adb命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#其中一个旧android-44-tv盒子root过程">其中一个旧Android 4.4 TV盒子root过程</a></li>
+  </ul>
+</nav>
+    <blockquote>
+<p>本文又臭又长，内容较杂，请善用目录链接</p>
+</blockquote>
+<p>这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或<strong>以上</strong>电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）</p>
+<p>这篇文章不针对盒子型号，我<strong>手上</strong>目前有的<strong>设备</strong>有两个：</p>
+<ol>
+<li>
+<p>一个<strong>Android 8</strong>的，官方固件带root的盒子。ARM64v8。两个USB口，一个是USB 3.0。网线口。16G。</p>
+</li>
+<li>
+<p>买某服务配送的电视盒子，设计给仅观看它们的某些节目用的，<strong>Android 4.4</strong>，32位ARM7，性能就那样1G运存，ROM空间倒是可以在root后装点东西进去。带有网线口和Wifi（有些盒子对热点参数很挑剔，否则Wifi很慢）、两个USB口。</p>
+</li>
+</ol>
+<p>电视盒子如果装Android手机的App，都可以装也95%可以运行，但实际发现可能是因为没有针对电视硬件优化过的原因，会比手机上使用卡，而且许多App放视频的时候无法硬解占CPU 99%，而且因屏幕方向不同，显示尺寸策略不同，有些用起来有点怪。</p>
+<p>因此有人说，目前买智能电视盒子不太值，不如买个手机USB转HDMI。</p>
+<p>或者使用手机与智能电视局域网投屏也不错，这个目前也有许多App实现了。</p>
+<p>实际测试一些大站的TV App比手机App能看的视频少（发现一些普通人上传的视频不让电视看），买剧更贵。</p>
+<p>本篇默认读者有一定的技术，写得较简略，且有点乱，因此不适合完全不懂的人阅读。如果你只是个用户消费者，这篇大部分内容不适合你看。我自己是常在Linux上以adb shell操作Android设备的，因此本篇会带有许多命令操作内容</p>
+<p>这里记录下（有root后）安装一些技术人喜欢用的工具类App，开源方案为主，及Android电视与电脑（Linux为主）配合的一些方法，包括有电脑控制电视、电脑向电视投屏、手机控制电视等奇技淫巧。也有少量提及家庭媒体相关的App。</p>
+<p><strong>弄的过程中鼠标键盘还是需要准备的</strong>，无线的最好，毕竟在客厅电视前。USB插口设计给插U盘放电影，但也可以插鼠标键盘。</p>
+<blockquote>
+<p>exFat及NTFS注意：买回来发现这个Android 8 盒子是不支持读取exFat的U盘的。而附赠的旧盒子竟然支持～。经查那些制造商没有给ms钱，也（暂时）没有采用其他第三方技术，就很可能不会支持这两个文件系统。于是把exFat的U盘格成了Fat32。</p>
+<p>Fat32只是在Windows下格式化时被限制在&lt;32G，所以找个Linux格式化一下就可以最多支持8T。单个文件最大4G无法突破。</p>
+</blockquote>
+<h2 id="解决时间无法自动同步问题">解决时间无法自动同步问题</h2>
+<p>较新版本Android默认估计采用了遥远处我们正常无法连接的NTP服务器来同步时间。而如果手动设置时间，关掉自动同步，有些盒子断电后时间复原。</p>
+<details>
+<p>用下面命令设置让它用国内的NTP服务器</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>settings put global ntp_server ntp1.aliyun.com
+</code></pre></div></details>
+<h2 id="使用app来开关网络adb">使用App来开关网络adb</h2>
+<p>如果进系统设置里开关adb麻烦，可以用一些App</p>
+<details>
+<p><a href="https://f-droid.org/packages/com.matoski.adbm/">com.matoski.adbm</a>（或<a href="https://f-droid.org/packages/com.github.sryze.wirebug/">com.github.sryze.wirebug</a>，或<a href="https://f-droid.org/packages/siir.es.adbWireless/">siir.es.adbWireless</a>）</p>
+</details>
+<h2 id="终端模拟器与开机脚本">终端模拟器与开机脚本</h2>
+<p>已有远程adb，但再装个终端App也无妨</p>
+<ul>
+<li>
+<p><a href="https://f-droid.org/packages/com.termoneplus/">com.termoneplus</a>或<a href="https://f-droid.org/packages/jackpal.androidterm/">jackpal.androidterm</a> （Android &lt;= 4）</p>
+</li>
+<li>
+<p>Termux（推荐）</p>
+<p>可以用Termux + Termux:Boot来实现开机自定义脚本</p>
+</li>
+</ul>
+<h2 id="安装ssh-server以及在ssh中开关adb">安装SSH server，以及在SSH中开关adb</h2>
+<p>（除以下笨方案外，Termux及其包中也提供有sshd）</p>
+<details>
+<p>adb没有密码，一直开着不够安全。</p>
+<p>装一个可以设置密码的SSH server(这里用了<code>net.xnano.android.sshserver</code>)。在SSH登录上去后可以再用命令去开关adb</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># 关闭adbd
+<span class="ln">2</span>setprop service.adb.tcp.port -1
+<span class="ln">3</span>killall  adbd
+<span class="ln">4</span>
+<span class="ln">5</span># 打开adbd
+<span class="ln">6</span>setprop service.adb.tcp.port 5555 （也可以换个非标准端口，防恶意扫描）
+<span class="ln">7</span>killall  adbd
+<span class="ln">8</span>adbd &amp; 
+</code></pre></div><p>可与此SSH服务器配合的bash脚本：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>TV_IP=
+<span class="ln"> 2</span>TV_SSH_USER=
+<span class="ln"> 3</span>TV_SSH_PASSWORD=
+<span class="ln"> 4</span>
+<span class="ln"> 5</span>function ssh_cmd() {
+<span class="ln"> 6</span>    local PID
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>    local AS
+<span class="ln"> 9</span>    local USER PASS IP PORT
+<span class="ln">10</span>    AS=$1
+<span class="ln">11</span>    IP=$2;  PORT=$3;  USER=$4;  PASS=$5;  shift;shift;shift;shift;shift
+<span class="ln">12</span>
+<span class="ln">13</span>    sshpass -p &#34;$PASS&#34;  ssh   ${USER}@${IP} -p $PORT -tt  &lt;&lt; EOF &amp;
+<span class="ln">14</span>su  -c &#34;$@&#34; $AS
+<span class="ln">15</span>EOF
+<span class="ln">16</span>
+<span class="ln">17</span>PID=$!
+<span class="ln">18</span>sleep 5
+<span class="ln">19</span>kill $PID
+<span class="ln">20</span>}
+<span class="ln">21</span>function tv_cmd() {
+<span class="ln">22</span>    local AS=$1
+<span class="ln">23</span>    shift
+<span class="ln">24</span>    ssh_cmd $AS $TV_IP 2222 $TV_SSH_USER $TV_SSH_PASSWORD &#34;$@&#34;
+<span class="ln">25</span>}
+<span class="ln">26</span>
+<span class="ln">27</span># 例：
+<span class="ln">28</span>
+<span class="ln">29</span># 要打开某url
+<span class="ln">30</span>tv_cmd &#34;shell&#34; am start -a android.intent.action.VIEW -d &lt;URL&gt;
+<span class="ln">31</span>
+<span class="ln">32</span># 允许adb
+<span class="ln">33</span>tv_cmd &#34;root&#34; &#34;setprop service.adb.tcp.port 5555; killall  adbd; nohup adbd &gt;/dev/null 2&gt;&amp;1  ; sleep 1&#34;
+<span class="ln">34</span>
+<span class="ln">35</span># 关闭adb
+<span class="ln">36</span>tv_cmd &#34;root&#34; &#34;setprop service.adb.tcp.port -1; killall  adbd&#34;
+</code></pre></div></details>
+<h2 id="f-droid客户端旧界面版">F-Droid客户端（旧界面版）</h2>
+<details>
+<p>装个第三方的老界面版本的<a href="https://f-droid.org/packages/eu.bubu1.fdroidclassic/">eu.bubu1.fdroidclassic</a>。官方的App对一些旧盒子来说吃不消。</p>
+<p>禁用原来的源后添加清华源（目前测试不能用https）</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>http://mirrors.tuna.tsinghua.edu.cn/fdroid/repo/  
+<span class="ln">2</span>http://mirrors.tuna.tsinghua.edu.cn/fdroid/archive
+</code></pre></div><p>指纹填</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB
+</code></pre></div></details>
+<h2 id="控制哪个app禁止或可以上网">控制哪个app禁止或可以上网</h2>
+<details>
+<p>AFWall+（dev.ukanth.ufirewall）不错</p>
+<blockquote>
+<p>Android 4 的得找旧版本<a href="https://github.com/ukanth/afwall/releases/tag/v2.9.9">2.9.9</a></p>
+</blockquote>
+</details>
+<h2 id="盒子基本技术型设置和安装tv上的工具app">盒子基本技术型设置和安装TV上的工具App</h2>
+<h3 id="安装一个适合android-tv的桌面launcher">安装一个适合Android TV的桌面Launcher</h3>
+<p>这里安装的是当贝桌面（2.1.3.1）</p>
+<details>
+> 如果将来某处不幸无法回到当贝桌面了，也可以用
+> 
+> ```
+> am start -n com.dangbei.tvlauncher/com.dangbei.tvlauncher.IndexActivity
+> ```
+> 
+> 命令运行当贝。
+<p>（这一个可选）然后装一个<a href="https://f-droid.org/en/packages/com.twsitedapps.homemanager/">com.twsitedapps.homemanager</a>，用以选择默认的桌面Launcher。</p>
+<blockquote>
+<p>可随时用</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -n com.twsitedapps.homemanager/.QuickSelectActivity
+</code></pre></div><p>来调用它的home launcher选择菜单</p>
+<p>用</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -n com.twsitedapps.homemanager/.HomeManagerActivity
+</code></pre></div><p>来打开它的App主页面。</p>
+</blockquote>
+<blockquote>
+<p>除了当贝桌面外，还要有一个可以显示小部件（Widgets）（前提是ROM支持，实测附赠的Android 4.4盒子不支持），又可以用遥控器方向键操作的Home Launcher。TV Launcher才是最适合做主要Launcher的，但它们一般不支持Widgets，因此两种Launcher需要共存。（待续）</p>
+</blockquote>
+</details>
+<h3 id="使菜单键可用">使菜单键可用</h3>
+<p>如果你的盒子是附赠的，原厂设置了菜单键为打开它的入口App，菜单键原有的功效都失效。</p>
+<details>
+<p>如果你暂时不用它原定的视频节目功能了，可以将它的默认App直接禁用掉。查得它原厂默认入口App的包名后</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pm block 包名
+<span class="ln">2</span>pm disable 包名
+<span class="ln">3</span>pm disable-user 包名
+</code></pre></div><p>（这个过程也可以装<a href="https://f-droid.org/packages/com.dkanada.openapk">com.dkanada.openapk</a>后点鼠标搞定）</p>
+</details>
+<h3 id="尝试清除附赠盒子的一些厂家的预装app失败">尝试清除附赠盒子的一些厂家的预装App（失败～）</h3>
+<details>
+<p>发现附赠的盒子厂家设置了保护，干掉一些原厂App后，会自动恢复原厂ROM。所以，只禁用掉一个入口App就好了，其他给它留着吧</p>
+</details>
+<h3 id="适当压低cpugpu频率改善发热">适当压低CPU/GPU频率改善发热</h3>
+<details>
+<p>有些盒子的散热真的做的不好，如果你还没有买风扇，可以暂时适当降频</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/data/data/com.termux/files/usr/bin/bash
+</span><span class="ln"> 2</span><span class="cp"></span>
+<span class="ln"> 3</span><span class="nv">BASEPATH</span><span class="o">=</span><span class="s2">&#34;/sys/devices/system/cpu&#34;</span>                                                                      
+<span class="ln"> 4</span>
+<span class="ln"> 5</span><span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span>0<span class="p">;</span> i&lt;<span class="o">=</span>3<span class="p">;</span> i++<span class="o">))</span>
+<span class="ln"> 6</span><span class="k">do</span>                                                                  
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>        su -c <span class="s2">&#34;echo conservative &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/scaling_governor&#34;</span>
+<span class="ln"> 9</span>        su -c <span class="s2">&#34;echo 50 &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/conservative/down_threshold&#34;</span>
+<span class="ln">10</span>        su -c <span class="s2">&#34;echo 99 &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/conservative/up_threshold&#34;</span>
+<span class="ln">11</span><span class="k">done</span>      
+</code></pre></div></details>
+<h3 id="限制后台以解决卡顿和发热">限制后台以解决卡顿（和发热）</h3>
+<p>还是iOS好。Android要做几样不同的步骤来限制那些App。</p>
+<p>既然是TV Box，肯定要安装些视频网站的App，那些难免会不守道德偷偷占你后台。</p>
+<h4 id="关闭通知权限">关闭通知权限</h4>
+<p>系统设置-&gt;应用-&gt;通知。把那些大站的App的通知权限都关掉。</p>
+<h4 id="取消app后台运行权限">取消APP后台运行权限</h4>
+<p>管理权限（包括隐藏权限）的工具有：</p>
+<details>
+<ul>
+<li>AppOpsX</li>
+<li>Permission Manager X</li>
+<li>BackgroundRestrictor （这个只管理<code>RUN_IN_BACKGROUND</code>一个权限）</li>
+<li>App Manager</li>
+<li>ADBungFu</li>
+</ul>
+<p>ADBungFu是个名字个界面都有点奇怪但功能似乎很强大的东西，它与其他不同，可以按照权限来列出App，让你针对性的关。关了大站App的相关后台权限</p>
+<p>如果是用命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cmd appops set &lt;package_name&gt; RUN_IN_BACKGROUND ignore
+<span class="ln">2</span>cmd appops set &lt;package_name&gt; RUN_ANY_IN_BACKGROUND ignore
+<span class="ln">3</span>cmd appops set &lt;package_name&gt; START_FOREGROUND ignore
+<span class="ln">4</span>cmd appops set &lt;package_name&gt; INSTANT_APP_START_FOREGROUND ignore
+</code></pre></div></details>
+<h4 id="在系统开发者选项中限制后台">在系统开发者选项中限制后台</h4>
+<p>你会发现以上都不够。所以Android在这方面确实还有欠缺。</p>
+<p>进去开发者模式菜单-&gt;后台进程限制，设置允许后台数量2个左右好了。</p>
+<blockquote>
+<p>这一项最好你都做完了盒子该做的配置再搞</p>
+</blockquote>
+<h4 id="杀后台和冻结">杀后台和冻结</h4>
+<p>用SuperFreezZ杀后台，可以结合KeyMapper添加一个遥控器快捷键。</p>
+<p>杀后台的App不止这一个，而其他的必须都手动加入杀的列表，SuperFreezZ可以设置成用户新安装的App自动加入到杀的列表中（这样我们要手动把一些信得过的App加入到白名单）。</p>
+<p>装了又好大半年用不上的App可以用App Manager完全禁用掉。</p>
+<h2 id="家庭媒体略写">家庭媒体（略写）</h2>
+<h3 id="播放器">播放器</h3>
+<ul>
+<li>Kodi这个播放器具足了服务端和客户端的功能，nfs、smb、ftp、http这些局域网媒体协议都支持。</li>
+</ul>
+<blockquote>
+<p>最后支持Android 4 的是16版本</p>
+</blockquote>
+<ul>
+<li>
+<p>VLC。大家都知道。</p>
+</li>
+<li>
+<p>DLNA（upnp）播放端（接收端）。F-Droid上就有几个支持这个功能的小App</p>
+</li>
+</ul>
+<h3 id="接收投屏的app">接收投屏的App</h3>
+<ul>
+<li>乐播投屏</li>
+</ul>
+<h2 id="用电视看小说">用电视看小说</h2>
+<details>
+<p>用遥控器翻页，不用低头，不用固定坐在桌子前，对一些人来说还保护眼睛。</p>
+<ul>
+<li>
+<p><a href="https://f-droid.org/packages/org.geometerplus.zlibrary.ui.android">FBReader</a></p>
+</li>
+<li>
+<p><a href="https://www.moondownload.com/chinese.html">静读天下</a>。这个还支持中文竖排</p>
+</li>
+</ul>
+<blockquote>
+<p>其他应该还有更好的App，比如一些支持朗读(TTS，Text to Speech文字转语音）的</p>
+</blockquote>
+</details>
+<h2 id="投屏及投声音linux为主部分适用windows">投屏及投声音（Linux为主，部分适用Windows）</h2>
+<p>这里讲的是电脑向电视投屏（的笨方案），如果是手机（不管是iOS还是Android）向电视，外面已经有很多方案了</p>
+<h3 id="将linux所放音频投放到android">将Linux所放音频投放到Android</h3>
+<p>不是投放音频文件，而是实时投放Linux正在播放的音频</p>
+<h4 id="tcp传输原始音频流播放">TCP传输原始音频流播放</h4>
+<p>使用Pulseaudio的模块将Linux作为简单原始音频的tcp服务器。这个方案音频延迟很小基本没有</p>
+<details>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=1 source=0 record=true 
+</code></pre></div><p>默认端口为4711，<code>channel=1</code>为单声道，<code>rate=48000</code>占网速约100KB/s。</p>
+<p>如果要停止，则</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pactl unload-module module-simple-protocol-tcp
+</code></pre></div><blockquote>
+<p>此命令的技术文档位于<a href="https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/">freedesktop页面</a></p>
+</blockquote>
+<p>Android端使用Simple Protocol Player NG（<a href="https://f-droid.org/packages/fr.jakse.raphael.simpleprotocolplayer/">fr.jakse.raphael.simpleprotocolplayer</a>），输入Linux的IP和其他少量参数后接收播放</p>
+<blockquote>
+<p>这个方法还可以把Android手机当电脑的无线耳机使用。前提是手机支持锁屏幕后Wifi不休眠</p>
+</blockquote>
+</details>
+<h4 id="利用apple-airplay协议">利用Apple AirPlay协议</h4>
+<p>苹果的AirPlay协议可投屏幕也可投音频，苹果用户很熟悉。</p>
+<details>
+<p>其之中单独播放音频的AirTunes协议使用UDP。</p>
+<p>Android有一些App支持接收AirPlay的投放，如“乐播投屏”（版本8.x）。</p>
+<blockquote>
+<p>用Avahi Disvovery（<code>avahi-discover</code>命令，位于包<code>python3-avahi-gtk</code>中）可以看到局域网内的“乐播投屏”在广播<code>_airplay._tcp</code>及<code>AirTunes Remote Audio</code></p>
+</blockquote>
+<p>PulseAudio的名为RAOP（Remote Audio Output Protocol）的模块实现了音频AirTunes投放，其对应模块有<code>module-raop-sink</code>、<code>module-raop-discover</code>。</p>
+<p>PulseAudio所实现的RAOP需要在“PulseAudio属性&quot;(<code>paprefs</code>命令）中的&quot;Network Access&quot;中勾选&quot;Make discoverable Apple AirTunes sound devices available locally”启用。</p>
+<p>另外Linux上需要有Avahi，用systemd先启动它</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo systemctl start avahi-daemon.service
+</code></pre></div><p>可能还要重启一下PulseAudio</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pulseaudio -k
+</code></pre></div><p>若要将单独一个Linux程序的音频投出去，在PulseAudio的“音量控制”（<code>pavucontrol</code>命令）中“回放”中将此程序的音频输出设置为找到的AirTunes。</p>
+<blockquote>
+<p>待续</p>
+</blockquote>
+</details>
+<h3 id="将windows所放音频投放到android">将Windows所放音频投放到Android</h3>
+<ul>
+<li>
+<p>上面那个Linux+PulseAudio方案，因Windows没有PulseAudio，但有人写了个实现上面功能的Windows程序： <a href="https://github.com/kaytat/SimpleProtocolServer">https://github.com/kaytat/SimpleProtocolServer</a></p>
+</li>
+<li>
+<p>一个<a href="http://georgielabs.net/">GeorgieLabs</a>出的专用于网络传输音频的软件，Android上装他的App <a href="https://play.google.com/store/apps/details?id=com.georgie.SoundWireFree">SoundWire</a>，电脑上也要运行他的软件（Windows、Linux）</p>
+</li>
+</ul>
+<h3 id="linux整个屏幕音视投屏到android">Linux整个屏幕音视投屏到Android</h3>
+<p>现有的各种现成投屏方案对Linux支持不够好，自己弄的方法有：</p>
+<ul>
+<li>
+<p>（推荐）流媒体方案（以下会有几种方案，其中推荐的是OBS Studio + RTSP + VLC，此方案也适用于Windows）</p>
+</li>
+<li>
+<p>VNC方案可以用（VNC本身<strong>无声音</strong>），如果调低分辨率，放普通视频勉强可以（还要配合上面那个投放音频的方法一起用），画面变化大时占约1400KB/s网速</p>
+</li>
+<li>
+<p>通过Airplay投单张图片可以看看 <a href="https://github.com/openairplay/open-airplay">https://github.com/openairplay/open-airplay</a></p>
+</li>
+</ul>
+<h4 id="流媒体投频方案">流媒体投频方案</h4>
+<p>流媒体直播屏幕的方案优点不用说，缺点有：</p>
+<ul>
+<li>
+<p>占用电脑CPU稍高</p>
+</li>
+<li>
+<p>有明显的直播延迟，至少3秒</p>
+</li>
+</ul>
+<h5 id="流媒体实时录屏方案一obs-studio-及推流">流媒体实时录屏方案一：OBS Studio （及推流）</h5>
+<details>
+<p>OBS Studio的界面操作是比较明了易懂的。多显示器的可以选择仅录一个屏幕。</p>
+<ul>
+<li>
+<p>添加“屏幕采集”作为视频源</p>
+</li>
+<li>
+<p>在“设置”的“音频”中选中一个电脑输出音频</p>
+</li>
+<li>
+<p>OBS Studio中设置视频录制参数：</p>
+<p>OBS Studio中“设置”的”输出“中，若调整”输出模式“为”高级“，可以选择的编码器（在我的Linux笔记本上）有：</p>
+<ul>
+<li>
+<p>x264</p>
+<p>能够使用电脑的多核CPU，但总体占用CPU量大，因此发热不小（这里为4核）</p>
+<p>CBR 200Kbps足够</p>
+</li>
+<li>
+<p>FFMPEG VAAPI （使用了我的Intel集显，Codec为H.264）</p>
+<p>总体CPU占用不算很大，但需要的码率比x264高</p>
+<p>CBR 3000Kbps够</p>
+</li>
+</ul>
+</li>
+<li>
+<p>流视频服务器（或推流到服务器）：</p>
+<ul>
+<li>
+<p>方案一：推流到Nginx RTMP服务器（服务器搭建见另节）：</p>
+<ul>
+<li>
+<p>“设置”的”推流“的”服务“选”自定义“，服务器填<code>rtmp://127.0.0.1/stream</code>（此处的这个<code>stream</code>是串流名称，若要改，需要在nginx那边做对应设置才允许推流），串流密钥可留空</p>
+</li>
+<li>
+<p>点击”开始推流“</p>
+</li>
+<li>
+<p>播放那端的设备上打开URL <code>rtmp://电脑IP/stream（这是串流名称）/串流密钥</code>（密钥空则可省）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>方案二：使用RTSP服务器插件（插件安装见另节）：</p>
+<ul>
+<li>
+<p>“工具”-&gt;“RTSP服务器&quot;-&gt;”启动“</p>
+</li>
+<li>
+<p>播放那端的设备上打开URL <code>rtsp://电脑IP:端口/live（这是串流名称）</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>以上视频服务器<strong>选一种</strong>方案使用即可。建议RTSP。</p>
+</li>
+</ul>
+</details>
+<h5 id="流媒体实时录屏方案二gnome-network-displayhttpsgitlabgnomeorggnomegnome-network-displays">流媒体实时录屏方案二：<a href="https://gitlab.gnome.org/GNOME/gnome-network-displays">Gnome Network Display</a></h5>
+<details>
+<p>这是一种Miracast协议（又叫Wi-Fi Display）的实现，软件正在实验阶段的，项目目前属于Gnome。</p>
+<p>按照说明中的testing purposes的方法，可以录屏的同时作为RTSP流服务器，声音可以通过pulseaudio的一些操作开启。不过试验结果是较卡。</p>
+</details>
+<h5 id="流服务器方案一obs-studio的rtsp流服务器插件安装">流服务器方案一：OBS Studio的RTSP流服务器插件安装</h5>
+<details>
+<p>RTSP（实时串流协议，Real Time Streaming Protocol）默认使用端口554。这是个Netscape交由IETF标准化的协议。</p>
+<p>一位国人做的 <a href="https://github.com/iamscottxu/obs-rtspserver">GitHub - iamscottxu/obs-rtspserver: RTSP server plugin for obs-studio</a> 十分实用，安装只要下载文件放入OBS插件对应位置（测试环境Linux 64位，obs-rtspserver 1.3.0）。</p>
+<p>安装好OBS插件后，“工具”-&gt;“RTSP服务器&quot;打开其操作界面，应当改一下使用的端口。</p>
+</details>
+<h5 id="流服务器方案二搭建nginx-rtmp-module">流服务器方案二：搭建Nginx RTMP module</h5>
+<details>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%97%B6%E6%B6%88%E6%81%AF%E5%8D%8F%E8%AE%AE">RTMP（实时消息协议，Real-Time Messaging Protocol）</a>这个协议默认使用端口1935，最初本是Macromedia Flash所用（Macromedia Flash Communications Server MX）。</p>
+<p>OBS推流及播放器的访问都是在RTMP服务器的1935端口。Linux上的RTMP服务器一般是使用Nginx服务器配合模块<a href="https://github.com/arut/nginx-rtmp-module">nginx-rtmp-module</a>。</p>
+<blockquote>
+<p>如果发行版中没有<code>nginx-rtmp-module</code>的包，可以使用Docker Hub上的镜像，如</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>docker pull alfg/nginx-rtmp
+<span class="ln">2</span>docker run -it -p 1935:1935 -p 8080:80 --rm alfg/nginx-rtmp
+</code></pre></div><p>（实际测试中80端口未用上，不映射它也可以）</p>
+</blockquote>
+</details>
+<h5 id="播放端软件">播放端软件</h5>
+<details>
+<p>可使用VLC，这里用了<a href="https://get.videolan.org/vlc-android/1.5.2/">VLC-Android-1.5.2</a>播放RTSP流（如果使用RTMP协议则要更高的版本的VLC）。</p>
+<blockquote>
+<p>VLC在界面中输入rtsp地址有可能会播放失败，然而使用adb直接打开rtsp地址则能播放：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -a android.intent.action.VIEW -d rtsp://xxxxx
+</code></pre></div></blockquote>
+<p>经试验RTMP有时会有音视频不同步的问题，RTSP则没有。</p>
+</details>
+<h3 id="linux-vnc投画面">Linux VNC投画面</h3>
+<p>这部分<strong>只有画面不含声音</strong>，可以配合另节的是个仅投音频的方法。</p>
+<details>
+<p>电脑端的以<strong>当前屏幕内容</strong>作为源的VNC服务器可以用：</p>
+<ul>
+<li>
+<p>vino (Gnome)（经试验，密码验证及加密传输无法使用，只能无密）</p>
+</li>
+<li>
+<p>krfb (KDE)（如果是多显示器，只能显示主屏幕）</p>
+</li>
+<li>
+<p>rfb</p>
+</li>
+</ul>
+<p>虚拟一个第二屏幕，并当作VNC服务器：</p>
+<ul>
+<li>VirtScreen</li>
+</ul>
+<p>下面只讲一讲vino在非Gnome桌面的操作，因为非Gnome无GUI。另外两个有GUI</p>
+<h4 id="vino在非gnome桌面的操作">vino在非Gnome桌面的操作</h4>
+<p>安装vino后，如果用的不是Gnome桌面，则要通过命令启用（并且它的<code>vino</code>二进制程序未必在<code>$PATH</code>的路径里）和操作。</p>
+<ul>
+<li>
+<p>查看vino的设置</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span> gsettings list-recursively org.gnome.Vino
+</code></pre></div></li>
+<li>
+<p>修改设置</p>
+<p>修改为仅观看模式，不允许电视操作电脑</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span> gsettings set org.gnome.Vino view-only true
+</code></pre></div><p>（可选） 改为不需要弹出确认就可以观看</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span> gsettings set org.gnome.Vino prompt-enabled false
+</code></pre></div><p>还可以把密码去掉，加密也免掉，以提高流畅度</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span> org.gnome.Vino prompt-enabled false
+<span class="ln"> 2</span> org.gnome.Vino require-encryption false
+<span class="ln"> 3</span> org.gnome.Vino use-alternative-port false
+<span class="ln"> 4</span> org.gnome.Vino disable-background false
+<span class="ln"> 5</span> org.gnome.Vino disable-xdamage false
+<span class="ln"> 6</span> org.gnome.Vino alternative-port uint16 5900
+<span class="ln"> 7</span> org.gnome.Vino icon-visibility &#39;client&#39;
+<span class="ln"> 8</span> org.gnome.Vino authentication-methods [&#39;none&#39;]
+<span class="ln"> 9</span> org.gnome.Vino network-interface &#39;&#39;
+<span class="ln">10</span> org.gnome.Vino notify-on-connect true
+<span class="ln">11</span> org.gnome.Vino mailto &#39;&#39;
+<span class="ln">12</span> org.gnome.Vino lock-screen-on-disconnect false
+<span class="ln">13</span> org.gnome.Vino use-upnp false
+<span class="ln">14</span> org.gnome.Vino vnc-password &#39;keyring&#39;
+<span class="ln">15</span> org.gnome.Vino view-only true
+</code></pre></div><blockquote>
+<p>对应的设置文档可查阅<a href="https://getadmx.com/?Category=CentrifyDC_GP_Extension&amp;Policy=Centrify.Policies.CentrifyGnome3Settings::policy_1573">这个页面</a></p>
+</blockquote>
+</li>
+</ul>
+<p>启动vino: <code>/usr/lib/vino/vino-server</code>。即可以用Android上的VNC客户端来连接。</p>
+</details>
+<h4 id="android端的vnc客户端">Android端的VNC客户端</h4>
+<details>
+<p>可以用</p>
+<ul>
+<li>
+<p><a href="https://apt.izzysoft.de/fdroid/index/apk/com.iiordanov.freebVNC">com.iiordanov.freebVNC</a></p>
+</li>
+<li>
+<p><a href="https://apt.izzysoft.de/fdroid/index/apk/com.coboltforge.dontmind.multivnc?repo=archive">com.coboltforge.dontmind.multivnc</a> (1.8.10 支持Android 4)</p>
+</li>
+</ul>
+</details>
+<h2 id="操作android设备电视的奇怪技巧">操作Android设备（电视）的奇怪技巧</h2>
+<p>毕竟是TV盒子，不可能一直接着键盘鼠标，遥控器也很费力。并且有些盒子直接砍掉了一些Android设置界面。</p>
+<h3 id="自定义遥控器动作或快捷键">自定义遥控器动作或快捷键</h3>
+<p><a href="https://f-droid.org/packages/io.github.sds100.keymapper">Keyboard/Button Mapper</a>可以用来启动App或其他动作，毕竟遥控器有些按钮没有。</p>
+<blockquote>
+<p>在我的Android 4.4盒子上未成功，ROM中砍掉了功能，因此无法在Key Mapper中录制trigger</p>
+</blockquote>
+<h3 id="在电脑上查看和操作android屏幕">在电脑上查看和操作Android屏幕</h3>
+<h4 id="android-4">Android 4</h4>
+<ul>
+<li>
+<p><a href="https://github.com/koush/vysor.io">Vysor</a></p>
+<p>通过adb。Android端安装App，使用PC端的客户端就可以用局域网adb。</p>
+</li>
+<li>
+<p>电脑端的AndroidScreencast（开源， java）</p>
+<p>通过USB调试接口（也就是adb）通信，不过这个很卡</p>
+</li>
+</ul>
+<h4 id="android--5">Android &gt;= 5</h4>
+<p>有一个著名的由Genymotion开源的scrcpy，是通过adb传画面和远控的。有人做了个加强版guiscrcpy。</p>
+<p>这个时候，你可能还需要一个 Keyboard Switcher <a href="https://f-droid.org/en/packages/com.kunzisoft.keyboard.switcher">com.kunzisoft.keyboard.switcher</a>，它可以显示一个浮动小图标，可以用鼠标来点击切换Android输入法</p>
+<h3 id="浮动工具">浮动工具</h3>
+<p>许多电视盒子ROM<strong>状态栏</strong>、<strong>通知面板</strong>和<strong>桌面小部件</strong>的功能都<strong>没有</strong>，所以找一些浮动在屏幕上的小工具</p>
+<details>
+<ul>
+<li>
+<p><a href="https://apkpure.com/cn/resource-monitor-mini/info.kfsoft.android.MemoryIndicator">Resource Monitor Mini</a> CPU、内存（文本）。CPU可以在屏幕边缘以细线条显示，占地方少又清晰。</p>
+</li>
+<li>
+<p><a href="https://apkpure.com/cn/cpu-indicator/com.pies3nscy.cpuindicator">com.pies3nscy.cpuindicator</a> 浮动CPU、内存百分数圈</p>
+</li>
+<li>
+<p><a href="https://apkpure.com/cn/floating-toolbox/com.toolbox.shortcuts">com.toolbox.shortcuts</a> 可以选择几个App的浮动的应用启动器，可伸缩，挺适合用鼠标</p>
+</li>
+<li>
+<p><a href="https://apkpure.com/cn/floating-network-monitor/jc.floating.monitor">jc.floating.monitor</a> 浮动网速显示（文字）</p>
+<p>这个要从命令直接开启浮动显示的话使用（root）：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am startservice jc.floating.monitor/.NetworkMonitor
+</code></pre></div></li>
+<li>
+<p><a href="https://apkpure.com/cn/tinycore-cpu-ram-monitor/org.neotech.app.tinycore">Tinycore</a> 在以屏幕边缘以条状显示一项（可以是CPU、内存、温度)，无文字</p>
+</li>
+<li>
+<p><a href="https://apkdl.net/en/com.kami.cputemp">Cpu Temperature</a> 仅以文字简单地浮动显示一个温度</p>
+</li>
+<li>
+<p><a href="https://apkpure.com/cn/c-floating/com.ccs.floating_info">com.ccs.floating_info</a> 浮动的可伸缩的最近几个App、内存监视、网络监视。纯文字，且占面积有点大</p>
+</li>
+<li>
+<p>Transparent CPU Monitor(skynet.transparentcpumonitor) CPU、GPU、内存</p>
+<p>这个显示的图表有点巨大。它本身就占了一定CPU。它可以自定义各个参数的读取路径，这在其他App读不出时有点用</p>
+</li>
+</ul>
+</details>
+<h3 id="用kde-connecthttpsf-droidorgpackagesorgkdekdeconnect_tp在另一个android手机或电脑上用键盘控制电视">用<a href="https://f-droid.org/packages/org.kde.kdeconnect_tp">KDE Connect</a>在另一个Android手机（或电脑）上用键盘控制电视</h3>
+<details>
+<p>手机（也有电脑版的）和电视上装上同一个App，配对。</p>
+<ol>
+<li>
+<p>在电视盒上选择KDE Connect输入法</p>
+<p>并在它的键盘弹出时，点下面的设置，去掉“只有在输入时接收远程按键”</p>
+</li>
+<li>
+<p>手机设置为控制端，不当受控端</p>
+<p>在手机配对后，插件页面，去掉所有，只留下“电视遥控”和“远程输入”两个</p>
+<blockquote>
+<p>手机上可以安装<a href="https://f-droid.org/packages/org.pocketworkstation.pckeyboard/">Hacker's Keyboard</a>或<a href="https://f-droid.org/packages/com.vlath.keyboard/">BeHe Keyboard</a>，这两个键盘能提供比一般手机输入法更多的按键，如ctrl、tab、alt、方向键、更方便的常用符号等等。</p>
+</blockquote>
+</li>
+</ol>
+</details>
+<h3 id="远程键盘输入法">远程键盘输入法</h3>
+<ol>
+<li>
+<p>WiFi键盘 <a href="https://f-droid.org/packages/com.volosyukivan/">com.volosyukivan</a></p>
+</li>
+<li>
+<p>ADB键盘 <a href="https://f-droid.org/en/packages/com.android.adbkeyboard/">com.android.adbkeyboard</a></p>
+</li>
+<li>
+<p>Telnet键盘 <a href="https://f-droid.org/en/packages/de.onyxbits.remotekeyboard/">de.onyxbits.remotekeyboard</a>.</p>
+</li>
+</ol>
+<p>有些电视盒子没有提供打开输入法设置界面的入口。打开的命令是:</p>
+<details>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -a android.settings.INPUT_METHOD_SETTINGS
+</code></pre></div><p>如果也被砍了，那就用命令</p>
+<ul>
+<li>
+<p>列出输入法</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ime list -a (多)
+<span class="ln">2</span>ime list -s (少)
+</code></pre></div></li>
+<li>
+<p>启用输入法</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ime enable xxxxx/xxxxx
+</code></pre></div></li>
+<li>
+<p>选择输入法</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ime set xxxxx/xxxxx
+</code></pre></div></li>
+</ul>
+</details>
+<p>或者用Keyboard Switcher  <a href="https://f-droid.org/en/packages/com.kunzisoft.keyboard.switcher">com.kunzisoft.keyboard.switcher</a></p>
+<details>
+<p>安装后就可以用</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -n com.kunzisoft.keyboard.switcher/.KeyboardManagerActivity
+</code></pre></div><p>来直接打开输入法切换框。这个App也支持显示一个浮动按钮来打开。</p>
+</details>
+<h3 id="局域网传文本的app">局域网传文本的App</h3>
+<details>
+<p>Kouchat是可以在局域网内传文字信息，不需要服务器，自动发现。所以，用来从手机或电脑传一个URL到电视点开是可以。Kouchat有Android版和PC java版。</p>
+<p>只不过，许多家大的视频网站的Android TV版的App竟然没有注册自己成为URL scheme的打开方式。</p>
+</details>
+<h3 id="找一些盒子固件隐藏的app入口">找一些盒子固件隐藏的App入口</h3>
+<details>
+<p>用<a href="https://f-droid.org/packages/de.szalkowski.activitylauncher/">de.szalkowski.activitylauncher</a>查看和调用所有App之下的活动（其实这没太多必要）</p>
+</details>
+<h3 id="一点常用的adb命令">一点常用的adb命令</h3>
+<details>
+<ul>
+<li>
+<p>adb启动App</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -n 包名/活动
+</code></pre></div><p>你需要知道App的包名和主活动的名称</p>
+</li>
+<li>
+<p>adb打开网址</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -a android.intent.action.VIEW -d http://xxxxxxx
+</code></pre></div></li>
+<li>
+<p>adb输入文本</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>input text hello
+</code></pre></div></li>
+<li>
+<p>adb模拟按键/输入</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>input keyevent &lt;keycode&gt;
+</code></pre></div><p>参考https://developer.android.com/reference/android/view/KeyEvent</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>input keyevent &lt;keycode&gt;
+<span class="ln"> 2</span>3    HOME 键 （一些遥控器的”本地“）
+<span class="ln"> 3</span>4    返回键
+<span class="ln"> 4</span>19  KEYCODE_DPAD_UP 導航鍵 向上 19 （遥控器方向键）
+<span class="ln"> 5</span>20  KEYCODE_DPAD_DOWN 導航鍵 向下 20
+<span class="ln"> 6</span>21  KEYCODE_DPAD_LEFT 導航鍵 向左 21
+<span class="ln"> 7</span>22  KEYCODE_DPAD_RIGHT 導航鍵 向右 22 
+<span class="ln"> 8</span>23  遥控器“OK”.  Directional Pad Center key. 
+<span class="ln"> 9</span>24    增加音量
+<span class="ln">10</span>25    降低音量
+<span class="ln">11</span>26    电源键
+<span class="ln">12</span>64    打开浏览器
+<span class="ln">13</span>66  ENTER
+<span class="ln">14</span>67  Backspace key.KEYCODE_DEL  遥控器”交换“
+<span class="ln">15</span>82    菜单键
+<span class="ln">16</span>83  KEYCODE_NOTIFICATION
+<span class="ln">17</span>85    播放/暂停
+<span class="ln">18</span>86    停止播放
+<span class="ln">19</span>87    播放下一首
+<span class="ln">20</span>88    播放上一首
+<span class="ln">21</span>92  PAGE UP
+<span class="ln">22</span>93  PAGE DOWN
+<span class="ln">23</span>111  ESCAPE
+<span class="ln">24</span>126    恢复播放
+<span class="ln">25</span>127    暂停播放
+<span class="ln">26</span>166  频道+（换台）
+<span class="ln">27</span>167  频道-
+<span class="ln">28</span>168  ZOOM_IN
+<span class="ln">29</span>169  ZOOM_OUT
+<span class="ln">30</span>176    打开系统设置
+<span class="ln">31</span>183  遥控器红键（直播）
+<span class="ln">32</span>184  遥控器绿键（回看）
+<span class="ln">33</span>185  遥控器黄键（点播）
+<span class="ln">34</span>186  遥控器蓝键（信息）
+<span class="ln">35</span>187    切换应用
+<span class="ln">36</span>223    系统休眠
+<span class="ln">37</span>224    点亮屏幕
+<span class="ln">38</span>226 KEYCODE_MEDIA_TOP_MENU 226
+<span class="ln">39</span>229  KEYCODE_LAST_CHANNEL  Last Channel key. Goes to the last viewed channel.
+<span class="ln">40</span>284  KEYCODE_ALL_APPS  284
+</code></pre></div></li>
+</ul>
+</details>
+<h2 id="其中一个旧android-44-tv盒子root过程">其中一个旧Android 4.4 TV盒子root过程</h2>
+<details>
+<p>这一段旧旧盒子的，估计一般人不用看了。仅这一段，下文主要针对Android 8及以上</p>
+<blockquote>
+<p>root过程因机而异。此处主要为自己的记录，看客也可以参考</p>
+</blockquote>
+<p>这个买某服务配送的盒子root不需要拆机、不需要TTL线，不需要任何USB或刷机</p>
+<ol>
+<li>
+<p>按照网上查的方式打开网络adb。过程略</p>
+</li>
+<li>
+<p><code>adb connect &lt;ip&gt;</code>连上后，直接使用<code>adb root</code>取得root权限。看来它的ROM是留了这个后门的。</p>
+</li>
+<li>
+<p>安装root管理的App，给其他App可申请root权限</p>
+<blockquote>
+<p>此方法不适合 Android &gt;= 5</p>
+</blockquote>
+<ol>
+<li>准备好<code>superuser.apk</code>（我用的是<a href="https://f-droid.org/packages/com.koushikdutta.superuser/">com.koushikdutta.superuser</a>，<a href="https://github.com/koush/Superuser">源代码</a>）</li>
+<li><code>adb shell mount -o rw,remount /system</code></li>
+<li>解压<code>superuser.apk</code>，把<code>assets/armeabi/su</code>放<code>/system/xbin/su</code>，并<code>chmod 755 /system/xbin/su</code></li>
+<li>安装<code>superuser.apk</code></li>
+<li>复制<code>/data/app/</code>下的<code>superuser.apk</code>到<code>/system/app/</code></li>
+<li>使<code>/system/xbin/su --daemon &amp;</code>成为开机自动运行的一条命令。我找了一个原厂家的启动shell脚本文件，加在尾部。</li>
+<li>重启</li>
+</ol>
+</li>
+</ol>
+</details>
+<div style="text-align: center; font-size: 80%;">
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。
+<br>
+All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.
+</div>
+
+<h2>打赏作者</h2>
+
+<p>写作不易，感谢支持！ 扫个码吧～</p>
+
+<p>
+<a href="https://github.com/garywill/receiving/blob/master/receiving_methods.md" target="_blank"><img src="https://raw.githubusercontent.com/garywill/receiving/master/receivingcode.png"></img></a>
+</p>
+
+
+
+  </article>
+<aside class="sidebar">
+  <section class="sidebar_inner">
+    
+      <h2>garywill</h2>
+      <div class="sidebar_description">
+        <p><a href="https://garywill.github.io">我的开源代码仓库</a></p>
+<p><a href="https://github.com/garywill/receiving/blob/master/receiving_methods.md">扫码打赏</a></p>
+<p>此处为博客的站点2，<a href="https://www.cnblogs.com/garyw">访问博客国内站</a></p>
+<p>Blog made with <a href="https://gohugo.io/">Hugo</a> and <a href="https://themes.gohugo.io/hugo-clarity/">Clarity theme</a></p>
+<div style="font-size: 80%;">
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 
+<br>
+All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.
+</div>
+<script type='text/javascript'></script>
+
+      </div>
+    <h2 class="mt-4">Featured Posts</h2>
+    <ul>
+      <li>
+        <a href="/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/" class="nav-link" title="非常干净的日用软件列表分享（许多开源App）">非常干净的日用软件列表分享（许多开源App）</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
+      </li>
+    </ul>
+    <h2 class="mt-4">Recent Posts</h2>
+    <ul class="flex-column">
+      <li>
+        <a href="/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/" class="nav-link" title="非常干净的日用软件列表分享（许多开源App）">非常干净的日用软件列表分享（许多开源App）</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/appimage%E6%89%93%E5%8C%85/" class="nav-link" title="初探AppImage打包（Qt程序为例）">初探AppImage打包（Qt程序为例）</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/linux-process-dns/" class="nav-link" title="Linux给特定进程单独指定DNS">Linux给特定进程单独指定DNS</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/wine/" class="nav-link" title="wine实用经验教程">wine实用经验教程</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/firefox_uc%E8%84%9A%E6%9C%AC/" class="nav-link" title="2020年代仍有Firefox userChrome JS脚本（介绍、简略教程、资源）">2020年代仍有Firefox userChrome JS脚本（介绍、简略教程、资源）</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" class="nav-link" title="容易上手的LXD容器和虚拟X server">容易上手的LXD容器和虚拟X server</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/ttffont/" class="nav-link" title="修复一些不能直接使用或不好用的ttf字体文件">修复一些不能直接使用或不好用的ttf字体文件</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/github6/" class="nav-link" title="展示Github repo的橱窗页面，超越只允许6个仓库的限制">展示Github repo的橱窗页面，超越只允许6个仓库的限制</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/choose-linux-pc/" class="nav-link" title="如何配电脑？如何配一台对Linux兼容比较好的电脑？">如何配电脑？如何配一台对Linux兼容比较好的电脑？</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/bash%E8%AE%A9%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E4%B8%8D%E5%90%8C/" class="nav-link" title="BASH让标准输出和错误输出颜色不同">BASH让标准输出和错误输出颜色不同</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/qr/" class="nav-link" title="在Linux终端中快速生成、解码二维码">在Linux终端中快速生成、解码二维码</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/cgroup/" class="nav-link" title="用cgroup限制内存以防止Linux因内存用尽卡死">用cgroup限制内存以防止Linux因内存用尽卡死</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/" class="nav-link" title="为Linux的文件管理器创建“在此打开终端”菜单">为Linux的文件管理器创建“在此打开终端”菜单</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/linux%E5%85%B3%E8%81%94%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E5%92%8C%E6%89%93%E5%BC%80%E7%A8%8B%E5%BA%8F/" class="nav-link" title="Linux关联文件扩展名和打开程序">Linux关联文件扩展名和打开程序</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/distro/" class="nav-link" title="Linux发行版教你如何选 给入门者的选择通法">Linux发行版教你如何选 给入门者的选择通法</a>
+      </li>
+    </ul>
+    <div>
+      <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
+      <nav class="tags_nav">
+        <a href='/chiblog/tags/linux/' class="post_tag button button_translucent" title="linux">
+          LINUX
+          <span class="button_tally">9</span>
+        </a>
+        
+        <a href='/chiblog/tags/shell/' class="post_tag button button_translucent" title="shell">
+          SHELL
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/chiblog/tags/%E5%8F%8D%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/' class="post_tag button button_translucent" title="反流氓软件">
+          反流氓软件
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/chiblog/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/' class="post_tag button button_translucent" title="开源软件">
+          开源软件
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/chiblog/tags/%E6%96%87%E4%BB%B6%E5%85%B3%E8%81%94/' class="post_tag button button_translucent" title="文件关联">
+          文件关联
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/chiblog/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/' class="post_tag button button_translucent" title="绿色软件">
+          绿色软件
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='/chiblog/tags/adb/' class="post_tag button button_translucent" title="adb">
+          ADB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/android/' class="post_tag button button_translucent" title="android">
+          ANDROID
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/android-4.4/' class="post_tag button button_translucent" title="android-4.4">
+          ANDROID-4.4
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/android-8/' class="post_tag button button_translucent" title="android-8">
+          ANDROID-8
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/android-kitkat/' class="post_tag button button_translucent" title="android-kitkat">
+          ANDROID-KITKAT
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/android-oreo/' class="post_tag button button_translucent" title="android-oreo">
+          ANDROID-OREO
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/android-tv/' class="post_tag button button_translucent" title="android-tv">
+          ANDROID-TV
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/android%E7%94%B5%E8%A7%86%E7%9B%92%E5%AD%90/' class="post_tag button button_translucent" title="android电视盒子">
+          ANDROID电视盒子
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/appimage/' class="post_tag button button_translucent" title="appimage">
+          APPIMAGE
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/bash/' class="post_tag button button_translucent" title="bash">
+          BASH
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/cgroup/' class="post_tag button button_translucent" title="cgroup">
+          CGROUP
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/dns/' class="post_tag button button_translucent" title="dns">
+          DNS
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
+          FIREFOX
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/fontforge/' class="post_tag button button_translucent" title="fontforge">
+          FONTFORGE
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/github/' class="post_tag button button_translucent" title="github">
+          GITHUB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/github-api/' class="post_tag button button_translucent" title="github-api">
+          GITHUB-API
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/github-page/' class="post_tag button button_translucent" title="github-page">
+          GITHUB-PAGE
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/github.io/' class="post_tag button button_translucent" title="github.io">
+          GITHUB.IO
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/js/' class="post_tag button button_translucent" title="js">
+          JS
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class="post_tag button button_translucent" title="linux发行版">
+          LINUX发行版
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/lxc/' class="post_tag button button_translucent" title="lxc">
+          LXC
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/lxd/' class="post_tag button button_translucent" title="lxd">
+          LXD
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/mime/' class="post_tag button button_translucent" title="mime">
+          MIME
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/obs-studio/' class="post_tag button button_translucent" title="obs-studio">
+          OBS-STUDIO
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+        <br>
+        <div class="post_tags_toggle button">All Tags</div>
+        <div class="post_tags">
+          <div class="tags_list">
+            
+            <a href='/chiblog/tags/adb/' class=" post_tag button button_translucent" data-position=1 title="adb">ADB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/android/' class=" post_tag button button_translucent" data-position=1 title="android">ANDROID<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/android-4.4/' class=" post_tag button button_translucent" data-position=1 title="android-4.4">ANDROID-4.4<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/android-8/' class=" post_tag button button_translucent" data-position=1 title="android-8">ANDROID-8<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/android-kitkat/' class=" post_tag button button_translucent" data-position=1 title="android-kitkat">ANDROID-KITKAT<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/android-oreo/' class=" post_tag button button_translucent" data-position=1 title="android-oreo">ANDROID-OREO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/android-tv/' class=" post_tag button button_translucent" data-position=1 title="android-tv">ANDROID-TV<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/android%E7%94%B5%E8%A7%86%E7%9B%92%E5%AD%90/' class=" post_tag button button_translucent" data-position=1 title="android电视盒子">ANDROID电视盒子<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/appimage/' class=" post_tag button button_translucent" data-position=1 title="appimage">APPIMAGE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/bash/' class=" post_tag button button_translucent" data-position=1 title="bash">BASH<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/cgroup/' class=" post_tag button button_translucent" data-position=1 title="cgroup">CGROUP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/dns/' class=" post_tag button button_translucent" data-position=1 title="dns">DNS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=1 title="firefox">FIREFOX<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/fontforge/' class=" post_tag button button_translucent" data-position=1 title="fontforge">FONTFORGE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/github/' class=" post_tag button button_translucent" data-position=1 title="github">GITHUB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/github-api/' class=" post_tag button button_translucent" data-position=1 title="github-api">GITHUB-API<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/github-page/' class=" post_tag button button_translucent" data-position=1 title="github-page">GITHUB-PAGE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/github.io/' class=" post_tag button button_translucent" data-position=1 title="github.io">GITHUB.IO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/js/' class=" post_tag button button_translucent" data-position=1 title="js">JS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/linux/' class=" post_tag button button_translucent" data-position=9 title="linux">LINUX<span class="button_tally">9</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class=" post_tag button button_translucent" data-position=1 title="linux发行版">LINUX发行版<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/lxc/' class=" post_tag button button_translucent" data-position=1 title="lxc">LXC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/lxd/' class=" post_tag button button_translucent" data-position=1 title="lxd">LXD<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/mime/' class=" post_tag button button_translucent" data-position=1 title="mime">MIME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/obs-studio/' class=" post_tag button button_translucent" data-position=1 title="obs-studio">OBS-STUDIO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/oom/' class=" post_tag button button_translucent" data-position=1 title="oom">OOM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/pc/' class=" post_tag button button_translucent" data-position=1 title="pc">PC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/qq/' class=" post_tag button button_translucent" data-position=1 title="qq">QQ<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/qr-code/' class=" post_tag button button_translucent" data-position=1 title="qr-code">QR-CODE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/resolv.conf/' class=" post_tag button button_translucent" data-position=1 title="resolv.conf">RESOLV.CONF<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/rtmp/' class=" post_tag button button_translucent" data-position=1 title="rtmp">RTMP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/rtsp/' class=" post_tag button button_translucent" data-position=1 title="rtsp">RTSP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/shell/' class=" post_tag button button_translucent" data-position=2 title="shell">SHELL<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/stderr/' class=" post_tag button button_translucent" data-position=1 title="stderr">STDERR<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/stdout/' class=" post_tag button button_translucent" data-position=1 title="stdout">STDOUT<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/truetype/' class=" post_tag button button_translucent" data-position=1 title="truetype">TRUETYPE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/ttf/' class=" post_tag button button_translucent" data-position=1 title="ttf">TTF<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/uc%E8%84%9A%E6%9C%AC/' class=" post_tag button button_translucent" data-position=1 title="uc脚本">UC脚本<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/userchrome/' class=" post_tag button button_translucent" data-position=1 title="userchrome">USERCHROME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/userchrome-script/' class=" post_tag button button_translucent" data-position=1 title="userchrome-script">USERCHROME-SCRIPT<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/vnc/' class=" post_tag button button_translucent" data-position=1 title="vnc">VNC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/wine/' class=" post_tag button button_translucent" data-position=1 title="wine">WINE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/winetricks/' class=" post_tag button button_translucent" data-position=1 title="winetricks">WINETRICKS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/x-server/' class=" post_tag button button_translucent" data-position=1 title="x-server">X-SERVER<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/xul/' class=" post_tag button button_translucent" data-position=1 title="xul">XUL<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/' class=" post_tag button button_translucent" data-position=1 title="二维码">二维码<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%86%85%E5%AD%98%E4%B8%8D%E8%B6%B3/' class=" post_tag button button_translucent" data-position=1 title="内存不足">内存不足<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%8F%8D%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/' class=" post_tag button button_translucent" data-position=2 title="反流氓软件">反流氓软件<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%90%8E%E7%BC%80/' class=" post_tag button button_translucent" data-position=1 title="后缀">后缀<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/' class=" post_tag button button_translucent" data-position=1 title="命令行">命令行<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%9C%A8%E8%BF%99%E9%87%8C%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/' class=" post_tag button button_translucent" data-position=1 title="在这里打开终端">在这里打开终端<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AD%97%E4%BD%93/' class=" post_tag button button_translucent" data-position=1 title="字体">字体<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%89%E8%A3%85/' class=" post_tag button button_translucent" data-position=1 title="安装">安装<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%B9%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="容器">容器<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/' class=" post_tag button button_translucent" data-position=2 title="开源软件">开源软件<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%BE%AE%E4%BF%A1/' class=" post_tag button button_translucent" data-position=1 title="微信">微信<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%89%93%E5%8C%85/' class=" post_tag button button_translucent" data-position=1 title="打包">打包<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%89%A9%E5%B1%95%E5%90%8D/' class=" post_tag button button_translucent" data-position=1 title="扩展名">扩展名<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%8A%95%E5%B1%8F/' class=" post_tag button button_translucent" data-position=1 title="投屏">投屏<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/' class=" post_tag button button_translucent" data-position=1 title="控制台">控制台<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%96%87%E4%BB%B6%E5%85%B3%E8%81%94/' class=" post_tag button button_translucent" data-position=2 title="文件关联">文件关联<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%96%87%E4%BB%B6%E5%A4%B9/' class=" post_tag button button_translucent" data-position=1 title="文件夹">文件夹<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="文件浏览器">文件浏览器<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="文件管理器">文件管理器<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA/' class=" post_tag button button_translucent" data-position=1 title="标准输出">标准输出<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%AD%BB%E6%9C%BA/' class=" post_tag button button_translucent" data-position=1 title="死机">死机<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6%E6%9B%BF%E4%BB%A3/' class=" post_tag button button_translucent" data-position=1 title="流氓软件替代">流氓软件替代<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E7%A1%AC%E4%BB%B6/' class=" post_tag button button_translucent" data-position=1 title="硬件">硬件<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/' class=" post_tag button button_translucent" data-position=1 title="程序员">程序员<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E7%BB%88%E7%AB%AF/' class=" post_tag button button_translucent" data-position=1 title="终端">终端<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/' class=" post_tag button button_translucent" data-position=2 title="绿色软件">绿色软件<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/' class=" post_tag button button_translucent" data-position=1 title="虚拟化">虚拟化<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E8%B7%A8%E5%8F%91%E8%A1%8C%E7%89%88/' class=" post_tag button button_translucent" data-position=1 title="跨发行版">跨发行版<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E8%BD%AF%E4%BB%B6/' class=" post_tag button button_translucent" data-position=1 title="软件">软件<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E8%BD%AF%E4%BB%B6%E5%8C%85/' class=" post_tag button button_translucent" data-position=1 title="软件包">软件包<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/' class=" post_tag button button_translucent" data-position=1 title="软件推荐">软件推荐<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E8%BF%9B%E7%A8%8Bdns/' class=" post_tag button button_translucent" data-position=1 title="进程dns">进程DNS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E8%BF%9C%E7%A8%8B%E9%9F%B3%E5%93%8D/' class=" post_tag button button_translucent" data-position=1 title="远程音响">远程音响<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E9%80%89%E8%B4%AD/' class=" post_tag button button_translucent" data-position=1 title="选购">选购<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA/' class=" post_tag button button_translucent" data-position=1 title="错误输出">错误输出<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E9%99%90%E5%88%B6%E5%86%85%E5%AD%98/' class=" post_tag button button_translucent" data-position=1 title="限制内存">限制内存<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E9%9D%9E%E5%85%A8%E5%B1%80dns/' class=" post_tag button button_translucent" data-position=1 title="非全局dns">非全局DNS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E9%A2%9C%E8%89%B2/' class=" post_tag button button_translucent" data-position=1 title="颜色">颜色<span class="button_tally">1</span>
+            </a>
+            
+            <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
+            </div>
+            <span class="tags_hide"><svg class="icon">
+            <use xlink:href="#closeme"></use>
+          </svg></span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+</aside>
+
+  
+</div>
+    </main><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 212" id="gitlab">
+    <path d="M12.3 74.7h54L43.3 3c-1-3.6-6.4-3.6-7.6 0L12.3 74.8z" />
+    <path d="M12.3 74.7L.5 111c-1 3.2 0 6.8 3 8.8l101.6 74-92.5-119z"/>
+    <path d="M105 193.7l-38.6-119h-54l92.7 119z"/>
+    <path d="M105 193.7l38.7-119H66.4l38.7 119z"/>
+    <path d="M105 193.7l38.7-119H198l-93 119z"/>
+    <path d="M198 74.7l11.6 36.2c1 3 0 6.6-3 8.6l-101.5 74 93-119z"/>
+    <path d="M198 74.7h-54.3L167 3c1.2-3.6 6.4-3.6 7.6 0L198 74.8z"/> 
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id=youtube>
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+</svg>
+
+
+<footer class="footer">
+  <div class="footer_inner wrap pale">
+    <img src='/chiblog/icons/apple-touch-icon.png' class="icon icon_2 transparent" alt="Gary W 的中文博客(站2)">
+    <p>Copyright&nbsp;2017-&nbsp;<span class="year"></span>&nbsp;GARY W 的中文博客(站2). All Rights Reserved</p><a class="to_top" href="#documentTop">
+  <svg class="icon">
+  <use xlink:href="#arrow"></use>
+</svg>
+</a>
+
+  </div>
+</footer>
+
+    <script type="text/javascript" src="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" integrity="sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
+    
+  </body>
+</html>

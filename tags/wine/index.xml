@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wine on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/wine/</link>
+    <description>Recent content in wine on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Mon, 10 Aug 2020 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/wine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>wine实用经验教程</title>
+      <link>/chiblog/post/wine/</link>
+      <pubDate>Mon, 10 Aug 2020 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/wine/</guid>
+      <description>
+        
+          
+            本篇讲类unix系统下的用以模拟运行Windows程序的wine。会从普通使用者的比较实用的角度去讲。有专为国内用户准备的内容。
+本篇面向有Linux经验但对wine不熟悉的人。
+wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环境和严格环境中千万别用。
+一般越旧的Windows程序wine越容易模拟运行成功（或部分功能成功）。请先在官方wine Application Database上查你想运行的程序的别人的模拟结果（官方搜索不好用，可以用Google加 site:appdb.winehq.org），看Test Results：
+  Rating一列由运行结果好到坏为Platinum、Gold、Silver、Bronze、Garbage
+  看他们当时所用的wine版本和程序版本。有些是用很旧的wine测试的结果不好，新版本wine或许已不一样
+  结果好的，你打算做，那么点击此条结果，看提交者所描述的正常功能、不可用功能、未测试功能，及他所留的建立过程和操作方法
+  无近期结果或近期仍然Silver以下的就放弃吧。也可以自己尝试，但这对普通人来说，顺利则已，不顺利则是一大大大坑
+   基础知识和操作 WINEARCH环境变量 这个WINEARCH 决定了你模拟的Windows是32位或是64位的x86。对应的值为win32及win64，如果你的Unix系统是64位的它就默认是win64。
+发行版所提供的wine一般都有32位及64位两个包，直接对应所模拟的Windows位数，包里面的Unix二进制及运行库也都是对应位数。
+以我的经验来看，使用32位更容易成功。
+WINEPREFIX环境变量 WINEPREFIX是很重要的，默认值为~/.wine。
+wine会在它所指定的路径下创建drive_c/等几个文件（夹），其中包含了Windows环境配置、它的C盘文件等等。
+建议把你安装的不同的Windows程序分给不同的WINEPREFIX，便于打包和隔离。当你要启动这个Windows程序前也记得要设置WINEPREFIX。
+ 在你用一个空WINEPREFIX目录第一次启动wine时，它会问你是否下载mono和gecko。一般情况选否即可。
+ 启动Windows程序及路径处理 命令wine 路径/xxx.exe 参数（可以是文件路径）就可以通过wine运行exe。路径可以是Unix路径，也可以是（在有WINEPREFIX情况下的）Windows路径，wine会自动判断。
+以WINEPREFIX是默认值情况下为例：
+1wine notepad.exe c:/abc.txt 2wine notepad.exe ~/.wine/drive_c/abc.txt 上面两条命令效果一样。
+对wine来说，你Unix系统里的其他文件（即模拟的C盘之外的文件）的Windows路径都以Z盘开头：
+1wine notepad.exe z:/home/username/.wine/drive_c/abc.txt  wine也提供了winepath这个命令来转换Unix和Windows之前的路径，但一般用不上。
+ 安装Windows程序及之后 要安装一个Windows程序，一般就是在设置好WINEPREFIX和WINEARCH后，运行安装包
+1wine 安装包.exe 2wine msiexec /i 安装包.msi 安装好后，安装程序所生成的Windows开始菜单项会被自动加入你的Linux系统的启动器中。.desktop文件里已经有了WINEPREFIX和WINEARCH。安装程序所产生的文件扩展名关联、图标等等“垃圾”也会进入Linux中。
+ 如果你不喜欢垃圾，可以清理，参考官方FAQ 甚至你可以在安装前就禁止它在Unix中产生任何菜单、文件关联等物件（参考这里）： export WINEDLLOVERRIDES=winemenubuilder.exe=d wine setup.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/wine/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
