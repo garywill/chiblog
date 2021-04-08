@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github page on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/github-page/</link>
+    <description>Recent content in github page on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Thu, 19 Dec 2019 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/github-page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>展示Github repo的橱窗页面，超越只允许6个仓库的限制</title>
+      <link>/chiblog/post/github6/</link>
+      <pubDate>Thu, 19 Dec 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/github6/</guid>
+      <description>
+        
+          
+            Github是许多人展示自己的作品的平台，而profile页面只允许pin 6个repo。
+如果你有超过6个作品想要展示： 只选6个最想要展示的，忍痛舍弃其他的？ 另外做一个网站来一个个介绍你的repo？
+不如自己弄一个Github风格的橱窗展示页面，直接调用Github API去fetch并展示各个repo的信息，这样想展示多少个都可以，而且也免去了为每个作品额外写介绍的麻烦。
+演示 先看看我自己的： https://garywill.github.io
+页面模板 非常符合Github风格的网页模板有一个Cayman theme，朴实简洁实用。就以它为基础修改。
+使用 经过js的Github API的调用、css编辑等工作，将展示一个repo封装成了这样一行简单的html：
+1&amp;lt;div class=&amp;#34;repo-box&amp;#34; owner=&amp;#34;garywill&amp;#34; reponame=&amp;#34;bigSearch&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; owner是Github用户名，reponame是repo名称。
+完整代码 完整的代码在这个仓库中： GitHub - garywill/garywill.github.io: Github page showing Github repos using API
+感谢Cayman theme模板
+ Update：
+现在Github的profile已经支持直接展示一个静态页面在6个pinned repos之上，支持文字、链接、图片，创建一个与自己Github用户名相同名称的repo，在其README.me中写内容即可。
+因为它是全静态，不支持js的，因此，放个链接引导向xxx.github.io就好了：）
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+  
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/github6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

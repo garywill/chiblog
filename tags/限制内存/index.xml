@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>限制内存 on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/%E9%99%90%E5%88%B6%E5%86%85%E5%AD%98/</link>
+    <description>Recent content in 限制内存 on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Fri, 22 Feb 2019 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/%E9%99%90%E5%88%B6%E5%86%85%E5%AD%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用cgroup限制内存以防止Linux因内存用尽卡死</title>
+      <link>/chiblog/post/cgroup/</link>
+      <pubDate>Fri, 22 Feb 2019 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/cgroup/</guid>
+      <description>
+        
+          
+            Linux在内存用尽的情况下，整个界面，包括tty和ctrl-alt-F1都会卡住难以响应。虽然Linux内核有OOM Killer机制杀掉吃内存的进程，但经常内存用尽时连OOM Killer都无法动作。
+本篇讲述如何用cgroup限制内存防止整个Linux因内存用尽卡死。
+因内存用尽卡住时怎么办  如果鼠标还能动一点，可以尝试在top中杀掉吃内存的进程。但这时想进入top并kill -9都很难。ctrl-alt-F1都会卡。 如果鼠标完全不能动，可以等待15分钟左右，OOM Killer可能会动作杀掉吃内存的进程，然后就可以恢复。如果15分钟还无反应，那是真卡死了。 魔法键强制安全重启。  用cgroup限制用户内存留空间给内核动作 cgroup是内核的一个资源限制功能。这里限制日常用户的内存，留500MB左右给root和内核。
+我的Linux是否支持cgroup 1cat /proc/self/cgroup 这里可以列出某进程所处的资源限制组。有则表示内核支持cgroup
+安装cgroup相关工具 我们要用到cgconfigparser和cgrulesengd这两个工具。安装libcgroup-tools（可能因发行版而异）这个包。
+配置cgroup规则 /etc/cgconfig.conf中写
+1group users_mem_limit { 2 memory { 3 memory.limit_in_bytes = 3500000000; 4 } 5} 这里限制共使用3.5G内存（假设共有4G内存）。用cat /proc/meminfo查看准确的总内存大小以决定数值。
+/etc/cgrules.conf中写
+1@users	memory	users_mem_limit/ 2日常用户名	memory	users_mem_limit/ 这是将规则应用给users组和日常用户。
+接下来运行
+1# cgconfigparser -l /etc/cgconfig.conf 2# cgrulesengd 等待两分钟，日常用户的所有进程就会被放入资源限制规则组中，新打开的进程也会自动加入。cat /proc/&amp;lt;PID&amp;gt;/cgroup可以看某进程是否已加入组。
+如果成功，将上面两条命令设置成为开机自动以root运行就行。具体步骤略。
+吃内存测试 如果想要测试这个方法的效果，可以用这个工具来吃内存（自己make一下）。
+1$ ./memhog 100 9999999 它会一次吃掉100MB内存，逐渐把内存用尽（这并不能完全模拟所有程序运行时的内存使用方式，这只是个简单的测试）
+其他方法 Linux有内存用尽卡死的问题，是Linux内核的OOM机制不够好。这或许是它不如Windows的一个地方。
+另外许多人推荐一个叫Early OOM的程序，用它来替代Linux自身的OOM。
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/cgroup/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

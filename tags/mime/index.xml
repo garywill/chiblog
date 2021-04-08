@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MIME on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/mime/</link>
+    <description>Recent content in MIME on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Wed, 06 Dec 2017 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/mime/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux关联文件扩展名和打开程序</title>
+      <link>/chiblog/post/linux%E5%85%B3%E8%81%94%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E5%92%8C%E6%89%93%E5%BC%80%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 06 Dec 2017 08:47:11 +0100</pubDate>
+      
+      <guid>/chiblog/post/linux%E5%85%B3%E8%81%94%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E5%92%8C%E6%89%93%E5%BC%80%E7%A8%8B%E5%BA%8F/</guid>
+      <description>
+        
+          
+            手动为Linux关联文件扩展名与打开程序。
+当Linux不认识某种扩展名的时候，需要为此扩展名创建一个MIME类型。Linux是依据MIME类型而不是扩展名来决定打开程序的。
+再将此种MIME类型与某程序菜单项关联。
+手动关联步骤   为扩展名建造一个MIME类型
+ 如果你的Linux已经认得这种扩展名，不需要做这一步。在你的文件管理器中，看看这种扩展名的文件有没有被正确识别。或使用file命令查看。
+ 创建 application-x-扩展名.xml 内容：
+1&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; 2&amp;lt;mime-info xmlns=&amp;#34;http://www.freedesktop.org/standards/shared-mime-info&amp;#34;&amp;gt; 3 &amp;lt;mime-type type=&amp;#34;application/x-扩展名&amp;#34;&amp;gt; 4 &amp;lt;comment&amp;gt;此种文件类型的描述&amp;lt;/comment&amp;gt; 5 &amp;lt;icon name=&amp;#34;application-x-扩展名&amp;#34;/&amp;gt; 6 &amp;lt;glob-deleteall/&amp;gt; 7 &amp;lt;glob pattern=&amp;#34;*.扩展名&amp;#34;/&amp;gt; 8 &amp;lt;/mime-type&amp;gt; 9&amp;lt;/mime-info&amp;gt; 放 application-x-扩展名.xml 到 ~/.local/share/mime/packages/。
+刷新系统MIME数据库
+1$ update-mime-database ~/.local/share/mime   为程序建造一个菜单项
+ 如果此程序已经有菜单项，略过这一步。
+ 创建程序.desktop ， 内容：
+1[Desktop Entry] 2Version=1.0 3Type=Application 4Name=显示的程序名 5Icon=&amp;#34;/path-to/图标文件&amp;#34; 6Exec=&amp;#34;/path-to/执行程序&amp;#34; %f 7Path=&amp;#34;/path-to/&amp;#34; （可选） 8NoDisplay=false （true则不会在系统菜单中出现） 9Categories=Utility; 10StartupNotify=false 11Terminal=false 其关键在于Exec=行中的%f将文件路径传递给执行程序。
+Exec=也可以没有绝对路径直接使用命令，Icon=也可以不用路径而直接写系统认可的图标名称。
+放 程序.desktop 文件到 ~/.
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/linux%E5%85%B3%E8%81%94%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E5%92%8C%E6%89%93%E5%BC%80%E7%A8%8B%E5%BA%8F/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
