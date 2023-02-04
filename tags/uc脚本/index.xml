@@ -5,6 +5,7 @@
     <link>/chiblog/tags/uc%E8%84%9A%E6%9C%AC/</link>
     <description>Recent content in uc脚本 on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Sun, 19 Jan 2020 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/uc%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -17,27 +18,34 @@
         
           
             直到现在（2022年中更新时）Firefox的 userChrome script（简称uc脚本） 仍然可以使用。我们无法知道在遥远的或不久的将来Mozilla会不会让uc脚本完全失效，这两年已有人在说，但自57以后，是uc脚本让一些人（例如我）不需要（或暂时不需要）放弃Firefox转用其他浏览器。目前看来，uc脚本仍然可以让我们这些普通用户安心使用下去。
- 本人的技术重点不在于浏览器，只是个浏览器用户。本文非专业性很强的文章
- 背景 2017年Firefox的“量子”版本（57）发布，中止了所有旧扩展（Addon/Extension，又称附加组件，与“插件 Plugins 不同）的支持。XUL、XPCOM、XBL等旧的被称为Legacy的技术被宣称要废弃。57开始只支持webExtension的扩展。
+本人的技术重点不在于浏览器，只是个浏览器用户。本文非专业性很强的文章
+背景 2017年Firefox的“量子”版本（57）发布，中止了所有旧扩展（Addon/Extension，又称附加组件，与“插件 Plugins 不同）的支持。XUL、XPCOM、XBL等旧的被称为Legacy的技术被宣称要废弃。57开始只支持webExtension的扩展。
 这一改变我相信使得很多人离开Firefox，因为可自订性、可玩性降低很多（例如主界面不能再随意更改、扩展不能再任意操作浏览器about:config内的项目），一大堆的旧扩展作废。
 但旧技术也没有完全被剥离，仍然有人通过 userChrome script（简称uc脚本） 的方式实现一些webExtension无法实现（或暂时无法实现）的功能。甚至有人通过uc脚本复活了好多个Legacy扩展的100%功能。可以说只要uc脚本仍可用，以前的Firefox玩法都可以继续。
 在本来就小众的Firefox用户群中，uc脚本更加小众，本篇将介绍一些资源和笔者自己写的uc脚本，还有简略的脚本编写教程（默认你会js）（我这个教程写得不算好，但目前没发现有大神在写）。
- userChrome JS脚本与userChrome.css有关但不同，脚本是JavaScript的，不是CSS
- 如何启用uc脚本 Firefox每更新一个版本，启用uc脚本的方法就很可能会变化。以下这些常跟进Firefox的变化提供启用方法的：
-  xiaoxiaoflood/firefox-scripts:
-  Aris-t2/CustomJSforFx
-  方法一般就是将一些用于启用的js、xml、css文件放入Firefox程序目录及profile中，然后就可以把你的具体.uc.js文件放入对应位置使用。
+userChrome JS脚本与userChrome.css有关但不同，脚本是JavaScript的，不是CSS
+如何启用uc脚本 Firefox每更新一个版本，启用uc脚本的方法就很可能会变化。以下这些常跟进Firefox的变化提供启用方法的：
+Aris-t2/CustomJSforFx
+xiaoxiaoflood/firefox-scripts:
+方法一般就是将一些用于启用的js、xml、css文件放入Firefox程序目录及profile中，然后就可以把你的具体.uc.js文件放入对应位置使用。
 以上所列这些启用方式，每一套也称为一种uc脚本管理器。
- 除了启用uc脚本的方法会变化，uc脚本代码也需要根据Firefox版本的更新而修改。如果常更新是较麻烦的，因此我自己使用半年更新一次的Firefox ESR。
- 编写uc脚本的简略教程 启用浏览器工具箱 编写uc脚本需要使用浏览器工具箱（Browser Tools）来调试。可以让你用鼠标选择和可查看浏览器主界面上的任意一部位的部件（导航栏、地址栏、标签栏等），也可以让你输入执行整个浏览器级别的js代码。
+除了启用uc脚本的方法会变化，uc脚本代码也需要根据Firefox版本的更新而修改。如果常更新是较麻烦的，因此我自己使用半年更新一次的Firefox ESR。
+编写uc脚本的简略教程 启用浏览器工具箱 编写uc脚本需要使用浏览器工具箱（Browser Tools）来调试。可以让你用鼠标选择和可查看浏览器主界面上的任意一部位的部件（导航栏、地址栏、标签栏等），也可以让你输入执行整个浏览器级别的js代码。
 浏览器工具箱（Browser Tools）开启的快捷键是Ctrl+Shift+Alt+I。
- 注意与网页开发所用的工具箱Ctrl+Shift+I不同，我们需要的这个是可以调试整个浏览器的，而那个只调试一个tab内的网页
- 而Firefox默认是禁用了Browser Tools的。启用的方法为：
-  先打开一个tab页面的开发者工具（Ctrl+Shift+I）
-  右上角三个点-&amp;gt;设置
-  勾选高级设置下面的以下两个
-  Enable browser chrome and add-on debugging toolboxes
-  Enable remote debugging
+注意与网页开发所用的工具箱Ctrl+Shift+I不同，我们需要的这个是可以调试整个浏览器的，而那个只调试一个tab内的网页
+而Firefox默认是禁用了Browser Tools的。启用的方法为：
+先打开一个tab页面的开发者工具（Ctrl+Shift+I）
+右上角三个点-&amp;gt;设置
+勾选高级设置下面的以下两个
+Enable browser chrome and add-on debugging toolboxes
+Enable remote debugging
+现在可以关闭网页开发工具，打开浏览器工具箱了。打开时会弹窗确认允许远程调试连接。
+编写代码 学了WebExtension的而未学Firefox Legacy技术的可以看看这篇比较文章
+这里不详细讲，也不会去教js，默认读者有一些js基础了。只简略说些常见的做法，具体还请参考下面的参考资源，本篇中的许多具体脚本的链接也可以作为例子学习。
+uc脚本的代码有可能因Firefox版本更新而需要改变
+主界面上的部件、按钮等都是有DOM节点的，一般都有id和class，可以像平常使用js一样对它们做一些操作。请在浏览器工具箱中慢慢研究。
+.uc.js特别的头部 打开一个.uc.js一般常看到
+1// ==UserScript== 2// @name &amp;lt;script name&amp;gt; 3// @author &amp;lt;someone&amp;gt; 4// @include main 5// @onlyonce 6// ==/UserScript== 这些//开头的，虽然对于JS来说是没有用的注释，但对于uc脚本来说，在一个.
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/firefox_uc%E8%84%9A%E6%9C%AC/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

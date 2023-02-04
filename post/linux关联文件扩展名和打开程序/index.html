@@ -4,7 +4,7 @@
   <head>
 <title>Linux关联文件扩展名和打开程序 | Gary W 的中文博客(站2)</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.121.1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -13,8 +13,8 @@
 <meta name="description" content="手动为Linux关联文件扩展名与打开程序。
 当Linux不认识某种扩展名的时候，需要为此扩展名创建一个MIME类型。Linux是依据MIME类型而不是扩展名来决定打开程序的。
 再将此种MIME类型与某程序菜单项关联。
-手动关联步骤   为扩展名建造一个MIME类型
- 如果你的Linux已经认得这种扩展名，不需要做这一 …">
+手动关联步骤 为扩展名建造一个MIME类型
+如果你的Linux已经认得这种扩展名，不需要做这一步。在你 …">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="Linux关联文件扩展名和打开程序" />
@@ -23,8 +23,8 @@
 <meta property="og:description" content="手动为Linux关联文件扩展名与打开程序。
 当Linux不认识某种扩展名的时候，需要为此扩展名创建一个MIME类型。Linux是依据MIME类型而不是扩展名来决定打开程序的。
 再将此种MIME类型与某程序菜单项关联。
-手动关联步骤   为扩展名建造一个MIME类型
- 如果你的Linux已经认得这种扩展名，不需要做这一 …" />
+手动关联步骤 为扩展名建造一个MIME类型
+如果你的Linux已经认得这种扩展名，不需要做这一步。在你 …" />
 <meta property="og:image" content="/chiblog/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='/chiblog/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='/chiblog/icons/favicon-32x32.png'>
@@ -40,8 +40,8 @@
     
     
     <link rel="preload" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity = "sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" as="script" integrity=
-    "sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous">
+    <link rel="preload" href="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" as="script" integrity=
+    "sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity="sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" crossorigin="anonymous"><link rel="stylesheet" href="/chiblog/custom.css">
@@ -177,46 +177,46 @@
 <p>如果你的Linux已经认得这种扩展名，不需要做这一步。在你的文件管理器中，看看这种扩展名的文件有没有被正确识别。或使用<code>file</code>命令查看。</p>
 </blockquote>
 <p>创建 <code>application-x-扩展名.xml</code> 内容：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
-<span class="ln">2</span>&lt;mime-info xmlns=&#34;http://www.freedesktop.org/standards/shared-mime-info&#34;&gt;
-<span class="ln">3</span>   &lt;mime-type type=&#34;application/x-扩展名&#34;&gt;
-<span class="ln">4</span>       &lt;comment&gt;此种文件类型的描述&lt;/comment&gt;
-<span class="ln">5</span>       &lt;icon name=&#34;application-x-扩展名&#34;/&gt;
-<span class="ln">6</span>       &lt;glob-deleteall/&gt;
-<span class="ln">7</span>       &lt;glob pattern=&#34;*.扩展名&#34;/&gt;
-<span class="ln">8</span>   &lt;/mime-type&gt;
-<span class="ln">9</span>&lt;/mime-info&gt; 
-</code></pre></div><p>放 <code>application-x-扩展名.xml</code> 到 <code>~/.local/share/mime/packages/</code>。<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">&lt;mime-info xmlns=&#34;http://www.freedesktop.org/standards/shared-mime-info&#34;&gt;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">   &lt;mime-type type=&#34;application/x-扩展名&#34;&gt;
+</span></span><span class="line"><span class="ln">4</span><span class="cl">       &lt;comment&gt;此种文件类型的描述&lt;/comment&gt;
+</span></span><span class="line"><span class="ln">5</span><span class="cl">       &lt;icon name=&#34;application-x-扩展名&#34;/&gt;
+</span></span><span class="line"><span class="ln">6</span><span class="cl">       &lt;glob-deleteall/&gt;
+</span></span><span class="line"><span class="ln">7</span><span class="cl">       &lt;glob pattern=&#34;*.扩展名&#34;/&gt;
+</span></span><span class="line"><span class="ln">8</span><span class="cl">   &lt;/mime-type&gt;
+</span></span><span class="line"><span class="ln">9</span><span class="cl">&lt;/mime-info&gt; 
+</span></span></code></pre></div><p>放 <code>application-x-扩展名.xml</code> 到 <code>~/.local/share/mime/packages/</code>。<br>
 刷新系统MIME数据库</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ update-mime-database ~/.local/share/mime
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ update-mime-database ~/.local/share/mime
+</span></span></code></pre></div></li>
 <li>
 <p>为程序建造一个菜单项</p>
 <blockquote>
 <p>如果此程序已经有菜单项，略过这一步。</p>
 </blockquote>
 <p>创建<code>程序.desktop</code> ， 内容：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>[Desktop Entry]
-<span class="ln"> 2</span>Version=1.0
-<span class="ln"> 3</span>Type=Application
-<span class="ln"> 4</span>Name=显示的程序名
-<span class="ln"> 5</span>Icon=&#34;/path-to/图标文件&#34;
-<span class="ln"> 6</span>Exec=&#34;/path-to/执行程序&#34; %f
-<span class="ln"> 7</span>Path=&#34;/path-to/&#34; （可选）
-<span class="ln"> 8</span>NoDisplay=false （true则不会在系统菜单中出现）
-<span class="ln"> 9</span>Categories=Utility;
-<span class="ln">10</span>StartupNotify=false
-<span class="ln">11</span>Terminal=false
-</code></pre></div><p>其关键在于<code>Exec=</code>行中的<code>%f</code>将文件路径传递给执行程序。<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">[Desktop Entry]
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Version=1.0
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">Type=Application
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">Name=显示的程序名
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">Icon=&#34;/path-to/图标文件&#34;
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">Exec=&#34;/path-to/执行程序&#34; %f
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">Path=&#34;/path-to/&#34; （可选）
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">NoDisplay=false （true则不会在系统菜单中出现）
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">Categories=Utility;
+</span></span><span class="line"><span class="ln">10</span><span class="cl">StartupNotify=false
+</span></span><span class="line"><span class="ln">11</span><span class="cl">Terminal=false
+</span></span></code></pre></div><p>其关键在于<code>Exec=</code>行中的<code>%f</code>将文件路径传递给执行程序。<br>
 <code>Exec=</code>也可以没有绝对路径直接使用命令，<code>Icon=</code>也可以不用路径而直接写系统认可的图标名称。<br>
 放 <code>程序.desktop</code> 文件到 <code>~/.local/share/applications/</code></p>
 </li>
 <li>
 <p>设置用某程序打开MIME类型文件<br>
 修改 <code>~/.config/mimeapps.list</code> 或 <code>~/.local/share/applications/mimeapps.list</code>(废弃)</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>[Added Associations]
-<span class="ln">2</span>application/x-扩展名=程序.desktop;其他程序.desktop;其他程序2.desktop;
-</code></pre></div><p>其中<code>application/x-扩展名</code>是你刚刚所创建的MIME类型。如果MIME类型是原有的不是刚刚创建的，替换为原有的MIME类型名称。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">[Added Associations]
+</span></span><span class="line"><span class="ln">2</span><span class="cl">application/x-扩展名=程序.desktop;其他程序.desktop;其他程序2.desktop;
+</span></span></code></pre></div><p>其中<code>application/x-扩展名</code>是你刚刚所创建的MIME类型。如果MIME类型是原有的不是刚刚创建的，替换为原有的MIME类型名称。</p>
 </li>
 </ol>
 <h2 id="参考">参考</h2>
@@ -273,6 +273,12 @@ All articles are original (except for those specially claimed) and copyrighted. 
         <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
       </li>
       <li>
+        <a href="/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="nav-link" title="Thunderbird打开活动管理器在标签中（2023，TB115)">Thunderbird打开活动管理器在标签中（2023，TB115)</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/esp32/" class="nav-link" title="花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)">花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)</a>
+      </li>
+      <li>
         <a href="/chiblog/post/appimage%E6%89%93%E5%8C%85/" class="nav-link" title="初探AppImage打包（Qt程序为例）">初探AppImage打包（Qt程序为例）</a>
       </li>
       <li>
@@ -286,6 +292,9 @@ All articles are original (except for those specially claimed) and copyrighted. 
       </li>
       <li>
         <a href="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" class="nav-link" title="容易上手的LXD容器和虚拟X server">容易上手的LXD容器和虚拟X server</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E7%AD%89/" class="nav-link" title="Firefox/Chromium浏览器的启动命令选项参数等配置">Firefox/Chromium浏览器的启动命令选项参数等配置</a>
       </li>
       <li>
         <a href="/chiblog/post/ttffont/" class="nav-link" title="修复一些不能直接使用或不好用的ttf字体文件">修复一些不能直接使用或不好用的ttf字体文件</a>
@@ -323,6 +332,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">9</span>
         </a>
         
+        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
+          FIREFOX
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='/chiblog/tags/shell/' class="post_tag button button_translucent" title="shell">
           SHELL
           <span class="button_tally">2</span>
@@ -348,8 +362,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">2</span>
         </a>
         
+        <a href='/chiblog/tags/activity-manager/' class="post_tag button button_translucent" title="activity-manager">
+          ACTIVITY-MANAGER
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/adb/' class="post_tag button button_translucent" title="adb">
           ADB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/an-thinker/' class="post_tag button button_translucent" title="an-thinker">
+          AN-THINKER
           <span class="button_tally">1</span>
         </a>
         
@@ -398,6 +422,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
+        <a href='/chiblog/tags/c3/' class="post_tag button button_translucent" title="c3">
+          C3
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/cgroup/' class="post_tag button button_translucent" title="cgroup">
           CGROUP
           <span class="button_tally">1</span>
@@ -408,8 +437,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
-          FIREFOX
+        <a href='/chiblog/tags/esp/' class="post_tag button button_translucent" title="esp">
+          ESP
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32/' class="post_tag button button_translucent" title="esp32">
+          ESP32
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32-c3/' class="post_tag button button_translucent" title="esp32-c3">
+          ESP32-C3
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32c3/' class="post_tag button button_translucent" title="esp32c3">
+          ESP32C3
           <span class="button_tally">1</span>
         </a>
         
@@ -433,48 +477,21 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/github.io/' class="post_tag button button_translucent" title="github.io">
-          GITHUB.IO
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/js/' class="post_tag button button_translucent" title="js">
-          JS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class="post_tag button button_translucent" title="linux发行版">
-          LINUX发行版
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxc/' class="post_tag button button_translucent" title="lxc">
-          LXC
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxd/' class="post_tag button button_translucent" title="lxd">
-          LXD
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/mime/' class="post_tag button button_translucent" title="mime">
-          MIME
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/obs-studio/' class="post_tag button button_translucent" title="obs-studio">
-          OBS-STUDIO
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
+            <a href='/chiblog/tags/activity-manager/' class=" post_tag button button_translucent" data-position=1 title="activity-manager">ACTIVITY-MANAGER<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/adb/' class=" post_tag button button_translucent" data-position=1 title="adb">ADB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/an-thinker/' class=" post_tag button button_translucent" data-position=1 title="an-thinker">AN-THINKER<span class="button_tally">1</span>
             </a>
             
             
@@ -514,6 +531,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/c3/' class=" post_tag button button_translucent" data-position=1 title="c3">C3<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/cgroup/' class=" post_tag button button_translucent" data-position=1 title="cgroup">CGROUP<span class="button_tally">1</span>
             </a>
             
@@ -522,7 +543,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
-            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=1 title="firefox">FIREFOX<span class="button_tally">1</span>
+            <a href='/chiblog/tags/esp/' class=" post_tag button button_translucent" data-position=1 title="esp">ESP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32/' class=" post_tag button button_translucent" data-position=1 title="esp32">ESP32<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32-c3/' class=" post_tag button button_translucent" data-position=1 title="esp32-c3">ESP32-C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32c3/' class=" post_tag button button_translucent" data-position=1 title="esp32c3">ESP32C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=2 title="firefox">FIREFOX<span class="button_tally">2</span>
             </a>
             
             
@@ -546,6 +583,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/in-tab/' class=" post_tag button button_translucent" data-position=1 title="in-tab">IN-TAB<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/js/' class=" post_tag button button_translucent" data-position=1 title="js">JS<span class="button_tally">1</span>
             </a>
             
@@ -566,7 +607,15 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/micropython/' class=" post_tag button button_translucent" data-position=1 title="micropython">MICROPYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/mime/' class=" post_tag button button_translucent" data-position=1 title="mime">MIME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/mozilla/' class=" post_tag button button_translucent" data-position=1 title="mozilla">MOZILLA<span class="button_tally">1</span>
             </a>
             
             
@@ -579,6 +628,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/pc/' class=" post_tag button button_translucent" data-position=1 title="pc">PC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/picocom/' class=" post_tag button button_translucent" data-position=1 title="picocom">PICOCOM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python/' class=" post_tag button button_translucent" data-position=1 title="python">PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python-shell/' class=" post_tag button button_translucent" data-position=1 title="python-shell">PYTHON-SHELL<span class="button_tally">1</span>
             </a>
             
             
@@ -614,6 +675,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/thunderbird/' class=" post_tag button button_translucent" data-position=1 title="thunderbird">THUNDERBIRD<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/truetype/' class=" post_tag button button_translucent" data-position=1 title="truetype">TRUETYPE<span class="button_tally">1</span>
             </a>
             
@@ -635,6 +700,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/vnc/' class=" post_tag button button_translucent" data-position=1 title="vnc">VNC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/webrepl/' class=" post_tag button button_translucent" data-position=1 title="webrepl">WEBREPL<span class="button_tally">1</span>
             </a>
             
             
@@ -679,6 +748,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E5%AD%97%E4%BD%93/' class=" post_tag button button_translucent" data-position=1 title="字体">字体<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/' class=" post_tag button button_translucent" data-position=1 title="安信可">安信可<span class="button_tally">1</span>
             </a>
             
             
@@ -735,6 +808,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E6%AD%BB%E6%9C%BA/' class=" post_tag button button_translucent" data-position=1 title="死机">死机<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="活动管理器">活动管理器<span class="button_tally">1</span>
             </a>
             
             
@@ -894,7 +971,7 @@ All articles are original (except for those specially claimed) and copyrighted. 
   </div>
 </footer>
 
-    <script type="text/javascript" src="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" integrity="sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
+    <script type="text/javascript" src="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" integrity="sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
     
   </body>
 </html>

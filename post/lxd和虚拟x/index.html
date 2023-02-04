@@ -4,21 +4,21 @@
   <head>
 <title>容易上手的LXD容器和虚拟X server | Gary W 的中文博客(站2)</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.121.1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
 <meta name="description" content="Linux有容器技术LXC，LXD对LXC进行了封装。与Docker类似，但LXC容器比Docker容器完整，且不像Docker是一次性容器设计运行结束后即销毁实例。使用LXD操作容器，体验介于Docker与虚拟机之间。（其实LXD不只提供封装LXC容器的功能，还提供封装虚拟机）
-开始使用LXD——初始设置   从自己 …">
+开始使用LXD——初始设置 从自己的发 …">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="容易上手的LXD容器和虚拟X server" />
 <meta property="og:url" content="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" />
 <meta property="og:title" content="容易上手的LXD容器和虚拟X server" />
 <meta property="og:description" content="Linux有容器技术LXC，LXD对LXC进行了封装。与Docker类似，但LXC容器比Docker容器完整，且不像Docker是一次性容器设计运行结束后即销毁实例。使用LXD操作容器，体验介于Docker与虚拟机之间。（其实LXD不只提供封装LXC容器的功能，还提供封装虚拟机）
-开始使用LXD——初始设置   从自己 …" />
+开始使用LXD——初始设置 从自己的发 …" />
 <meta property="og:image" content="/chiblog/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='/chiblog/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='/chiblog/icons/favicon-32x32.png'>
@@ -34,8 +34,8 @@
     
     
     <link rel="preload" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity = "sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" as="script" integrity=
-    "sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous">
+    <link rel="preload" href="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" as="script" integrity=
+    "sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity="sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" crossorigin="anonymous"><link rel="stylesheet" href="/chiblog/custom.css">
@@ -163,7 +163,7 @@
     <li><a href="#虚拟x-server">虚拟X server</a>
       <ul>
         <li><a href="#启动虚拟x-server">启动虚拟X server</a></li>
-        <li><a href="#对虚拟x-server操作和截图">对虚拟X server操作和截图</a></li>
+        <li><a href="#通过shell对虚拟x-server操作和截图">通过shell对虚拟X server操作和截图</a></li>
       </ul>
     </li>
   </ul>
@@ -173,104 +173,107 @@
 <ol>
 <li>
 <p>从自己的发行版仓库安装LXD。LXD与Docker一样有一个守护进程<code>lxd</code>，因此有</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo systemctl enable/disable/start/stop lxd
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">sudo systemctl enable/disable/start/stop lxd
+</span></span></code></pre></div><blockquote>
 <p>如果用<code>systemctl</code>停止lxd时，仍有正在运行的容器，那些容器不会被停止。所以应该先停止所有容器，再<code>systemctl stop</code></p>
 </blockquote>
 <p><code>lxd</code>是守护进程，而平时操作LXD则是用<code>lxc</code>命令（此lxc非属于LXC容器，是LXD的客户端的意思）</p>
 </li>
 <li>
 <p>安装LXD后自动创建<code>lxd</code>用户组，我们手动把自己的日常用户添加进这个组里：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>usermod -aG lxd &lt;username&gt;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">usermod -aG lxd &lt;username&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>添加清华LXC镜像（下文都用这个<code>tuna-images</code>源）：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>lxc remote add tuna-images https://mirrors.tuna.tsinghua.edu.cn/lxc-images/ --protocol=simplestreams --public
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">lxc remote add tuna-images https://mirrors.tuna.tsinghua.edu.cn/lxc-images/ --protocol=simplestreams --public
+</span></span></code></pre></div><blockquote>
 <p>若想在连接镜像时使用代理：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc config <span class="nb">set</span> core.proxy_http http://ip:port
-<span class="ln">2</span>lxc config <span class="nb">set</span> core.proxy_https http://ip:port
-<span class="ln">3</span>lxc config <span class="nb">set</span> core.proxy_ignore_hosts image-server.local 
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc config <span class="nb">set</span> core.proxy_http http://ip:port
+</span></span><span class="line"><span class="ln">2</span><span class="cl">lxc config <span class="nb">set</span> core.proxy_https http://ip:port
+</span></span><span class="line"><span class="ln">3</span><span class="cl">lxc config <span class="nb">set</span> core.proxy_ignore_hosts image-server.local 
+</span></span></code></pre></div></blockquote>
 </li>
 <li>
 <p><code>/etc/subuid</code>和<code>/etc/subgid</code>都写</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>root:1000000:65536
-<span class="ln">2</span>1000:1000000:65536
-<span class="ln">3</span>lxd:1000000:65536
-</code></pre></div><p>让容器进程运行时，宿主看到的容器进程所属UID以一百万算起 （外一百万=内0）。且容器的<code>rootfs/</code>下的文件在宿主机看来UID、GID也都是一样map过的。这种叫非特权容器，比特权容器安全。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">1000:1000000:65536
+</span></span><span class="line"><span class="ln">2</span><span class="cl">root:1000000:65536
+</span></span><span class="line"><span class="ln">3</span><span class="cl">lxd:1000000:65536
+</span></span></code></pre></div><p>让容器进程运行时，宿主看到的容器进程所属UID以一百万算起 （外一百万=内0）。且容器的<code>rootfs/</code>下的文件在宿主机看来UID、GID也都是一样map过的。这种叫非特权容器，比特权容器安全。</p>
 </li>
 <li>
 <p>初始化LXD。运行</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo lxd init
-</code></pre></div><p>交互问答式的。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">sudo lxd init
+</span></span></code></pre></div><p>交互问答式的。</p>
 <ul>
 <li>其中有一个项让我们选择储存方式，我们自用选最简单的<code>dir</code>方式就可以，简单实用（这样容器内文件可以直接访问<code>/var/lib/lxd/storage-pools/default/containers/容器名/rootfs/</code>查看修改）。</li>
 </ul>
 </li>
 <li>
 <p>（可选）缓存与自动刷新相关设置</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc config <span class="nb">set</span> images.remote_cache_expiry <span class="m">30</span>
-<span class="ln">2</span>lxc config <span class="nb">set</span> images.auto_update_interval <span class="m">24</span>
-<span class="ln">3</span>lxc config <span class="nb">set</span> images.auto_update_cached <span class="nb">false</span> 
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc config <span class="nb">set</span> images.remote_cache_expiry <span class="m">30</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">lxc config <span class="nb">set</span> images.auto_update_interval <span class="m">24</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">lxc config <span class="nb">set</span> images.auto_update_cached <span class="nb">false</span> 
+</span></span></code></pre></div></li>
 <li>
 <p>重启</p>
+</li>
+<li>
+<p>若宿主机有防火墙，可能需要手动把<code>lxdbr0</code>加入白名单，以使容器能够联网和与宿主机网络通信</p>
 </li>
 </ol>
 <h2 id="使用lxd的常用操作">使用LXD的常用操作</h2>
 <ul>
 <li>
 <p>查看网络源目前可下载的镜像</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc image list tuna-images：
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc image list tuna-images：
+</span></span></code></pre></div></li>
 <li>
 <p>查看本地已缓存镜像</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc image list local：
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc image list local：
+</span></span></code></pre></div></li>
 <li>
 <p>下载镜像到本地缓存</p>
 </li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>    lxc image copy ubuntu:14.04 local:
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">    lxc image copy ubuntu:14.04 local:
+</span></span></code></pre></div><ul>
 <li>
 <p>使用镜像创建并运行容器</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc launch tuna-images:发布版/版本/架构 容器名
-</code></pre></div><p>（<code>发布版/版本/架构</code>也可以用它的一串十六进制数字id替代表示）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc launch tuna-images:发布版/版本/架构 容器名
+</span></span></code></pre></div><p>（<code>发布版/版本/架构</code>也可以用它的一串十六进制数字id替代表示）</p>
 </li>
 <li>
 <p>运行或停止容器</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc start 容器名
-<span class="ln">2</span>  
-<span class="ln">3</span>lxc stop <span class="o">[</span>-f<span class="o">]</span> 容器名
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc start 容器名
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">lxc stop <span class="o">[</span>-f<span class="o">]</span> 容器名
+</span></span></code></pre></div></li>
 <li>
 <p>获得容器的bash shell</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc <span class="nb">exec</span> 容器名 bash
-</code></pre></div><p>上面这个是non-login shell。它支持stdin传入，如：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>cat 宿主机上的某shell脚本 <span class="p">|</span> lxc <span class="nb">exec</span> 容器名 bash -
-</code></pre></div><p>（可选）在容器内，用<code>passwd</code>设置root密码。内账户有密码后，可登录容器获得login shell：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc console 容器名
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc <span class="nb">exec</span> 容器名 bash
+</span></span></code></pre></div><p>上面这个是non-login shell。它支持stdin传入，如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">cat 宿主机上的某shell脚本 <span class="p">|</span> lxc <span class="nb">exec</span> 容器名 bash -
+</span></span></code></pre></div><p>（可选）在容器内，用<code>passwd</code>设置root密码。内账户有密码后，可登录容器获得login shell：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc console 容器名
+</span></span></code></pre></div></li>
 <li>
 <p>挂载主机路径到容器</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc config<span class="p">|</span>profile device add &lt;容器名<span class="p">|</span>profile名&gt; share-from-host（设备名） disk <span class="nv">source</span><span class="o">=</span>/tmp/share-to-lxd/ <span class="nv">path</span><span class="o">=</span>/media/share-from-host <span class="o">[</span><span class="nv">shift</span><span class="o">=</span>true<span class="o">]</span>
-</code></pre></div><p><code>shift=true</code>启用指非特权容器需要的UID、GID map。这个要求内核支持shiftfs。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc config<span class="p">|</span>profile device add &lt;容器名<span class="p">|</span>profile名&gt; share-from-host（设备名） disk <span class="nv">source</span><span class="o">=</span>/tmp/share-to-lxd/ <span class="nv">path</span><span class="o">=</span>/media/share-from-host <span class="o">[</span><span class="nv">shift</span><span class="o">=</span>true<span class="o">]</span>
+</span></span></code></pre></div><p><code>shift=true</code>启用指非特权容器需要的UID、GID map。这个要求内核支持shiftfs。</p>
 <p>若无，非特权容器中看到的宿主机共享进去的文件都是<code>nobody:nobody</code>的，而主机中看到的容器内创建的文件都是<code>1000000:1000000</code>。</p>
 </li>
 <li>
 <p>查看挂载</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>lxc config device show &lt;容器名&gt;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lxc config device show &lt;容器名&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>手动带UID、GID map的挂载</p>
 <p>前面说到，以非特权方式运行容器，UID、GID是map过的。如果内核不支持shiftfs，可以考虑一些workaround方案，用其他方式来做map（选其中一个）：</p>
 <ul>
 <li>
 <p>bindfs：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>bindfs -u <span class="m">1000000</span> -g <span class="m">1000000</span> --create-for-user<span class="o">=</span><span class="m">1000</span> --create-for-group<span class="o">=</span><span class="m">1000</span>  /something-on-host /tmp/share-to-lxd/subdir
-</code></pre></div><p>（注意：这样mount中套mount，有时有看不见的可能，有时要先启动容器，进入了share文件夹，再从主机中bindfs）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">bindfs -u <span class="m">1000000</span> -g <span class="m">1000000</span> --create-for-user<span class="o">=</span><span class="m">1000</span> --create-for-group<span class="o">=</span><span class="m">1000</span>  /something-on-host /tmp/share-to-lxd/subdir
+</span></span></code></pre></div><p>（注意：这样mount中套mount，有时有看不见的可能，有时要先启动容器，进入了share文件夹，再从主机中bindfs）</p>
 </li>
 <li>
 <p>fuse-overlayfs</p>
@@ -279,7 +282,7 @@
 </li>
 </ul>
 <h2 id="虚拟x-server">虚拟X server</h2>
-<p>容器镜像一般都不会带有GUI相关内容的，若想在容器内运行GUI程序，除了安装相应的包外，还需要一个X server。可以把宿主机的X server（或宿主机在<code>:0</code>之外，另外运行一个<code>:1</code>）共享给容器用，但这需要处理好X授权，且安全性低些。可以在容器内运行虚拟的X server，可以通过截图、VNC、录屏方式查看和操作这个虚拟X server，这些方法在CI自动化测试时也有用。</p>
+<p>容器镜像一般都不会带有GUI相关内容的，若想在容器内运行GUI程序，除了安装相应的包外，还需要一个X server。可以把宿主机的X server共享给容器用，但这需要处理好X授权，且安全性低些。可以在容器内运行虚拟的X server，可以通过截图、VNC、录屏方式查看和操作这个虚拟X server，这些方法在CI自动化测试时也有用。</p>
 <p>虚拟的X server有：</p>
 <ul>
 <li>Xvfb</li>
@@ -291,27 +294,70 @@
 <ul>
 <li>
 <p>Xvfb</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>apt-get install xvfb
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>Xvfb -ac :3 <span class="o">[</span>-listen tcp<span class="o">]</span>  <span class="o">[</span>-screen <span class="m">0</span> 1280x1024x24 <span class="o">]</span>
-</code></pre></div><p>（它可能不会有任何输出）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">apt-get install xvfb
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">Xvfb -ac :3 <span class="o">[</span>-listen tcp<span class="o">]</span>  <span class="o">[</span>-screen <span class="m">0</span> 1280x1024x24 <span class="o">]</span>
+</span></span></code></pre></div><p>（它可能不会有任何输出）</p>
 </li>
 <li>
 <p>Xdummy</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>apt-get install x11vnc xserver-xorg-video-dummy gcc
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>Xdummy -install 
-</code></pre></div><p>这一步实际上是用<code>cc</code>编译一个<code>.so</code>出来，准备结合<code>LD_PRELOAD</code>运行X server。</p>
+<ul>
+<li>第一种情况：需要编译</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">apt-get install x11vnc xserver-xorg-video-dummy gcc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">Xdummy -install 
+</span></span></code></pre></div><p><code>Xdummy</code>是一个脚本，这一步实际上是用<code>cc</code>编译一个<code>.so</code>出来，准备结合<code>LD_PRELOAD</code>运行X server。<code>Xdummy</code>也可以调用<code>X</code>。</p>
 <p>启动：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>Xdummy :3  <span class="o">[</span>-listen tcp<span class="o">]</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">Xdummy :3  <span class="o">[</span>-listen tcp<span class="o">]</span>
+</span></span></code></pre></div><blockquote>
 <p>若报错 dlsym No such file ，则在上一步编译时，加一个环境变量 <code>CFLAGS=&quot;-ldl&quot;</code></p>
 </blockquote>
+<ul>
+<li>
+<p>第二种情况：不需要编译</p>
+<p>这种情况下可以没有<code>Xdummy</code>这个脚本文件。</p>
+<p>创建<code>/tmp/dummy.conf</code>写入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">Section &#34;Monitor&#34;
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  Identifier &#34;Monitor0&#34;
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  HorizSync 28.0-80.0
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  VertRefresh 48.0-75.0
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  # https://arachnoid.com/modelines/
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">  # 1920x1080 @ 60.00 Hz (GTF) hsync: 67.08 kHz; pclk: 172.80 MHz
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  # Modeline &#34;1920x1080_60.00&#34; 172.80 1920 2040 2248 2576 1080 1081 1084 1118 -HSync +Vsync
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  Modeline &#34;1280x720_60.00&#34;   74.50  1280 1344 1472 1664  720 723 728 748 -hsync +vsync
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">EndSection
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">Section &#34;Device&#34;
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  Identifier &#34;Card0&#34;
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  Driver &#34;dummy&#34;
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  VideoRam 256000
+</span></span><span class="line"><span class="ln">15</span><span class="cl">EndSection
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl">Section &#34;Screen&#34;
+</span></span><span class="line"><span class="ln">18</span><span class="cl">  DefaultDepth 24
+</span></span><span class="line"><span class="ln">19</span><span class="cl">  Identifier &#34;Screen0&#34;
+</span></span><span class="line"><span class="ln">20</span><span class="cl">  Device &#34;Card0&#34;
+</span></span><span class="line"><span class="ln">21</span><span class="cl">  Monitor &#34;Monitor0&#34;
+</span></span><span class="line"><span class="ln">22</span><span class="cl">  SubSection &#34;Display&#34;
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    Depth 24
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    Modes &#34;1280x720_60.00&#34;
+</span></span><span class="line"><span class="ln">25</span><span class="cl">  EndSubSection
+</span></span><span class="line"><span class="ln">26</span><span class="cl">EndSection
+</span></span></code></pre></div><p>然后运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">X -config /tmp/dummy.conf :3 -listen tcp
+</span></span></code></pre></div></li>
+</ul>
 </li>
 </ul>
 <p>启动了虚拟的X server在<code>:3</code>后，就可以</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>env <span class="nv">DISPLAY</span><span class="o">=</span>:3 某GUI程序
-</code></pre></div><h3 id="对虚拟x-server操作和截图">对虚拟X server操作和截图</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>apt-get install xdotool xwd scrot x11vnc
-</code></pre></div><p>其中：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">env <span class="nv">DISPLAY</span><span class="o">=</span>:3 某GUI程序
+</span></span></code></pre></div><blockquote>
+<p>也可以把Xvfb运行在宿主机上。这样要在容器内设定<code>export DISPLAY=宿主机IP:3</code></p>
+<p>如果X server与client（client即那些GUI程序）不是运行在一个系统上的，虚拟X server那边则需要执行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">xhost +&lt;另一系统的IP&gt;
+</span></span></code></pre></div></blockquote>
+<h3 id="通过shell对虚拟x-server操作和截图">通过shell对虚拟X server操作和截图</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">apt-get install xdotool xwd scrot x11vnc
+</span></span></code></pre></div><p>其中：</p>
 <ul>
 <li>
 <p>xdotool，模拟键盘和鼠标动作</p>
@@ -328,28 +374,27 @@
 </ul>
 <h4 id="模拟鼠标操作">模拟鼠标操作</h4>
 <p>容器内运行xdotool</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>env <span class="nv">DISPLAY</span><span class="o">=</span>:3 xdotool getmouselocation
-<span class="ln">2</span>env <span class="nv">DISPLAY</span><span class="o">=</span>:3 xdotool mousemove &lt;x&gt; &lt;y&gt;
-<span class="ln">3</span>env <span class="nv">DISPLAY</span><span class="o">=</span>:3 xdotool click <span class="m">1</span>    <span class="c1"># (1是左键)</span>
-</code></pre></div><h4 id="vnc">VNC</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">env <span class="nv">DISPLAY</span><span class="o">=</span>:3 xdotool getmouselocation
+</span></span><span class="line"><span class="ln">2</span><span class="cl">env <span class="nv">DISPLAY</span><span class="o">=</span>:3 xdotool mousemove &lt;x&gt; &lt;y&gt;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">env <span class="nv">DISPLAY</span><span class="o">=</span>:3 xdotool click <span class="m">1</span>    <span class="c1"># (1是左键)</span>
+</span></span></code></pre></div><h4 id="vnc">VNC</h4>
 <p>容器内运行VNC服务</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>x11vnc -display :3 -N -forever -shared -reopen -passwd <span class="m">123456</span> -desktop <span class="m">1</span>
-</code></pre></div><p>宿主机可用Remmina连接<code>容器IP:5903</code>（因为容器内用了<code>:3</code>这个DISPLAY，所以默认的x11vnc服务端口是5903），密码为上面设置的123456</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">x11vnc -display :3 -N -forever -shared -reopen <span class="o">[</span>-passwd 123456<span class="o">]</span> -desktop <span class="m">1</span>
+</span></span></code></pre></div><p>宿主机可用Remmina连接<code>容器IP:5903</code>（因为容器内用了<code>:3</code>这个DISPLAY，所以默认的x11vnc服务端口是5903），密码为上面设置的123456</p>
 <blockquote>
 <p>注意在Redmina中挥动鼠标可能会使截图中的鼠标隐藏。用xdotool mousemove可恢复</p>
 </blockquote>
 <h4 id="截图">截图</h4>
 <p>在容器内运行CLI截图工具。</p>
 <p>xwd（不推荐）:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>xwd -display :3 -root -out /media/share-from-host/shot.xwd
-<span class="ln">2</span>
-<span class="ln">3</span>（主机中或容器中） convert shot.xwd shot.png
-</code></pre></div><p>上面的convert是ImageMagick的命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">xwd -display :3 -root -out /media/share-from-host/shot.xwd
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">（主机中或容器中） convert shot.xwd shot.png
+</span></span></code></pre></div><p>上面的convert是ImageMagick的命令</p>
 <p>scrot（推荐）:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>env <span class="nv">DISPLAY</span><span class="o">=</span>:3 scrot /media/share-from-host/shot.png -p   <span class="c1"># （-p : 截图包括鼠标）</span>
-</code></pre></div><p>（如果在CI中，截图后记得上传artifacts）</p>
-<p>甚至，理论上可以在容器内运行OBS Studio等录屏工具。</p>
-<p>若是在自己机子而不是CI上，可以把虚拟X server改为在宿主机的<code>:3</code>运行（这样容器内环境变量需要<code>DISPLAY=&lt;宿主机IP&gt;:3</code>），在宿主机上运行OBS Studio。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">env <span class="nv">DISPLAY</span><span class="o">=</span>:3 scrot /media/share-from-host/shot.png -p   <span class="c1"># （-p : 截图包括鼠标）</span>
+</span></span></code></pre></div><p>（如果在CI中，截图后要上传artifacts）</p>
+<p>也可以运行simplescreenrecorder或ffmpeg等对虚拟X server录屏（录屏工具与虚拟X server要运行在同一系统上）。</p>
 <div style="text-align: center; font-size: 80%;">
 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。
 <br>
@@ -402,6 +447,12 @@ All articles are original (except for those specially claimed) and copyrighted. 
         <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
       </li>
       <li>
+        <a href="/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="nav-link" title="Thunderbird打开活动管理器在标签中（2023，TB115)">Thunderbird打开活动管理器在标签中（2023，TB115)</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/esp32/" class="nav-link" title="花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)">花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)</a>
+      </li>
+      <li>
         <a href="/chiblog/post/appimage%E6%89%93%E5%8C%85/" class="nav-link" title="初探AppImage打包（Qt程序为例）">初探AppImage打包（Qt程序为例）</a>
       </li>
       <li>
@@ -412,6 +463,9 @@ All articles are original (except for those specially claimed) and copyrighted. 
       </li>
       <li>
         <a href="/chiblog/post/firefox_uc%E8%84%9A%E6%9C%AC/" class="nav-link" title="2020年代仍有Firefox userChrome JS脚本（介绍、简略教程、资源）">2020年代仍有Firefox userChrome JS脚本（介绍、简略教程、资源）</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E7%AD%89/" class="nav-link" title="Firefox/Chromium浏览器的启动命令选项参数等配置">Firefox/Chromium浏览器的启动命令选项参数等配置</a>
       </li>
       <li>
         <a href="/chiblog/post/ttffont/" class="nav-link" title="修复一些不能直接使用或不好用的ttf字体文件">修复一些不能直接使用或不好用的ttf字体文件</a>
@@ -452,6 +506,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">9</span>
         </a>
         
+        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
+          FIREFOX
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='/chiblog/tags/shell/' class="post_tag button button_translucent" title="shell">
           SHELL
           <span class="button_tally">2</span>
@@ -477,8 +536,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">2</span>
         </a>
         
+        <a href='/chiblog/tags/activity-manager/' class="post_tag button button_translucent" title="activity-manager">
+          ACTIVITY-MANAGER
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/adb/' class="post_tag button button_translucent" title="adb">
           ADB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/an-thinker/' class="post_tag button button_translucent" title="an-thinker">
+          AN-THINKER
           <span class="button_tally">1</span>
         </a>
         
@@ -527,6 +596,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
+        <a href='/chiblog/tags/c3/' class="post_tag button button_translucent" title="c3">
+          C3
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/cgroup/' class="post_tag button button_translucent" title="cgroup">
           CGROUP
           <span class="button_tally">1</span>
@@ -537,8 +611,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
-          FIREFOX
+        <a href='/chiblog/tags/esp/' class="post_tag button button_translucent" title="esp">
+          ESP
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32/' class="post_tag button button_translucent" title="esp32">
+          ESP32
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32-c3/' class="post_tag button button_translucent" title="esp32-c3">
+          ESP32-C3
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32c3/' class="post_tag button button_translucent" title="esp32c3">
+          ESP32C3
           <span class="button_tally">1</span>
         </a>
         
@@ -562,48 +651,21 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/github.io/' class="post_tag button button_translucent" title="github.io">
-          GITHUB.IO
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/js/' class="post_tag button button_translucent" title="js">
-          JS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class="post_tag button button_translucent" title="linux发行版">
-          LINUX发行版
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxc/' class="post_tag button button_translucent" title="lxc">
-          LXC
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxd/' class="post_tag button button_translucent" title="lxd">
-          LXD
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/mime/' class="post_tag button button_translucent" title="mime">
-          MIME
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/obs-studio/' class="post_tag button button_translucent" title="obs-studio">
-          OBS-STUDIO
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
+            <a href='/chiblog/tags/activity-manager/' class=" post_tag button button_translucent" data-position=1 title="activity-manager">ACTIVITY-MANAGER<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/adb/' class=" post_tag button button_translucent" data-position=1 title="adb">ADB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/an-thinker/' class=" post_tag button button_translucent" data-position=1 title="an-thinker">AN-THINKER<span class="button_tally">1</span>
             </a>
             
             
@@ -643,6 +705,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/c3/' class=" post_tag button button_translucent" data-position=1 title="c3">C3<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/cgroup/' class=" post_tag button button_translucent" data-position=1 title="cgroup">CGROUP<span class="button_tally">1</span>
             </a>
             
@@ -651,7 +717,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
-            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=1 title="firefox">FIREFOX<span class="button_tally">1</span>
+            <a href='/chiblog/tags/esp/' class=" post_tag button button_translucent" data-position=1 title="esp">ESP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32/' class=" post_tag button button_translucent" data-position=1 title="esp32">ESP32<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32-c3/' class=" post_tag button button_translucent" data-position=1 title="esp32-c3">ESP32-C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32c3/' class=" post_tag button button_translucent" data-position=1 title="esp32c3">ESP32C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=2 title="firefox">FIREFOX<span class="button_tally">2</span>
             </a>
             
             
@@ -675,6 +757,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/in-tab/' class=" post_tag button button_translucent" data-position=1 title="in-tab">IN-TAB<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/js/' class=" post_tag button button_translucent" data-position=1 title="js">JS<span class="button_tally">1</span>
             </a>
             
@@ -695,7 +781,15 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/micropython/' class=" post_tag button button_translucent" data-position=1 title="micropython">MICROPYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/mime/' class=" post_tag button button_translucent" data-position=1 title="mime">MIME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/mozilla/' class=" post_tag button button_translucent" data-position=1 title="mozilla">MOZILLA<span class="button_tally">1</span>
             </a>
             
             
@@ -708,6 +802,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/pc/' class=" post_tag button button_translucent" data-position=1 title="pc">PC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/picocom/' class=" post_tag button button_translucent" data-position=1 title="picocom">PICOCOM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python/' class=" post_tag button button_translucent" data-position=1 title="python">PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python-shell/' class=" post_tag button button_translucent" data-position=1 title="python-shell">PYTHON-SHELL<span class="button_tally">1</span>
             </a>
             
             
@@ -743,6 +849,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/thunderbird/' class=" post_tag button button_translucent" data-position=1 title="thunderbird">THUNDERBIRD<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/truetype/' class=" post_tag button button_translucent" data-position=1 title="truetype">TRUETYPE<span class="button_tally">1</span>
             </a>
             
@@ -764,6 +874,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/vnc/' class=" post_tag button button_translucent" data-position=1 title="vnc">VNC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/webrepl/' class=" post_tag button button_translucent" data-position=1 title="webrepl">WEBREPL<span class="button_tally">1</span>
             </a>
             
             
@@ -808,6 +922,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E5%AD%97%E4%BD%93/' class=" post_tag button button_translucent" data-position=1 title="字体">字体<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/' class=" post_tag button button_translucent" data-position=1 title="安信可">安信可<span class="button_tally">1</span>
             </a>
             
             
@@ -864,6 +982,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E6%AD%BB%E6%9C%BA/' class=" post_tag button button_translucent" data-position=1 title="死机">死机<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="活动管理器">活动管理器<span class="button_tally">1</span>
             </a>
             
             
@@ -1023,7 +1145,7 @@ All articles are original (except for those specially claimed) and copyrighted. 
   </div>
 </footer>
 
-    <script type="text/javascript" src="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" integrity="sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
+    <script type="text/javascript" src="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" integrity="sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
     
   </body>
 </html>

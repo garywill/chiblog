@@ -5,6 +5,7 @@
     <link>/chiblog/tags/android%E7%94%B5%E8%A7%86%E7%9B%92%E5%AD%90/</link>
     <description>Recent content in Android电视盒子 on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Mon, 09 Dec 2019 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/android%E7%94%B5%E8%A7%86%E7%9B%92%E5%AD%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -17,30 +18,31 @@
         
           
             本文又臭又长，内容较杂，请善用目录链接
- 这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
+这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
 这篇文章不针对盒子型号，我手上目前有的设备有两个：
-  一个Android 8的，官方固件带root的盒子。ARM64v8。两个USB口，一个是USB 3.0。网线口。16G。
-  买某服务配送的电视盒子，设计给仅观看它们的某些节目用的，Android 4.4，32位ARM7，性能就那样1G运存，ROM空间倒是可以在root后装点东西进去。带有网线口和Wifi（有些盒子对热点参数很挑剔，否则Wifi很慢）、两个USB口。
-  电视盒子如果装Android手机的App，都可以装也95%可以运行，但实际发现可能是因为没有针对电视硬件优化过的原因，会比手机上使用卡，而且许多App放视频的时候无法硬解占CPU 99%，而且因屏幕方向不同，显示尺寸策略不同，有些用起来有点怪。
+一个Android 8的，官方固件带root的盒子。ARM64v8。两个USB口，一个是USB 3.0。网线口。16G。
+买某服务配送的电视盒子，设计给仅观看它们的某些节目用的，Android 4.4，32位ARM7，性能就那样1G运存，ROM空间倒是可以在root后装点东西进去。带有网线口和Wifi（有些盒子对热点参数很挑剔，否则Wifi很慢）、两个USB口。
+电视盒子如果装Android手机的App，都可以装也95%可以运行，但实际发现可能是因为没有针对电视硬件优化过的原因，会比手机上使用卡，而且许多App放视频的时候无法硬解占CPU 99%，而且因屏幕方向不同，显示尺寸策略不同，有些用起来有点怪。
 因此有人说，目前买智能电视盒子不太值，不如买个手机USB转HDMI。
 或者使用手机与智能电视局域网投屏也不错，这个目前也有许多App实现了。
 实际测试一些大站的TV App比手机App能看的视频少（发现一些普通人上传的视频不让电视看），买剧更贵。
 本篇默认读者有一定的技术，写得较简略，且有点乱，因此不适合完全不懂的人阅读。如果你只是个用户消费者，这篇大部分内容不适合你看。我自己是常在Linux上以adb shell操作Android设备的，因此本篇会带有许多命令操作内容
 这里记录下（有root后）安装一些技术人喜欢用的工具类App，开源方案为主，及Android电视与电脑（Linux为主）配合的一些方法，包括有电脑控制电视、电脑向电视投屏、手机控制电视等奇技淫巧。也有少量提及家庭媒体相关的App。
 弄的过程中鼠标键盘还是需要准备的，无线的最好，毕竟在客厅电视前。USB插口设计给插U盘放电影，但也可以插鼠标键盘。
- exFat及NTFS注意：买回来发现这个Android 8 盒子是不支持读取exFat的U盘的。而附赠的旧盒子竟然支持～。经查那些制造商没有给ms钱，也（暂时）没有采用其他第三方技术，就很可能不会支持这两个文件系统。于是把exFat的U盘格成了Fat32。
+exFat及NTFS注意：买回来发现这个Android 8 盒子是不支持读取exFat的U盘的。而附赠的旧盒子竟然支持～。经查那些制造商没有给ms钱，也（暂时）没有采用其他第三方技术，就很可能不会支持这两个文件系统。于是把exFat的U盘格成了Fat32。
 Fat32只是在Windows下格式化时被限制在&amp;lt;32G，所以找个Linux格式化一下就可以最多支持8T。单个文件最大4G无法突破。
- 解决时间无法自动同步问题 较新版本Android默认估计采用了遥远处我们正常无法连接的NTP服务器来同步时间。而如果手动设置时间，关掉自动同步，有些盒子断电后时间复原。
- 用下面命令设置让它用国内的NTP服务器
-1settings put global ntp_server ntp1.aliyun.com  使用App来开关网络adb 如果进系统设置里开关adb麻烦，可以用一些App
- com.matoski.adbm（或com.github.sryze.wirebug，或siir.es.adbWireless）
- 终端模拟器与开机脚本 已有远程adb，但再装个终端App也无妨
-  com.termoneplus或jackpal.androidterm （Android &amp;lt;= 4）
-  Termux（推荐）
+解决时间无法自动同步问题 较新版本Android默认估计采用了遥远处我们正常无法连接的NTP服务器来同步时间。而如果手动设置时间，关掉自动同步，有些盒子断电后时间复原。
+用下面命令设置让它用国内的NTP服务器
+1settings put global ntp_server ntp1.aliyun.com 使用App来开关网络adb 如果进系统设置里开关adb麻烦，可以用一些App
+com.matoski.adbm（或com.github.sryze.wirebug，或siir.es.adbWireless）
+终端模拟器与开机脚本 已有远程adb，但再装个终端App也无妨
+com.termoneplus或jackpal.androidterm （Android &amp;lt;= 4）
+Termux（推荐）
 可以用Termux + Termux:Boot来实现开机自定义脚本
-  安装SSH server，以及在SSH中开关adb （除以下笨方案外，Termux及其包中也提供有sshd）
- adb没有密码，一直开着不够安全。
-装一个可以设置密码的SSH server(这里用了net.
+安装SSH server，以及在SSH中开关adb （除以下笨方案外，Termux及其包中也提供有sshd）
+adb没有密码，一直开着不够安全。
+装一个可以设置密码的SSH server(这里用了net.xnano.android.sshserver)。在SSH登录上去后可以再用命令去开关adb
+1# 关闭adbd 2setprop service.adb.tcp.port -1 3killall adbd 4 5# 打开adbd 6setprop service.adb.tcp.port 5555 （也可以换个非标准端口，防恶意扫描） 7killall adbd 8adbd &amp;amp; 可与此SSH服务器配合的bash脚本：
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/androidtv/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

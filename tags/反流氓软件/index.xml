@@ -5,6 +5,7 @@
     <link>/chiblog/tags/%E5%8F%8D%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/</link>
     <description>Recent content in 反流氓软件 on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Sun, 18 Oct 2020 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/%E5%8F%8D%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -19,26 +20,34 @@
             前言 既是自己的记录，也是向各位介绍，面向各行各业大众，介绍许多适合日用、洁净单纯的软件（不包含专业领域）。所介绍的软件都尽可能选同类软件中最干净的好用的。
 网上推荐软件的文章很多，这里与其他不同，大多为开源（开放源代码）软件，也含名声不错的闭源软件。
 像电脑手机这类电子机器的这滩浑水我曾经趟过，读者可以少趟。
- 虽然所介绍的大部分用过，本人免任何责，只做介绍。
- 正文  对于跨平台的软件，只会提及Windows、Android、iOS、Mac OS、Linux
- 解决Android卡顿 是否有因装多App变卡，而正在用的所谓“加速软件”自身就是占用大量资源的恶龙？
- 这类最好有root权限以发挥最好功效
- Android自启动管理   Autostarts（开源）
- 用它禁止一App自启动时，也有可能牵连该App的某些触发性功能被破坏。在Autostarts的界面上能看到
-   Android应用冻结 冻结，也就是杀后台
-  SuperFreezZ（开源）
+虽然所介绍的大部分用过，本人免任何责，只做介绍。
+正文 对于跨平台的软件，只会提及Windows、Android、iOS、Mac OS、Linux
+解决Android卡顿 是否有因装多App变卡，而正在用的所谓“加速软件”自身就是占用大量资源的恶龙？
+这类最好有root权限以发挥最好功效
+Android自启动管理 Autostarts（开源）
+用它禁止一App自启动时，也有可能牵连该App的某些触发性功能被破坏。在Autostarts的界面上能看到
+Android应用冻结 冻结，也就是杀后台
+SuperFreezZ（开源）
 这个比其他类似的有一点好，就是能设置默认策略为冻结（即，自动把新安装的app添加进冻结列表中）
-  绿色守护 作者是国人Oasis Feng，近年似乎名声不错。
-  冰箱（IceBox） 不但冻结，还放入冰箱中就好像被删掉了一样，还可以阻止同伙App将它唤醒，比杀后台更厉害。又可以随时取出来用。免费版的有冻结10个App的限制
-  自冻（开源） 有任务计划功能的冻结应用。也可以让被冻结的App暂时消失。作者是国人Playhi
-  Android应用隔离 这些可以说是帮你开启Android本身的一个隐藏功能，把应用装到一个隔离的环境中，整个隔离环境可以随时开启或关闭，关闭了里面的App就好像不存在了一样，自然不占用后台。
+绿色守护 作者是国人Oasis Feng，近年似乎名声不错。
+冰箱（IceBox） 不但冻结，还放入冰箱中就好像被删掉了一样，还可以阻止同伙App将它唤醒，比杀后台更厉害。又可以随时取出来用。免费版的有冻结10个App的限制
+自冻（开源） 有任务计划功能的冻结应用。也可以让被冻结的App暂时消失。作者是国人Playhi
+Android应用隔离 这些可以说是帮你开启Android本身的一个隐藏功能，把应用装到一个隔离的环境中，整个隔离环境可以随时开启或关闭，关闭了里面的App就好像不存在了一样，自然不占用后台。
 从隔离环境内是无法访问外部文件的，还可以保护一些隐私。
- 没有root也可以用，不过更麻烦些
+没有root也可以用，不过更麻烦些
 有些机型ROM或旧的Android可能不兼容
-   炼妖壶（Island）（开源） 与绿色守护是同一个作者
-  Shelter（开源） 作者是国人Peter Cai
-   如果用这类软件搞分身、双账号多开之类的，仍是有被检测到并封号的可能，风险要自己评估
- 搜索引擎和上网入口   大术专搜（Big Search） （开源） 以 灵活又顺手 的方式 在(切换) 任意一个 或 (连续)多个 搜索引擎（或任意网站）进行搜索。这个工具的作者就是我。
+炼妖壶（Island）（开源） 与绿色守护是同一个作者
+Shelter（开源） 作者是国人Peter Cai
+如果用这类软件搞分身、双账号多开之类的，仍是有被检测到并封号的可能，风险要自己评估
+搜索引擎和上网入口 大术专搜（Big Search） （开源） 以 灵活又顺手 的方式 在(切换) 任意一个 或 (连续)多个 搜索引擎（或任意网站）进行搜索。这个工具的作者就是我。
+除了搜索之外，查询、词典、网购买东西等等之类的，也可以从这个工具调用。
+如果你上网搜寻资料时，对搜索质量、广度有要求，这也是个很好很高效的工具。
+而如果你就是一个普通的百度、淘宝之类大众网页的使用者，也可以轻松使用。
+有浏览器扩展版（推荐）和网页版：
+Firefox Addon Chrome Addon 或 下载 .crx。 适用于：Google Chrome、Microsoft Edge、Brave、Vivaldi、Opera、搜狗浏览器(部分)、360浏览器(部分) 等 网页版 并且引擎数据具有高度可自定义性
+播放器 注意这些仅是播放器，不带有任何一家网络资源
+SMPlayer（Windows、Linux）（开源） 视频播放器
+VLC media player（Windows、Android、iOS、Mac OS、Linux）（开源） 视频播放器
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
@@ -58,33 +67,47 @@
           
             前言 本篇既是自己的记录，也是向各位介绍许多程序员会喜欢的风格的日常软件。都尽可能选同类软件中最干净的好用的。来自多年开源社区打滚经验。
 所介绍大多为开源软件，也含名声不错的闭源软件。
- 姊妹篇：适合百姓日用且干净如玉的软件分享（有重叠内容）
-  虽然所介绍的大部分用过，本人免任何责，只做介绍。
- 正文  对于跨平台的软件，只会提及Windows、Linux、Android、iOS、Mac OS
-   VirtuaWin(Windows)（开源）
+姊妹篇：适合百姓日用且干净如玉的软件分享（有重叠内容）
+虽然所介绍的大部分用过，本人免任何责，只做介绍。
+正文 对于跨平台的软件，只会提及Windows、Linux、Android、iOS、Mac OS
+VirtuaWin(Windows)（开源）
 在Windows上使用虚拟桌面（工作区）。Windows 10已经原带这个功能了。
 建议也在它的模块页面下载KvasdoPager（开源）安装，它提供任务栏中快速切换工作区功能。
-  AltDrag(Windows)（开源）
+AltDrag(Windows)（开源）
 在Windows上用Alt+左键移动窗口，Alt+右键缩放容器。像Linux桌面用户熟悉的那样
- 一个继续的fork：RamonUnch/AltSnap
-   OAndBackupX (Android)（开源）
+一个继续的fork：RamonUnch/AltSnap
+OAndBackupX (Android)（开源）
 批量备份App和数据。常刷机有用
-  Delta Chat（Windows、Linux、Mac OS、Android、iOS）（开源）
+Delta Chat（Windows、Linux、Mac OS、Android、iOS）（开源）
 像使用聊天工具一样地使用Email通信。是个提供类似聊天工具的界面体验的Email客户端。
- 使用前请先查它这个表，看哪一家Email兼容。表中所列好像还没有测试多少国内Email提供商
+使用前请先查它这个表，看哪一家Email兼容。表中所列好像还没有测试多少国内Email提供商
 这个软件正在积极开发中，用户目前也还是洋人多
-   TrafficMonitor 或 Perfmonbar (Windows)（开源）
+TrafficMonitor 或 Perfmonbar (Windows)（开源）
 显示当前网速、CPU及内存利用率。TrafficMonitor可悬浮窗，或任务栏显示
-  linux-router（Linux）（开源）
+linux-router（Linux）（开源）
 用于一个命令创建Wifi热点，按ctrl+c直接复原。
 有线、或虚拟interface的网络共享也可以。主要是为Linux桌面用户考虑的，而各种Pi也适用。 支持透明代理、IPv6。
-  WAFall+（Android）（开源）
+WAFall+（Android）（开源）
 可控制哪些App可以或不可以联网。需要root。
-  NetGuard（Android）（开源）
+NetGuard（Android）（开源）
 可控制哪些App可以或不可以联网。不需要root。
-  App Manager（Android）（开源）
+App Manager（Android）（开源）
 对已安装的Android App和未安装的apk，能够提供非常齐全的信息显示和操作。能想到的和未想到的都有（显示各类信息、打开各个相关路径、权限管理、tracker检查、活动、服务、备份数据等等）
-  guiscrcpy（Windows、Linux、Mac OS）（开源）
+guiscrcpy（Windows、Linux、Mac OS）（开源）
+在电脑上查看和控制Android设备屏幕，通过USB调试（adb）通信。scrcpy的fork
+另外还有QtScrcpy和scrcpy-gui
+还有移植到让Android手机作为控制端的scrcpy-android（去控制另一个手机）
+Sumatra PDF(Windows)（开源）
+轻巧实用快速的PDF阅读器。支持标注。
+PDFCreator(Windows)（开源）
+生成PDF的软件。通过创建虚拟的打印机，把任何东西打印成PDF。有开源版也有收费版。
+krop（开源） (Linux) 统一裁剪PDF文件每一页，也可分单双页。GUI，可视，用鼠标划框即可
+用 Python + Qt 做的，理论上Windows和Mac也有可能用，作者自己也没试过
+酷安(Android)
+国内的Android应用市场，比其他国内市场名声好。可以安装它的官方App，也可以直接在它的网页上下载各种应用的apk（目前官方网站上不支持直接搜索App）。本文中所介绍的一些Android App链接就是指向酷安的。
+iRime（iOS）（开源） 输入法，安装后自带拼音、五笔和其他各种输入法方案，可直接用。它其实是个可自定义的输入法框架。开源，也有内购可用的更方便的功能
+同文（Android）（开源） 输入法。它其实是个可自定义的输入法框架，安装后不带码表，自己下载配置一下拼音、五笔和其他各种输入法方案
+Hacker&#39;s Keyboard 和 BeHe Keyboard和Unexpected Keyboard（Android）（开源） 程序员键盘。有ctrl等功能键。
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

@@ -4,21 +4,21 @@
   <head>
 <title>初探AppImage打包（Qt程序为例） | Gary W 的中文博客(站2)</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.121.1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
 <meta name="description" content="这是稿件，有待完善
- .AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制&#43;动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（ …">
+.AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制&#43;动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用 …">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="初探AppImage打包（Qt程序为例）" />
 <meta property="og:url" content="/chiblog/post/appimage%E6%89%93%E5%8C%85/" />
 <meta property="og:title" content="初探AppImage打包（Qt程序为例）" />
 <meta property="og:description" content="这是稿件，有待完善
- .AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制&#43;动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（ …" />
+.AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制&#43;动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用 …" />
 <meta property="og:image" content="/chiblog/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='/chiblog/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='/chiblog/icons/favicon-32x32.png'>
@@ -34,8 +34,8 @@
     
     
     <link rel="preload" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity = "sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" as="script" integrity=
-    "sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous">
+    <link rel="preload" href="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" as="script" integrity=
+    "sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity="sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" crossorigin="anonymous"><link rel="stylesheet" href="/chiblog/custom.css">
@@ -189,37 +189,37 @@
 <h3 id="查看或解包一appimage文件">查看或解包一.AppImage文件</h3>
 <p>学习打包前，先了解查看和解包的方法</p>
 <p>要解包一<code>.AppImage</code>文件，运行：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>xxxxx.AppImage --appimage-extract
-</code></pre></div><p>则只会将其内部的文件解包在<code>./squashfs-root/</code>下，不会运行软件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">xxxxx.AppImage --appimage-extract
+</span></span></code></pre></div><p>则只会将其内部的文件解包在<code>./squashfs-root/</code>下，不会运行软件</p>
 <p>若想只查看<code>.AppImage</code>文件内部的文件列表，可以使用下面说到的appimagetool，它的<code>-l</code>参数是做这个的</p>
 <h2 id="初探appimage打包基本要求和操作">初探AppImage打包基本要求和操作</h2>
 <p>准备一个AppDir目录，里面需要放：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>├── AppRun                         # 从AppImage官方下载，此文件官方随同appimagetool一起发布（如果没有好像也可以，例如linuxdeploy的qt插件会生成一个shell脚本来充当它）
-<span class="ln"> 2</span>├── appentry.desktop                 # 文件名随便，后缀要.desktop。这里不能有第二个.desktop文件
-<span class="ln"> 3</span>├── logo.png                        #  文件名（去除后缀部分）与appentry.desktop中的icon=一致
-<span class="ln"> 4</span>└── usr
-<span class="ln"> 5</span>    ├── bin                         # appentry.desktop中的&#34;exec=&#34;使用的相对路径是相对于这里
-<span class="ln"> 6</span>    │   ├── 可执行二进制文件            # 文件名与appentry.desktop中的exec=一致
-<span class="ln"> 7</span>    ├── lib                         # 即使是64位，也不需要命名为lib64
-<span class="ln"> 8</span>    │   └── 自己的软件编译出来的库（若有）.so    # 如果有，需要在运行linuxdeploy时要设置LD_BRARY_PATH为这里（打包机器上的绝对路径）
-<span class="ln"> 9</span>    └── share
-<span class="ln">10</span>        ├── applications
-<span class="ln">11</span>        │   └── 软件名.desktop -&gt; ../../../appentry.desktop
-<span class="ln">12</span>        └── icons
-<span class="ln">13</span>            └── hicolor
-<span class="ln">14</span>                └── 512x512
-<span class="ln">15</span>                    ├── 软件名.png    # （多搞几个重复的png文件没关系）
-<span class="ln">16</span>                    └── logo.png 
-</code></pre></div><p>其中的<code>appentry.desktop</code>可按模板：</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="ln">1</span><span class="k">[Desktop Entry]</span>
-<span class="ln">2</span><span class="na">Version</span><span class="o">=</span><span class="s">1.0</span>
-<span class="ln">3</span><span class="na">Type</span><span class="o">=</span><span class="s">Application</span>
-<span class="ln">4</span><span class="na">Categories</span><span class="o">=</span><span class="s">Qt</span>
-<span class="ln">5</span><span class="na">Name</span><span class="o">=</span><span class="s">软件名</span>
-<span class="ln">6</span><span class="na">Comment</span><span class="o">=</span><span class="s">软件描述</span>
-<span class="ln">7</span><span class="na">Exec</span><span class="o">=</span><span class="s">可执行二进文件名（这里使用相对路径，相对于AppDir/usr/bin/）</span>
-<span class="ln">8</span><span class="na">Icon</span><span class="o">=</span><span class="s">logo</span>
-</code></pre></div><h2 id="下载及运行appimage相关工具">下载及运行AppImage相关工具</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="err">├──</span> <span class="n">AppRun</span>                         <span class="c1"># 从AppImage官方下载，此文件官方随同appimagetool一起发布（如果没有好像也可以，例如linuxdeploy的qt插件会生成一个shell脚本来充当它）</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="err">├──</span> <span class="n">appentry</span><span class="o">.</span><span class="n">desktop</span>                 <span class="c1"># 文件名随便，后缀要.desktop。这里不能有第二个.desktop文件</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="err">├──</span> <span class="n">logo</span><span class="o">.</span><span class="n">png</span>                        <span class="c1">#  文件名（去除后缀部分）与appentry.desktop中的icon=一致</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="err">└──</span> <span class="n">usr</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="err">├──</span> <span class="n">bin</span>                         <span class="c1"># appentry.desktop中的&#34;exec=&#34;使用的相对路径是相对于这里</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="err">│</span>   <span class="err">├──</span> <span class="err">可执行二进制文件</span>            <span class="c1"># 文件名与appentry.desktop中的exec=一致</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="err">├──</span> <span class="n">lib</span>                         <span class="c1"># 即使是64位，也不需要命名为lib64</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="err">│</span>   <span class="err">└──</span> <span class="err">自己的软件编译出来的库（若有）</span><span class="o">.</span><span class="n">so</span>    <span class="c1"># 如果有，需要在运行linuxdeploy时要设置LD_BRARY_PATH为这里（打包机器上的绝对路径）</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="err">└──</span> <span class="n">share</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="err">├──</span> <span class="n">applications</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="err">│</span>   <span class="err">└──</span> <span class="err">软件名</span><span class="o">.</span><span class="n">desktop</span> <span class="o">-&gt;</span> <span class="o">../../../</span><span class="n">appentry</span><span class="o">.</span><span class="n">desktop</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="err">└──</span> <span class="n">icons</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="err">└──</span> <span class="n">hicolor</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">                <span class="err">└──</span> <span class="mi">512</span><span class="n">x512</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">                    <span class="err">├──</span> <span class="err">软件名</span><span class="o">.</span><span class="n">png</span>    <span class="c1"># （多搞几个重复的png文件没关系）</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">                    <span class="err">└──</span> <span class="n">logo</span><span class="o">.</span><span class="n">png</span> 
+</span></span></code></pre></div><p>其中的<code>appentry.desktop</code>可按模板：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">[Desktop Entry]</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="na">Version</span><span class="o">=</span><span class="s">1.0</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="na">Type</span><span class="o">=</span><span class="s">Application</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="na">Categories</span><span class="o">=</span><span class="s">Qt</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="na">Name</span><span class="o">=</span><span class="s">软件名</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="na">Comment</span><span class="o">=</span><span class="s">软件描述</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="na">Exec</span><span class="o">=</span><span class="s">可执行二进文件名（这里使用相对路径，相对于AppDir/usr/bin/）</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="na">Icon</span><span class="o">=</span><span class="s">logo</span>
+</span></span></code></pre></div><h2 id="下载及运行appimage相关工具">下载及运行AppImage相关工具</h2>
 <blockquote>
 <p>AppImage相关工具一般不以版本号发布，许多就是发布被称为<code>continuous</code>的版本（或者<code>latest</code>），也就是说他们想要让人们一直使用最新版，然后其二进制内会有个工具编译日期。</p>
 <p>他们发布的工具，常常每一种工具是一个<code>.AppImage</code>的文件</p>
@@ -242,34 +242,34 @@
 <p>另有一个工具叫<code>linuxdeployqt</code>，它们不一样</p>
 </blockquote>
 <p>下载：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-<span class="ln">2</span>wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
-<span class="ln">3</span><span class="c1"># （记得`chmod a+x`）</span>
-</code></pre></div><p>运行：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>打包系统中目前所放位置/AppDir/usr/lib/
-<span class="ln">2</span><span class="nb">export</span> <span class="nv">QMAKE</span><span class="o">=</span>打包系统中qmake程序路径  <span class="c1"># 因此例为Qt程序故有这个 # 若能找到则不需要</span>
-<span class="ln">3</span>
-<span class="ln">4</span>./linuxdeploy-x86_64.AppImage --appdir 打包系统中目前所放位置/AppDir --plugin qt 
-</code></pre></div><h3 id="appimagetool">appimagetool</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+</span></span><span class="line"><span class="ln">2</span><span class="cl">wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># （记得`chmod a+x`）</span>
+</span></span></code></pre></div><p>运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>打包系统中目前所放位置/AppDir/usr/lib/
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">export</span> <span class="nv">QMAKE</span><span class="o">=</span>打包系统中qmake程序路径  <span class="c1"># 因此例为Qt程序故有这个 # 若能找到则不需要</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">./linuxdeploy-x86_64.AppImage --appdir 打包系统中目前所放位置/AppDir --plugin qt <span class="o">[</span>-i logo.png<span class="o">]</span>
+</span></span></code></pre></div><h3 id="appimagetool">appimagetool</h3>
 <p>这是打包工具。打包这一步即是在准备好以上AppDir里的东西后，类似tarball一样压缩打包（实际上用的是squashfs）。</p>
 <p>这个打包工具不对AppDir内容做合法性检查，就只是打包</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://github.com/AppImage/AppImageKit/releases/latest/download/appimagetool-x86_64.AppImage 
-<span class="ln">2</span><span class="c1"># （记得`chmod a+x`）</span>
-</code></pre></div><p>（可选）AppRun会被官方随appimagetool一同发布。下载并放AppRun入AppDir:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://github.com/AppImage/AppImageKit/releases/latest/download/AppRun-x86_64 
-<span class="ln">2</span>cp AppRun-x86_64 打包系统中目前所放位置/AppDir/AppRun
-<span class="ln">3</span><span class="c1"># （记得`chmod a+x`）</span>
-</code></pre></div><p><code>AppDir/AppRun</code>这个文件就是<code>.AppImage</code>被执行后会第一个执行的入口程序。官方推荐用他们发布的<code>AppRun</code>（一个二进制程序文件）作为入口，但也可以自己写个shell脚本，重命令为<code>AppRun</code>放在这个位置作为入口。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">wget https://github.com/AppImage/AppImageKit/releases/latest/download/appimagetool-x86_64.AppImage 
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># （记得`chmod a+x`）</span>
+</span></span></code></pre></div><p>（可选）AppRun会被官方随appimagetool一同发布。下载并放AppRun入AppDir:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">wget https://github.com/AppImage/AppImageKit/releases/latest/download/AppRun-x86_64 
+</span></span><span class="line"><span class="ln">2</span><span class="cl">cp AppRun-x86_64 打包系统中目前所放位置/AppDir/AppRun
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># （记得`chmod a+x`）</span>
+</span></span></code></pre></div><p><code>AppDir/AppRun</code>这个文件就是<code>.AppImage</code>被执行后会第一个执行的入口程序。官方推荐用他们发布的<code>AppRun</code>（一个二进制程序文件）作为入口，但也可以自己写个shell脚本，重命令为<code>AppRun</code>放在这个位置作为入口。</p>
 <p>打包：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>appimagetool-x86_64.AppImage  打包系统中目前所放位置/AppDir    输出位置/AppImage文件名.AppImage
-</code></pre></div><p>这一个文件<code>AppImage文件名.AppImage</code>即可发布出给别人下载运行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">appimagetool-x86_64.AppImage  打包系统中目前所放位置/AppDir    输出位置/AppImage文件名.AppImage
+</span></span></code></pre></div><p>这一个文件<code>AppImage文件名.AppImage</code>即可发布出给别人下载运行。</p>
 <h2 id="测试打包好的appimage文件">测试打包好的.AppImage文件</h2>
 <p>打包AppImage的一个原则是，在足够旧的Linux发行版上打包，这样打包出来的AppImage才尽可能兼容大部分人的机子。</p>
 <p>一般人都选择用仍在支持周期内的最旧的一个Ubuntu LTS来打包（但不知是否为最佳选择）</p>
 <h3 id="appimagelint">appimagelint</h3>
 <p>appimagelint会连网查询当前最近几个版本的Ubuntu、Debian的glibc等库的版本，然后比较你的<code>.AppImage</code>文件所要求的最低版本，来显示兼容性。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>wget https://github.com/TheAssassin/appimagelint/releases/download/continuous/appimagelint-x86_64.AppImage
-</code></pre></div><p>appimagelint不做完整的测试，所以，它显示兼容某发行版某版本的，不代表能成功跑起来。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">wget https://github.com/TheAssassin/appimagelint/releases/download/continuous/appimagelint-x86_64.AppImage
+</span></span></code></pre></div><p>appimagelint不做完整的测试，所以，它显示兼容某发行版某版本的，不代表能成功跑起来。</p>
 <h3 id="通过容器在其他发行版测试">通过容器在其他发行版测试</h3>
 <p>测试就用容器，没必要用虚拟机或实机（不过，虚拟机+live ISO，因为其带有DE，对新人可能更容易）。</p>
 <p>用容器的话，虚拟的X server是少不了了（如果你打包的程序是GUI的）。</p>
@@ -330,6 +330,12 @@ All articles are original (except for those specially claimed) and copyrighted. 
         <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
       </li>
       <li>
+        <a href="/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="nav-link" title="Thunderbird打开活动管理器在标签中（2023，TB115)">Thunderbird打开活动管理器在标签中（2023，TB115)</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/esp32/" class="nav-link" title="花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)">花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)</a>
+      </li>
+      <li>
         <a href="/chiblog/post/linux-process-dns/" class="nav-link" title="Linux给特定进程单独指定DNS">Linux给特定进程单独指定DNS</a>
       </li>
       <li>
@@ -340,6 +346,9 @@ All articles are original (except for those specially claimed) and copyrighted. 
       </li>
       <li>
         <a href="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" class="nav-link" title="容易上手的LXD容器和虚拟X server">容易上手的LXD容器和虚拟X server</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E7%AD%89/" class="nav-link" title="Firefox/Chromium浏览器的启动命令选项参数等配置">Firefox/Chromium浏览器的启动命令选项参数等配置</a>
       </li>
       <li>
         <a href="/chiblog/post/ttffont/" class="nav-link" title="修复一些不能直接使用或不好用的ttf字体文件">修复一些不能直接使用或不好用的ttf字体文件</a>
@@ -380,6 +389,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">9</span>
         </a>
         
+        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
+          FIREFOX
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='/chiblog/tags/shell/' class="post_tag button button_translucent" title="shell">
           SHELL
           <span class="button_tally">2</span>
@@ -405,8 +419,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">2</span>
         </a>
         
+        <a href='/chiblog/tags/activity-manager/' class="post_tag button button_translucent" title="activity-manager">
+          ACTIVITY-MANAGER
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/adb/' class="post_tag button button_translucent" title="adb">
           ADB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/an-thinker/' class="post_tag button button_translucent" title="an-thinker">
+          AN-THINKER
           <span class="button_tally">1</span>
         </a>
         
@@ -455,6 +479,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
+        <a href='/chiblog/tags/c3/' class="post_tag button button_translucent" title="c3">
+          C3
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/cgroup/' class="post_tag button button_translucent" title="cgroup">
           CGROUP
           <span class="button_tally">1</span>
@@ -465,8 +494,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
-          FIREFOX
+        <a href='/chiblog/tags/esp/' class="post_tag button button_translucent" title="esp">
+          ESP
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32/' class="post_tag button button_translucent" title="esp32">
+          ESP32
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32-c3/' class="post_tag button button_translucent" title="esp32-c3">
+          ESP32-C3
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32c3/' class="post_tag button button_translucent" title="esp32c3">
+          ESP32C3
           <span class="button_tally">1</span>
         </a>
         
@@ -490,48 +534,21 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/github.io/' class="post_tag button button_translucent" title="github.io">
-          GITHUB.IO
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/js/' class="post_tag button button_translucent" title="js">
-          JS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class="post_tag button button_translucent" title="linux发行版">
-          LINUX发行版
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxc/' class="post_tag button button_translucent" title="lxc">
-          LXC
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxd/' class="post_tag button button_translucent" title="lxd">
-          LXD
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/mime/' class="post_tag button button_translucent" title="mime">
-          MIME
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/obs-studio/' class="post_tag button button_translucent" title="obs-studio">
-          OBS-STUDIO
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
+            <a href='/chiblog/tags/activity-manager/' class=" post_tag button button_translucent" data-position=1 title="activity-manager">ACTIVITY-MANAGER<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/adb/' class=" post_tag button button_translucent" data-position=1 title="adb">ADB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/an-thinker/' class=" post_tag button button_translucent" data-position=1 title="an-thinker">AN-THINKER<span class="button_tally">1</span>
             </a>
             
             
@@ -571,6 +588,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/c3/' class=" post_tag button button_translucent" data-position=1 title="c3">C3<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/cgroup/' class=" post_tag button button_translucent" data-position=1 title="cgroup">CGROUP<span class="button_tally">1</span>
             </a>
             
@@ -579,7 +600,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
-            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=1 title="firefox">FIREFOX<span class="button_tally">1</span>
+            <a href='/chiblog/tags/esp/' class=" post_tag button button_translucent" data-position=1 title="esp">ESP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32/' class=" post_tag button button_translucent" data-position=1 title="esp32">ESP32<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32-c3/' class=" post_tag button button_translucent" data-position=1 title="esp32-c3">ESP32-C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32c3/' class=" post_tag button button_translucent" data-position=1 title="esp32c3">ESP32C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=2 title="firefox">FIREFOX<span class="button_tally">2</span>
             </a>
             
             
@@ -603,6 +640,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/in-tab/' class=" post_tag button button_translucent" data-position=1 title="in-tab">IN-TAB<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/js/' class=" post_tag button button_translucent" data-position=1 title="js">JS<span class="button_tally">1</span>
             </a>
             
@@ -623,7 +664,15 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/micropython/' class=" post_tag button button_translucent" data-position=1 title="micropython">MICROPYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/mime/' class=" post_tag button button_translucent" data-position=1 title="mime">MIME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/mozilla/' class=" post_tag button button_translucent" data-position=1 title="mozilla">MOZILLA<span class="button_tally">1</span>
             </a>
             
             
@@ -636,6 +685,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/pc/' class=" post_tag button button_translucent" data-position=1 title="pc">PC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/picocom/' class=" post_tag button button_translucent" data-position=1 title="picocom">PICOCOM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python/' class=" post_tag button button_translucent" data-position=1 title="python">PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python-shell/' class=" post_tag button button_translucent" data-position=1 title="python-shell">PYTHON-SHELL<span class="button_tally">1</span>
             </a>
             
             
@@ -671,6 +732,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/thunderbird/' class=" post_tag button button_translucent" data-position=1 title="thunderbird">THUNDERBIRD<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/truetype/' class=" post_tag button button_translucent" data-position=1 title="truetype">TRUETYPE<span class="button_tally">1</span>
             </a>
             
@@ -692,6 +757,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/vnc/' class=" post_tag button button_translucent" data-position=1 title="vnc">VNC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/webrepl/' class=" post_tag button button_translucent" data-position=1 title="webrepl">WEBREPL<span class="button_tally">1</span>
             </a>
             
             
@@ -736,6 +805,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E5%AD%97%E4%BD%93/' class=" post_tag button button_translucent" data-position=1 title="字体">字体<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/' class=" post_tag button button_translucent" data-position=1 title="安信可">安信可<span class="button_tally">1</span>
             </a>
             
             
@@ -792,6 +865,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E6%AD%BB%E6%9C%BA/' class=" post_tag button button_translucent" data-position=1 title="死机">死机<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="活动管理器">活动管理器<span class="button_tally">1</span>
             </a>
             
             
@@ -951,7 +1028,7 @@ All articles are original (except for those specially claimed) and copyrighted. 
   </div>
 </footer>
 
-    <script type="text/javascript" src="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" integrity="sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
+    <script type="text/javascript" src="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" integrity="sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
     
   </body>
 </html>

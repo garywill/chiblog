@@ -5,6 +5,7 @@
     <link>/chiblog/tags/%E9%9D%9E%E5%85%A8%E5%B1%80dns/</link>
     <description>Recent content in 非全局DNS on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Sat, 17 Oct 2020 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/%E9%9D%9E%E5%85%A8%E5%B1%80dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -18,14 +19,14 @@
           
             Linux本身只能通过/etc/resolv.conf设置全系统的DNS。这里有一种给特定进程单独设置DNS的方法，通过免root的mount namespace达成。使用脚本只需要一条简洁的命令就可以。
 背景 例如，在各省各地布置了CDN，本地Linux系统用的DNS为114.114.114.114，这里想要使用某地某ISP的DNS5.5.5.5来测试CDN设置状况，却不想更改全系统设置。虽然dig和nslookup可指定DNS，但大部分程序没有这个功能。
-方法   Bubblewrap是一个非特权（免root）容器工具，使用bwrap命令以用它来创建一个mount namespace，使得在此namespace下的进程所看见的/etc/resolv.conf被覆盖为自己指定的内容。
-  有些程序会使用系统统一提供的DNS缓存（一般由nscd提供），因此mount namespace需要阻止DNS缓存被访问。阻止/var/run/nscd/被访问即可。
-  使用 移步Github仓库，有我整理好的脚本
+方法 Bubblewrap是一个非特权（免root）容器工具，使用bwrap命令以用它来创建一个mount namespace，使得在此namespace下的进程所看见的/etc/resolv.conf被覆盖为自己指定的内容。
+有些程序会使用系统统一提供的DNS缓存（一般由nscd提供），因此mount namespace需要阻止DNS缓存被访问。阻止/var/run/nscd/被访问即可。
+使用 移步Github仓库，有我整理好的脚本
 1proxc -d 5.5.5.5 -c nslookup my-website-with-cdn.com 2proxc -d 5.5.5.5 -c firefox http://my-website-with-cdn.com 3proxc -d 5.5.5.5 -c curl -v http://my-website-with-cdn.com 使用此脚本只需要一条简洁的命令就可以达到。将5.5.5.5分别替换成要测试的各省各ISP的DNS即可。
-限制   由于Bubblewrap的限制，若在使用过程中，mount namespace之外的进程删除、重建或更改了/etc/resolv.conf，也会使namespace内所看见的/etc/resolv.conf被修改。
+限制 由于Bubblewrap的限制，若在使用过程中，mount namespace之外的进程删除、重建或更改了/etc/resolv.conf，也会使namespace内所看见的/etc/resolv.conf被修改。
 因此，NetworkManager切换网络后，可能会使此方法设置的DNS失效。可以通过禁止NetworkManager更改/etc/resolv.conf来避免。
-  在bubblewrap这类容器之中，有些程序本身需要用到mount、namespace等功能的无法使用，如AppImage
-  本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+在bubblewrap这类容器之中，有些程序本身需要用到mount、namespace等功能的无法使用，如AppImage
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden. 打赏作者 写作不易，感谢支持！ 扫个码吧～
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/linux-process-dns/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

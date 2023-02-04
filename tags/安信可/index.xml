@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安信可 on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/</link>
+    <description>Recent content in 安信可 on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Sun, 19 Feb 2023 08:00:00 +0800</lastBuildDate><atom:link href="/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)</title>
+      <link>/chiblog/post/esp32/</link>
+      <pubDate>Sun, 19 Feb 2023 08:00:00 +0800</pubDate>
+      
+      <guid>/chiblog/post/esp32/</guid>
+      <description>
+        
+          
+            本文章可以配合我发的一个视频食用： https://www.bilibili.com/video/BV1RV4y1e79H/
+ESP32是近年很火的国产低成本MCU系列。
+买了芯片ESP32-C3的模组安信可 ESP-C3-32S的开发板安信可 NodeMCU ESP-C3-32S-Kit 。开发板很小，没有任何多余的东西，还不如叫它「最小系统+最小连接板」。
+烧录只需要以上加一条microUSB线就可以，不用买任何的232 TTL、烧录器之类的，开发板上有USB转串口的芯片。
+另外，看文档说，改变接线后，可以启用USB JTAG（无需任何额外芯片），然后可以单步调试、看寄存器之类的（有对应的开源跨平台软件openocd）。这一开发板也引出了USB数据的两个pin
+便宜是便宜，但买得不够好。不好的原因及造成的限制：
+ESP32-C3这个芯片型号是RISC-V架构。若使用MicroPython，那么MicroPython的native code或viper（这两个东西能让python写的东西运行更快）都尚未支持。ESP32-Cx属于ESP32系列中的便宜精简系列。要求高的建议买ESP32系列的其他架构的型号（请查MicroPython文档中native对各个架构的支持情况）。
+这个模组配的Flash只有2M。MicroPython官方提供的bin文件(1.4M左右)虽然足够烧进去，但功能有问题。建议至少选4M Flash的。
+不过还好
+这里有个老外编译了2M Flash版本的ESP32C3的MicroPython的bin。版本号 1.16.0 210824 v1.16-236-gb51e7e9d0，python 3.4.0。其中也包括他修改自己的安信可开发板，焊上缺失的两个开关管的说明。 （建议）我自己编译了MicroPython 1.19 for ESP32-C3 2M Flash 若选CircuitPython: 这是MicroPython的衍生版。它提供针对这一开发板的2M Flash固件adafruit-circuitpython-ai_thinker_esp32-c3s-2m-en_US-7.3.3.bin。Python 3.4.0
+这个开发板买回来缺少两开关管，和几个0402的电阻电容。可能就是这个原因，导致ampy（一个PC上的与MicroPython通信的工具，非必须）无法使用。不过我也试出了补救方法。你可以像上面那个老外那样自己焊上去，也可以用我这里将要介绍的经验，在不用ampy的情况下使用
+以下描述都是在Linux下进行。Windows用户请将串口/dev/ttyUSB0自行替换为Windows的COM
+烧录MicroPython/CircuitPython到ESP32C3 （2M Flash） 使用esptool.py清除整个Flash（必须）。其中的esptool.py来自ESP官方IDF
+烧录：
+1esptool.py --chip esp32c3 --port /dev/ttyUSB0 write_flash -z 0x0 firmware_gereric_c3_2mb_210824.bin （下载上面链接的老外提供的MicroPython .bin文件。（你若愿意自己编译更好）.bin
+或选择CircuitPython
+1esptool.py --chip esp32c3 --port /dev/ttyUSB0 write_flash -z 0x0 adafruit-circuitpython-ai_thinker_esp32-c3s-2m-en_US-7.3.3.bin 通过USB串口线连接获得python shell 使用Linux上picocom这个串口工具
+1picocom -b 115200 --lower-dtr --lower-rts /dev/ttyUSB0 启动后自动连wifi 连路由器的wifi也可以。若是想在Linux电脑上设个专门的wifi也行：
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/esp32/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

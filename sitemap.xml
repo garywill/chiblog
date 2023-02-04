@@ -9,18 +9,78 @@
     <lastmod>2019-12-08T08:47:11+01:00</lastmod>
   </url><url>
     <loc>/chiblog/</loc>
-    <lastmod>2022-09-01T08:00:00+08:00</lastmod>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/activity-manager/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/firefox/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/in-tab/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/mozilla/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/post/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/thunderbird/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/</loc>
+    <lastmod>2023-07-13T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/an-thinker/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/c3/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/esp/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/esp32/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/esp32-c3/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/esp32c3/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/micropython/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/picocom/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/python/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/python-shell/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/webrepl/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/post/esp32/</loc>
+    <lastmod>2023-02-19T08:00:00+08:00</lastmod>
   </url><url>
     <loc>/chiblog/tags/appimage/</loc>
     <lastmod>2022-09-01T08:00:00+08:00</lastmod>
   </url><url>
     <loc>/chiblog/tags/linux/</loc>
-    <lastmod>2022-09-01T08:00:00+08:00</lastmod>
-  </url><url>
-    <loc>/chiblog/post/</loc>
-    <lastmod>2022-09-01T08:00:00+08:00</lastmod>
-  </url><url>
-    <loc>/chiblog/tags/</loc>
     <lastmod>2022-09-01T08:00:00+08:00</lastmod>
   </url><url>
     <loc>/chiblog/post/appimage%E6%89%93%E5%8C%85/</loc>
@@ -89,9 +149,6 @@
     <loc>/chiblog/post/firefox_uc%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2020-01-19T08:47:11+01:00</lastmod>
   </url><url>
-    <loc>/chiblog/tags/firefox/</loc>
-    <lastmod>2020-01-19T08:47:11+01:00</lastmod>
-  </url><url>
     <loc>/chiblog/tags/js/</loc>
     <lastmod>2020-01-19T08:47:11+01:00</lastmod>
   </url><url>
@@ -124,6 +181,9 @@
   </url><url>
     <loc>/chiblog/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/</loc>
     <lastmod>2020-01-18T08:00:00+08:00</lastmod>
+  </url><url>
+    <loc>/chiblog/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E7%AD%89/</loc>
+    <lastmod>2020-01-17T00:00:00+01:00</lastmod>
   </url><url>
     <loc>/chiblog/tags/fontforge/</loc>
     <lastmod>2020-01-17T00:00:00+01:00</lastmod>
@@ -318,10 +378,8 @@
     <lastmod>2017-01-16T08:47:11+01:00</lastmod>
   </url><url>
     <loc>/chiblog/donate_cn/</loc>
-    <priority>0</priority>
   </url><url>
     <loc>/chiblog/donate_global/</loc>
-    <priority>0</priority>
   </url><url>
     <loc>/chiblog/categories/</loc>
   </url><url>

@@ -5,6 +5,7 @@
     <link>/chiblog/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
     <description>Recent content in 虚拟化 on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Sat, 18 Jan 2020 08:00:00 +0800</lastBuildDate><atom:link href="/chiblog/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -17,17 +18,20 @@
         
           
             Linux有容器技术LXC，LXD对LXC进行了封装。与Docker类似，但LXC容器比Docker容器完整，且不像Docker是一次性容器设计运行结束后即销毁实例。使用LXD操作容器，体验介于Docker与虚拟机之间。（其实LXD不只提供封装LXC容器的功能，还提供封装虚拟机）
-开始使用LXD——初始设置   从自己的发行版仓库安装LXD。LXD与Docker一样有一个守护进程lxd，因此有
-1sudo systemctl enable/disable/start/stop lxd  如果用systemctl停止lxd时，仍有正在运行的容器，那些容器不会被停止。所以应该先停止所有容器，再systemctl stop
- lxd是守护进程，而平时操作LXD则是用lxc命令（此lxc非属于LXC容器，是LXD的客户端的意思）
-  安装LXD后自动创建lxd用户组，我们手动把自己的日常用户添加进这个组里：
-1usermod -aG lxd &amp;lt;username&amp;gt;   添加清华LXC镜像（下文都用这个tuna-images源）：
-1lxc remote add tuna-images https://mirrors.tuna.tsinghua.edu.cn/lxc-images/ --protocol=simplestreams --public  若想在连接镜像时使用代理：
-1lxc config set core.proxy_http http://ip:port 2lxc config set core.proxy_https http://ip:port 3lxc config set core.proxy_ignore_hosts image-server.local    /etc/subuid和/etc/subgid都写
-1root:1000000:65536 21000:1000000:65536 3lxd:1000000:65536 让容器进程运行时，宿主看到的容器进程所属UID以一百万算起 （外一百万=内0）。且容器的rootfs/下的文件在宿主机看来UID、GID也都是一样map过的。这种叫非特权容器，比特权容器安全。
-  初始化LXD。运行
+开始使用LXD——初始设置 从自己的发行版仓库安装LXD。LXD与Docker一样有一个守护进程lxd，因此有
+1sudo systemctl enable/disable/start/stop lxd 如果用systemctl停止lxd时，仍有正在运行的容器，那些容器不会被停止。所以应该先停止所有容器，再systemctl stop
+lxd是守护进程，而平时操作LXD则是用lxc命令（此lxc非属于LXC容器，是LXD的客户端的意思）
+安装LXD后自动创建lxd用户组，我们手动把自己的日常用户添加进这个组里：
+1usermod -aG lxd &amp;lt;username&amp;gt; 添加清华LXC镜像（下文都用这个tuna-images源）：
+1lxc remote add tuna-images https://mirrors.tuna.tsinghua.edu.cn/lxc-images/ --protocol=simplestreams --public 若想在连接镜像时使用代理：
+1lxc config set core.proxy_http http://ip:port 2lxc config set core.proxy_https http://ip:port 3lxc config set core.proxy_ignore_hosts image-server.local /etc/subuid和/etc/subgid都写
+11000:1000000:65536 2root:1000000:65536 3lxd:1000000:65536 让容器进程运行时，宿主看到的容器进程所属UID以一百万算起 （外一百万=内0）。且容器的rootfs/下的文件在宿主机看来UID、GID也都是一样map过的。这种叫非特权容器，比特权容器安全。
+初始化LXD。运行
 1sudo lxd init 交互问答式的。
- 其中有一个项让我们选择储存方式，我们自用选最简单的dir方式就可以，简单实用（这样容器内文件可以直接访问/var/lib/lxd/storage-pools/default/containers/容器名/rootfs/查看修改）。    （可选）缓存与自动刷新相关设置
+其中有一个项让我们选择储存方式，我们自用选最简单的dir方式就可以，简单实用（这样容器内文件可以直接访问/var/lib/lxd/storage-pools/default/containers/容器名/rootfs/查看修改）。 （可选）缓存与自动刷新相关设置
+1lxc config set images.remote_cache_expiry 30 2lxc config set images.auto_update_interval 24 3lxc config set images.auto_update_cached false 重启
+若宿主机有防火墙，可能需要手动把lxdbr0加入白名单，以使容器能够联网和与宿主机网络通信
+使用LXD的常用操作 查看网络源目前可下载的镜像
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

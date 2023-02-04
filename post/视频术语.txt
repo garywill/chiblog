@@ -1,0 +1,13 @@
+Intel: Quick Sync Video (QSV)
+
+NVIDIA: NVDEC/NVENC (NVENC)
+
+AMD: Advanced Media Framework (AMF)
+
+Intel/AMD: Video Acceleration API (VA-API, Linux only)
+
+Apple: Video Toolbox (macOS only)
+
+Raspberry Pi: Video4Linux2 (V4L2, Linux only) 
+
+https://jellyfin.org/docs/general/administration/hardware-acceleration/nvidia/

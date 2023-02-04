@@ -5,6 +5,7 @@
     <link>/chiblog/tags/%E5%9C%A8%E8%BF%99%E9%87%8C%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/</link>
     <description>Recent content in 在这里打开终端 on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Tue, 12 Jun 2018 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/%E5%9C%A8%E8%BF%99%E9%87%8C%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -22,8 +23,7 @@
 1[Desktop Entry] 2Encoding=UTF-8 3Name=rxvt-unicode in this path 4GenericName=rxvt-unicode in this path 5Exec=urxvt -cd %f 6Icon=utilities-terminal 7Terminal=false 8NoDisplay=true 其中的Exec=终端命令 需要的参数 %f因不同终端而异，本例是urxvt-unicode终端的。 xfce4-terminal终端为Exec=xfce4-terminal --working-directory=%f
 终端安装好后是肯定自带了.dekstop文件的，但一般它的Exec=中都没有传递路径的部分，所以这里要自己写一个。
 然后，在那篇文章的第3步写
-1[Added Associations] 2inode/directory=你的终端-in-this-path.desktop; 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
-  
+1[Added Associations] 2inode/directory=你的终端-in-this-path.desktop; 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden. 打赏作者 写作不易，感谢支持！ 扫个码吧～
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

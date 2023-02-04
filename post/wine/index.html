@@ -4,25 +4,23 @@
   <head>
 <title>wine实用经验教程 | Gary W 的中文博客(站2)</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.121.1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
 <meta name="description" content="本篇讲类unix系统下的用以模拟运行Windows程序的wine。会从普通使用者的比较实用的角度去讲。有专为国内用户准备的内容。
-本篇面向有Linux经验但对wine不熟悉的人。
-wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环境和严格环境中千万别用。
-一般越旧的Windows程序wine越容易模拟运行 …">
+本篇面向有Linux经验但对wine不熟悉的人。（非开发者。普通用户。我不是专业的，皆是个人经验）
+wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环境和严格环境中千万别用。（ …">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="wine实用经验教程" />
 <meta property="og:url" content="/chiblog/post/wine/" />
 <meta property="og:title" content="wine实用经验教程" />
 <meta property="og:description" content="本篇讲类unix系统下的用以模拟运行Windows程序的wine。会从普通使用者的比较实用的角度去讲。有专为国内用户准备的内容。
-本篇面向有Linux经验但对wine不熟悉的人。
-wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环境和严格环境中千万别用。
-一般越旧的Windows程序wine越容易模拟运行 …" />
+本篇面向有Linux经验但对wine不熟悉的人。（非开发者。普通用户。我不是专业的，皆是个人经验）
+wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环境和严格环境中千万别用。（ …" />
 <meta property="og:image" content="/chiblog/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='/chiblog/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='/chiblog/icons/favicon-32x32.png'>
@@ -38,8 +36,8 @@ wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环�
     
     
     <link rel="preload" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity = "sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" as="script" integrity=
-    "sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous">
+    <link rel="preload" href="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" as="script" integrity=
+    "sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity="sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" crossorigin="anonymous"><link rel="stylesheet" href="/chiblog/custom.css">
@@ -159,9 +157,6 @@ wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环�
     <nav id="TableOfContents">
   <ul>
     <li><a href="#wine可靠吗该不该用">wine可靠吗？该不该用？</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#基础知识和操作">基础知识和操作</a>
       <ul>
         <li><a href="#winearch环境变量">WINEARCH环境变量</a></li>
@@ -184,9 +179,9 @@ wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环�
   </ul>
 </nav>
     <p>本篇讲类unix系统下的用以模拟运行Windows程序的<code>wine</code>。会从普通使用者的比较实用的角度去讲。有专为国内用户准备的内容。</p>
-<p>本篇面向有Linux经验但对wine不熟悉的人。</p>
+<p>本篇面向有Linux经验但对wine不熟悉的人。（非开发者。普通用户。我不是专业的，皆是个人经验）</p>
 <h2 id="wine可靠吗该不该用">wine可靠吗？该不该用？</h2>
-<p>wine是<strong>不可靠</strong>的，自用可以，生产环境和严格环境中千万别用。</p>
+<p>wine是<strong>不可靠</strong>的，自用可以，生产环境和严格环境中千万别用。（你是开发者另说 ）</p>
 <p>一般越旧的Windows程序wine越容易模拟运行成功（或部分功能成功）。请先在官方<a href="https://appdb.winehq.org/">wine Application Database</a>上查你想运行的程序的别人的模拟结果（官方搜索不好用，可以用Google加<code> site:appdb.winehq.org</code>），看Test Results：</p>
 <ul>
 <li>
@@ -202,7 +197,6 @@ wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环�
 <p>无近期结果或近期仍然Silver以下的就放弃吧。也可以自己尝试，但这对普通人来说，顺利则已，不顺利则是一大大大坑</p>
 </li>
 </ul>
-<h1 id="heading"></h1>
 <h2 id="基础知识和操作">基础知识和操作</h2>
 <h3 id="winearch环境变量">WINEARCH环境变量</h3>
 <p>这个<code>WINEARCH</code> 决定了你模拟的Windows是32位或是64位的x86。对应的值为<code>win32</code>及<code>win64</code>，如果你的Unix系统是64位的它就默认是<code>win64</code>。</p>
@@ -218,19 +212,19 @@ wine可靠吗？该不该用？ wine是不可靠的，自用可以，生产环�
 <h3 id="启动windows程序及路径处理">启动Windows程序及路径处理</h3>
 <p>命令<code>wine 路径/xxx.exe 参数（可以是文件路径）</code>就可以通过wine运行<code>exe</code>。路径可以是Unix路径，也可以是（在有WINEPREFIX情况下的）Windows路径，wine会自动判断。</p>
 <p>以WINEPREFIX是默认值情况下为例：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>wine notepad.exe c:/abc.txt
-<span class="ln">2</span>wine notepad.exe ~/.wine/drive_c/abc.txt
-</code></pre></div><p>上面两条命令效果一样。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">wine notepad.exe c:/abc.txt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">wine notepad.exe ~/.wine/drive_c/abc.txt
+</span></span></code></pre></div><p>上面两条命令效果一样。</p>
 <p>对wine来说，你Unix系统里的其他文件（即模拟的C盘之外的文件）的Windows路径都以Z盘开头：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>wine notepad.exe z:/home/username/.wine/drive_c/abc.txt
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">wine notepad.exe z:/home/username/.wine/drive_c/abc.txt
+</span></span></code></pre></div><blockquote>
 <p>wine也提供了<code>winepath</code>这个命令来转换Unix和Windows之前的路径，但一般用不上。</p>
 </blockquote>
 <h3 id="安装windows程序及之后">安装Windows程序及之后</h3>
 <p>要安装一个Windows程序，一般就是在设置好<code>WINEPREFIX</code>和<code>WINEARCH</code>后，运行安装包</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>wine 安装包.exe
-<span class="ln">2</span>wine msiexec /i 安装包.msi
-</code></pre></div><p>安装好后，安装程序所生成的Windows开始菜单项会被自动加入你的Linux系统的启动器中。<code>.desktop</code>文件里已经有了<code>WINEPREFIX</code>和<code>WINEARCH</code>。安装程序所产生的文件扩展名关联、图标等等“垃圾”也会进入Linux中。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">wine 安装包.exe
+</span></span><span class="line"><span class="ln">2</span><span class="cl">wine msiexec /i 安装包.msi
+</span></span></code></pre></div><p>安装好后，安装程序所生成的Windows开始菜单项会被自动加入你的Linux系统的启动器中。<code>.desktop</code>文件里已经有了<code>WINEPREFIX</code>和<code>WINEARCH</code>。安装程序所产生的文件扩展名关联、图标等等“垃圾”也会进入Linux中。</p>
 <blockquote>
 <p>如果你不喜欢垃圾，可以清理，参考<a href="https://wiki.winehq.org/FAQ#How_do_I_clean_the_Open_With_List.3F">官方FAQ</a>
 甚至你可以在安装前就禁止它在Unix中产生任何菜单、文件关联等物件（参考<a href="https://wiki.winehq.org/FAQ#How_can_I_prevent_Wine_from_changing_the_filetype_associations_on_my_system_or_adding_unwanted_menu_entries.2Fdesktop_links.3F">这里</a>）：
@@ -238,22 +232,30 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d wine setup.exe</p>
 </blockquote>
 <p>我自己是总把垃圾清理掉的。如果你也清理了，没有了安装程序创建的菜单和文件关联，可以按如下方法自己弄：</p>
 <p>写一个自己的脚本：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="c1"># 取得此bash脚本所在路径</span>
-<span class="ln"> 4</span><span class="nv">script</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="s2">&#34;</span><span class="nv">$0</span><span class="s2">&#34;</span><span class="k">)</span>
-<span class="ln"> 5</span><span class="nv">scriptpath</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&#34;</span><span class="nv">$script</span><span class="s2">&#34;</span><span class="k">)</span>
-<span class="ln"> 6</span>
-<span class="ln"> 7</span><span class="c1"># 这里设置好WINEPREFIX</span>
-<span class="ln"> 8</span><span class="nb">export</span> <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$scriptpath</span><span class="s2">&#34;</span>
-<span class="ln"> 9</span>
-<span class="ln">10</span>wine <span class="s2">&#34;c:\Program Files\xxxx\xxxx.exe&#34;</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
-</code></pre></div><p>把这个脚本放在WINEPREFIX目录下使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># 取得此bash脚本所在路径</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">script</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="s2">&#34;</span><span class="nv">$0</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nv">scriptpath</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&#34;</span><span class="nv">$script</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"># 这里设置好WINEPREFIX</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nb">export</span> <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$scriptpath</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl">wine <span class="s2">&#34;c:\Program Files\xxxx\xxxx.exe&#34;</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>把这个脚本放在WINEPREFIX目录下使用。</p>
 <p>自己确定好此WINEPREFIX目录放在何处后，可以手动将文件后缀与这个脚本关联，具体可以参考我写的另一篇《<a href="https://www.cnblogs.com/garyw/p/12769264.html">Linux关联文件扩展名和打开程序</a>》。</p>
 <h3 id="winecfg">winecfg</h3>
 <p><code>winecfg</code>命令会打开一个GUI的、应对此WINEPREFIX的wine环境配置。</p>
 <p>里面可以设置要模拟的Windows版本。</p>
-<p>还可以设置某个DLL文件使用内建、原装、内建先于原装、原装先于内建、停用之中的哪种。默认情况下都是使用内建的。如果想使用原装，则必须把真正的Windows DLL放入WINERPEFIX的系统目录中，其中大部分是用<code>winetricks</code>来搞。</p>
+<p>还可以设置某个DLL文件使用</p>
+<ul>
+<li>内建</li>
+<li>原装</li>
+<li>内建先于原装</li>
+<li>原装先于内建</li>
+<li>停用</li>
+</ul>
+<p>之中的哪种。默认情况下都是使用<code>内建</code>的。如果想使用<code>原装</code>，则必须把真正的Windows DLL放入WINERPEFIX的系统目录中。实际上，这一操作大部分人是让<code>winetricks</code>来搞。</p>
 <p>这个对于一个程序是否能成功模拟比较关键，但需要一些技术知识，本篇不细谈。官方wine Application Database中，提交者一般会给出他们所使用的设置。</p>
 <h3 id="winetricks">winetricks</h3>
 <p>有官方背景的一个工具。其主页位于<a href="https://github.com/Winetricks/winetricks">Github</a>。发行版也会带它，但不一定最新，最好用最新的。它能帮用户方便配置wine环境，或安装一些基本DLL，运行库如VC runtime、.NET。</p>
@@ -265,14 +267,14 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d wine setup.exe</p>
 <p>有时尝试了多次都失败，而<code>export LANG=en_US.utf8</code>后就成功了。其中有些Windows程序安装时需要把语言设置成英文，运行时又可以用中文运行。神奇吧 !-_-!</p>
 <h3 id="wine卡死了或程序退出不彻底">wine卡死了或程序退出不彻底</h3>
 <p>如果在wine中运行notepad，会有以下进程在Unix中：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>23770 23765 notepad.exe     notepad.exe
-<span class="ln">2</span>23774 23765 wineserver      /usr/bin/wineserver
-<span class="ln">3</span>23780 23765 services.exe    C:\windows\system32\services.exe
-<span class="ln">4</span>23783 23765 winedevice.exe  C:\windows\system32\winedevice.exe
-<span class="ln">5</span>23793 23765 plugplay.exe    C:\windows\system32\plugplay.exe
-<span class="ln">6</span>23798 23765 winedevice.exe  C:\windows\system32\winedevice.exe
-<span class="ln">7</span>23805 23765 explorer.exe    C:\windows\system32\explorer.exe /desktop
-</code></pre></div><p>那些看似名为<code>.exe</code>结尾的进程实际上在Unix中是<code>wine-preloader</code>。每一个运行中的WINEPREFIX会有一套以上进程。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">23770 23765 notepad.exe     notepad.exe
+</span></span><span class="line"><span class="ln">2</span><span class="cl">23774 23765 wineserver      /usr/bin/wineserver
+</span></span><span class="line"><span class="ln">3</span><span class="cl">23780 23765 services.exe    C:\windows\system32\services.exe
+</span></span><span class="line"><span class="ln">4</span><span class="cl">23783 23765 winedevice.exe  C:\windows\system32\winedevice.exe
+</span></span><span class="line"><span class="ln">5</span><span class="cl">23793 23765 plugplay.exe    C:\windows\system32\plugplay.exe
+</span></span><span class="line"><span class="ln">6</span><span class="cl">23798 23765 winedevice.exe  C:\windows\system32\winedevice.exe
+</span></span><span class="line"><span class="ln">7</span><span class="cl">23805 23765 explorer.exe    C:\windows\system32\explorer.exe /desktop
+</span></span></code></pre></div><p>那些看似名为<code>.exe</code>结尾的进程实际上在Unix中是<code>wine-preloader</code>。每一个运行中的WINEPREFIX会有一套以上进程。</p>
 <p>正常情况下，如上例，<code>notepad.exe</code>退出后其余也会自动退出。但wine无法正常自行彻底退出是常有的。例如若用wine运行QQ，常常出现<code>QQ.exe</code>退出但<code>TXPlatform.exe</code>死活不自己退出的情况，甚至可能你点击了QQ界面上的叉，只是界面消失，实际的exe进程都卡住不退。卡住不退的情况也属于所模拟的程序功能仅部分正常。</p>
 <p>使用<code>wineserver -k</code>来告诉wine杀死本WINEPREFIX的所有进程。但这招有时也不灵，那么需要手动清理，比较麻烦。</p>
 <p><strong>因此，有了这一个脚本——<a href="https://github.com/garywill/wineprc">wineprc</a>，只需要一条命令，快速列出或杀死卡住的wine，可以指定一个WINEPREFIX或全部wine进程。</strong></p>
@@ -288,7 +290,7 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d wine setup.exe</p>
 <p>别人打包的AppImage，例如这个打包好的QQ（https://github.com/askme765cs/Wine-QQ-TIM)。许多人是拿深度所做的打包成AppImage。自行在网上搜索一下会有，但别人打包的水平有高有低，兼容性有好有坏。可靠度和风险自行评估。</p>
 </li>
 <li>
-<p>Github上的用户 countstarlight 所维护的从深度wine那边移植往Arch Linux的腾讯通信软件：</p>
+<p>Github上的用户 countstarlight 所维护的从深度wine那边移植往Arch Linux的腾讯通信软件：（可靠度和风险自行评估）</p>
 <ul>
 <li><a href="https://github.com/countstarlight/deepin-wine-qq-arch">deepin-wine-qq-arch</a></li>
 <li><a href="https://github.com/countstarlight/deepin-wine-tim-arch">deepin-wine-tim-arch</a></li>
@@ -321,7 +323,7 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d wine setup.exe</p>
 <p>经我测试，下载后解包，不要改变目录关系，使用里面的<code>wine</code>二进制即可以，一般是比较portable的。</p>
 <p>下载时注意是32位还是64位的x86。不是根据你的真实cpu位数来，而是根据你需要模拟的Windows位数来。</p>
 <h2 id="总结">总结</h2>
-<p>wine是坑！能用则用，不能用别留恋。两台电脑一台Linux一台Windows是最好方案。</p>
+<p>wine是坑，能用则用，不能用别留恋（除非你是开发者。或者，普通用户被坑了后想提交个bug也非不可）。两台电脑一台Linux一台Windows是最好方案。</p>
 <p>另外最好也知道，proton是Valve为他们的游戏弄的wine衍生版，部分steam游戏使用它；crossover是wine的一个商业应用。如果真要弄wine，有时也可以寻找这些资源。</p>
 <div style="text-align: center; font-size: 80%;">
 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。
@@ -375,6 +377,12 @@ All articles are original (except for those specially claimed) and copyrighted. 
         <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
       </li>
       <li>
+        <a href="/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="nav-link" title="Thunderbird打开活动管理器在标签中（2023，TB115)">Thunderbird打开活动管理器在标签中（2023，TB115)</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/esp32/" class="nav-link" title="花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)">花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)</a>
+      </li>
+      <li>
         <a href="/chiblog/post/appimage%E6%89%93%E5%8C%85/" class="nav-link" title="初探AppImage打包（Qt程序为例）">初探AppImage打包（Qt程序为例）</a>
       </li>
       <li>
@@ -385,6 +393,9 @@ All articles are original (except for those specially claimed) and copyrighted. 
       </li>
       <li>
         <a href="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" class="nav-link" title="容易上手的LXD容器和虚拟X server">容易上手的LXD容器和虚拟X server</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E7%AD%89/" class="nav-link" title="Firefox/Chromium浏览器的启动命令选项参数等配置">Firefox/Chromium浏览器的启动命令选项参数等配置</a>
       </li>
       <li>
         <a href="/chiblog/post/ttffont/" class="nav-link" title="修复一些不能直接使用或不好用的ttf字体文件">修复一些不能直接使用或不好用的ttf字体文件</a>
@@ -425,6 +436,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">9</span>
         </a>
         
+        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
+          FIREFOX
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='/chiblog/tags/shell/' class="post_tag button button_translucent" title="shell">
           SHELL
           <span class="button_tally">2</span>
@@ -450,8 +466,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">2</span>
         </a>
         
+        <a href='/chiblog/tags/activity-manager/' class="post_tag button button_translucent" title="activity-manager">
+          ACTIVITY-MANAGER
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/adb/' class="post_tag button button_translucent" title="adb">
           ADB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/an-thinker/' class="post_tag button button_translucent" title="an-thinker">
+          AN-THINKER
           <span class="button_tally">1</span>
         </a>
         
@@ -500,6 +526,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
+        <a href='/chiblog/tags/c3/' class="post_tag button button_translucent" title="c3">
+          C3
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/cgroup/' class="post_tag button button_translucent" title="cgroup">
           CGROUP
           <span class="button_tally">1</span>
@@ -510,8 +541,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
-          FIREFOX
+        <a href='/chiblog/tags/esp/' class="post_tag button button_translucent" title="esp">
+          ESP
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32/' class="post_tag button button_translucent" title="esp32">
+          ESP32
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32-c3/' class="post_tag button button_translucent" title="esp32-c3">
+          ESP32-C3
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32c3/' class="post_tag button button_translucent" title="esp32c3">
+          ESP32C3
           <span class="button_tally">1</span>
         </a>
         
@@ -535,48 +581,21 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/github.io/' class="post_tag button button_translucent" title="github.io">
-          GITHUB.IO
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/js/' class="post_tag button button_translucent" title="js">
-          JS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class="post_tag button button_translucent" title="linux发行版">
-          LINUX发行版
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxc/' class="post_tag button button_translucent" title="lxc">
-          LXC
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxd/' class="post_tag button button_translucent" title="lxd">
-          LXD
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/mime/' class="post_tag button button_translucent" title="mime">
-          MIME
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/obs-studio/' class="post_tag button button_translucent" title="obs-studio">
-          OBS-STUDIO
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
+            <a href='/chiblog/tags/activity-manager/' class=" post_tag button button_translucent" data-position=1 title="activity-manager">ACTIVITY-MANAGER<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/adb/' class=" post_tag button button_translucent" data-position=1 title="adb">ADB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/an-thinker/' class=" post_tag button button_translucent" data-position=1 title="an-thinker">AN-THINKER<span class="button_tally">1</span>
             </a>
             
             
@@ -616,6 +635,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/c3/' class=" post_tag button button_translucent" data-position=1 title="c3">C3<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/cgroup/' class=" post_tag button button_translucent" data-position=1 title="cgroup">CGROUP<span class="button_tally">1</span>
             </a>
             
@@ -624,7 +647,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
-            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=1 title="firefox">FIREFOX<span class="button_tally">1</span>
+            <a href='/chiblog/tags/esp/' class=" post_tag button button_translucent" data-position=1 title="esp">ESP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32/' class=" post_tag button button_translucent" data-position=1 title="esp32">ESP32<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32-c3/' class=" post_tag button button_translucent" data-position=1 title="esp32-c3">ESP32-C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32c3/' class=" post_tag button button_translucent" data-position=1 title="esp32c3">ESP32C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=2 title="firefox">FIREFOX<span class="button_tally">2</span>
             </a>
             
             
@@ -648,6 +687,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/in-tab/' class=" post_tag button button_translucent" data-position=1 title="in-tab">IN-TAB<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/js/' class=" post_tag button button_translucent" data-position=1 title="js">JS<span class="button_tally">1</span>
             </a>
             
@@ -668,7 +711,15 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/micropython/' class=" post_tag button button_translucent" data-position=1 title="micropython">MICROPYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/mime/' class=" post_tag button button_translucent" data-position=1 title="mime">MIME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/mozilla/' class=" post_tag button button_translucent" data-position=1 title="mozilla">MOZILLA<span class="button_tally">1</span>
             </a>
             
             
@@ -681,6 +732,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/pc/' class=" post_tag button button_translucent" data-position=1 title="pc">PC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/picocom/' class=" post_tag button button_translucent" data-position=1 title="picocom">PICOCOM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python/' class=" post_tag button button_translucent" data-position=1 title="python">PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python-shell/' class=" post_tag button button_translucent" data-position=1 title="python-shell">PYTHON-SHELL<span class="button_tally">1</span>
             </a>
             
             
@@ -716,6 +779,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/thunderbird/' class=" post_tag button button_translucent" data-position=1 title="thunderbird">THUNDERBIRD<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/truetype/' class=" post_tag button button_translucent" data-position=1 title="truetype">TRUETYPE<span class="button_tally">1</span>
             </a>
             
@@ -737,6 +804,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/vnc/' class=" post_tag button button_translucent" data-position=1 title="vnc">VNC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/webrepl/' class=" post_tag button button_translucent" data-position=1 title="webrepl">WEBREPL<span class="button_tally">1</span>
             </a>
             
             
@@ -781,6 +852,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E5%AD%97%E4%BD%93/' class=" post_tag button button_translucent" data-position=1 title="字体">字体<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/' class=" post_tag button button_translucent" data-position=1 title="安信可">安信可<span class="button_tally">1</span>
             </a>
             
             
@@ -837,6 +912,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E6%AD%BB%E6%9C%BA/' class=" post_tag button button_translucent" data-position=1 title="死机">死机<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="活动管理器">活动管理器<span class="button_tally">1</span>
             </a>
             
             
@@ -996,7 +1075,7 @@ All articles are original (except for those specially claimed) and copyrighted. 
   </div>
 </footer>
 
-    <script type="text/javascript" src="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" integrity="sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
+    <script type="text/javascript" src="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" integrity="sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
     
   </body>
 </html>

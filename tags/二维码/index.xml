@@ -5,6 +5,7 @@
     <link>/chiblog/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/</link>
     <description>Recent content in 二维码 on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Mon, 25 Feb 2019 08:00:00 +0100</lastBuildDate><atom:link href="/chiblog/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -17,15 +18,14 @@
         
           
             我们需要的两个功能：
- 解码Linux屏幕上的二维码，将结果输出在终端 在终端中将字符串转为二维码，直接显示二维码在终端中以供扫描  实现方法   生成二维码 qrencode是一个常见的生成二维码的CLI程序，许多发行版仓库中有。它支持直接输出二维码在终端中。（它也支持输出二维码到图片文件）
-  解码二维码
- 此方法在 X11 上测试过
-  在终端中运行截屏程序，以截得二维码图形
+解码Linux屏幕上的二维码，将结果输出在终端 在终端中将字符串转为二维码，直接显示二维码在终端中以供扫描 实现方法 生成二维码 qrencode是一个常见的生成二维码的CLI程序，许多发行版仓库中有。它支持直接输出二维码在终端中。（它也支持输出二维码到图片文件）
+解码二维码
+此方法在 X11 上测试过
+在终端中运行截屏程序，以截得二维码图形
 scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给解析二维码的CLI程序。
-我们用zbar来解析二维码，显示结果在终端。    我已将以上所述整理成一个shell脚本：
- 终端中运行这个脚本，然后鼠标框选屏幕上的二维码，即可解析出结果。 将任意字符串当作参数传给这个脚本，即可在屏幕上显示出二维码。  完整脚本 代码请移步我的Github仓库 https://github.com/garywill/qrshot 查看
-本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
-  
+我们用zbar来解析二维码，显示结果在终端。 我已将以上所述整理成一个shell脚本：
+终端中运行这个脚本，然后鼠标框选屏幕上的二维码，即可解析出结果。 将任意字符串当作参数传给这个脚本，即可在屏幕上显示出二维码。 完整脚本 代码请移步我的Github仓库 https://github.com/garywill/qrshot 查看
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden. 打赏作者 写作不易，感谢支持！ 扫个码吧～
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/qr/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

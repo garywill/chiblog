@@ -5,6 +5,7 @@
     <link>/chiblog/tags/%E8%B7%A8%E5%8F%91%E8%A1%8C%E7%89%88/</link>
     <description>Recent content in 跨发行版 on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Thu, 01 Sep 2022 08:00:00 +0800</lastBuildDate><atom:link href="/chiblog/tags/%E8%B7%A8%E5%8F%91%E8%A1%8C%E7%89%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -17,7 +18,7 @@
         
           
             这是稿件，有待完善
- .AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制+动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用了squashfs+FUSE）。软件退出后，/tmp/.mount_xxxxxxxx会消失。
+.AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制+动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用了squashfs+FUSE）。软件退出后，/tmp/.mount_xxxxxxxx会消失。
 一般来说（如果正确打包了），运行时传递了参数给.AppImage文件，这些参数会传递到其内部的usr/bin/真正的可执行文件上（但也有特例，如解包参数--appimage-extract）
 查看或解包一.AppImage文件 学习打包前，先了解查看和解包的方法
 要解包一.AppImage文件，运行：

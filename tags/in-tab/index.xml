@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>in tab on Gary W 的中文博客(站2)</title>
+    <link>/chiblog/tags/in-tab/</link>
+    <description>Recent content in in tab on Gary W 的中文博客(站2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
+    <lastBuildDate>Thu, 13 Jul 2023 08:00:00 +0800</lastBuildDate><atom:link href="/chiblog/tags/in-tab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thunderbird打开活动管理器在标签中（2023，TB115)</title>
+      <link>/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <pubDate>Thu, 13 Jul 2023 08:00:00 +0800</pubDate>
+      
+      <guid>/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <description>
+        
+          
+            现在是2023年，Thunderbird 115。
+想要让Mozilla家的Thunderbird把「活动管理器」打开在标签里，而不是在单独窗口里。
+今天自己研究了一下，发现与Firefox的「userChrome JS script」（又叫「uc脚本」）有几分类似。之前我就自己写过一篇《2020年代仍有Firefox userChrome JS脚本》。今天用点在Thunderbird上。
+在Thunderbird 115上，三杠菜单 -&amp;gt; 工具 -&amp;gt; 开发者工具 （或Ctrl+Shift+I），在打开的开发者工具箱窗口的控制台里输入
+1Components.classes[&amp;#34;@mozilla.org/appshell/window-mediator;1&amp;#34;] 2 .getService(Components.interfaces.nsIWindowMediator) 3 .getMostRecentBrowserWindow(&amp;#39;&amp;#39;) 4 .openContentTab(&amp;#39;chrome://messenger/content/activity.xhtml&amp;#39;) 就那么简单。
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden. 打赏作者 写作不易，感谢支持！ 扫个码吧～
+          
+          
+            &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

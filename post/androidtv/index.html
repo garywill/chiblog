@@ -4,23 +4,23 @@
   <head>
 <title>Android与电视盒，电脑投屏、技术工具、遥控器之外的操作方式等 | Gary W 的中文博客(站2)</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.121.1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
 <meta name="description" content="本文又臭又长，内容较杂，请善用目录链接
- 这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
-这篇 …">
+这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
+这篇文 …">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="Android与电视盒，电脑投屏、技术工具、遥控器之外的操作方式等" />
 <meta property="og:url" content="/chiblog/post/androidtv/" />
 <meta property="og:title" content="Android与电视盒，电脑投屏、技术工具、遥控器之外的操作方式等" />
 <meta property="og:description" content="本文又臭又长，内容较杂，请善用目录链接
- 这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
-这篇 …" />
+这篇文章不针对Android设备型号，所讲内容（胡乱记录）大部分已测试适用于Android 4.4或以上电视盒子。（不过，别玩太多，没多大用，有用的是祝大家买到的是一个性价比高又有足够好的配套工具使用的TV盒子（当前有了没有？），不用像本文这样浪费时间弄那么多麻烦玩意。）
+这篇文 …" />
 <meta property="og:image" content="/chiblog/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='/chiblog/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='/chiblog/icons/favicon-32x32.png'>
@@ -36,8 +36,8 @@
     
     
     <link rel="preload" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity = "sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" as="script" integrity=
-    "sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous">
+    <link rel="preload" href="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" as="script" integrity=
+    "sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity="sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" crossorigin="anonymous"><link rel="stylesheet" href="/chiblog/custom.css">
@@ -180,6 +180,7 @@
     <li><a href="#使用app来开关网络adb">使用App来开关网络adb</a></li>
     <li><a href="#终端模拟器与开机脚本">终端模拟器与开机脚本</a></li>
     <li><a href="#安装ssh-server以及在ssh中开关adb">安装SSH server，以及在SSH中开关adb</a></li>
+    <li><a href="#手动添加ipv6地址和路由">手动添加IPv6地址和路由</a></li>
     <li><a href="#f-droid客户端旧界面版">F-Droid客户端（旧界面版）</a></li>
     <li><a href="#控制哪个app禁止或可以上网">控制哪个app禁止或可以上网</a></li>
     <li><a href="#盒子基本技术型设置和安装tv上的工具app">盒子基本技术型设置和安装TV上的工具App</a>
@@ -249,8 +250,8 @@
 <p>较新版本Android默认估计采用了遥远处我们正常无法连接的NTP服务器来同步时间。而如果手动设置时间，关掉自动同步，有些盒子断电后时间复原。</p>
 <details>
 <p>用下面命令设置让它用国内的NTP服务器</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>settings put global ntp_server ntp1.aliyun.com
-</code></pre></div></details>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">settings put global ntp_server ntp1.aliyun.com
+</span></span></code></pre></div></details>
 <h2 id="使用app来开关网络adb">使用App来开关网络adb</h2>
 <p>如果进系统设置里开关adb麻烦，可以用一些App</p>
 <details>
@@ -272,61 +273,94 @@
 <details>
 <p>adb没有密码，一直开着不够安全。</p>
 <p>装一个可以设置密码的SSH server(这里用了<code>net.xnano.android.sshserver</code>)。在SSH登录上去后可以再用命令去开关adb</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># 关闭adbd
-<span class="ln">2</span>setprop service.adb.tcp.port -1
-<span class="ln">3</span>killall  adbd
-<span class="ln">4</span>
-<span class="ln">5</span># 打开adbd
-<span class="ln">6</span>setprop service.adb.tcp.port 5555 （也可以换个非标准端口，防恶意扫描）
-<span class="ln">7</span>killall  adbd
-<span class="ln">8</span>adbd &amp; 
-</code></pre></div><p>可与此SSH服务器配合的bash脚本：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>TV_IP=
-<span class="ln"> 2</span>TV_SSH_USER=
-<span class="ln"> 3</span>TV_SSH_PASSWORD=
-<span class="ln"> 4</span>
-<span class="ln"> 5</span>function ssh_cmd() {
-<span class="ln"> 6</span>    local PID
-<span class="ln"> 7</span>
-<span class="ln"> 8</span>    local AS
-<span class="ln"> 9</span>    local USER PASS IP PORT
-<span class="ln">10</span>    AS=$1
-<span class="ln">11</span>    IP=$2;  PORT=$3;  USER=$4;  PASS=$5;  shift;shift;shift;shift;shift
-<span class="ln">12</span>
-<span class="ln">13</span>    sshpass -p &#34;$PASS&#34;  ssh   ${USER}@${IP} -p $PORT -tt  &lt;&lt; EOF &amp;
-<span class="ln">14</span>su  -c &#34;$@&#34; $AS
-<span class="ln">15</span>EOF
-<span class="ln">16</span>
-<span class="ln">17</span>PID=$!
-<span class="ln">18</span>sleep 5
-<span class="ln">19</span>kill $PID
-<span class="ln">20</span>}
-<span class="ln">21</span>function tv_cmd() {
-<span class="ln">22</span>    local AS=$1
-<span class="ln">23</span>    shift
-<span class="ln">24</span>    ssh_cmd $AS $TV_IP 2222 $TV_SSH_USER $TV_SSH_PASSWORD &#34;$@&#34;
-<span class="ln">25</span>}
-<span class="ln">26</span>
-<span class="ln">27</span># 例：
-<span class="ln">28</span>
-<span class="ln">29</span># 要打开某url
-<span class="ln">30</span>tv_cmd &#34;shell&#34; am start -a android.intent.action.VIEW -d &lt;URL&gt;
-<span class="ln">31</span>
-<span class="ln">32</span># 允许adb
-<span class="ln">33</span>tv_cmd &#34;root&#34; &#34;setprop service.adb.tcp.port 5555; killall  adbd; nohup adbd &gt;/dev/null 2&gt;&amp;1  ; sleep 1&#34;
-<span class="ln">34</span>
-<span class="ln">35</span># 关闭adb
-<span class="ln">36</span>tv_cmd &#34;root&#34; &#34;setprop service.adb.tcp.port -1; killall  adbd&#34;
-</code></pre></div></details>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 关闭adbd</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">setprop service.adb.tcp.port -1
+</span></span><span class="line"><span class="ln">3</span><span class="cl">killall  adbd
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1"># 打开adbd</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">setprop service.adb.tcp.port <span class="m">5555</span> （也可以换个非标准端口，防恶意扫描）
+</span></span><span class="line"><span class="ln">7</span><span class="cl">killall  adbd
+</span></span><span class="line"><span class="ln">8</span><span class="cl">adbd <span class="p">&amp;</span> 
+</span></span></code></pre></div><p>可与此SSH服务器配合的bash脚本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">TV_IP</span><span class="o">=</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nv">TV_SSH_USER</span><span class="o">=</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">TV_SSH_PASSWORD</span><span class="o">=</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">function</span> ssh_cmd<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">local</span> PID
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nb">local</span> AS
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nb">local</span> USER PASS IP PORT
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="nv">AS</span><span class="o">=</span><span class="nv">$1</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="nv">IP</span><span class="o">=</span><span class="nv">$2</span><span class="p">;</span>  <span class="nv">PORT</span><span class="o">=</span><span class="nv">$3</span><span class="p">;</span>  <span class="nv">USER</span><span class="o">=</span><span class="nv">$4</span><span class="p">;</span>  <span class="nv">PASS</span><span class="o">=</span><span class="nv">$5</span><span class="p">;</span>  shift<span class="p">;</span>shift<span class="p">;</span>shift<span class="p">;</span>shift<span class="p">;</span><span class="nb">shift</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    sshpass -p <span class="s2">&#34;</span><span class="nv">$PASS</span><span class="s2">&#34;</span>  ssh   <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>@<span class="si">${</span><span class="nv">IP</span><span class="si">}</span> -p <span class="nv">$PORT</span> -tt  <span class="s">&lt;&lt; EOF &amp;
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="s">su  -c &#34;$@&#34; $AS
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="nv">PID</span><span class="o">=</span><span class="nv">$!</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">sleep <span class="m">5</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="nb">kill</span> <span class="nv">$PID</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="k">function</span> tv_cmd<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="nb">local</span> <span class="nv">AS</span><span class="o">=</span><span class="nv">$1</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="nb">shift</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    ssh_cmd <span class="nv">$AS</span> <span class="nv">$TV_IP</span> <span class="m">2222</span> <span class="nv">$TV_SSH_USER</span> <span class="nv">$TV_SSH_PASSWORD</span> <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">
+</span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="c1"># 例：</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c1"># 要打开某url</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">tv_cmd <span class="s2">&#34;shell&#34;</span> am start -a android.intent.action.VIEW -d &lt;URL&gt;
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="c1"># 允许adb</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">tv_cmd <span class="s2">&#34;root&#34;</span> <span class="s2">&#34;setprop service.adb.tcp.port 5555; killall  adbd; nohup adbd &gt;/dev/null 2&gt;&amp;1  ; sleep 1&#34;</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">
+</span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="c1"># 关闭adb</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">tv_cmd <span class="s2">&#34;root&#34;</span> <span class="s2">&#34;setprop service.adb.tcp.port -1; killall  adbd&#34;</span>
+</span></span></code></pre></div></details>
+<h2 id="手动添加ipv6地址和路由">手动添加IPv6地址和路由</h2>
+<details>
+<p>正常情况下不用手动的，有时特殊情况下才需要。</p>
+<p>把以下内容放到<code>/data/data/com.termux/files/home/.termux/boot/</code>目录里</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">ipv6prefix</span><span class="o">=</span><span class="s2">&#34;2xxx:xxxx:xxxx:xxxx/64&#34;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">generate_random_lan_ip6_local<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">local</span> r1 r2 r3 r4 r5 r6 r7 r8 r9
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1">#         r1=$( printf &#34;%x&#34; $(($RANDOM%240+16)) )</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nv">r2</span><span class="o">=</span><span class="k">$(</span> <span class="nb">printf</span> <span class="s2">&#34;%x&#34;</span> <span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">240</span><span class="o">+</span><span class="m">16</span><span class="k">))</span> <span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nv">r3</span><span class="o">=</span><span class="k">$(</span> <span class="nb">printf</span> <span class="s2">&#34;%x&#34;</span> <span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">240</span><span class="o">+</span><span class="m">16</span><span class="k">))</span> <span class="k">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="nv">r4</span><span class="o">=</span><span class="k">$(</span> <span class="nb">printf</span> <span class="s2">&#34;%x&#34;</span> <span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">240</span><span class="o">+</span><span class="m">16</span><span class="k">))</span> <span class="k">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="nv">r5</span><span class="o">=</span><span class="k">$(</span> <span class="nb">printf</span> <span class="s2">&#34;%x&#34;</span> <span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">240</span><span class="o">+</span><span class="m">16</span><span class="k">))</span> <span class="k">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="nv">r6</span><span class="o">=</span><span class="k">$(</span> <span class="nb">printf</span> <span class="s2">&#34;%x&#34;</span> <span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">240</span><span class="o">+</span><span class="m">16</span><span class="k">))</span> <span class="k">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="nv">r7</span><span class="o">=</span><span class="k">$(</span> <span class="nb">printf</span> <span class="s2">&#34;%x&#34;</span> <span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">240</span><span class="o">+</span><span class="m">16</span><span class="k">))</span> <span class="k">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="nv">r8</span><span class="o">=</span><span class="k">$(</span> <span class="nb">printf</span> <span class="s2">&#34;%x&#34;</span> <span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">240</span><span class="o">+</span><span class="m">16</span><span class="k">))</span> <span class="k">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="nv">r9</span><span class="o">=</span><span class="k">$(</span> <span class="nb">printf</span> <span class="s2">&#34;%x&#34;</span> <span class="k">$((</span><span class="nv">$RANDOM</span><span class="o">%</span><span class="m">240</span><span class="o">+</span><span class="m">16</span><span class="k">))</span> <span class="k">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$r2$r3</span><span class="s2">:</span><span class="nv">$r4$r5</span><span class="s2">:</span><span class="nv">$r6$r7</span><span class="s2">:</span><span class="nv">$r8$r9</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="nv">myipv6</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">ipv6prefix</span><span class="p">%::*</span><span class="si">}</span><span class="s2">:</span><span class="k">$(</span>generate_random_lan_ip6_local<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Generated my random ipv6 </span><span class="nv">$myipv6</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Going to add random ipv6 addr to your host...&#34;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">su -c <span class="s2">&#34;ip -6 a add </span><span class="nv">$myipv6</span><span class="s2">/64 dev eth0&#34;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl">su -c <span class="s2">&#34;ip -6 route add ::1 dev&#34;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">su -c <span class="s2">&#34;ip -6 route add </span><span class="nv">$ipv6prefix</span><span class="s2">::/64 dev eth0&#34;</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">su -c <span class="s2">&#34;ip -6 route add fe80::/64 dev eth0&#34;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">su -c <span class="s2">&#34;ip -6 route add default via fe80::1 dev eth0&#34;</span>
+</span></span></code></pre></div></details>
 <h2 id="f-droid客户端旧界面版">F-Droid客户端（旧界面版）</h2>
 <details>
 <p>装个第三方的老界面版本的<a href="https://f-droid.org/packages/eu.bubu1.fdroidclassic/">eu.bubu1.fdroidclassic</a>。官方的App对一些旧盒子来说吃不消。</p>
 <p>禁用原来的源后添加清华源（目前测试不能用https）</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>http://mirrors.tuna.tsinghua.edu.cn/fdroid/repo/  
-<span class="ln">2</span>http://mirrors.tuna.tsinghua.edu.cn/fdroid/archive
-</code></pre></div><p>指纹填</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB
-</code></pre></div></details>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">http://mirrors.tuna.tsinghua.edu.cn/fdroid/repo/  
+</span></span><span class="line"><span class="ln">2</span><span class="cl">http://mirrors.tuna.tsinghua.edu.cn/fdroid/archive
+</span></span></code></pre></div><p>指纹填</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB
+</span></span></code></pre></div></details>
 <h2 id="控制哪个app禁止或可以上网">控制哪个app禁止或可以上网</h2>
 <details>
 <p>AFWall+（dev.ukanth.ufirewall）不错</p>
@@ -348,11 +382,11 @@
 <p>（这一个可选）然后装一个<a href="https://f-droid.org/en/packages/com.twsitedapps.homemanager/">com.twsitedapps.homemanager</a>，用以选择默认的桌面Launcher。</p>
 <blockquote>
 <p>可随时用</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -n com.twsitedapps.homemanager/.QuickSelectActivity
-</code></pre></div><p>来调用它的home launcher选择菜单</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">am start -n com.twsitedapps.homemanager/.QuickSelectActivity
+</span></span></code></pre></div><p>来调用它的home launcher选择菜单</p>
 <p>用</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -n com.twsitedapps.homemanager/.HomeManagerActivity
-</code></pre></div><p>来打开它的App主页面。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">am start -n com.twsitedapps.homemanager/.HomeManagerActivity
+</span></span></code></pre></div><p>来打开它的App主页面。</p>
 </blockquote>
 <blockquote>
 <p>除了当贝桌面外，还要有一个可以显示小部件（Widgets）（前提是ROM支持，实测附赠的Android 4.4盒子不支持），又可以用遥控器方向键操作的Home Launcher。TV Launcher才是最适合做主要Launcher的，但它们一般不支持Widgets，因此两种Launcher需要共存。（待续）</p>
@@ -362,10 +396,10 @@
 <p>如果你的盒子是附赠的，原厂设置了菜单键为打开它的入口App，菜单键原有的功效都失效。</p>
 <details>
 <p>如果你暂时不用它原定的视频节目功能了，可以将它的默认App直接禁用掉。查得它原厂默认入口App的包名后</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pm block 包名
-<span class="ln">2</span>pm disable 包名
-<span class="ln">3</span>pm disable-user 包名
-</code></pre></div><p>（这个过程也可以装<a href="https://f-droid.org/packages/com.dkanada.openapk">com.dkanada.openapk</a>后点鼠标搞定）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">pm block 包名
+</span></span><span class="line"><span class="ln">2</span><span class="cl">pm disable 包名
+</span></span><span class="line"><span class="ln">3</span><span class="cl">pm disable-user 包名
+</span></span></code></pre></div><p>（这个过程也可以装<a href="https://f-droid.org/packages/com.dkanada.openapk">com.dkanada.openapk</a>后点鼠标搞定）</p>
 </details>
 <h3 id="尝试清除附赠盒子的一些厂家的预装app失败">尝试清除附赠盒子的一些厂家的预装App（失败～）</h3>
 <details>
@@ -374,18 +408,18 @@
 <h3 id="适当压低cpugpu频率改善发热">适当压低CPU/GPU频率改善发热</h3>
 <details>
 <p>有些盒子的散热真的做的不好，如果你还没有买风扇，可以暂时适当降频</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/data/data/com.termux/files/usr/bin/bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="nv">BASEPATH</span><span class="o">=</span><span class="s2">&#34;/sys/devices/system/cpu&#34;</span>                                                                      
-<span class="ln"> 4</span>
-<span class="ln"> 5</span><span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span>0<span class="p">;</span> i&lt;<span class="o">=</span>3<span class="p">;</span> i++<span class="o">))</span>
-<span class="ln"> 6</span><span class="k">do</span>                                                                  
-<span class="ln"> 7</span>
-<span class="ln"> 8</span>        su -c <span class="s2">&#34;echo conservative &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/scaling_governor&#34;</span>
-<span class="ln"> 9</span>        su -c <span class="s2">&#34;echo 50 &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/conservative/down_threshold&#34;</span>
-<span class="ln">10</span>        su -c <span class="s2">&#34;echo 99 &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/conservative/up_threshold&#34;</span>
-<span class="ln">11</span><span class="k">done</span>      
-</code></pre></div></details>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/data/data/com.termux/files/usr/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">BASEPATH</span><span class="o">=</span><span class="s2">&#34;/sys/devices/system/cpu&#34;</span>                                                                      
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span>0<span class="p">;</span> i&lt;<span class="o">=</span>3<span class="p">;</span> i++<span class="o">))</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">do</span>                                                                  
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        su -c <span class="s2">&#34;echo conservative &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/scaling_governor&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        su -c <span class="s2">&#34;echo 50 &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/conservative/down_threshold&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        su -c <span class="s2">&#34;echo 99 &gt; </span><span class="nv">$BASEPATH</span><span class="s2">/cpu</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">/cpufreq/conservative/up_threshold&#34;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">done</span>      
+</span></span></code></pre></div></details>
 <h3 id="限制后台以解决卡顿和发热">限制后台以解决卡顿（和发热）</h3>
 <p>还是iOS好。Android要做几样不同的步骤来限制那些App。</p>
 <p>既然是TV Box，肯定要安装些视频网站的App，那些难免会不守道德偷偷占你后台。</p>
@@ -403,11 +437,11 @@
 </ul>
 <p>ADBungFu是个名字个界面都有点奇怪但功能似乎很强大的东西，它与其他不同，可以按照权限来列出App，让你针对性的关。关了大站App的相关后台权限</p>
 <p>如果是用命令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cmd appops set &lt;package_name&gt; RUN_IN_BACKGROUND ignore
-<span class="ln">2</span>cmd appops set &lt;package_name&gt; RUN_ANY_IN_BACKGROUND ignore
-<span class="ln">3</span>cmd appops set &lt;package_name&gt; START_FOREGROUND ignore
-<span class="ln">4</span>cmd appops set &lt;package_name&gt; INSTANT_APP_START_FOREGROUND ignore
-</code></pre></div></details>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cmd appops set &lt;package_name&gt; RUN_IN_BACKGROUND ignore
+</span></span><span class="line"><span class="ln">2</span><span class="cl">cmd appops set &lt;package_name&gt; RUN_ANY_IN_BACKGROUND ignore
+</span></span><span class="line"><span class="ln">3</span><span class="cl">cmd appops set &lt;package_name&gt; START_FOREGROUND ignore
+</span></span><span class="line"><span class="ln">4</span><span class="cl">cmd appops set &lt;package_name&gt; INSTANT_APP_START_FOREGROUND ignore
+</span></span></code></pre></div></details>
 <h4 id="在系统开发者选项中限制后台">在系统开发者选项中限制后台</h4>
 <p>你会发现以上都不够。所以Android在这方面确实还有欠缺。</p>
 <p>进去开发者模式菜单-&gt;后台进程限制，设置允许后台数量2个左右好了。</p>
@@ -460,11 +494,11 @@
 <h4 id="tcp传输原始音频流播放">TCP传输原始音频流播放</h4>
 <p>使用Pulseaudio的模块将Linux作为简单原始音频的tcp服务器。这个方案音频延迟很小基本没有</p>
 <details>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=1 source=0 record=true 
-</code></pre></div><p>默认端口为4711，<code>channel=1</code>为单声道，<code>rate=48000</code>占网速约100KB/s。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">pactl</span> <span class="nb">load</span><span class="o">-</span><span class="n">module</span> <span class="n">module</span><span class="o">-</span><span class="n">simple</span><span class="o">-</span><span class="n">protocol</span><span class="o">-</span><span class="n">tcp</span> <span class="n">rate</span><span class="o">=</span><span class="mi">48000</span> <span class="n">format</span><span class="o">=</span><span class="n">s16le</span> <span class="n">channels</span><span class="o">=</span><span class="mi">1</span> <span class="n">source</span><span class="o">=</span><span class="mi">0</span> <span class="n">record</span><span class="o">=</span><span class="bp">true</span> 
+</span></span></code></pre></div><p>默认端口为4711，<code>channel=1</code>为单声道，<code>rate=48000</code>占网速约100KB/s。</p>
 <p>如果要停止，则</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pactl unload-module module-simple-protocol-tcp
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">pactl</span> <span class="n">unload</span><span class="o">-</span><span class="n">module</span> <span class="n">module</span><span class="o">-</span><span class="n">simple</span><span class="o">-</span><span class="n">protocol</span><span class="o">-</span><span class="n">tcp</span>
+</span></span></code></pre></div><blockquote>
 <p>此命令的技术文档位于<a href="https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/">freedesktop页面</a></p>
 </blockquote>
 <p>Android端使用Simple Protocol Player NG（<a href="https://f-droid.org/packages/fr.jakse.raphael.simpleprotocolplayer/">fr.jakse.raphael.simpleprotocolplayer</a>），输入Linux的IP和其他少量参数后接收播放</p>
@@ -483,10 +517,10 @@
 <p>PulseAudio的名为RAOP（Remote Audio Output Protocol）的模块实现了音频AirTunes投放，其对应模块有<code>module-raop-sink</code>、<code>module-raop-discover</code>。</p>
 <p>PulseAudio所实现的RAOP需要在“PulseAudio属性&quot;(<code>paprefs</code>命令）中的&quot;Network Access&quot;中勾选&quot;Make discoverable Apple AirTunes sound devices available locally”启用。</p>
 <p>另外Linux上需要有Avahi，用systemd先启动它</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo systemctl start avahi-daemon.service
-</code></pre></div><p>可能还要重启一下PulseAudio</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pulseaudio -k
-</code></pre></div><p>若要将单独一个Linux程序的音频投出去，在PulseAudio的“音量控制”（<code>pavucontrol</code>命令）中“回放”中将此程序的音频输出设置为找到的AirTunes。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo systemctl start avahi-daemon.service
+</span></span></code></pre></div><p>可能还要重启一下PulseAudio</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">pulseaudio -k
+</span></span></code></pre></div><p>若要将单独一个Linux程序的音频投出去，在PulseAudio的“音量控制”（<code>pavucontrol</code>命令）中“回放”中将此程序的音频输出设置为找到的AirTunes。</p>
 <blockquote>
 <p>待续</p>
 </blockquote>
@@ -599,9 +633,9 @@
 <p>OBS推流及播放器的访问都是在RTMP服务器的1935端口。Linux上的RTMP服务器一般是使用Nginx服务器配合模块<a href="https://github.com/arut/nginx-rtmp-module">nginx-rtmp-module</a>。</p>
 <blockquote>
 <p>如果发行版中没有<code>nginx-rtmp-module</code>的包，可以使用Docker Hub上的镜像，如</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>docker pull alfg/nginx-rtmp
-<span class="ln">2</span>docker run -it -p 1935:1935 -p 8080:80 --rm alfg/nginx-rtmp
-</code></pre></div><p>（实际测试中80端口未用上，不映射它也可以）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">docker pull alfg/nginx-rtmp
+</span></span><span class="line"><span class="ln">2</span><span class="cl">docker run -it -p 1935:1935 -p 8080:80 --rm alfg/nginx-rtmp
+</span></span></code></pre></div><p>（实际测试中80端口未用上，不映射它也可以）</p>
 </blockquote>
 </details>
 <h5 id="播放端软件">播放端软件</h5>
@@ -609,8 +643,8 @@
 <p>可使用VLC，这里用了<a href="https://get.videolan.org/vlc-android/1.5.2/">VLC-Android-1.5.2</a>播放RTSP流（如果使用RTMP协议则要更高的版本的VLC）。</p>
 <blockquote>
 <p>VLC在界面中输入rtsp地址有可能会播放失败，然而使用adb直接打开rtsp地址则能播放：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -a android.intent.action.VIEW -d rtsp://xxxxx
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">am start -a android.intent.action.VIEW -d rtsp://xxxxx
+</span></span></code></pre></div></blockquote>
 <p>经试验RTMP有时会有音视频不同步的问题，RTSP则没有。</p>
 </details>
 <h3 id="linux-vnc投画面">Linux VNC投画面</h3>
@@ -638,31 +672,31 @@
 <ul>
 <li>
 <p>查看vino的设置</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span> gsettings list-recursively org.gnome.Vino
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"> gsettings list-recursively org.gnome.Vino
+</span></span></code></pre></div></li>
 <li>
 <p>修改设置</p>
 <p>修改为仅观看模式，不允许电视操作电脑</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span> gsettings set org.gnome.Vino view-only true
-</code></pre></div><p>（可选） 改为不需要弹出确认就可以观看</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span> gsettings set org.gnome.Vino prompt-enabled false
-</code></pre></div><p>还可以把密码去掉，加密也免掉，以提高流畅度</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span> org.gnome.Vino prompt-enabled false
-<span class="ln"> 2</span> org.gnome.Vino require-encryption false
-<span class="ln"> 3</span> org.gnome.Vino use-alternative-port false
-<span class="ln"> 4</span> org.gnome.Vino disable-background false
-<span class="ln"> 5</span> org.gnome.Vino disable-xdamage false
-<span class="ln"> 6</span> org.gnome.Vino alternative-port uint16 5900
-<span class="ln"> 7</span> org.gnome.Vino icon-visibility &#39;client&#39;
-<span class="ln"> 8</span> org.gnome.Vino authentication-methods [&#39;none&#39;]
-<span class="ln"> 9</span> org.gnome.Vino network-interface &#39;&#39;
-<span class="ln">10</span> org.gnome.Vino notify-on-connect true
-<span class="ln">11</span> org.gnome.Vino mailto &#39;&#39;
-<span class="ln">12</span> org.gnome.Vino lock-screen-on-disconnect false
-<span class="ln">13</span> org.gnome.Vino use-upnp false
-<span class="ln">14</span> org.gnome.Vino vnc-password &#39;keyring&#39;
-<span class="ln">15</span> org.gnome.Vino view-only true
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"> gsettings set org.gnome.Vino view-only true
+</span></span></code></pre></div><p>（可选） 改为不需要弹出确认就可以观看</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"> gsettings set org.gnome.Vino prompt-enabled false
+</span></span></code></pre></div><p>还可以把密码去掉，加密也免掉，以提高流畅度</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl"> org.gnome.Vino prompt-enabled false
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"> org.gnome.Vino require-encryption false
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"> org.gnome.Vino use-alternative-port false
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"> org.gnome.Vino disable-background false
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"> org.gnome.Vino disable-xdamage false
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"> org.gnome.Vino alternative-port uint16 5900
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"> org.gnome.Vino icon-visibility &#39;client&#39;
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"> org.gnome.Vino authentication-methods [&#39;none&#39;]
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"> org.gnome.Vino network-interface &#39;&#39;
+</span></span><span class="line"><span class="ln">10</span><span class="cl"> org.gnome.Vino notify-on-connect true
+</span></span><span class="line"><span class="ln">11</span><span class="cl"> org.gnome.Vino mailto &#39;&#39;
+</span></span><span class="line"><span class="ln">12</span><span class="cl"> org.gnome.Vino lock-screen-on-disconnect false
+</span></span><span class="line"><span class="ln">13</span><span class="cl"> org.gnome.Vino use-upnp false
+</span></span><span class="line"><span class="ln">14</span><span class="cl"> org.gnome.Vino vnc-password &#39;keyring&#39;
+</span></span><span class="line"><span class="ln">15</span><span class="cl"> org.gnome.Vino view-only true
+</span></span></code></pre></div><blockquote>
 <p>对应的设置文档可查阅<a href="https://getadmx.com/?Category=CentrifyDC_GP_Extension&amp;Policy=Centrify.Policies.CentrifyGnome3Settings::policy_1573">这个页面</a></p>
 </blockquote>
 </li>
@@ -719,8 +753,8 @@
 <li>
 <p><a href="https://apkpure.com/cn/floating-network-monitor/jc.floating.monitor">jc.floating.monitor</a> 浮动网速显示（文字）</p>
 <p>这个要从命令直接开启浮动显示的话使用（root）：</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am startservice jc.floating.monitor/.NetworkMonitor
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">am startservice jc.floating.monitor/.NetworkMonitor
+</span></span></code></pre></div></li>
 <li>
 <p><a href="https://apkpure.com/cn/tinycore-cpu-ram-monitor/org.neotech.app.tinycore">Tinycore</a> 在以屏幕边缘以条状显示一项（可以是CPU、内存、温度)，无文字</p>
 </li>
@@ -767,29 +801,29 @@
 </ol>
 <p>有些电视盒子没有提供打开输入法设置界面的入口。打开的命令是:</p>
 <details>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -a android.settings.INPUT_METHOD_SETTINGS
-</code></pre></div><p>如果也被砍了，那就用命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">am start -a android.settings.INPUT_METHOD_SETTINGS
+</span></span></code></pre></div><p>如果也被砍了，那就用命令</p>
 <ul>
 <li>
 <p>列出输入法</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ime list -a (多)
-<span class="ln">2</span>ime list -s (少)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">ime list -a (多)
+</span></span><span class="line"><span class="ln">2</span><span class="cl">ime list -s (少)
+</span></span></code></pre></div></li>
 <li>
 <p>启用输入法</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ime enable xxxxx/xxxxx
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">ime enable xxxxx/xxxxx
+</span></span></code></pre></div></li>
 <li>
 <p>选择输入法</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ime set xxxxx/xxxxx
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">ime set xxxxx/xxxxx
+</span></span></code></pre></div></li>
 </ul>
 </details>
 <p>或者用Keyboard Switcher  <a href="https://f-droid.org/en/packages/com.kunzisoft.keyboard.switcher">com.kunzisoft.keyboard.switcher</a></p>
 <details>
 <p>安装后就可以用</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -n com.kunzisoft.keyboard.switcher/.KeyboardManagerActivity
-</code></pre></div><p>来直接打开输入法切换框。这个App也支持显示一个浮动按钮来打开。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">am start -n com.kunzisoft.keyboard.switcher/.KeyboardManagerActivity
+</span></span></code></pre></div><p>来直接打开输入法切换框。这个App也支持显示一个浮动按钮来打开。</p>
 </details>
 <h3 id="局域网传文本的app">局域网传文本的App</h3>
 <details>
@@ -805,62 +839,62 @@
 <ul>
 <li>
 <p>adb启动App</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -n 包名/活动
-</code></pre></div><p>你需要知道App的包名和主活动的名称</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">am start -n 包名/活动
+</span></span></code></pre></div><p>你需要知道App的包名和主活动的名称</p>
 </li>
 <li>
 <p>adb打开网址</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>am start -a android.intent.action.VIEW -d http://xxxxxxx
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">am start -a android.intent.action.VIEW -d http://xxxxxxx
+</span></span></code></pre></div></li>
 <li>
 <p>adb输入文本</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>input text hello
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">input text hello
+</span></span></code></pre></div></li>
 <li>
 <p>adb模拟按键/输入</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>input keyevent &lt;keycode&gt;
-</code></pre></div><p>参考https://developer.android.com/reference/android/view/KeyEvent</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>input keyevent &lt;keycode&gt;
-<span class="ln"> 2</span>3    HOME 键 （一些遥控器的”本地“）
-<span class="ln"> 3</span>4    返回键
-<span class="ln"> 4</span>19  KEYCODE_DPAD_UP 導航鍵 向上 19 （遥控器方向键）
-<span class="ln"> 5</span>20  KEYCODE_DPAD_DOWN 導航鍵 向下 20
-<span class="ln"> 6</span>21  KEYCODE_DPAD_LEFT 導航鍵 向左 21
-<span class="ln"> 7</span>22  KEYCODE_DPAD_RIGHT 導航鍵 向右 22 
-<span class="ln"> 8</span>23  遥控器“OK”.  Directional Pad Center key. 
-<span class="ln"> 9</span>24    增加音量
-<span class="ln">10</span>25    降低音量
-<span class="ln">11</span>26    电源键
-<span class="ln">12</span>64    打开浏览器
-<span class="ln">13</span>66  ENTER
-<span class="ln">14</span>67  Backspace key.KEYCODE_DEL  遥控器”交换“
-<span class="ln">15</span>82    菜单键
-<span class="ln">16</span>83  KEYCODE_NOTIFICATION
-<span class="ln">17</span>85    播放/暂停
-<span class="ln">18</span>86    停止播放
-<span class="ln">19</span>87    播放下一首
-<span class="ln">20</span>88    播放上一首
-<span class="ln">21</span>92  PAGE UP
-<span class="ln">22</span>93  PAGE DOWN
-<span class="ln">23</span>111  ESCAPE
-<span class="ln">24</span>126    恢复播放
-<span class="ln">25</span>127    暂停播放
-<span class="ln">26</span>166  频道+（换台）
-<span class="ln">27</span>167  频道-
-<span class="ln">28</span>168  ZOOM_IN
-<span class="ln">29</span>169  ZOOM_OUT
-<span class="ln">30</span>176    打开系统设置
-<span class="ln">31</span>183  遥控器红键（直播）
-<span class="ln">32</span>184  遥控器绿键（回看）
-<span class="ln">33</span>185  遥控器黄键（点播）
-<span class="ln">34</span>186  遥控器蓝键（信息）
-<span class="ln">35</span>187    切换应用
-<span class="ln">36</span>223    系统休眠
-<span class="ln">37</span>224    点亮屏幕
-<span class="ln">38</span>226 KEYCODE_MEDIA_TOP_MENU 226
-<span class="ln">39</span>229  KEYCODE_LAST_CHANNEL  Last Channel key. Goes to the last viewed channel.
-<span class="ln">40</span>284  KEYCODE_ALL_APPS  284
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">input keyevent &lt;keycode&gt;
+</span></span></code></pre></div><p>参考https://developer.android.com/reference/android/view/KeyEvent</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">input keyevent &lt;keycode&gt;
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">3    HOME 键 （一些遥控器的”本地“）
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">4    返回键
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">19  KEYCODE_DPAD_UP 導航鍵 向上 19 （遥控器方向键）
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">20  KEYCODE_DPAD_DOWN 導航鍵 向下 20
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">21  KEYCODE_DPAD_LEFT 導航鍵 向左 21
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">22  KEYCODE_DPAD_RIGHT 導航鍵 向右 22 
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">23  遥控器“OK”.  Directional Pad Center key. 
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">24    增加音量
+</span></span><span class="line"><span class="ln">10</span><span class="cl">25    降低音量
+</span></span><span class="line"><span class="ln">11</span><span class="cl">26    电源键
+</span></span><span class="line"><span class="ln">12</span><span class="cl">64    打开浏览器
+</span></span><span class="line"><span class="ln">13</span><span class="cl">66  ENTER
+</span></span><span class="line"><span class="ln">14</span><span class="cl">67  Backspace key.KEYCODE_DEL  遥控器”交换“
+</span></span><span class="line"><span class="ln">15</span><span class="cl">82    菜单键
+</span></span><span class="line"><span class="ln">16</span><span class="cl">83  KEYCODE_NOTIFICATION
+</span></span><span class="line"><span class="ln">17</span><span class="cl">85    播放/暂停
+</span></span><span class="line"><span class="ln">18</span><span class="cl">86    停止播放
+</span></span><span class="line"><span class="ln">19</span><span class="cl">87    播放下一首
+</span></span><span class="line"><span class="ln">20</span><span class="cl">88    播放上一首
+</span></span><span class="line"><span class="ln">21</span><span class="cl">92  PAGE UP
+</span></span><span class="line"><span class="ln">22</span><span class="cl">93  PAGE DOWN
+</span></span><span class="line"><span class="ln">23</span><span class="cl">111  ESCAPE
+</span></span><span class="line"><span class="ln">24</span><span class="cl">126    恢复播放
+</span></span><span class="line"><span class="ln">25</span><span class="cl">127    暂停播放
+</span></span><span class="line"><span class="ln">26</span><span class="cl">166  频道+（换台）
+</span></span><span class="line"><span class="ln">27</span><span class="cl">167  频道-
+</span></span><span class="line"><span class="ln">28</span><span class="cl">168  ZOOM_IN
+</span></span><span class="line"><span class="ln">29</span><span class="cl">169  ZOOM_OUT
+</span></span><span class="line"><span class="ln">30</span><span class="cl">176    打开系统设置
+</span></span><span class="line"><span class="ln">31</span><span class="cl">183  遥控器红键（直播）
+</span></span><span class="line"><span class="ln">32</span><span class="cl">184  遥控器绿键（回看）
+</span></span><span class="line"><span class="ln">33</span><span class="cl">185  遥控器黄键（点播）
+</span></span><span class="line"><span class="ln">34</span><span class="cl">186  遥控器蓝键（信息）
+</span></span><span class="line"><span class="ln">35</span><span class="cl">187    切换应用
+</span></span><span class="line"><span class="ln">36</span><span class="cl">223    系统休眠
+</span></span><span class="line"><span class="ln">37</span><span class="cl">224    点亮屏幕
+</span></span><span class="line"><span class="ln">38</span><span class="cl">226 KEYCODE_MEDIA_TOP_MENU 226
+</span></span><span class="line"><span class="ln">39</span><span class="cl">229  KEYCODE_LAST_CHANNEL  Last Channel key. Goes to the last viewed channel.
+</span></span><span class="line"><span class="ln">40</span><span class="cl">284  KEYCODE_ALL_APPS  284
+</span></span></code></pre></div></li>
 </ul>
 </details>
 <h2 id="其中一个旧android-44-tv盒子root过程">其中一个旧Android 4.4 TV盒子root过程</h2>
@@ -946,6 +980,12 @@ All articles are original (except for those specially claimed) and copyrighted. 
         <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
       </li>
       <li>
+        <a href="/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="nav-link" title="Thunderbird打开活动管理器在标签中（2023，TB115)">Thunderbird打开活动管理器在标签中（2023，TB115)</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/esp32/" class="nav-link" title="花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)">花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)</a>
+      </li>
+      <li>
         <a href="/chiblog/post/appimage%E6%89%93%E5%8C%85/" class="nav-link" title="初探AppImage打包（Qt程序为例）">初探AppImage打包（Qt程序为例）</a>
       </li>
       <li>
@@ -959,6 +999,9 @@ All articles are original (except for those specially claimed) and copyrighted. 
       </li>
       <li>
         <a href="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" class="nav-link" title="容易上手的LXD容器和虚拟X server">容易上手的LXD容器和虚拟X server</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E7%AD%89/" class="nav-link" title="Firefox/Chromium浏览器的启动命令选项参数等配置">Firefox/Chromium浏览器的启动命令选项参数等配置</a>
       </li>
       <li>
         <a href="/chiblog/post/ttffont/" class="nav-link" title="修复一些不能直接使用或不好用的ttf字体文件">修复一些不能直接使用或不好用的ttf字体文件</a>
@@ -996,6 +1039,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">9</span>
         </a>
         
+        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
+          FIREFOX
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='/chiblog/tags/shell/' class="post_tag button button_translucent" title="shell">
           SHELL
           <span class="button_tally">2</span>
@@ -1021,8 +1069,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">2</span>
         </a>
         
+        <a href='/chiblog/tags/activity-manager/' class="post_tag button button_translucent" title="activity-manager">
+          ACTIVITY-MANAGER
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/adb/' class="post_tag button button_translucent" title="adb">
           ADB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/an-thinker/' class="post_tag button button_translucent" title="an-thinker">
+          AN-THINKER
           <span class="button_tally">1</span>
         </a>
         
@@ -1071,6 +1129,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
+        <a href='/chiblog/tags/c3/' class="post_tag button button_translucent" title="c3">
+          C3
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/cgroup/' class="post_tag button button_translucent" title="cgroup">
           CGROUP
           <span class="button_tally">1</span>
@@ -1081,8 +1144,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
-          FIREFOX
+        <a href='/chiblog/tags/esp/' class="post_tag button button_translucent" title="esp">
+          ESP
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32/' class="post_tag button button_translucent" title="esp32">
+          ESP32
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32-c3/' class="post_tag button button_translucent" title="esp32-c3">
+          ESP32-C3
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32c3/' class="post_tag button button_translucent" title="esp32c3">
+          ESP32C3
           <span class="button_tally">1</span>
         </a>
         
@@ -1106,48 +1184,21 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/github.io/' class="post_tag button button_translucent" title="github.io">
-          GITHUB.IO
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/js/' class="post_tag button button_translucent" title="js">
-          JS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class="post_tag button button_translucent" title="linux发行版">
-          LINUX发行版
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxc/' class="post_tag button button_translucent" title="lxc">
-          LXC
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxd/' class="post_tag button button_translucent" title="lxd">
-          LXD
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/mime/' class="post_tag button button_translucent" title="mime">
-          MIME
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/obs-studio/' class="post_tag button button_translucent" title="obs-studio">
-          OBS-STUDIO
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
+            <a href='/chiblog/tags/activity-manager/' class=" post_tag button button_translucent" data-position=1 title="activity-manager">ACTIVITY-MANAGER<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/adb/' class=" post_tag button button_translucent" data-position=1 title="adb">ADB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/an-thinker/' class=" post_tag button button_translucent" data-position=1 title="an-thinker">AN-THINKER<span class="button_tally">1</span>
             </a>
             
             
@@ -1187,6 +1238,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/c3/' class=" post_tag button button_translucent" data-position=1 title="c3">C3<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/cgroup/' class=" post_tag button button_translucent" data-position=1 title="cgroup">CGROUP<span class="button_tally">1</span>
             </a>
             
@@ -1195,7 +1250,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
-            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=1 title="firefox">FIREFOX<span class="button_tally">1</span>
+            <a href='/chiblog/tags/esp/' class=" post_tag button button_translucent" data-position=1 title="esp">ESP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32/' class=" post_tag button button_translucent" data-position=1 title="esp32">ESP32<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32-c3/' class=" post_tag button button_translucent" data-position=1 title="esp32-c3">ESP32-C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32c3/' class=" post_tag button button_translucent" data-position=1 title="esp32c3">ESP32C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=2 title="firefox">FIREFOX<span class="button_tally">2</span>
             </a>
             
             
@@ -1219,6 +1290,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/in-tab/' class=" post_tag button button_translucent" data-position=1 title="in-tab">IN-TAB<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/js/' class=" post_tag button button_translucent" data-position=1 title="js">JS<span class="button_tally">1</span>
             </a>
             
@@ -1239,7 +1314,15 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/micropython/' class=" post_tag button button_translucent" data-position=1 title="micropython">MICROPYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/mime/' class=" post_tag button button_translucent" data-position=1 title="mime">MIME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/mozilla/' class=" post_tag button button_translucent" data-position=1 title="mozilla">MOZILLA<span class="button_tally">1</span>
             </a>
             
             
@@ -1252,6 +1335,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/pc/' class=" post_tag button button_translucent" data-position=1 title="pc">PC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/picocom/' class=" post_tag button button_translucent" data-position=1 title="picocom">PICOCOM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python/' class=" post_tag button button_translucent" data-position=1 title="python">PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python-shell/' class=" post_tag button button_translucent" data-position=1 title="python-shell">PYTHON-SHELL<span class="button_tally">1</span>
             </a>
             
             
@@ -1287,6 +1382,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/thunderbird/' class=" post_tag button button_translucent" data-position=1 title="thunderbird">THUNDERBIRD<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/truetype/' class=" post_tag button button_translucent" data-position=1 title="truetype">TRUETYPE<span class="button_tally">1</span>
             </a>
             
@@ -1308,6 +1407,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/vnc/' class=" post_tag button button_translucent" data-position=1 title="vnc">VNC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/webrepl/' class=" post_tag button button_translucent" data-position=1 title="webrepl">WEBREPL<span class="button_tally">1</span>
             </a>
             
             
@@ -1352,6 +1455,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E5%AD%97%E4%BD%93/' class=" post_tag button button_translucent" data-position=1 title="字体">字体<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/' class=" post_tag button button_translucent" data-position=1 title="安信可">安信可<span class="button_tally">1</span>
             </a>
             
             
@@ -1408,6 +1515,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E6%AD%BB%E6%9C%BA/' class=" post_tag button button_translucent" data-position=1 title="死机">死机<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="活动管理器">活动管理器<span class="button_tally">1</span>
             </a>
             
             
@@ -1567,7 +1678,7 @@ All articles are original (except for those specially claimed) and copyrighted. 
   </div>
 </footer>
 
-    <script type="text/javascript" src="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" integrity="sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
+    <script type="text/javascript" src="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" integrity="sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
     
   </body>
 </html>

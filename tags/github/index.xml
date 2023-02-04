@@ -5,6 +5,7 @@
     <link>/chiblog/tags/github/</link>
     <description>Recent content in github on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Thu, 19 Dec 2019 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -25,11 +26,10 @@
 1&amp;lt;div class=&amp;#34;repo-box&amp;#34; owner=&amp;#34;garywill&amp;#34; reponame=&amp;#34;bigSearch&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; owner是Github用户名，reponame是repo名称。
 完整代码 完整的代码在这个仓库中： GitHub - garywill/garywill.github.io: Github page showing Github repos using API
 感谢Cayman theme模板
- Update：
+Update：
 现在Github的profile已经支持直接展示一个静态页面在6个pinned repos之上，支持文字、链接、图片，创建一个与自己Github用户名相同名称的repo，在其README.me中写内容即可。
 因为它是全静态，不支持js的，因此，放个链接引导向xxx.github.io就好了：）
-本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
-  
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden. 打赏作者 写作不易，感谢支持！ 扫个码吧～
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/github6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

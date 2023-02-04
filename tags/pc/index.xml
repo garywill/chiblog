@@ -5,6 +5,7 @@
     <link>/chiblog/tags/pc/</link>
     <description>Recent content in PC on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Tue, 26 Feb 2019 09:36:13 +0000</lastBuildDate><atom:link href="/chiblog/tags/pc/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -17,20 +18,22 @@
         
           
             这里收集了一些配电脑及了解某硬件与Linux兼容程度的一些方法。
- 我收集了这些，但没用上，放弃了。最后配了一台标准的，没去考虑Linux。烧脑啊！
- 普通的选电脑配件工具   https://hk.pcpartpicker.com/list/
-  中关村比较配硬件 http://zj.zol.com.cn/
-  PConline配硬件 https://mydiy.pconline.com.cn/
-  计算硬件功率 https://www.coolermaster.com/power-supply-calculator/
-  AMD Ryzen列表 https://www.wikiwand.com/zh-hans/AMD_Ryzen （这两年大家不是在都说AMD比Intel好，Intel爆出好多问题，还有AMD比Nvidia对Linux友好吗？）
+我收集了这些，但没用上，放弃了。最后配了一台标准的，没去考虑Linux。烧脑啊！
+普通的选电脑配件工具 https://hk.pcpartpicker.com/list/
+中关村比较配硬件 http://zj.zol.com.cn/
+PConline配硬件 https://mydiy.pconline.com.cn/
+计算硬件功率 https://www.coolermaster.com/power-supply-calculator/
+AMD Ryzen列表 https://www.wikiwand.com/zh-hans/AMD_Ryzen （这两年大家不是在都说AMD比Intel好，Intel爆出好多问题，还有AMD比Nvidia对Linux友好吗？）
 不负责任据说，三大主板商中，微星对Linux最友好。其次技嘉，华硕最不好。
 硬件的VID、DID、PID查询 Vendor ID、Product ID、Device ID。解释略。USB设备和PCI设备的ID分配是不同的。
-  PCI和USB的Vendor ID 、Product ID （无名称搜索） https://devicehunt.com/
-  PCI 的Vendor ID 、Product ID ，或名称搜索 https://www.pcilookup.com/
-  https://pci-ids.ucw.cz/read/PC/
-  Realtek 硬件的VID、DID查询（非官方） https://www.realtek.cz/realtek-audio-devices.html https://www.realtek.cz/realtek-network-devices.html https://www.realtek.cz/realtek-wireless-devices.html
-  Linux中用命令查看VID、DID   看当前硬件的内核模块和VID DID
-1$ lspci -knn   看当前linux中支持的VID、DID
+PCI和USB的Vendor ID 、Product ID （无名称搜索） https://devicehunt.com/
+PCI 的Vendor ID 、Product ID ，或名称搜索 https://www.pcilookup.com/
+https://pci-ids.ucw.cz/read/PC/
+Realtek 硬件的VID、DID查询（非官方） https://www.realtek.cz/realtek-audio-devices.html https://www.realtek.cz/realtek-network-devices.html https://www.realtek.cz/realtek-wireless-devices.html
+Linux中用命令查看VID、DID 看当前硬件的内核模块和VID DID
+1$ lspci -knn 看当前linux中支持的VID、DID
+1modprobe -c | grep -i -E &amp;#39;&amp;lt;vendor ID&amp;gt;.*&amp;lt;product ID&amp;gt;&amp;#39; 输出说明：
+1alias pci:v0000&amp;lt;vendor ID&amp;gt;:d0000&amp;lt;product ID&amp;gt;sv... &amp;lt;module name&amp;gt; 2 v (vendor) 3 d (device) 4 sv (subvendor) 5 sd (subdevice) 6 bc (bus class) 7 sc (bus subclass) 8 i (interface) 看一个内核模块宣称支持的硬件（VID、DID）
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/choose-linux-pc/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;

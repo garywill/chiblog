@@ -5,6 +5,7 @@
     <link>/chiblog/tags/cgroup/</link>
     <description>Recent content in cgroup on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Fri, 22 Feb 2019 08:47:11 +0100</lastBuildDate><atom:link href="/chiblog/tags/cgroup/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -18,7 +19,7 @@
           
             Linux在内存用尽的情况下，整个界面，包括tty和ctrl-alt-F1都会卡住难以响应。虽然Linux内核有OOM Killer机制杀掉吃内存的进程，但经常内存用尽时连OOM Killer都无法动作。
 本篇讲述如何用cgroup限制内存防止整个Linux因内存用尽卡死。
-因内存用尽卡住时怎么办  如果鼠标还能动一点，可以尝试在top中杀掉吃内存的进程。但这时想进入top并kill -9都很难。ctrl-alt-F1都会卡。 如果鼠标完全不能动，可以等待15分钟左右，OOM Killer可能会动作杀掉吃内存的进程，然后就可以恢复。如果15分钟还无反应，那是真卡死了。 魔法键强制安全重启。  用cgroup限制用户内存留空间给内核动作 cgroup是内核的一个资源限制功能。这里限制日常用户的内存，留500MB左右给root和内核。
+因内存用尽卡住时怎么办 如果鼠标还能动一点，可以尝试在top中杀掉吃内存的进程。但这时想进入top并kill -9都很难。ctrl-alt-F1都会卡。 如果鼠标完全不能动，可以等待15分钟左右，OOM Killer可能会动作杀掉吃内存的进程，然后就可以恢复。如果15分钟还无反应，那是真卡死了。 魔法键强制安全重启。 用cgroup限制用户内存留空间给内核动作 cgroup是内核的一个资源限制功能。这里限制日常用户的内存，留500MB左右给root和内核。
 我的Linux是否支持cgroup 1cat /proc/self/cgroup 这里可以列出某进程所处的资源限制组。有则表示内核支持cgroup
 安装cgroup相关工具 我们要用到cgconfigparser和cgrulesengd这两个工具。安装libcgroup-tools（可能因发行版而异）这个包。
 配置cgroup规则 /etc/cgconfig.conf中写

@@ -4,7 +4,7 @@
   <head>
 <title>Linux | Gary W 的中文博客(站2)</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.121.1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -33,8 +33,8 @@
     
     
     <link rel="preload" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity = "sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" as="script" integrity=
-    "sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous">
+    <link rel="preload" href="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" as="script" integrity=
+    "sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity="sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" crossorigin="anonymous"><link rel="stylesheet" href="/chiblog/custom.css">
@@ -141,11 +141,11 @@
               前言 既是自己的记录，也是向各位介绍，面向各行各业大众，介绍许多适合日用、洁净单纯的软件（不包含专业领域）。所介绍的软件都尽可能选同类软件中最干净的好用的。
 网上推荐软件的文章很多，这里与其他不同，大多为开源（开放源代码）软件，也含名声不错的闭源软件。
 像电脑手机这类电子机器的这滩浑水我曾经趟过，读者可以少趟。
- 虽然所介绍的大部分用过，本人免任何责，只做介绍。
- 正文  对于跨平台的软件，只会提及Windows、Android、iOS、Mac OS、Linux
- 解决Android卡顿 是否有因装多App变卡，而正在用的所谓“加速软件”自身就是占用大量资源的恶龙？
- 这类最好有root权限以发挥最好功效
- Android …
+虽然所介绍的大部分用过，本人免任何责，只做介绍。
+正文 对于跨平台的软件，只会提及Windows、Android、iOS、Mac OS、Linux
+解决Android卡顿 是否有因装多App变卡，而正在用的所谓“加速软件”自身就是占用大量资源的恶龙？
+这类最好有root权限以发挥最好功效
+Android …
             
           </p>
           <a href="/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/" title="Read More" class="excerpt_more button">Read More</a>
@@ -189,9 +189,9 @@
           <p class="pale">
             
               这是稿件，有待完善
- .AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制+动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用了squashfs+FUSE）。软件退出后，/tmp/.mount_xxxxxxxx会消失。
+.AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制+动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用了squashfs+FUSE）。软件退出后，/tmp/.mount_xxxxxxxx会消失。
 一般来说（如果正确打包了），运行时传递了参数给.AppImage文件，这些参数会传递到其内部的usr/bin/真正的可执行文件上（但也有特例，如解包参数--appimage-extract）
-查看或解包一.AppImage文 …
+查看或解包一.AppImage …
             
           </p>
           <a href="/chiblog/post/appimage%E6%89%93%E5%8C%85/" title="Read More" class="excerpt_more button">Read More</a>
@@ -232,7 +232,7 @@
             
               Linux本身只能通过/etc/resolv.conf设置全系统的DNS。这里有一种给特定进程单独设置DNS的方法，通过免root的mount namespace达成。使用脚本只需要一条简洁的命令就可以。
 背景 例如，在各省各地布置了CDN，本地Linux系统用的DNS为114.114.114.114，这里想要使用某地某ISP的DNS5.5.5.5来测试CDN设置状况，却不想更改全系统设置。虽然dig和nslookup可指定DNS，但大部分程序没有这个功能。
-方法   Bubblewrap是一个非特权（免root）容器工具，使用bwrap命令以用它来创建一个mount namespace，使得在此namespace下的进程所看见 …
+方法 Bubblewrap是一个非特权（免root）容器工具，使用bwrap命令以用它来创建一个mount namespace，使得在此namespace下的进程所看见 …
             
           </p>
           <a href="/chiblog/post/linux-process-dns/" title="Read More" class="excerpt_more button">Read More</a>
@@ -274,9 +274,9 @@
           <p class="pale">
             
               Linux有容器技术LXC，LXD对LXC进行了封装。与Docker类似，但LXC容器比Docker容器完整，且不像Docker是一次性容器设计运行结束后即销毁实例。使用LXD操作容器，体验介于Docker与虚拟机之间。（其实LXD不只提供封装LXC容器的功能，还提供封装虚拟机）
-开始使用LXD——初始设置   从自己的发行版仓库安装LXD。LXD与Docker一样有一个守护进程lxd，因此有
-1sudo systemctl enable/disable/start/stop lxd  如果用systemctl停止lxd时，仍有正在运行的容器，那些容器不会被停止。所以应该先停止所有容器，再systemctl stop
- lxd是守护 …
+开始使用LXD——初始设置 从自己的发行版仓库安装LXD。LXD与Docker一样有一个守护进程lxd，因此有
+1sudo systemctl enable/disable/start/stop lxd 如果用systemctl停止lxd时，仍有正在运行的容器，那些容器不会被停止。所以应该先停止所有容器，再systemctl stop
+lxd是守护进程，而 …
             
           </p>
           <a href="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" title="Read More" class="excerpt_more button">Read More</a>
@@ -314,12 +314,12 @@
           <p class="pale">
             
               这里收集了一些配电脑及了解某硬件与Linux兼容程度的一些方法。
- 我收集了这些，但没用上，放弃了。最后配了一台标准的，没去考虑Linux。烧脑啊！
- 普通的选电脑配件工具   https://hk.pcpartpicker.com/list/
-  中关村比较配硬件 http://zj.zol.com.cn/
-  PConline配硬件 https://mydiy.pconline.com.cn/
-  计算硬件功率 https://www.coolermaster.com/power-supply-calculator/
-  AMD Ryzen列表 https://www.wikiwand.com/zh-hans/AMD_Ryzen …
+我收集了这些，但没用上，放弃了。最后配了一台标准的，没去考虑Linux。烧脑啊！
+普通的选电脑配件工具 https://hk.pcpartpicker.com/list/
+中关村比较配硬件 http://zj.zol.com.cn/
+PConline配硬件 https://mydiy.pconline.com.cn/
+计算硬件功率 https://www.coolermaster.com/power-supply-calculator/
+AMD Ryzen列表 https://www.wikiwand.com/zh-hans/AMD_Ryzen （这两年大家不是在都 …
             
           </p>
           <a href="/chiblog/post/choose-linux-pc/" title="Read More" class="excerpt_more button">Read More</a>
@@ -359,13 +359,13 @@
           <p class="pale">
             
               我们需要的两个功能：
- 解码Linux屏幕上的二维码，将结果输出在终端 在终端中将字符串转为二维码，直接显示二维码在终端中以供扫描  实现方法   生成二维码 qrencode是一个常见的生成二维码的CLI程序，许多发行版仓库中有。它支持直接输出二维码在终端中。（它也支持输出二维码到图片文件）
-  解码二维码
- 此方法在 X11 上测试过
-  在终端中运行截屏程序，以截得二维码图形
+解码Linux屏幕上的二维码，将结果输出在终端 在终端中将字符串转为二维码，直接显示二维码在终端中以供扫描 实现方法 生成二维码 qrencode是一个常见的生成二维码的CLI程序，许多发行版仓库中有。它支持直接输出二维码在终端中。（它也支持输出二维码到图片文件）
+解码二维码
+此方法在 X11 上测试过
+在终端中运行截屏程序，以截得二维码图形
 scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给解析二维码的CLI程序。
-我们用zbar来解析二维码，显示结果在终端。    我已将以上所述整理成一个shell脚本：
- 终端中运行这个脚本，然后鼠标框选屏幕上的二维码，即可解析出结果。 将 …
+我们用zbar来解析二维码，显示结果在终端。 我已将以上所述整理成一个shell脚本：
+终端中运行这个脚本，然后鼠标框选屏幕上的二维码，即可解析出结果。 将任意字符串当作参数传给这个 …
             
           </p>
           <a href="/chiblog/post/qr/" title="Read More" class="excerpt_more button">Read More</a>
@@ -408,7 +408,7 @@ scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给�
             
               Linux在内存用尽的情况下，整个界面，包括tty和ctrl-alt-F1都会卡住难以响应。虽然Linux内核有OOM Killer机制杀掉吃内存的进程，但经常内存用尽时连OOM Killer都无法动作。
 本篇讲述如何用cgroup限制内存防止整个Linux因内存用尽卡死。
-因内存用尽卡住时怎么办  如果鼠标还能动一点，可以尝试在top中杀掉吃内存的进程。但这时想进入top并kill -9都很难。ctrl-alt-F1都会卡。 如果鼠标完全不能动，可以等待15分钟左右，OOM Killer可能会动作杀掉吃内存的进程，然后就可以恢复。如果15分钟还无反应，那是真卡死了。 魔法键强制安全重启。  用cgroup限制用户内存留空间给内核动 …
+因内存用尽卡住时怎么办 如果鼠标还能动一点，可以尝试在top中杀掉吃内存的进程。但这时想进入top并kill -9都很难。ctrl-alt-F1都会卡。 如果鼠标完全不能动，可以等待15分钟左右，OOM Killer可能会动作杀掉吃内存的进程，然后就可以恢复。如果15分钟还无反应，那是真卡死了。 魔法键强制安全重启。 用cgroup …
             
           </p>
           <a href="/chiblog/post/cgroup/" title="Read More" class="excerpt_more button">Read More</a>
@@ -500,9 +500,9 @@ scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给�
               手动为Linux关联文件扩展名与打开程序。
 当Linux不认识某种扩展名的时候，需要为此扩展名创建一个MIME类型。Linux是依据MIME类型而不是扩展名来决定打开程序的。
 再将此种MIME类型与某程序菜单项关联。
-手动关联步骤   为扩展名建造一个MIME类型
- 如果你的Linux已经认得这种扩展名，不需要做这一步。在你的文件管理器中，看看这种扩展名的文件有没有被正确识别。或使用file命令查看。
- 创建 application-x-扩展名.xml 内容：
+手动关联步骤 为扩展名建造一个MIME类型
+如果你的Linux已经认得这种扩展名，不需要做这一步。在你的文件管理器中，看看这种扩展名的文件有没有被正确识别。或使用file命令查看。
+创建 application-x-扩展名.xml 内容：
 1&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; 2&lt;mime-info …
             
           </p>
@@ -513,8 +513,6 @@ scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给�
   </li>
 
     <li>
-
-
     </li>
   </ul>
 <aside class="sidebar">
@@ -552,6 +550,12 @@ All articles are original (except for those specially claimed) and copyrighted. 
         <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
       </li>
       <li>
+        <a href="/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="nav-link" title="Thunderbird打开活动管理器在标签中（2023，TB115)">Thunderbird打开活动管理器在标签中（2023，TB115)</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/esp32/" class="nav-link" title="花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)">花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)</a>
+      </li>
+      <li>
         <a href="/chiblog/post/appimage%E6%89%93%E5%8C%85/" class="nav-link" title="初探AppImage打包（Qt程序为例）">初探AppImage打包（Qt程序为例）</a>
       </li>
       <li>
@@ -565,6 +569,9 @@ All articles are original (except for those specially claimed) and copyrighted. 
       </li>
       <li>
         <a href="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" class="nav-link" title="容易上手的LXD容器和虚拟X server">容易上手的LXD容器和虚拟X server</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E7%AD%89/" class="nav-link" title="Firefox/Chromium浏览器的启动命令选项参数等配置">Firefox/Chromium浏览器的启动命令选项参数等配置</a>
       </li>
       <li>
         <a href="/chiblog/post/ttffont/" class="nav-link" title="修复一些不能直接使用或不好用的ttf字体文件">修复一些不能直接使用或不好用的ttf字体文件</a>
@@ -605,6 +612,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">9</span>
         </a>
         
+        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
+          FIREFOX
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='/chiblog/tags/shell/' class="post_tag button button_translucent" title="shell">
           SHELL
           <span class="button_tally">2</span>
@@ -630,8 +642,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">2</span>
         </a>
         
+        <a href='/chiblog/tags/activity-manager/' class="post_tag button button_translucent" title="activity-manager">
+          ACTIVITY-MANAGER
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/adb/' class="post_tag button button_translucent" title="adb">
           ADB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/an-thinker/' class="post_tag button button_translucent" title="an-thinker">
+          AN-THINKER
           <span class="button_tally">1</span>
         </a>
         
@@ -680,6 +702,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
+        <a href='/chiblog/tags/c3/' class="post_tag button button_translucent" title="c3">
+          C3
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/cgroup/' class="post_tag button button_translucent" title="cgroup">
           CGROUP
           <span class="button_tally">1</span>
@@ -690,8 +717,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
-          FIREFOX
+        <a href='/chiblog/tags/esp/' class="post_tag button button_translucent" title="esp">
+          ESP
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32/' class="post_tag button button_translucent" title="esp32">
+          ESP32
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32-c3/' class="post_tag button button_translucent" title="esp32-c3">
+          ESP32-C3
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32c3/' class="post_tag button button_translucent" title="esp32c3">
+          ESP32C3
           <span class="button_tally">1</span>
         </a>
         
@@ -715,48 +757,21 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/github.io/' class="post_tag button button_translucent" title="github.io">
-          GITHUB.IO
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/js/' class="post_tag button button_translucent" title="js">
-          JS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class="post_tag button button_translucent" title="linux发行版">
-          LINUX发行版
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxc/' class="post_tag button button_translucent" title="lxc">
-          LXC
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxd/' class="post_tag button button_translucent" title="lxd">
-          LXD
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/mime/' class="post_tag button button_translucent" title="mime">
-          MIME
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/obs-studio/' class="post_tag button button_translucent" title="obs-studio">
-          OBS-STUDIO
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
+            <a href='/chiblog/tags/activity-manager/' class=" post_tag button button_translucent" data-position=1 title="activity-manager">ACTIVITY-MANAGER<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/adb/' class=" post_tag button button_translucent" data-position=1 title="adb">ADB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/an-thinker/' class=" post_tag button button_translucent" data-position=1 title="an-thinker">AN-THINKER<span class="button_tally">1</span>
             </a>
             
             
@@ -796,6 +811,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/c3/' class=" post_tag button button_translucent" data-position=1 title="c3">C3<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/cgroup/' class=" post_tag button button_translucent" data-position=1 title="cgroup">CGROUP<span class="button_tally">1</span>
             </a>
             
@@ -804,7 +823,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
-            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=1 title="firefox">FIREFOX<span class="button_tally">1</span>
+            <a href='/chiblog/tags/esp/' class=" post_tag button button_translucent" data-position=1 title="esp">ESP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32/' class=" post_tag button button_translucent" data-position=1 title="esp32">ESP32<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32-c3/' class=" post_tag button button_translucent" data-position=1 title="esp32-c3">ESP32-C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32c3/' class=" post_tag button button_translucent" data-position=1 title="esp32c3">ESP32C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=2 title="firefox">FIREFOX<span class="button_tally">2</span>
             </a>
             
             
@@ -828,6 +863,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/in-tab/' class=" post_tag button button_translucent" data-position=1 title="in-tab">IN-TAB<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/js/' class=" post_tag button button_translucent" data-position=1 title="js">JS<span class="button_tally">1</span>
             </a>
             
@@ -848,7 +887,15 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/micropython/' class=" post_tag button button_translucent" data-position=1 title="micropython">MICROPYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/mime/' class=" post_tag button button_translucent" data-position=1 title="mime">MIME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/mozilla/' class=" post_tag button button_translucent" data-position=1 title="mozilla">MOZILLA<span class="button_tally">1</span>
             </a>
             
             
@@ -861,6 +908,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/pc/' class=" post_tag button button_translucent" data-position=1 title="pc">PC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/picocom/' class=" post_tag button button_translucent" data-position=1 title="picocom">PICOCOM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python/' class=" post_tag button button_translucent" data-position=1 title="python">PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python-shell/' class=" post_tag button button_translucent" data-position=1 title="python-shell">PYTHON-SHELL<span class="button_tally">1</span>
             </a>
             
             
@@ -896,6 +955,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/thunderbird/' class=" post_tag button button_translucent" data-position=1 title="thunderbird">THUNDERBIRD<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/truetype/' class=" post_tag button button_translucent" data-position=1 title="truetype">TRUETYPE<span class="button_tally">1</span>
             </a>
             
@@ -917,6 +980,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/vnc/' class=" post_tag button button_translucent" data-position=1 title="vnc">VNC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/webrepl/' class=" post_tag button button_translucent" data-position=1 title="webrepl">WEBREPL<span class="button_tally">1</span>
             </a>
             
             
@@ -961,6 +1028,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E5%AD%97%E4%BD%93/' class=" post_tag button button_translucent" data-position=1 title="字体">字体<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/' class=" post_tag button button_translucent" data-position=1 title="安信可">安信可<span class="button_tally">1</span>
             </a>
             
             
@@ -1017,6 +1088,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E6%AD%BB%E6%9C%BA/' class=" post_tag button button_translucent" data-position=1 title="死机">死机<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="活动管理器">活动管理器<span class="button_tally">1</span>
             </a>
             
             
@@ -1177,7 +1252,7 @@ All articles are original (except for those specially claimed) and copyrighted. 
   </div>
 </footer>
 
-    <script type="text/javascript" src="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" integrity="sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
+    <script type="text/javascript" src="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" integrity="sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
     
   </body>
 </html>

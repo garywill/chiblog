@@ -12,12 +12,36 @@
 }
 
 b, strong, em {
-
     font-weight: 600 !important;
-
 }
+h1, h2, h3, h4, h5{
+    font-weight: unset !important;
+}
+
 #TableOfContents {
     font-size: 90%;
     line-height: normal;
     border-bottom: 1px dashed;
+}
+
+html[data-mode=lit] {
+    --text: black;
+}
+
+li > p {
+    padding: 0;
+}
+
+.highlight_wrap {  /* 代码块的上下空间  */
+    margin: 0;
+}
+
+.chroma {  /*  代码块内部上下  */
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+blockquote {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }

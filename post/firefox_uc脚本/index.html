@@ -4,7 +4,7 @@
   <head>
 <title>2020年代仍有Firefox userChrome JS脚本（介绍、简略教程、资源） | Gary W 的中文博客(站2)</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.121.1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity = "sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" as="script" integrity=
-    "sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous">
+    <link rel="preload" href="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" as="script" integrity=
+    "sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="/chiblog/css/styles.782bf96a82b3cc5b3cee4c47a42cc81321f16960a6d41fab3277c4abe047bc7ae044ea1bb7ae4d237c12baa0143e02f95969e5e8b6e68d9dcfd14158cfa244ac.css" integrity="sha512-eCv5aoKzzFs87kxHpCzIEyHxaWCm1B&#43;rMnfEq&#43;BHvHrgROobt65NI3wSuqAUPgL5WWnl6LbmjZ3P0UFYz6JErA==" crossorigin="anonymous"><link rel="stylesheet" href="/chiblog/custom.css">
@@ -191,10 +191,10 @@
 <p>Firefox每更新一个版本，启用uc脚本的方法就很可能会变化。以下这些常跟进Firefox的变化提供启用方法的：</p>
 <ul>
 <li>
-<p><a href="https://github.com/xiaoxiaoflood/firefox-scripts">xiaoxiaoflood/firefox-scripts:</a></p>
+<p><a href="https://github.com/Aris-t2/CustomJSforFx">Aris-t2/CustomJSforFx</a></p>
 </li>
 <li>
-<p><a href="https://github.com/Aris-t2/CustomJSforFx">Aris-t2/CustomJSforFx</a></p>
+<p><a href="https://github.com/xiaoxiaoflood/firefox-scripts">xiaoxiaoflood/firefox-scripts:</a></p>
 </li>
 </ul>
 <p>方法一般就是将一些用于启用的js、xml、css文件放入Firefox程序目录及profile中，然后就可以把你的具体<code>.uc.js</code>文件放入对应位置使用。</p>
@@ -241,13 +241,13 @@
 <p>主界面上的部件、按钮等都是有DOM节点的，一般都有id和class，可以像平常使用js一样对它们做一些操作。请在浏览器工具箱中慢慢研究。</p>
 <h4 id="ucjs特别的头部">.uc.js特别的头部</h4>
 <p>打开一个<code>.uc.js</code>一般常看到</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>// ==UserScript==
-<span class="ln">2</span>// @name            &lt;script name&gt;
-<span class="ln">3</span>// @author          &lt;someone&gt;
-<span class="ln">4</span>// @include         main
-<span class="ln">5</span>// @onlyonce
-<span class="ln">6</span>// ==/UserScript==
-</code></pre></div><p>这些<code>//</code>开头的，虽然对于JS来说是没有用的注释，但对于uc脚本来说，在一个<code>.uc.js</code>文件被执行前，是会先寻找并解析这种@开头的关键字的（这也可能因你所用uc脚本管理器而异）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">// ==UserScript==
+</span></span><span class="line"><span class="ln">2</span><span class="cl">// @name            &lt;script name&gt;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">// @author          &lt;someone&gt;
+</span></span><span class="line"><span class="ln">4</span><span class="cl">// @include         main
+</span></span><span class="line"><span class="ln">5</span><span class="cl">// @onlyonce
+</span></span><span class="line"><span class="ln">6</span><span class="cl">// ==/UserScript==
+</span></span></code></pre></div><p>这些<code>//</code>开头的，虽然对于JS来说是没有用的注释，但对于uc脚本来说，在一个<code>.uc.js</code>文件被执行前，是会先寻找并解析这种@开头的关键字的（这也可能因你所用uc脚本管理器而异）。</p>
 <p><code>@include</code>指定你的这个<code>.uc.js</code>文件在怎么样的Firefox窗口中执行。Firefox是可以打开多窗口的（包括那些下载对话框之类的，也算一种窗口）。经常，我们只需要脚本在Firefox的主（可以打开多个）窗口执行，所以使用<code>@include main</code>排除下载、关于等非主窗口。</p>
 <p><code>@onlyonce</code>指定该<code>uc.js</code>在整个Firefox中只被执行一遍（而不是每打开一个窗口就执行一次）。例如添加自定义widget（即工具栏按钮）的代码在整个Firefox只应该被执行一遍，它就会在每个浏览器窗口中出现该widget，这时就需要<code>@onlyonce</code>。</p>
 <blockquote>
@@ -255,9 +255,9 @@
 </blockquote>
 <h4 id="standard-code-modules">Standard code modules</h4>
 <p>操作DOM节点还不够，有些Firefox内置的功能最好调用一些内部Standard code modules来使用。例如常看到</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="ln">1</span><span class="kr">const</span> <span class="nx">xxx</span> <span class="o">=</span> <span class="nx">Components</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s2">&#34;resource://xxx/xxx.jsm&#34;</span><span class="p">);</span>
-<span class="ln">2</span><span class="kr">const</span> <span class="nx">xxx</span> <span class="o">=</span> <span class="nx">Components</span><span class="p">.</span><span class="nx">classes</span><span class="p">[</span><span class="s2">&#34;@mozilla.org/xxx/xxx;1&#34;</span><span class="p">].</span><span class="nx">getService</span><span class="p">(</span><span class="nx">Components</span><span class="p">.</span><span class="nx">xxx</span><span class="p">.</span><span class="nx">xxx</span><span class="p">);</span>
-</code></pre></div><p>这些Standard code modules具体是通过<code>.jsm</code>文件（Firefox源码中，也是JS）封装的。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="ln">1</span><span class="cl"><span class="kr">const</span> <span class="nx">xxx</span> <span class="o">=</span> <span class="nx">Components</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s2">&#34;resource://xxx/xxx.jsm&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kr">const</span> <span class="nx">xxx</span> <span class="o">=</span> <span class="nx">Components</span><span class="p">.</span><span class="nx">classes</span><span class="p">[</span><span class="s2">&#34;@mozilla.org/xxx/xxx;1&#34;</span><span class="p">].</span><span class="nx">getService</span><span class="p">(</span><span class="nx">Components</span><span class="p">.</span><span class="nx">xxx</span><span class="p">.</span><span class="nx">xxx</span><span class="p">);</span>
+</span></span></code></pre></div><p>这些Standard code modules具体是通过<code>.jsm</code>文件（Firefox源码中，也是JS）封装的。</p>
 <blockquote>
 <p>根据Mozilla<a href="https://firefox-source-docs.mozilla.org/code-quality/lint/linters/eslint-plugin-mozilla/use-chromeutils-import.html">此文</a> ，使用<code>ChromeUtils.import</code>好过<code>Components.utils.import</code></p>
 </blockquote>
@@ -271,14 +271,14 @@ XBL： <a href="http://www.mozilla.org/xbl">http://www.mozilla.org/xbl</a></p>
 </blockquote>
 <p>脚本中可用<code>document.createElementNS</code>来创建XUL namespace的元素，也可以用简化的<code>document.createXULElement</code>来直接创建浏览器UI常用的XUL。</p>
 <p>css内也会出现如</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>@namespace url(&#34;http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul&#34;);
-</code></pre></div><h4 id="管理好每个ucjs文件的命名空间">管理好每个.uc.js文件的命名空间</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">@namespace url(&#34;http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul&#34;);
+</span></span></code></pre></div><h4 id="管理好每个ucjs文件的命名空间">管理好每个.uc.js文件的命名空间</h4>
 <p>编写uc脚本时，将js变量和对象名称限制在命名空间内是个好习惯，例如在一个<code>.uc.js</code>文件内：</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="ln">1</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;xxx.uc.js&#34;</span><span class="p">);</span>
-<span class="ln">2</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-<span class="ln">3</span>    <span class="nx">你的代码</span>
-<span class="ln">4</span><span class="p">})();</span>
-</code></pre></div><p>除了上面方式，也可以创建一个有名称的Object来当你的命名空间。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;xxx.uc.js&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nx">你的代码</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">})();</span>
+</span></span></code></pre></div><p>除了上面方式，也可以创建一个有名称的Object来当你的命名空间。</p>
 <h2 id="一些资源">一些资源</h2>
 <h3 id="我自己写的uc脚本">我自己写的uc脚本</h3>
 <blockquote>
@@ -322,11 +322,11 @@ XBL： <a href="http://www.mozilla.org/xbl">http://www.mozilla.org/xbl</a></p>
 <p>在没有我们这里的方法之前，Firefox不支持终端中用CLI命令加载扩展，只允许安装经过Mozilla签名的（上<a href="https://addons.mozilla.org">AMO</a>去提交并签名再下载回来。可以不发布）。在<code>about:debugging</code>页面中可以用点击“加载临时扩展”以安装未打包、未签名的扩展，但关闭Firefox后不会维持，要重新操作一遍。</p>
 <p>这里，我在<code>about:debugging</code>页面中用F12查看了加载临时按钮的元素信息后，简单地在<a href="https://searchfox.org">Searchfox</a>搜索了Firefox的源代码内容，便得到了方法。</p>
 <p>通过uc脚本代码，可以使Firefox每次启动时自动加载临时扩展：</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="ln">1</span><span class="kd">var</span> <span class="nx">FileUtils</span> <span class="o">=</span> <span class="nx">Cu</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s2">&#34;resource://gre/modules/FileUtils.jsm&#34;</span><span class="p">).</span><span class="nx">FileUtils</span> 
-<span class="ln">2</span><span class="kd">var</span> <span class="nx">nsifile</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileUtils</span><span class="p">.</span><span class="nx">File</span><span class="p">(</span><span class="s2">&#34;未打包的扩展路径，目录下应有manifest.json&#34;</span><span class="p">);</span>
-<span class="ln">3</span><span class="nx">Cu</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s2">&#34;resource://gre/modules/AddonManager.jsm&#34;</span><span class="p">);</span>
-<span class="ln">4</span><span class="nx">AddonManager</span><span class="p">.</span><span class="nx">installTemporaryAddon</span><span class="p">(</span><span class="nx">nsifile</span><span class="p">);</span>
-</code></pre></div><h3 id="其他人的uc脚本或legacy技术资源">其他人的uc脚本或Legacy技术资源</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">var</span> <span class="nx">FileUtils</span> <span class="o">=</span> <span class="nx">Cu</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s2">&#34;resource://gre/modules/FileUtils.jsm&#34;</span><span class="p">).</span><span class="nx">FileUtils</span> 
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kd">var</span> <span class="nx">nsifile</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileUtils</span><span class="p">.</span><span class="nx">File</span><span class="p">(</span><span class="s2">&#34;未打包的扩展路径，目录下应有manifest.json&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nx">Cu</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s2">&#34;resource://gre/modules/AddonManager.jsm&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nx">AddonManager</span><span class="p">.</span><span class="nx">installTemporaryAddon</span><span class="p">(</span><span class="nx">nsifile</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="其他人的uc脚本或legacy技术资源">其他人的uc脚本或Legacy技术资源</h3>
 <ul>
 <li>
 <p><a href="https://github.com/xiaoxiaoflood/firefox-scripts">xiaoxiaoflood/firefox-scripts</a></p>
@@ -358,7 +358,7 @@ XBL： <a href="http://www.mozilla.org/xbl">http://www.mozilla.org/xbl</a></p>
 <li>
 <p>Mozilla已存档的旧技术文档，其中就包含有编写uc脚本会用到的legacy扩展资料、Firefox的Component Utils用法、内部的Standard code modules（<code>.jsm</code>）等</p>
 <ul>
-<li>~~<a href="https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules~~">https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules~~</a></li>
+<li><del><a href="https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules">https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules</a></del></li>
 <li><del><a href="https://developer.mozilla.org/en-US/docs/Archive">https://developer.mozilla.org/en-US/docs/Archive</a> （其中有很多链接仍指向移入Archive之前的，未修改路径）</del></li>
 <li><a href="https://github.com/mdn/archived-content">https://github.com/mdn/archived-content</a></li>
 </ul>
@@ -419,6 +419,12 @@ All articles are original (except for those specially claimed) and copyrighted. 
         <a href="/chiblog/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BD%AF%E4%BB%B6/" class="nav-link" title="适合程序员风格的许多日常软件列表分享（开源为主）">适合程序员风格的许多日常软件列表分享（开源为主）</a>
       </li>
       <li>
+        <a href="/chiblog/post/thunderbird%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="nav-link" title="Thunderbird打开活动管理器在标签中（2023，TB115)">Thunderbird打开活动管理器在标签中（2023，TB115)</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/esp32/" class="nav-link" title="花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)">花10几元买ESP32-C3，体验一下MicroPython (和CircuitPython)</a>
+      </li>
+      <li>
         <a href="/chiblog/post/appimage%E6%89%93%E5%8C%85/" class="nav-link" title="初探AppImage打包（Qt程序为例）">初探AppImage打包（Qt程序为例）</a>
       </li>
       <li>
@@ -429,6 +435,9 @@ All articles are original (except for those specially claimed) and copyrighted. 
       </li>
       <li>
         <a href="/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/" class="nav-link" title="容易上手的LXD容器和虚拟X server">容易上手的LXD容器和虚拟X server</a>
+      </li>
+      <li>
+        <a href="/chiblog/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4%E7%AD%89/" class="nav-link" title="Firefox/Chromium浏览器的启动命令选项参数等配置">Firefox/Chromium浏览器的启动命令选项参数等配置</a>
       </li>
       <li>
         <a href="/chiblog/post/ttffont/" class="nav-link" title="修复一些不能直接使用或不好用的ttf字体文件">修复一些不能直接使用或不好用的ttf字体文件</a>
@@ -469,6 +478,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">9</span>
         </a>
         
+        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
+          FIREFOX
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='/chiblog/tags/shell/' class="post_tag button button_translucent" title="shell">
           SHELL
           <span class="button_tally">2</span>
@@ -494,8 +508,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">2</span>
         </a>
         
+        <a href='/chiblog/tags/activity-manager/' class="post_tag button button_translucent" title="activity-manager">
+          ACTIVITY-MANAGER
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/adb/' class="post_tag button button_translucent" title="adb">
           ADB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/an-thinker/' class="post_tag button button_translucent" title="an-thinker">
+          AN-THINKER
           <span class="button_tally">1</span>
         </a>
         
@@ -544,6 +568,11 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
+        <a href='/chiblog/tags/c3/' class="post_tag button button_translucent" title="c3">
+          C3
+          <span class="button_tally">1</span>
+        </a>
+        
         <a href='/chiblog/tags/cgroup/' class="post_tag button button_translucent" title="cgroup">
           CGROUP
           <span class="button_tally">1</span>
@@ -554,8 +583,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/firefox/' class="post_tag button button_translucent" title="firefox">
-          FIREFOX
+        <a href='/chiblog/tags/esp/' class="post_tag button button_translucent" title="esp">
+          ESP
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32/' class="post_tag button button_translucent" title="esp32">
+          ESP32
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32-c3/' class="post_tag button button_translucent" title="esp32-c3">
+          ESP32-C3
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='/chiblog/tags/esp32c3/' class="post_tag button button_translucent" title="esp32c3">
+          ESP32C3
           <span class="button_tally">1</span>
         </a>
         
@@ -579,48 +623,21 @@ All articles are original (except for those specially claimed) and copyrighted. 
           <span class="button_tally">1</span>
         </a>
         
-        <a href='/chiblog/tags/github.io/' class="post_tag button button_translucent" title="github.io">
-          GITHUB.IO
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/js/' class="post_tag button button_translucent" title="js">
-          JS
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/linux%E5%8F%91%E8%A1%8C%E7%89%88/' class="post_tag button button_translucent" title="linux发行版">
-          LINUX发行版
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxc/' class="post_tag button button_translucent" title="lxc">
-          LXC
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/lxd/' class="post_tag button button_translucent" title="lxd">
-          LXD
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/mime/' class="post_tag button button_translucent" title="mime">
-          MIME
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='/chiblog/tags/obs-studio/' class="post_tag button button_translucent" title="obs-studio">
-          OBS-STUDIO
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
         <div class="post_tags">
           <div class="tags_list">
             
+            <a href='/chiblog/tags/activity-manager/' class=" post_tag button button_translucent" data-position=1 title="activity-manager">ACTIVITY-MANAGER<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/adb/' class=" post_tag button button_translucent" data-position=1 title="adb">ADB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/an-thinker/' class=" post_tag button button_translucent" data-position=1 title="an-thinker">AN-THINKER<span class="button_tally">1</span>
             </a>
             
             
@@ -660,6 +677,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/c3/' class=" post_tag button button_translucent" data-position=1 title="c3">C3<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/cgroup/' class=" post_tag button button_translucent" data-position=1 title="cgroup">CGROUP<span class="button_tally">1</span>
             </a>
             
@@ -668,7 +689,23 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
-            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=1 title="firefox">FIREFOX<span class="button_tally">1</span>
+            <a href='/chiblog/tags/esp/' class=" post_tag button button_translucent" data-position=1 title="esp">ESP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32/' class=" post_tag button button_translucent" data-position=1 title="esp32">ESP32<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32-c3/' class=" post_tag button button_translucent" data-position=1 title="esp32-c3">ESP32-C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/esp32c3/' class=" post_tag button button_translucent" data-position=1 title="esp32c3">ESP32C3<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/firefox/' class=" post_tag button button_translucent" data-position=2 title="firefox">FIREFOX<span class="button_tally">2</span>
             </a>
             
             
@@ -692,6 +729,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/in-tab/' class=" post_tag button button_translucent" data-position=1 title="in-tab">IN-TAB<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/js/' class=" post_tag button button_translucent" data-position=1 title="js">JS<span class="button_tally">1</span>
             </a>
             
@@ -712,7 +753,15 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/micropython/' class=" post_tag button button_translucent" data-position=1 title="micropython">MICROPYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/mime/' class=" post_tag button button_translucent" data-position=1 title="mime">MIME<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/mozilla/' class=" post_tag button button_translucent" data-position=1 title="mozilla">MOZILLA<span class="button_tally">1</span>
             </a>
             
             
@@ -725,6 +774,18 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/pc/' class=" post_tag button button_translucent" data-position=1 title="pc">PC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/picocom/' class=" post_tag button button_translucent" data-position=1 title="picocom">PICOCOM<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python/' class=" post_tag button button_translucent" data-position=1 title="python">PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/python-shell/' class=" post_tag button button_translucent" data-position=1 title="python-shell">PYTHON-SHELL<span class="button_tally">1</span>
             </a>
             
             
@@ -760,6 +821,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             </a>
             
             
+            <a href='/chiblog/tags/thunderbird/' class=" post_tag button button_translucent" data-position=1 title="thunderbird">THUNDERBIRD<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='/chiblog/tags/truetype/' class=" post_tag button button_translucent" data-position=1 title="truetype">TRUETYPE<span class="button_tally">1</span>
             </a>
             
@@ -781,6 +846,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/vnc/' class=" post_tag button button_translucent" data-position=1 title="vnc">VNC<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/webrepl/' class=" post_tag button button_translucent" data-position=1 title="webrepl">WEBREPL<span class="button_tally">1</span>
             </a>
             
             
@@ -825,6 +894,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E5%AD%97%E4%BD%93/' class=" post_tag button button_translucent" data-position=1 title="字体">字体<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E5%AE%89%E4%BF%A1%E5%8F%AF/' class=" post_tag button button_translucent" data-position=1 title="安信可">安信可<span class="button_tally">1</span>
             </a>
             
             
@@ -881,6 +954,10 @@ All articles are original (except for those specially claimed) and copyrighted. 
             
             
             <a href='/chiblog/tags/%E6%AD%BB%E6%9C%BA/' class=" post_tag button button_translucent" data-position=1 title="死机">死机<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='/chiblog/tags/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E5%99%A8/' class=" post_tag button button_translucent" data-position=1 title="活动管理器">活动管理器<span class="button_tally">1</span>
             </a>
             
             
@@ -1040,7 +1117,7 @@ All articles are original (except for those specially claimed) and copyrighted. 
   </div>
 </footer>
 
-    <script type="text/javascript" src="/chiblog/js/bundle.min.2795572dea13b4fc26e4fa0371eb735a81e4f586f935d83c52d99e8f04eabf78cc5a7036ad73ac7606572cc8c9285e43a60c548660a2b572b32a7f04436cac6c.js" integrity="sha512-J5VXLeoTtPwm5PoDcetzWoHk9Yb5Ndg8UtmejwTqv3jMWnA2rXOsdgZXLMjJKF5DpgxUhmCitXKzKn8EQ2ysbA==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
+    <script type="text/javascript" src="/chiblog/js/bundle.min.5912c2936a95cb7554b82ef48a51cd657315bfd574b8e07be237ba7b2a5837df47792ed88a500643481d18a782a4a0e110334fb80110567a3e34c74fdf3a25c6.js" integrity="sha512-WRLCk2qVy3VUuC70ilHNZXMVv9V0uOB74je6eypYN99HeS7YilAGQ0gdGKeCpKDhEDNPuAEQVno&#43;NMdP3zolxg==" crossorigin="anonymous"></script><script type="text/javascript" src="/chiblog/custom.js" ></script>
     
   </body>
 </html>

@@ -1,0 +1,37 @@
+https://azure.microsoft.com/zh-cn/products/cognitive-services/text-to-speech/#security
+微软 只可免费试听
+速度1.2
+Chinese (taiwanese mandarin ) 云哲 男
+Chinese (mandarin simplified) 云希 男
+    云扬 男 （可听出是机器人，音质和自然度都很好）
+
+====================================================
+https://synesthesiam.github.io/opentts/
+    coqui-tts > zh > zh_baker 女 中文 不能讲英文（字母也不行）
+    coqui-tts > en 女
+    larynx > en > cmu_ahw-glow_tts 男
+    larynx > en > cmu_aup-glow_tts 中性
+    larynx > en > cmu_bdl-glow_tts 男
+    larynx > en > cmu_eey-glow_tts 女
+    larynx > en > cmu_jmk-glow_tts 男轻
+    
+docker run -rm -it -p 5500:5500 synesthesiam/opentts:zh
+docker 2GB
+
+docker run -rm -it -p 5500:5500 synesthesiam/opentts:en-2.0
+(不用en，太大)
+docker 3GB
+
+===================================================
+
+https://github.com/synesthesiam/docker-mozillatts
+docker run -rm -it -p 5002:5002 synesthesiam/mozillatts:en  
+2GB
+    只有英语女
+    
+===================================================   
+https://github.com/coqui-ai/TTS
+docker 5GB
+===================================
+https://github.com/PaddlePaddle/PaddleSpeech/discussions/2492
+PaddleSpeech 实现多种卡通音色和方言的中英文混合 TTS （样例）

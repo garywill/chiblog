@@ -5,6 +5,7 @@
     <link>/chiblog/tags/linux/</link>
     <description>Recent content in Linux on Gary W 的中文博客(站2)</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>Copyright © All rights reserved 版权所有 保留所有权利</copyright>
     <lastBuildDate>Thu, 01 Sep 2022 08:00:00 +0800</lastBuildDate><atom:link href="/chiblog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -19,26 +20,34 @@
             前言 既是自己的记录，也是向各位介绍，面向各行各业大众，介绍许多适合日用、洁净单纯的软件（不包含专业领域）。所介绍的软件都尽可能选同类软件中最干净的好用的。
 网上推荐软件的文章很多，这里与其他不同，大多为开源（开放源代码）软件，也含名声不错的闭源软件。
 像电脑手机这类电子机器的这滩浑水我曾经趟过，读者可以少趟。
- 虽然所介绍的大部分用过，本人免任何责，只做介绍。
- 正文  对于跨平台的软件，只会提及Windows、Android、iOS、Mac OS、Linux
- 解决Android卡顿 是否有因装多App变卡，而正在用的所谓“加速软件”自身就是占用大量资源的恶龙？
- 这类最好有root权限以发挥最好功效
- Android自启动管理   Autostarts（开源）
- 用它禁止一App自启动时，也有可能牵连该App的某些触发性功能被破坏。在Autostarts的界面上能看到
-   Android应用冻结 冻结，也就是杀后台
-  SuperFreezZ（开源）
+虽然所介绍的大部分用过，本人免任何责，只做介绍。
+正文 对于跨平台的软件，只会提及Windows、Android、iOS、Mac OS、Linux
+解决Android卡顿 是否有因装多App变卡，而正在用的所谓“加速软件”自身就是占用大量资源的恶龙？
+这类最好有root权限以发挥最好功效
+Android自启动管理 Autostarts（开源）
+用它禁止一App自启动时，也有可能牵连该App的某些触发性功能被破坏。在Autostarts的界面上能看到
+Android应用冻结 冻结，也就是杀后台
+SuperFreezZ（开源）
 这个比其他类似的有一点好，就是能设置默认策略为冻结（即，自动把新安装的app添加进冻结列表中）
-  绿色守护 作者是国人Oasis Feng，近年似乎名声不错。
-  冰箱（IceBox） 不但冻结，还放入冰箱中就好像被删掉了一样，还可以阻止同伙App将它唤醒，比杀后台更厉害。又可以随时取出来用。免费版的有冻结10个App的限制
-  自冻（开源） 有任务计划功能的冻结应用。也可以让被冻结的App暂时消失。作者是国人Playhi
-  Android应用隔离 这些可以说是帮你开启Android本身的一个隐藏功能，把应用装到一个隔离的环境中，整个隔离环境可以随时开启或关闭，关闭了里面的App就好像不存在了一样，自然不占用后台。
+绿色守护 作者是国人Oasis Feng，近年似乎名声不错。
+冰箱（IceBox） 不但冻结，还放入冰箱中就好像被删掉了一样，还可以阻止同伙App将它唤醒，比杀后台更厉害。又可以随时取出来用。免费版的有冻结10个App的限制
+自冻（开源） 有任务计划功能的冻结应用。也可以让被冻结的App暂时消失。作者是国人Playhi
+Android应用隔离 这些可以说是帮你开启Android本身的一个隐藏功能，把应用装到一个隔离的环境中，整个隔离环境可以随时开启或关闭，关闭了里面的App就好像不存在了一样，自然不占用后台。
 从隔离环境内是无法访问外部文件的，还可以保护一些隐私。
- 没有root也可以用，不过更麻烦些
+没有root也可以用，不过更麻烦些
 有些机型ROM或旧的Android可能不兼容
-   炼妖壶（Island）（开源） 与绿色守护是同一个作者
-  Shelter（开源） 作者是国人Peter Cai
-   如果用这类软件搞分身、双账号多开之类的，仍是有被检测到并封号的可能，风险要自己评估
- 搜索引擎和上网入口   大术专搜（Big Search） （开源） 以 灵活又顺手 的方式 在(切换) 任意一个 或 (连续)多个 搜索引擎（或任意网站）进行搜索。这个工具的作者就是我。
+炼妖壶（Island）（开源） 与绿色守护是同一个作者
+Shelter（开源） 作者是国人Peter Cai
+如果用这类软件搞分身、双账号多开之类的，仍是有被检测到并封号的可能，风险要自己评估
+搜索引擎和上网入口 大术专搜（Big Search） （开源） 以 灵活又顺手 的方式 在(切换) 任意一个 或 (连续)多个 搜索引擎（或任意网站）进行搜索。这个工具的作者就是我。
+除了搜索之外，查询、词典、网购买东西等等之类的，也可以从这个工具调用。
+如果你上网搜寻资料时，对搜索质量、广度有要求，这也是个很好很高效的工具。
+而如果你就是一个普通的百度、淘宝之类大众网页的使用者，也可以轻松使用。
+有浏览器扩展版（推荐）和网页版：
+Firefox Addon Chrome Addon 或 下载 .crx。 适用于：Google Chrome、Microsoft Edge、Brave、Vivaldi、Opera、搜狗浏览器(部分)、360浏览器(部分) 等 网页版 并且引擎数据具有高度可自定义性
+播放器 注意这些仅是播放器，不带有任何一家网络资源
+SMPlayer（Windows、Linux）（开源） 视频播放器
+VLC media player（Windows、Android、iOS、Mac OS、Linux）（开源） 视频播放器
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E7%99%BE%E5%A7%93%E6%97%A5%E7%94%A8%E8%BD%AF%E4%BB%B6/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
@@ -57,7 +66,7 @@
         
           
             这是稿件，有待完善
- .AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制+动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用了squashfs+FUSE）。软件退出后，/tmp/.mount_xxxxxxxx会消失。
+.AppImage文件是什么及如何解包查看 一个.AppImage文件本身是Linux ELF格式的二进制可执行文件。同时其内也含有压缩打包好的一个软件所需要的一堆文件（一般就是可执行二进制+动态库），这一堆文件会在运行此.AppImage文件时以/tmp/.mount_xxxxxxx的路径出现（用了squashfs+FUSE）。软件退出后，/tmp/.mount_xxxxxxxx会消失。
 一般来说（如果正确打包了），运行时传递了参数给.AppImage文件，这些参数会传递到其内部的usr/bin/真正的可执行文件上（但也有特例，如解包参数--appimage-extract）
 查看或解包一.AppImage文件 学习打包前，先了解查看和解包的方法
 要解包一.AppImage文件，运行：
@@ -84,14 +93,14 @@
           
             Linux本身只能通过/etc/resolv.conf设置全系统的DNS。这里有一种给特定进程单独设置DNS的方法，通过免root的mount namespace达成。使用脚本只需要一条简洁的命令就可以。
 背景 例如，在各省各地布置了CDN，本地Linux系统用的DNS为114.114.114.114，这里想要使用某地某ISP的DNS5.5.5.5来测试CDN设置状况，却不想更改全系统设置。虽然dig和nslookup可指定DNS，但大部分程序没有这个功能。
-方法   Bubblewrap是一个非特权（免root）容器工具，使用bwrap命令以用它来创建一个mount namespace，使得在此namespace下的进程所看见的/etc/resolv.conf被覆盖为自己指定的内容。
-  有些程序会使用系统统一提供的DNS缓存（一般由nscd提供），因此mount namespace需要阻止DNS缓存被访问。阻止/var/run/nscd/被访问即可。
-  使用 移步Github仓库，有我整理好的脚本
+方法 Bubblewrap是一个非特权（免root）容器工具，使用bwrap命令以用它来创建一个mount namespace，使得在此namespace下的进程所看见的/etc/resolv.conf被覆盖为自己指定的内容。
+有些程序会使用系统统一提供的DNS缓存（一般由nscd提供），因此mount namespace需要阻止DNS缓存被访问。阻止/var/run/nscd/被访问即可。
+使用 移步Github仓库，有我整理好的脚本
 1proxc -d 5.5.5.5 -c nslookup my-website-with-cdn.com 2proxc -d 5.5.5.5 -c firefox http://my-website-with-cdn.com 3proxc -d 5.5.5.5 -c curl -v http://my-website-with-cdn.com 使用此脚本只需要一条简洁的命令就可以达到。将5.5.5.5分别替换成要测试的各省各ISP的DNS即可。
-限制   由于Bubblewrap的限制，若在使用过程中，mount namespace之外的进程删除、重建或更改了/etc/resolv.conf，也会使namespace内所看见的/etc/resolv.conf被修改。
+限制 由于Bubblewrap的限制，若在使用过程中，mount namespace之外的进程删除、重建或更改了/etc/resolv.conf，也会使namespace内所看见的/etc/resolv.conf被修改。
 因此，NetworkManager切换网络后，可能会使此方法设置的DNS失效。可以通过禁止NetworkManager更改/etc/resolv.conf来避免。
-  在bubblewrap这类容器之中，有些程序本身需要用到mount、namespace等功能的无法使用，如AppImage
-  本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
+在bubblewrap这类容器之中，有些程序本身需要用到mount、namespace等功能的无法使用，如AppImage
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden. 打赏作者 写作不易，感谢支持！ 扫个码吧～
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/linux-process-dns/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
@@ -110,17 +119,20 @@
         
           
             Linux有容器技术LXC，LXD对LXC进行了封装。与Docker类似，但LXC容器比Docker容器完整，且不像Docker是一次性容器设计运行结束后即销毁实例。使用LXD操作容器，体验介于Docker与虚拟机之间。（其实LXD不只提供封装LXC容器的功能，还提供封装虚拟机）
-开始使用LXD——初始设置   从自己的发行版仓库安装LXD。LXD与Docker一样有一个守护进程lxd，因此有
-1sudo systemctl enable/disable/start/stop lxd  如果用systemctl停止lxd时，仍有正在运行的容器，那些容器不会被停止。所以应该先停止所有容器，再systemctl stop
- lxd是守护进程，而平时操作LXD则是用lxc命令（此lxc非属于LXC容器，是LXD的客户端的意思）
-  安装LXD后自动创建lxd用户组，我们手动把自己的日常用户添加进这个组里：
-1usermod -aG lxd &amp;lt;username&amp;gt;   添加清华LXC镜像（下文都用这个tuna-images源）：
-1lxc remote add tuna-images https://mirrors.tuna.tsinghua.edu.cn/lxc-images/ --protocol=simplestreams --public  若想在连接镜像时使用代理：
-1lxc config set core.proxy_http http://ip:port 2lxc config set core.proxy_https http://ip:port 3lxc config set core.proxy_ignore_hosts image-server.local    /etc/subuid和/etc/subgid都写
-1root:1000000:65536 21000:1000000:65536 3lxd:1000000:65536 让容器进程运行时，宿主看到的容器进程所属UID以一百万算起 （外一百万=内0）。且容器的rootfs/下的文件在宿主机看来UID、GID也都是一样map过的。这种叫非特权容器，比特权容器安全。
-  初始化LXD。运行
+开始使用LXD——初始设置 从自己的发行版仓库安装LXD。LXD与Docker一样有一个守护进程lxd，因此有
+1sudo systemctl enable/disable/start/stop lxd 如果用systemctl停止lxd时，仍有正在运行的容器，那些容器不会被停止。所以应该先停止所有容器，再systemctl stop
+lxd是守护进程，而平时操作LXD则是用lxc命令（此lxc非属于LXC容器，是LXD的客户端的意思）
+安装LXD后自动创建lxd用户组，我们手动把自己的日常用户添加进这个组里：
+1usermod -aG lxd &amp;lt;username&amp;gt; 添加清华LXC镜像（下文都用这个tuna-images源）：
+1lxc remote add tuna-images https://mirrors.tuna.tsinghua.edu.cn/lxc-images/ --protocol=simplestreams --public 若想在连接镜像时使用代理：
+1lxc config set core.proxy_http http://ip:port 2lxc config set core.proxy_https http://ip:port 3lxc config set core.proxy_ignore_hosts image-server.local /etc/subuid和/etc/subgid都写
+11000:1000000:65536 2root:1000000:65536 3lxd:1000000:65536 让容器进程运行时，宿主看到的容器进程所属UID以一百万算起 （外一百万=内0）。且容器的rootfs/下的文件在宿主机看来UID、GID也都是一样map过的。这种叫非特权容器，比特权容器安全。
+初始化LXD。运行
 1sudo lxd init 交互问答式的。
- 其中有一个项让我们选择储存方式，我们自用选最简单的dir方式就可以，简单实用（这样容器内文件可以直接访问/var/lib/lxd/storage-pools/default/containers/容器名/rootfs/查看修改）。    （可选）缓存与自动刷新相关设置
+其中有一个项让我们选择储存方式，我们自用选最简单的dir方式就可以，简单实用（这样容器内文件可以直接访问/var/lib/lxd/storage-pools/default/containers/容器名/rootfs/查看修改）。 （可选）缓存与自动刷新相关设置
+1lxc config set images.remote_cache_expiry 30 2lxc config set images.auto_update_interval 24 3lxc config set images.auto_update_cached false 重启
+若宿主机有防火墙，可能需要手动把lxdbr0加入白名单，以使容器能够联网和与宿主机网络通信
+使用LXD的常用操作 查看网络源目前可下载的镜像
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/lxd%E5%92%8C%E8%99%9A%E6%8B%9Fx/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
@@ -139,20 +151,22 @@
         
           
             这里收集了一些配电脑及了解某硬件与Linux兼容程度的一些方法。
- 我收集了这些，但没用上，放弃了。最后配了一台标准的，没去考虑Linux。烧脑啊！
- 普通的选电脑配件工具   https://hk.pcpartpicker.com/list/
-  中关村比较配硬件 http://zj.zol.com.cn/
-  PConline配硬件 https://mydiy.pconline.com.cn/
-  计算硬件功率 https://www.coolermaster.com/power-supply-calculator/
-  AMD Ryzen列表 https://www.wikiwand.com/zh-hans/AMD_Ryzen （这两年大家不是在都说AMD比Intel好，Intel爆出好多问题，还有AMD比Nvidia对Linux友好吗？）
+我收集了这些，但没用上，放弃了。最后配了一台标准的，没去考虑Linux。烧脑啊！
+普通的选电脑配件工具 https://hk.pcpartpicker.com/list/
+中关村比较配硬件 http://zj.zol.com.cn/
+PConline配硬件 https://mydiy.pconline.com.cn/
+计算硬件功率 https://www.coolermaster.com/power-supply-calculator/
+AMD Ryzen列表 https://www.wikiwand.com/zh-hans/AMD_Ryzen （这两年大家不是在都说AMD比Intel好，Intel爆出好多问题，还有AMD比Nvidia对Linux友好吗？）
 不负责任据说，三大主板商中，微星对Linux最友好。其次技嘉，华硕最不好。
 硬件的VID、DID、PID查询 Vendor ID、Product ID、Device ID。解释略。USB设备和PCI设备的ID分配是不同的。
-  PCI和USB的Vendor ID 、Product ID （无名称搜索） https://devicehunt.com/
-  PCI 的Vendor ID 、Product ID ，或名称搜索 https://www.pcilookup.com/
-  https://pci-ids.ucw.cz/read/PC/
-  Realtek 硬件的VID、DID查询（非官方） https://www.realtek.cz/realtek-audio-devices.html https://www.realtek.cz/realtek-network-devices.html https://www.realtek.cz/realtek-wireless-devices.html
-  Linux中用命令查看VID、DID   看当前硬件的内核模块和VID DID
-1$ lspci -knn   看当前linux中支持的VID、DID
+PCI和USB的Vendor ID 、Product ID （无名称搜索） https://devicehunt.com/
+PCI 的Vendor ID 、Product ID ，或名称搜索 https://www.pcilookup.com/
+https://pci-ids.ucw.cz/read/PC/
+Realtek 硬件的VID、DID查询（非官方） https://www.realtek.cz/realtek-audio-devices.html https://www.realtek.cz/realtek-network-devices.html https://www.realtek.cz/realtek-wireless-devices.html
+Linux中用命令查看VID、DID 看当前硬件的内核模块和VID DID
+1$ lspci -knn 看当前linux中支持的VID、DID
+1modprobe -c | grep -i -E &amp;#39;&amp;lt;vendor ID&amp;gt;.*&amp;lt;product ID&amp;gt;&amp;#39; 输出说明：
+1alias pci:v0000&amp;lt;vendor ID&amp;gt;:d0000&amp;lt;product ID&amp;gt;sv... &amp;lt;module name&amp;gt; 2 v (vendor) 3 d (device) 4 sv (subvendor) 5 sd (subdevice) 6 bc (bus class) 7 sc (bus subclass) 8 i (interface) 看一个内核模块宣称支持的硬件（VID、DID）
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/choose-linux-pc/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
@@ -171,15 +185,14 @@
         
           
             我们需要的两个功能：
- 解码Linux屏幕上的二维码，将结果输出在终端 在终端中将字符串转为二维码，直接显示二维码在终端中以供扫描  实现方法   生成二维码 qrencode是一个常见的生成二维码的CLI程序，许多发行版仓库中有。它支持直接输出二维码在终端中。（它也支持输出二维码到图片文件）
-  解码二维码
- 此方法在 X11 上测试过
-  在终端中运行截屏程序，以截得二维码图形
+解码Linux屏幕上的二维码，将结果输出在终端 在终端中将字符串转为二维码，直接显示二维码在终端中以供扫描 实现方法 生成二维码 qrencode是一个常见的生成二维码的CLI程序，许多发行版仓库中有。它支持直接输出二维码在终端中。（它也支持输出二维码到图片文件）
+解码二维码
+此方法在 X11 上测试过
+在终端中运行截屏程序，以截得二维码图形
 scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给解析二维码的CLI程序。
-我们用zbar来解析二维码，显示结果在终端。    我已将以上所述整理成一个shell脚本：
- 终端中运行这个脚本，然后鼠标框选屏幕上的二维码，即可解析出结果。 将任意字符串当作参数传给这个脚本，即可在屏幕上显示出二维码。  完整脚本 代码请移步我的Github仓库 https://github.com/garywill/qrshot 查看
-本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
-  
+我们用zbar来解析二维码，显示结果在终端。 我已将以上所述整理成一个shell脚本：
+终端中运行这个脚本，然后鼠标框选屏幕上的二维码，即可解析出结果。 将任意字符串当作参数传给这个脚本，即可在屏幕上显示出二维码。 完整脚本 代码请移步我的Github仓库 https://github.com/garywill/qrshot 查看
+本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden. 打赏作者 写作不易，感谢支持！ 扫个码吧～
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/qr/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
@@ -199,7 +212,7 @@ scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给�
           
             Linux在内存用尽的情况下，整个界面，包括tty和ctrl-alt-F1都会卡住难以响应。虽然Linux内核有OOM Killer机制杀掉吃内存的进程，但经常内存用尽时连OOM Killer都无法动作。
 本篇讲述如何用cgroup限制内存防止整个Linux因内存用尽卡死。
-因内存用尽卡住时怎么办  如果鼠标还能动一点，可以尝试在top中杀掉吃内存的进程。但这时想进入top并kill -9都很难。ctrl-alt-F1都会卡。 如果鼠标完全不能动，可以等待15分钟左右，OOM Killer可能会动作杀掉吃内存的进程，然后就可以恢复。如果15分钟还无反应，那是真卡死了。 魔法键强制安全重启。  用cgroup限制用户内存留空间给内核动作 cgroup是内核的一个资源限制功能。这里限制日常用户的内存，留500MB左右给root和内核。
+因内存用尽卡住时怎么办 如果鼠标还能动一点，可以尝试在top中杀掉吃内存的进程。但这时想进入top并kill -9都很难。ctrl-alt-F1都会卡。 如果鼠标完全不能动，可以等待15分钟左右，OOM Killer可能会动作杀掉吃内存的进程，然后就可以恢复。如果15分钟还无反应，那是真卡死了。 魔法键强制安全重启。 用cgroup限制用户内存留空间给内核动作 cgroup是内核的一个资源限制功能。这里限制日常用户的内存，留500MB左右给root和内核。
 我的Linux是否支持cgroup 1cat /proc/self/cgroup 这里可以列出某进程所处的资源限制组。有则表示内核支持cgroup
 安装cgroup相关工具 我们要用到cgconfigparser和cgrulesengd这两个工具。安装libcgroup-tools（可能因发行版而异）这个包。
 配置cgroup规则 /etc/cgconfig.conf中写
@@ -237,8 +250,7 @@ scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给�
 1[Desktop Entry] 2Encoding=UTF-8 3Name=rxvt-unicode in this path 4GenericName=rxvt-unicode in this path 5Exec=urxvt -cd %f 6Icon=utilities-terminal 7Terminal=false 8NoDisplay=true 其中的Exec=终端命令 需要的参数 %f因不同终端而异，本例是urxvt-unicode终端的。 xfce4-terminal终端为Exec=xfce4-terminal --working-directory=%f
 终端安装好后是肯定自带了.dekstop文件的，但一般它的Exec=中都没有传递路径的部分，所以这里要自己写一个。
 然后，在那篇文章的第3步写
-1[Added Associations] 2inode/directory=你的终端-in-this-path.desktop; 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden.  打赏作者 写作不易，感谢支持！ 扫个码吧～
-  
+1[Added Associations] 2inode/directory=你的终端-in-this-path.desktop; 本博客文章皆属原创（除特别标明外）。 未联系作者获得同意前，不可转载。 All articles are original (except for those specially claimed) and copyrighted. Copying without permission is forbidden. 打赏作者 写作不易，感谢支持！ 扫个码吧～
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/%E5%9C%A8%E6%AD%A4%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
@@ -259,17 +271,20 @@ scrot是一个CLI的截屏程序，许多发行版仓库中有 将图形传给�
             手动为Linux关联文件扩展名与打开程序。
 当Linux不认识某种扩展名的时候，需要为此扩展名创建一个MIME类型。Linux是依据MIME类型而不是扩展名来决定打开程序的。
 再将此种MIME类型与某程序菜单项关联。
-手动关联步骤   为扩展名建造一个MIME类型
- 如果你的Linux已经认得这种扩展名，不需要做这一步。在你的文件管理器中，看看这种扩展名的文件有没有被正确识别。或使用file命令查看。
- 创建 application-x-扩展名.xml 内容：
+手动关联步骤 为扩展名建造一个MIME类型
+如果你的Linux已经认得这种扩展名，不需要做这一步。在你的文件管理器中，看看这种扩展名的文件有没有被正确识别。或使用file命令查看。
+创建 application-x-扩展名.xml 内容：
 1&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; 2&amp;lt;mime-info xmlns=&amp;#34;http://www.freedesktop.org/standards/shared-mime-info&amp;#34;&amp;gt; 3 &amp;lt;mime-type type=&amp;#34;application/x-扩展名&amp;#34;&amp;gt; 4 &amp;lt;comment&amp;gt;此种文件类型的描述&amp;lt;/comment&amp;gt; 5 &amp;lt;icon name=&amp;#34;application-x-扩展名&amp;#34;/&amp;gt; 6 &amp;lt;glob-deleteall/&amp;gt; 7 &amp;lt;glob pattern=&amp;#34;*.扩展名&amp;#34;/&amp;gt; 8 &amp;lt;/mime-type&amp;gt; 9&amp;lt;/mime-info&amp;gt; 放 application-x-扩展名.xml 到 ~/.local/share/mime/packages/。
 刷新系统MIME数据库
-1$ update-mime-database ~/.local/share/mime   为程序建造一个菜单项
- 如果此程序已经有菜单项，略过这一步。
- 创建程序.desktop ， 内容：
+1$ update-mime-database ~/.local/share/mime 为程序建造一个菜单项
+如果此程序已经有菜单项，略过这一步。
+创建程序.desktop ， 内容：
 1[Desktop Entry] 2Version=1.0 3Type=Application 4Name=显示的程序名 5Icon=&amp;#34;/path-to/图标文件&amp;#34; 6Exec=&amp;#34;/path-to/执行程序&amp;#34; %f 7Path=&amp;#34;/path-to/&amp;#34; （可选） 8NoDisplay=false （true则不会在系统菜单中出现） 9Categories=Utility; 10StartupNotify=false 11Terminal=false 其关键在于Exec=行中的%f将文件路径传递给执行程序。
 Exec=也可以没有绝对路径直接使用命令，Icon=也可以不用路径而直接写系统认可的图标名称。
-放 程序.desktop 文件到 ~/.
+放 程序.desktop 文件到 ~/.local/share/applications/
+设置用某程序打开MIME类型文件
+修改 ~/.config/mimeapps.list 或 ~/.local/share/applications/mimeapps.list(废弃)
+1[Added Associations] 2application/x-扩展名=程序.
           
           
             &lt;p&gt;&lt;a href=&#34;/chiblog/chiblog/post/linux%E5%85%B3%E8%81%94%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E5%92%8C%E6%89%93%E5%BC%80%E7%A8%8B%E5%BA%8F/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;
